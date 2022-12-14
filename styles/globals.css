@@ -1,0 +1,112 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.hide {
+  display: "none" !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: #1e1f26;
+    background: #1e1f26;
+  }
+}
+
+.MuiMobileStepper-progress {
+  /* width: 100%; */
+  background-color: #ffffff;
+}
+
+.css-5xe99f-MuiLinearProgress-bar1 {
+  background-color: #f7be02;
+}
+
+/* #cursor {
+  position: fixed;
+  top: -16px;
+  left: -16px;
+  z-index: 1;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background: #e0e1dd;
+  opacity: 0;
+} */
+
+#cursor.-activated {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.tags-cloud {
+  height: 1000px;
+  width: 1000px;
+  list-style: none;
+  opacity: 0;
+  color: white;
+}
+
+.tags-cloud.-loaded {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.tags-cloud > .tag {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5rem;
+  font-weight: bold;
+  transition: transform 0.5s linear, opacity 0.5s linear;
+}
+
+.tags-cloud > .tag > .wrap {
+  display: inline-block;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .tags-cloud {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .tags-cloud > .tag {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .tags-cloud > .tag > .wrap {
+    display: inline-block;
+    transform: translateX(-1%) translateY(-1%);
+  }
+}
