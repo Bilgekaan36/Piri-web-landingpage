@@ -1,10 +1,15 @@
+import styles from "./Benefitspage.module.css";
+
 import * as React from "react";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { useState } from "react";
+import { Paper, Typography, Button } from "@mui/material";
+import { useState, useRef, useEffect } from "react";
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
+
+import lottieJson from "../../public/bar-chart.json";
+import astronaut from "../../public/astronaut-in-tea-break.json";
+import developer from "../../public/hacker-thinking-about-code.json";
 
 const BenefitsStepper = ({ activeStep }) => {
   const maxSteps = steps.length;
@@ -31,18 +36,35 @@ const BenefitsStepper = ({ activeStep }) => {
       <Box
         sx={{
           minHeight: { xs: "none", md: 700 },
-          maxWidth: { xs: "100%", md: "70%" },
+          maxWidth: { xs: "100%", md: "100%" },
+          display: "flex",
+          alignItems: "center",
           width: "100%",
+          flexDirection: { xs: "column-reverse", md: "row" },
           p: 2,
           color: "white",
           bgcolor: "transparent",
         }}
       >
         <Typography
-          sx={{ fontSize: { xs: "1rem", md: "1.75rem" }, fontWeight: "200" }}
+          sx={{ fontSize: { xs: "0.75rem", md: "1.75rem" }, fontWeight: "200" }}
         >
           {steps[activeStep].description}
         </Typography>
+
+        <Player
+          autoplay
+          loop={false}
+          src={steps[activeStep].lottieFile}
+          keepLastFrame={true}
+          // style={{ height: "600px", width: "700px" }}
+          className={styles.lottiePlayer}
+        >
+          <Controls
+            visible={false}
+            buttons={["play", "repeat", "frame", "debug"]}
+          />
+        </Player>
       </Box>
       <MobileStepper
         variant='progress'
@@ -86,6 +108,7 @@ const steps = [
                 For each ad campaign that you create, you can control how much
                 you're willing to spend on clicks and conversions, which networks
                 and geographical locations you want your ads to show on, and more.`,
+    lottieFile: lottieJson,
   },
   {
     label: "QUALITY IN DESIGN",
@@ -101,6 +124,7 @@ const steps = [
                 For each ad campaign that you create, you can control how much
                 you're willing to spend on clicks and conversions, which networks
                 and geographical locations you want your ads to show on, and more.`,
+    lottieFile: astronaut,
   },
   {
     label: "PROFESSIONAL CODING",
@@ -116,6 +140,7 @@ const steps = [
                 For each ad campaign that you create, you can control how much
                 you're willing to spend on clicks and conversions, which networks
                 and geographical locations you want your ads to show on, and more.`,
+    lottieFile: developer,
   },
   {
     label: "THE DIFFERENCE",
@@ -131,6 +156,7 @@ const steps = [
                 For each ad campaign that you create, you can control how much
                 you're willing to spend on clicks and conversions, which networks
                 and geographical locations you want your ads to show on, and more.`,
+    lottieFile: astronaut,
   },
   {
     label: "YOUR VISION",
@@ -146,6 +172,7 @@ const steps = [
                 For each ad campaign that you create, you can control how much
                 you're willing to spend on clicks and conversions, which networks
                 and geographical locations you want your ads to show on, and more.`,
+    lottieFile: lottieJson,
   },
   {
     label: "FAST & SAFE",
@@ -161,5 +188,6 @@ const steps = [
                 For each ad campaign that you create, you can control how much
                 you're willing to spend on clicks and conversions, which networks
                 and geographical locations you want your ads to show on, and more.`,
+    lottieFile: astronaut,
   },
 ];

@@ -38,6 +38,12 @@ a {
   background-color: #f7be02;
 }
 
+.MuiImageListItemBar-title {
+  font-size: 3rem;
+  line-height: normal;
+  border-bottom: 2px solid white;
+}
+
 /* #cursor {
   position: fixed;
   top: -16px;
@@ -108,5 +114,11 @@ a {
   .tags-cloud > .tag > .wrap {
     display: inline-block;
     transform: translateX(-1%) translateY(-1%);
+  }
+
+  .MuiImageListItemBar-title {
+    font-size: 1rem;
+    line-height: normal;
+    border-bottom: 1px solid white;
   }
 }

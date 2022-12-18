@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 
 import Benefitspage from "../components/benefitspage/Benefitspage";
 import Landingpage from "../components/landingpage/Landingpage";
+import Process from "../components/process/Process";
 import Workspage from "../components/workspage/Workspage";
 
 export default function Main() {
   const [isShowWorkspage, setWorkspage] = useState(false);
 
   const setNextWorkspage = (data) => {
-    console.log("isSetWorkspage", isShowWorkspage);
     setWorkspage(data);
   };
 
@@ -24,6 +24,7 @@ export default function Main() {
       <Landingpage />
       <Benefitspage setNextWorkspage={setNextWorkspage} />
       <Workspage isShowWorkspage={isShowWorkspage} />
+      <Process isShowWorkspage={isShowWorkspage} />
     </Container>
   );
 }

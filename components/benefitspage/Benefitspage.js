@@ -105,7 +105,7 @@ const Benefitspage = (props) => {
           width: "100px",
           // backgroundColor: "purple",
           position: "absolute",
-          top: 0,
+          top: "2px",
           left: 0,
         }}
         onEnter={() => {

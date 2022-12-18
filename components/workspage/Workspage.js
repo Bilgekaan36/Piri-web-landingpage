@@ -8,8 +8,11 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
+  Box,
 } from "@mui/material";
-import { Parallax } from "react-scroll-parallax";
+
+import nextjs from "../../public/videos/nextjs.mp4";
+import portfolio from "../../public/videos/portfolio.mp4";
 
 const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
   height: "30vh",
@@ -58,11 +61,34 @@ const StyledRightTitleGrid = styled(Grid)(({ theme }) => ({
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
   position: "relative",
-  [theme.breakpoints.up("xl")]: {
+  [theme.breakpoints.up("md")]: {
     padding: "0 80px",
   },
-  [theme.breakpoints.down("md")]: {
+  [theme.breakpoints.down("xs")]: {
     padding: "0 18px",
+  },
+}));
+
+const StyledFooterBox = styled(Box)(({ theme }) => ({
+  padding: "132px 0",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  [theme.breakpoints.down("md")]: {},
+}));
+
+const StyledFooterText = styled(Typography)(({ theme }) => ({
+  lineHeight: "1.2em",
+  fontWeight: "700",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "2rem",
+  },
+}));
+
+const StyledFooterAuthor = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    fontSize: "1rem",
   },
 }));
 
@@ -76,7 +102,11 @@ const Workspage = ({ isShowWorkspage }) => {
       maxWidth='false'
       sx={{ display: isShowWorkspage ? "block" : "none" }}
     >
-      <StyledHeaderGrid container spacing={0}>
+      <StyledHeaderGrid
+        container
+        spacing={0}
+        sx={{ padding: { xs: "0 10px" } }}
+      >
         <StyledLeftTitleGrid item xs={5}>
           <StyledLeftTitleText variant='smallTitle' sx={{ color: "#1e1f26" }}>
             MY
@@ -97,19 +127,42 @@ const Workspage = ({ isShowWorkspage }) => {
       {/* Here starts the Imagelist */}
       <ImageList cols={matchDownMd ? 1 : 2} rowHeight={matchDownMd ? 120 : 400}>
         {itemData.map((item) => (
-          <ImageListItem rows={4} key={item.img}>
-            <img
+          <ImageListItem rows={4} key={item.id} sx={{ overflow: "hidden" }}>
+            {/* <img
               src={item.img}
               srcSet={item.img}
               alt={item.title}
               loading='lazy'
+            /> */}
+            <video
+              src={item.video}
+              type='video/mp4'
+              muted
+              height='100%'
+              width='100%'
+              style={{ scale: "1.25 1" }}
+              autoPlay={"autoplay"}
+              loop
             />
-            <ImageListItemBar sx={{ background: "rgba(0, 0, 0, 0)" }}>
-              <h1>dedefef</h1>
-            </ImageListItemBar>
+            <ImageListItemBar
+              title={item.title}
+              sx={{
+                background: "rgba(0, 0, 0, 0)",
+                margin: { xs: "25px 50px", md: "100px 200px" },
+              }}
+            />
           </ImageListItem>
         ))}
       </ImageList>
+      <StyledFooterBox>
+        <StyledFooterText variant='bigTitle' sx={{ color: "#1e1f26" }}>
+          "MAKE IT SIMPLE,
+        </StyledFooterText>
+        <StyledFooterText variant='bigTitle' sx={{ color: "#1e1f26" }}>
+          BUT SIGINIFICANT."
+        </StyledFooterText>
+        <StyledFooterAuthor variant='h4'>Dieter Rams</StyledFooterAuthor>
+      </StyledFooterBox>
     </StyledContainer>
   );
 };
@@ -118,73 +171,73 @@ export default Workspage;
 
 const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Breakfast",
+    // img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    id: 0,
+    title: "Next.js",
     author: "@bkristastucchio",
-
-    featured: true,
+    video: nextjs,
   },
   {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-    title: "Burger",
+    // img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    id: 1,
+    title: "bilgekaanyilmaz.com",
     author: "@rollelflex_graphy726",
+    video: portfolio,
   },
   {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Camera",
-    author: "@helloimnik",
+    // img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    id: 2,
+    title: "Next.js",
+    author: "@bkristastucchio",
+    video: nextjs,
   },
   {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-    title: "Coffee",
-    author: "@nolanissac",
-    cols: 2,
+    // img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    id: 3,
+    title: "bilgekaanyilmaz.com",
+    author: "@rollelflex_graphy726",
+    video: portfolio,
   },
   {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Hats",
-    author: "@hjrc33",
-    cols: 2,
+    // img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    id: 4,
+    title: "Next.js",
+    author: "@bkristastucchio",
+    video: nextjs,
   },
   {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
-    author: "@arwinneil",
-    rows: 2,
-    cols: 2,
-    featured: true,
+    // img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    id: 5,
+    title: "bilgekaanyilmaz.com",
+    author: "@rollelflex_graphy726",
+    video: portfolio,
   },
   {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Basketball",
-    author: "@tjdragotta",
+    // img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    id: 6,
+    title: "Next.js",
+    author: "@bkristastucchio",
+    video: nextjs,
   },
   {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-    title: "Fern",
-    author: "@katie_wasserman",
+    // img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    id: 7,
+    title: "bilgekaanyilmaz.com",
+    author: "@rollelflex_graphy726",
+    video: portfolio,
   },
   {
-    img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-    title: "Mushrooms",
-    author: "@silverdalex",
-    rows: 2,
-    cols: 2,
+    // img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    id: 8,
+    title: "Next.js",
+    author: "@bkristastucchio",
+    video: nextjs,
   },
   {
-    img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-    title: "Tomato basil",
-    author: "@shelleypauls",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-    title: "Sea star",
-    author: "@peterlaster",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-    title: "Bike",
-    author: "@southside_customs",
-    cols: 2,
+    // img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    id: 9,
+    title: "bilgekaanyilmaz.com",
+    author: "@rollelflex_graphy726",
+    video: portfolio,
   },
 ];

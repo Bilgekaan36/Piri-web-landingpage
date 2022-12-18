@@ -13,5 +13,14 @@
   width: 100px;
 }
 
+.lottiePlayer {
+  height: 600px;
+  width: 700px;
+}
+
 @media (max-width: 900px) {
+  .lottiePlayer {
+    height: 200px;
+    width: 100%;
+  }
 }
