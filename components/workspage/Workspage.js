@@ -124,7 +124,6 @@ const Workspage = ({ isShowWorkspage }) => {
           </StyledRightTitleText>
         </StyledRightTitleGrid>
       </StyledHeaderGrid>
-      {/* Here starts the Imagelist */}
       <ImageList cols={matchDownMd ? 1 : 2} rowHeight={matchDownMd ? 120 : 400}>
         {itemData.map((item) => (
           <ImageListItem rows={4} key={item.id} sx={{ overflow: "hidden" }}>
