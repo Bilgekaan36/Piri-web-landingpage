@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 
 import Benefitspage from "../components/benefitspage/Benefitspage";
 import Landingpage from "../components/landingpage/Landingpage";
-import Process from "../components/process/Process";
+import Personalpage from "../components/personalpage/Personalpage";
+import Processpage from "../components/processpage/Processpage";
 import Workspage from "../components/workspage/Workspage";
 
 export default function Main() {
@@ -24,7 +25,8 @@ export default function Main() {
       <Landingpage />
       <Benefitspage setNextWorkspage={setNextWorkspage} />
       <Workspage isShowWorkspage={isShowWorkspage} />
-      <Process isShowWorkspage={isShowWorkspage} />
+      <Processpage isShowWorkspage={isShowWorkspage} />
+      <Personalpage isShowWorkspage={isShowWorkspage} />
     </Container>
   );
 }

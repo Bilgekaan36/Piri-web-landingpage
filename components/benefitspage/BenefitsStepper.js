@@ -4,7 +4,6 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
 import { Paper, Typography, Button } from "@mui/material";
-import { useState, useRef, useEffect } from "react";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 
 import lottieJson from "../../public/bar-chart.json";

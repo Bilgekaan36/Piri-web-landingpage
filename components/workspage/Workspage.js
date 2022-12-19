@@ -139,7 +139,7 @@ const Workspage = ({ isShowWorkspage }) => {
               muted
               height='100%'
               width='100%'
-              style={{ scale: "1.25 1" }}
+              style={{ scale: "1.25" }}
               autoPlay={"autoplay"}
               loop
             />

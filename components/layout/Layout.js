@@ -1,5 +1,5 @@
 import ProgressBar from "./ProgressBar";
-import Footer from "./Footer";
+import Footerpage from "./Footerpage";
 import { Box, Container } from "@mui/material";
 
 const Layout = (props) => {
@@ -7,7 +7,7 @@ const Layout = (props) => {
     <Box>
       <ProgressBar />
       {props.children}
-      {/* <Footer></Footer> */}
+      <Footerpage />
     </Box>
   );
 };

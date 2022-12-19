@@ -1,0 +1,11 @@
+.profileImage {
+  height: 1000px;
+  width: 666px;
+}
+
+@media (max-width: 900px) {
+  .profileImage {
+    height: 350px;
+    width: 235px;
+  }
+}
