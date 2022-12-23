@@ -5,20 +5,20 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
   position: "relative",
   [theme.breakpoints.up("md")]: {
-    padding: "0 80px",
+    padding: "80px",
   },
-  [theme.breakpoints.down("xs")]: {
-    padding: "0 18px",
+  [theme.breakpoints.down("md")]: {
+    // padding: "18px",
   },
 }));
 
 const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
-  height: "30vh",
+  height: "45vh",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
   [theme.breakpoints.down("md")]: {
-    height: "12vh",
+    height: "20vh",
   },
 }));
 
@@ -41,7 +41,7 @@ const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
 
 const StyledRightTitleText = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
-    fontSize: "1.4rem",
+    fontSize: "2rem",
   },
 }));
 
@@ -67,7 +67,7 @@ const StyledHeadTitle = styled(Typography)(({ theme }) => ({
   fontSize: "6rem",
   fontWeight: "900",
   [theme.breakpoints.down("md")]: {
-    fontSize: "1.75rem",
+    fontSize: "1.5rem",
   },
 }));
 
@@ -84,7 +84,7 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
   borderBottom: "1px solid black",
   marginBottom: "32px",
   [theme.breakpoints.down("md")]: {
-    fontSize: "1rem",
+    fontSize: "0.75rem",
     fontWeight: "700",
     borderBottom: "1px solid black",
     marginBottom: "16px",
@@ -97,11 +97,7 @@ const Process = ({ isShowWorkspage }) => {
       maxWidth='false'
       sx={{ display: isShowWorkspage ? "block" : "none" }}
     >
-      <StyledHeaderGrid
-        container
-        spacing={0}
-        sx={{ padding: { xs: "0 10px" } }}
-      >
+      <StyledHeaderGrid container spacing={0}>
         <StyledRightTitleGrid item xs={7}>
           <StyledRightTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
             YOUR
@@ -126,14 +122,14 @@ const Process = ({ isShowWorkspage }) => {
         {textData.map((text) => (
           <Box
             key={text.title}
-            sx={{ marginBottom: { xs: "75px", md: "200px" } }}
+            sx={{ marginBottom: { xs: "32px", md: "200px" } }}
           >
             <Grid item xs={12} md={6}>
               <StyledHeadTitle>{text.title}</StyledHeadTitle>
               <StyledHeadContent>{text.content}</StyledHeadContent>
             </Grid>
             {text.subtitles.map((subtitle) => (
-              <Grid item xs={12} md={7} key={subtitle}>
+              <Grid item xs={12} md={6.5} key={subtitle}>
                 <StyledSubtitle>{subtitle}</StyledSubtitle>
               </Grid>
             ))}

@@ -35,7 +35,7 @@ const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
 
 const StyledRightTitleText = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
-    fontSize: "1.4rem",
+    fontSize: "2rem",
   },
 }));
 
@@ -55,10 +55,10 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "#1E1F26",
   position: "relative",
   [theme.breakpoints.up("xl")]: {
-    padding: "0 80px",
+    padding: "0px 80px 80px 80px",
   },
   [theme.breakpoints.down("md")]: {
-    padding: "0 18px",
+    padding: "18px",
   },
 }));
 
@@ -211,7 +211,7 @@ const Benefitspage = (props) => {
         }}
       >
         <StyledHeaderGrid container spacing={0}>
-          <StyledLeftTitleGrid item xs={6}>
+          <StyledLeftTitleGrid item xs={4} md={6}>
             <StyledLeftTitleText
               variant='smallTitle'
               sx={{ color: "common.white" }}
@@ -225,7 +225,7 @@ const Benefitspage = (props) => {
               BENEFITS
             </StyledLeftTitleText>
           </StyledLeftTitleGrid>
-          <StyledRightTitleGrid item xs={6}>
+          <StyledRightTitleGrid item xs={8} md={6}>
             <StyledRightTitleText
               variant='bigTitle'
               sx={{ color: "common.white" }}

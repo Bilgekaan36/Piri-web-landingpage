@@ -42,7 +42,7 @@ const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
 
 const StyledRightTitleText = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
-    fontSize: "1.4rem",
+    fontSize: "1.7rem",
   },
 }));
 
@@ -62,10 +62,10 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
   position: "relative",
   [theme.breakpoints.up("md")]: {
-    padding: "0 80px",
+    padding: "80px",
   },
-  [theme.breakpoints.down("xs")]: {
-    padding: "0 18px",
+  [theme.breakpoints.down("md")]: {
+    padding: "32px 0px",
   },
 }));
 
@@ -79,7 +79,7 @@ const StyledFooterBox = styled(Box)(({ theme }) => ({
 }));
 
 const StyledFooterText = styled(Typography)(({ theme }) => ({
-  lineHeight: "1.2em",
+  lineHeight: "1.2",
   fontWeight: "700",
   [theme.breakpoints.down("md")]: {
     fontSize: "2rem",
@@ -107,7 +107,7 @@ const Workspage = ({ isShowWorkspage }) => {
         spacing={0}
         sx={{ padding: { xs: "0 10px" } }}
       >
-        <StyledLeftTitleGrid item xs={5}>
+        <StyledLeftTitleGrid item xs={4} md={5}>
           <StyledLeftTitleText variant='smallTitle' sx={{ color: "#1e1f26" }}>
             MY
           </StyledLeftTitleText>
@@ -118,7 +118,7 @@ const Workspage = ({ isShowWorkspage }) => {
             WORK
           </StyledLeftTitleText>
         </StyledLeftTitleGrid>
-        <StyledRightTitleGrid item xs={7}>
+        <StyledRightTitleGrid item xs={8} md={7}>
           <StyledRightTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
             SELECTED WORK
           </StyledRightTitleText>

@@ -7,6 +7,8 @@ import Personalpage from "../components/personalpage/Personalpage";
 import Processpage from "../components/processpage/Processpage";
 import Workspage from "../components/workspage/Workspage";
 
+import NewLandingpage from "../components/landingpage/NewLandingpage";
+
 export default function Main() {
   const [isShowWorkspage, setWorkspage] = useState(false);
 
@@ -22,7 +24,8 @@ export default function Main() {
         transition: "all 1s ease-in-out",
       }}
     >
-      <Landingpage />
+      {/* <Landingpage /> */}
+      <NewLandingpage />
       <Benefitspage setNextWorkspage={setNextWorkspage} />
       <Workspage isShowWorkspage={isShowWorkspage} />
       <Processpage isShowWorkspage={isShowWorkspage} />
