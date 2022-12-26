@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: theme.palette.background.paper,
+  backgroundColor: "transparent",
   position: "static",
   paddingTop: "32px",
   boxShadow: "none",

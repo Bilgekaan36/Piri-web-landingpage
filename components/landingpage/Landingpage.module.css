@@ -130,6 +130,16 @@
     right: -8px;
     bottom: 3px;
   }
+
+  .lottiePlayer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    scale: 1;
+    z-index: -1;
+  }
 }
 
 @media (max-width: 600px) {
@@ -137,7 +147,6 @@
     top: 50px;
   }
 }
-
 .section {
   position: absolute;
   width: 100%;
@@ -186,3 +195,13 @@
   height: 100%;
   object-fit: cover;
 } */
+
+.lottiePlayer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  scale: 1.7;
+  z-index: -1;
+}
