@@ -1,66 +1,4 @@
-.placeholder {
-  text-align: center;
-  padding: 24px;
-  color: rgb(255, 255, 255);
-  background-color: #1e1f26;
-  font-family: "Sora";
-  font-weight: 700;
-  font-size: 15rem;
-  line-height: 1;
-  letter-spacing: "-0.5rem";
-}
-
-.firstHeader {
-  text-align: center;
-  padding: 24px;
-  color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #6691c3;
-  font-family: "Sora";
-  font-weight: 700;
-  font-size: 10rem;
-  line-height: 1;
-  letter-spacing: "-0.5rem";
-}
-
-.secondHeader {
-  text-align: center;
-  position: absolute;
-  padding: 24px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  color: white;
-  background-color: red;
-  font-family: "Sora";
-  font-weight: 700;
-  font-size: 10rem;
-  line-height: 1;
-  letter-spacing: "-0.5rem";
-}
-
-.thirdHeader {
-  text-align: center;
-  position: absolute;
-  padding: 24px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  color: white;
-  background-color: #1e1f26;
-  font-family: "Sora";
-  font-weight: 700;
-  font-size: 10rem;
-  line-height: 1;
-  letter-spacing: "-0.5rem";
-}
-
-.iconArrow {
+/* .iconArrow {
   width: 1px;
   height: 100px;
   background-color: #1e1f26;
@@ -130,78 +68,14 @@
     right: -8px;
     bottom: 3px;
   }
-
-  .lottiePlayer {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    scale: 1;
-    z-index: -1;
-  }
 }
 
 @media (max-width: 600px) {
   .iconArrow {
     top: 50px;
   }
-}
-.section {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.section video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.section h2 {
-  margin: 0px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-transform: uppercase;
-  font-size: 17vw;
-  text-align: center;
-  font-weight: 800;
-  line-height: 0.85em;
-  color: #1e1f26;
-  background: #fff;
-  mix-blend-mode: screen;
-}
-
-.section h2 span {
-  font-size: 0.4em;
-  line-height: 0.85em;
-}
-
-/* .video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 } */
 
-.lottiePlayer {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  scale: 1.7;
-  z-index: -1;
+.lottiePlayer svg {
+  scale: 2;
 }

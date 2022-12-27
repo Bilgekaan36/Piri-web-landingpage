@@ -36,7 +36,6 @@ const StyledHeaderModular = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
   padding: "24px",
   zIndex: 10,
-  //   minWidth : 2000,
   transition: "all 1s ease-in-out",
   [theme.breakpoints.down("md")]: {
     fontSize: "2rem",
@@ -50,6 +49,7 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
   color: "#1e1f26",
   zIndex: 10,
+  transition: "all 1s ease-in-out",
   [theme.breakpoints.down("md")]: {
     fontSize: "1rem",
     fontWeight: 200,
@@ -68,12 +68,13 @@ const LandingStepper = ({ activeStep }) => {
   return (
     <Box
       sx={{
-        flexGrow: 1,
-        height: "95vh",
+        height: "100%",
+        width: "100%",
         display: "flex",
         position: "relative",
         flexDirection: "column",
         justifyContent: "center",
+        overflow: "hidden",
       }}
     >
       <Player
@@ -81,7 +82,21 @@ const LandingStepper = ({ activeStep }) => {
         loop={false}
         src={steps[activeStep].lottieFile}
         keepLastFrame={true}
-        style={{ height: "100%", width: "100%", opacity: "0.4" }}
+        height
+        style={{
+          height: "100%",
+          width: "100%",
+          opacity: "0.4",
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         className={styles.lottiePlayer}
       >
         <Controls
@@ -94,8 +109,12 @@ const LandingStepper = ({ activeStep }) => {
           height: "100%",
           width: "100%",
           position: "absolute",
-          top: "35%",
+          top: "0",
           left: "0",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Box
@@ -113,9 +132,6 @@ const LandingStepper = ({ activeStep }) => {
           >
             {steps[activeStep].secondLabel}
           </StyledHeaderModular>
-          {/* <StyledHeader variant='bigTitle' component='div'>
-                modern & innovativ
-              </StyledHeader> */}
           <StyledHeaderSubTitle variant='bigTitle' component='div'>
             {steps[activeStep].thirdLabel}
           </StyledHeaderSubTitle>

@@ -70,14 +70,6 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   position: "relative",
 }));
 
-// const StyledWrapper = styled(Box)(({ theme }) => ({
-//   height: "100%",
-//   display: "flex",
-//   flexDirection: "column",
-//   justifyContent: "center",
-//   alignItems: "center",
-// }));
-
 const Landingpage = (props) => {
   const [activeStep, setActiveStep] = useState(0);
   const [isLocked, setIsLocked] = useState(true);
@@ -93,9 +85,9 @@ const Landingpage = (props) => {
     <div>
       <Parallax
         style={{
-          height: "20%",
+          height: "30%",
           width: "100px",
-          backgroundColor: "purple",
+          backgroundColor: "transparent",
           position: "absolute",
           top: "2px",
           left: 0,
@@ -110,11 +102,11 @@ const Landingpage = (props) => {
       />
       <Parallax
         style={{
-          height: "20%",
+          height: "30%",
           width: "100px",
-          backgroundColor: "yellow",
+          backgroundColor: "transparent",
           position: "absolute",
-          top: "20%",
+          top: "30%",
           left: 0,
           zIndex: 10,
         }}
@@ -127,11 +119,11 @@ const Landingpage = (props) => {
       />
       <Parallax
         style={{
-          height: "20%",
+          height: "30%",
           width: "100px",
-          backgroundColor: "green",
+          backgroundColor: "transparent",
           position: "absolute",
-          top: "40%",
+          top: "60%",
           left: 0,
           zIndex: 10,
         }}
@@ -151,168 +143,6 @@ const Landingpage = (props) => {
         }}
       >
         <Navbar></Navbar>
-        {/* <ParticlesBackground /> */}
-        {/* <StyledWrapper> */}
-        {/* <StyledHeaderBox>
-            <Box
-              sx={{
-                mb: { xs: 2, md: 10 },
-              }}
-            > */}
-        {/* <StyledHeader variant='secondHeader' component='div'>
-                DEINE
-              </StyledHeader>
-              <StyledHeaderModular variant='mainHeader' component='div'>
-                WEBAPPLIKATION
-              </StyledHeaderModular> */}
-        {/* <StyledHeader variant='bigTitle' component='div'>
-                modern & innovativ
-              </StyledHeader> */}
-        {/* <div className='loader'>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  m
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  o
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  d
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  e
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  r
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  n
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                  sx={{ margin: "0 32px" }}
-                >
-                  &
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  i
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  n
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  n
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  o
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  v
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  a
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  t
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  i
-                </StyledHeaderSubTitle>
-                <StyledHeaderSubTitle
-                  variant='bigTitle'
-                  component='div'
-                  className='m'
-                >
-                  v
-                </StyledHeaderSubTitle>
-              </div> */}
-        {/* </Box> */}
-        {/* <Box>
-              <StyledSubtitle variant='h5' component='div'>
-                Bringe deine Vison ins Web!
-              </StyledSubtitle>
-              <StyledSubtitle variant='h5' component='div'>
-                Ob Frontend- oder Backend du bekommst hier alles
-              </StyledSubtitle>
-              <StyledSubtitle variant='h5' component='div'>
-                aus einer Hand
-              </StyledSubtitle>
-            </Box> */}
-
-        {/* <section className={styles.section}>
-            <video
-              className={styles.video}
-              src='/video.mp4'
-              muted
-              autoPlay={"autoplay"}
-              poster='/background.jpg'
-              loop
-            >
-              video tag is not supported by your browser
-            </video>
-            <h2>
-              DEINE <br /> WEBSITE
-              <span> modern & innovativ</span>
-            </h2>
-          </section> */}
-        {/* </StyledHeaderBox> */}
 
         <Box
           sx={{
@@ -320,12 +150,11 @@ const Landingpage = (props) => {
             top: 0,
             left: 0,
             height: "100vh",
+            overflow: "hidden",
           }}
         >
           <LandingStepper activeStep={activeStep} />
         </Box>
-        {/* <Box className={styles.iconArrow} /> */}
-        {/* </StyledWrapper> */}
       </StyledContainer>
     </div>
   );
