@@ -126,7 +126,11 @@ const Workspage = ({ isShowWorkspage }) => {
       </StyledHeaderGrid>
       <ImageList cols={matchDownMd ? 1 : 2} rowHeight={matchDownMd ? 120 : 400}>
         {itemData.map((item) => (
-          <ImageListItem rows={4} key={item.id} sx={{ overflow: "hidden" }}>
+          <ImageListItem
+            rows={4}
+            key={item.id}
+            sx={{ overflow: "hidden", position: "relative" }}
+          >
             {/* <img
               src={item.img}
               srcSet={item.img}
@@ -139,7 +143,14 @@ const Workspage = ({ isShowWorkspage }) => {
               muted
               height='100%'
               width='100%'
-              style={{ scale: "1.25" }}
+              style={{
+                objectFit: "cover",
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                top: 0,
+                left: 0,
+              }}
               autoPlay={"autoplay"}
               loop
             />

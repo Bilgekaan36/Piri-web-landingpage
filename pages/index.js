@@ -6,6 +6,8 @@ import Landingpage from "../components/landingpage/Landingpage";
 import Personalpage from "../components/personalpage/Personalpage";
 import Processpage from "../components/processpage/Processpage";
 import Workspage from "../components/workspage/Workspage";
+import Toolspage from "../components/toolspage/Toolspage";
+import TestToolspage from "../components/toolspage/TestToolspage";
 
 export default function Main() {
   const [isShowWorkspage, setWorkspage] = useState(false);
@@ -25,6 +27,8 @@ export default function Main() {
       <Landingpage />
       <Benefitspage setNextWorkspage={setNextWorkspage} />
       <Workspage isShowWorkspage={isShowWorkspage} />
+      {/* <Toolspage /> */}
+      <TestToolspage />
       <Processpage isShowWorkspage={isShowWorkspage} />
       <Personalpage isShowWorkspage={isShowWorkspage} />
     </Container>

@@ -18,7 +18,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   minHeight: "101vh",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "flex-end",
+  justifyContent: "center",
   [theme.breakpoints.up("md")]: {
     padding: "80px",
   },
@@ -47,8 +47,14 @@ const StyledLeftTitleGrid = styled(Grid)(({ theme }) => ({
 }));
 
 const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.down("md")]: {
+  [theme.breakpoints.down("sm")]: {
     fontSize: "2.5rem",
+  },
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "5rem",
+  },
+  [theme.breakpoints.up("md")]: {
+    fontSize: "10rem",
   },
 }));
 
@@ -68,8 +74,16 @@ const StyledHeadContent = styled(Typography)(({ theme }) => ({
   fontSize: "1.75rem",
   fontWeight: "300",
   marginBottom: "32px",
-  [theme.breakpoints.down("md")]: {
+  [theme.breakpoints.down("sm")]: {
     fontSize: "0.7rem",
+    marginBottom: "12px",
+  },
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "1rem",
+    marginBottom: "12px",
+  },
+  [theme.breakpoints.up("md")]: {
+    fontSize: "1.75rem",
     marginBottom: "12px",
   },
 }));

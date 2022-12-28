@@ -1,11 +1,10 @@
-import styles from "./Benefitspage.module.css";
-
 import React, { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import Grid from "@mui/material/Grid";
 import { Box, Container, styled, Typography } from "@mui/material";
 
-import BenefitsStepper from "./BenefitsStepper";
+import ToolsStepper from "./ToolsStepper";
+import { useEffect } from "react";
 
 const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
   height: "30vh",
@@ -62,7 +61,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
-const Benefitspage = (props) => {
+const TestToolspage = (props) => {
   const [activeStep, setActiveStep] = useState(0);
   const [isLocked, setIsLocked] = useState(false);
 
@@ -76,14 +75,14 @@ const Benefitspage = (props) => {
       maxWidth='false'
       sx={{
         position: "relative",
-        height: isLocked ? "300vh" : "100vh",
+        height: isLocked ? "300vh" : "220vh",
       }}
     >
       <Parallax
         style={{
           height: "100px",
           width: "100px",
-          // backgroundColor: "green",
+          backgroundColor: "green",
           position: "absolute",
           top: "-110px",
           left: 0,
@@ -101,27 +100,31 @@ const Benefitspage = (props) => {
       />
       <Parallax
         style={{
-          height: "10%",
+          height: "5%",
           width: "100px",
-          // backgroundColor: "purple",
+          backgroundColor: "purple",
           position: "absolute",
           top: "2px",
           left: 0,
         }}
         onEnter={() => {
-          handleStep(0);
+          if (activeStep === 1) {
+            handleStep(0);
+          }
         }}
         onExit={() => {
-          handleStep(1);
+          if (activeStep === 0) {
+            handleStep(1);
+          }
         }}
       />
       <Parallax
         style={{
-          height: "10%",
+          height: "5%",
           width: "100px",
-          // backgroundColor: "yellow",
+          backgroundColor: "yellow",
           position: "absolute",
-          top: "10%",
+          top: "5%",
           left: 0,
         }}
         onEnter={() => {
@@ -130,16 +133,18 @@ const Benefitspage = (props) => {
           }
         }}
         onExit={() => {
-          handleStep(2);
+          if (activeStep === 1) {
+            handleStep(2);
+          }
         }}
       />
       <Parallax
         style={{
-          height: "10%",
+          height: "5%",
           width: "100px",
-          // backgroundColor: "orange",
+          backgroundColor: "orange",
           position: "absolute",
-          top: "20%",
+          top: "10%",
           left: 0,
         }}
         onEnter={() => {
@@ -148,16 +153,18 @@ const Benefitspage = (props) => {
           }
         }}
         onExit={() => {
-          handleStep(3);
+          if (activeStep === 2) {
+            handleStep(3);
+          }
         }}
       />
       <Parallax
         style={{
-          height: "10%",
+          height: "5%",
           width: "100px",
-          // backgroundColor: "darkred",
+          backgroundColor: "darkred",
           position: "absolute",
-          top: "30%",
+          top: "15%",
           left: 0,
         }}
         onEnter={() => {
@@ -166,16 +173,18 @@ const Benefitspage = (props) => {
           }
         }}
         onExit={() => {
-          handleStep(4);
+          if (activeStep === 3) {
+            handleStep(4);
+          }
         }}
       />
       <Parallax
         style={{
-          height: "10%",
+          height: "5%",
           width: "100px",
-          // backgroundColor: "gray",
+          backgroundColor: "gray",
           position: "absolute",
-          top: "40%",
+          top: "20%",
           left: 0,
         }}
         onEnter={() => {
@@ -184,22 +193,147 @@ const Benefitspage = (props) => {
           }
         }}
         onExit={() => {
-          handleStep(5);
+          if (activeStep === 4) {
+            handleStep(5);
+          }
         }}
       />
       <Parallax
         style={{
+          height: "5%",
+          width: "100px",
+          backgroundColor: "yellow",
+          position: "absolute",
+          top: "25%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 6) {
+            handleStep(5);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 5) {
+            handleStep(6);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          backgroundColor: "blue",
+          position: "absolute",
+          top: "30%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 7) {
+            handleStep(6);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 6) {
+            handleStep(7);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          backgroundColor: "white",
+          position: "absolute",
+          top: "35%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 8) {
+            handleStep(7);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 7) {
+            handleStep(8);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          backgroundColor: "black",
+          position: "absolute",
+          top: "40%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 9) {
+            handleStep(8);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 8) {
+            handleStep(9);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          backgroundColor: "yellow",
+          position: "absolute",
+          top: "45%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 10) {
+            handleStep(9);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 9) {
+            handleStep(10);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          backgroundColor: "purple",
+          position: "absolute",
+          top: "50%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 11) {
+            handleStep(10);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 10) {
+            handleStep(11);
+          }
+        }}
+      />
+
+      <Parallax
+        style={{
           height: "100px",
           width: "100px",
-          // backgroundColor: "red",
+          backgroundColor: "red",
           position: "absolute",
           bottom: isLocked ? 0 : "-120px",
           left: 0,
         }}
         onEnter={() => {
-          props.setNextWorkspage(true);
+          // props.setNextWorkspage(true);
         }}
-        onExit={() => {}}
+        onExit={() => {
+          console.log("EXITTTT");
+        }}
       />
 
       <Box
@@ -211,50 +345,44 @@ const Benefitspage = (props) => {
         }}
       >
         <StyledHeaderGrid container spacing={0}>
-          <StyledLeftTitleGrid item xs={4} md={6}>
+          <StyledLeftTitleGrid item xs={3} md={5}>
             <StyledLeftTitleText
               variant='smallTitle'
               sx={{ color: "common.white" }}
             >
-              YOUR
+              TECH
             </StyledLeftTitleText>
             <StyledLeftTitleText
               variant='smallTitle'
               sx={{ paddingLeft: "12px", color: "common.white" }}
             >
-              BENEFITS
+              STACK
             </StyledLeftTitleText>
           </StyledLeftTitleGrid>
-          <StyledRightTitleGrid item xs={8} md={6}>
+          <StyledRightTitleGrid item xs={9} md={7}>
             <StyledRightTitleText
               variant='bigTitle'
               sx={{ color: "common.white" }}
             >
-              A NEW
+              INHOUSE
             </StyledRightTitleText>
             <StyledRightTitleText
               variant='bigTitle'
               sx={{
                 color: "common.white",
-                paddingLeft: { xl: "96px", xs: "12px" },
+                paddingLeft: { xl: "64px", xs: "12px" },
               }}
             >
-              EXPERIENCE
-            </StyledRightTitleText>
-            <StyledRightTitleText
-              variant='bigTitle'
-              sx={{ color: "common.white" }}
-            >
-              IT ALL
+              TECHNOLOGIES
             </StyledRightTitleText>
           </StyledRightTitleGrid>
         </StyledHeaderGrid>
-        <Box sx={{ padding: "64px 0", marginTop: { xs: 0, md: 30 } }}>
-          <BenefitsStepper activeStep={activeStep} />
+        <Box sx={{ padding: "64px 0", marginTop: { xs: 0, md: 10 } }}>
+          <ToolsStepper activeStep={activeStep} />
         </Box>
       </Box>
     </StyledContainer>
   );
 };
 
-export default Benefitspage;
+export default TestToolspage;
