@@ -265,18 +265,18 @@ const textData = [
     ],
     lottieFile: onboarding,
   },
-  {
-    title: "LAUNCHING",
-    content:
-      " Beim Discovery Call schauen wir erstmal, ob es denn auch klick macht zwischen uns. D.h. wir lernen uns ein wenig besser kennen. Eine vertrauensvolle Zusammenarbeit ist mir wichtig. Denn sie macht nicht nur mehr Spaß, sondern führt auch zu einem erfolgreichem Ergebnis.Bevor es allerdings losgeht, finden wir heraus wie und obich Dir überhaupt helfen kann. Welche Anforderungen hast du an deine neue Webseite? Wieso brauchst du überhaupt eine neue Webseite? Welche Ziele hast du und welche Probleme können wir mit einer neuen Webseite lösen?",
-    subtitles: [
-      "Service Anfragen und Betreuung",
-      "technische Informationen zur Wartung",
-      "Service Anfragen und Produkte",
-      "technische Informationen zur Umsetzung",
-    ],
-    lottieFile: launching,
-  },
+  // {
+  //   title: "LAUNCHING",
+  //   content:
+  //     " Beim Discovery Call schauen wir erstmal, ob es denn auch klick macht zwischen uns. D.h. wir lernen uns ein wenig besser kennen. Eine vertrauensvolle Zusammenarbeit ist mir wichtig. Denn sie macht nicht nur mehr Spaß, sondern führt auch zu einem erfolgreichem Ergebnis.Bevor es allerdings losgeht, finden wir heraus wie und obich Dir überhaupt helfen kann. Welche Anforderungen hast du an deine neue Webseite? Wieso brauchst du überhaupt eine neue Webseite? Welche Ziele hast du und welche Probleme können wir mit einer neuen Webseite lösen?",
+  //   subtitles: [
+  //     "Service Anfragen und Betreuung",
+  //     "technische Informationen zur Wartung",
+  //     "Service Anfragen und Produkte",
+  //     "technische Informationen zur Umsetzung",
+  //   ],
+  //   lottieFile: launching,
+  // },
 ];
 
 export default Process;

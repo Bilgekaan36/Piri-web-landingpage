@@ -6,7 +6,7 @@ const VueSvg = () => {
       width='100%'
       height='100%'
       preserveAspectRatio='xMinYMin meet'
-      viewBox='-50 -15 350 240'
+      viewBox='-80 -45 450 200'
     >
       <path
         fill='#41B883'

@@ -6,7 +6,7 @@ const HtmlSvg = () => {
       width='100%'
       height='100%'
       preserveAspectRatio='xMinYMin meet'
-      viewBox='-120 -1 510 360'
+      viewBox='-140 -1 510 360'
     >
       <path
         fill='#E44D26'

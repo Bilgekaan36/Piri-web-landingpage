@@ -125,7 +125,7 @@ a {
 
 /* Here starts the code for landingpage */
 
-.loader {
+/* .loader {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -136,9 +136,9 @@ a {
 .m:hover {
   color: #6691c3;
   scale: 1.2;
-}
+} */
 
-.loader .m {
+/* .loader .m {
   color: #1e1f26;
   animation: loading 3s ease-in-out infinite alternate;
 }
@@ -204,4 +204,15 @@ a {
   height: 100% !important;
   width: 100% !important;
   z-index: -1;
+} */
+
+.MuiCircularProgress-root {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.MuiCircularProgress-colorPrimary {
+  color: white;
 }

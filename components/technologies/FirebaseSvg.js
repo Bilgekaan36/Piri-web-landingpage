@@ -6,7 +6,7 @@ const FirebaseSvg = () => {
       width='100%'
       height='100%'
       preserveAspectRatio='xMidYMid'
-      viewBox='-100 0 510 360'
+      viewBox='-140 0 510 360'
     >
       <defs>
         <filter id='b' x='-50%' y='-50%' filterUnits='objectBoundingBox'>

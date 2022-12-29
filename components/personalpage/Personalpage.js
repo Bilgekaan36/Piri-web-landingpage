@@ -7,16 +7,16 @@ import profil from "../../public/profil.png";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
-  //   height: "100vh",
+  height: "100vh",
   display: "flex",
   alignItems: "center",
-  flexDirection: "column",
 
   [theme.breakpoints.up("md")]: {
     padding: "80px 80px 0px 80px",
   },
-  [theme.breakpoints.down("xs")]: {
+  [theme.breakpoints.down("md")]: {
     padding: "18px",
+    height: "inherit",
   },
 }));
 

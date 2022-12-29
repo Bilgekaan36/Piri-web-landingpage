@@ -5,7 +5,7 @@ const NextjsSvg = () => {
     <svg
       width='100%'
       height='100%'
-      viewBox='-60 -1 400 270'
+      viewBox='-80 -13 400 270'
       version='1.1'
       preserveAspectRatio='xMidYMid'
     >

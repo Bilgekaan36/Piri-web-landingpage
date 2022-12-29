@@ -5,7 +5,7 @@ const VercelSvg = () => {
     <svg
       width='100%'
       height='100%'
-      viewBox='-40 -150 600 407'
+      viewBox='-60 -150 600 407'
       version='1.1'
       preserveAspectRatio='xMidYMid'
     >

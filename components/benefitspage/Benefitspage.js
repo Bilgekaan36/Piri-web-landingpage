@@ -76,7 +76,7 @@ const Benefitspage = (props) => {
       maxWidth='false'
       sx={{
         position: "relative",
-        height: isLocked ? "300vh" : "100vh",
+        height: isLocked ? "240vh" : "100vh",
       }}
     >
       <Parallax

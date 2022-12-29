@@ -2,7 +2,7 @@ import React from "react";
 
 const JavascriptSvg = () => {
   return (
-    <svg width='100%' height='100%' viewBox='-45 -1 170 116'>
+    <svg width='100%' height='100%' viewBox='-50 -1 170 116'>
       <path
         fill='#e6a329'
         d='M78.562 21.671H0l7.365 79.867 31.912 9.051 31.912-9.051Z'

@@ -1,28 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { Parallax } from "react-scroll-parallax";
+import Grid from "@mui/material/Grid";
+import { Box, Container, styled, Typography } from "@mui/material";
 
-import {
-  Container,
-  styled,
-  Grid,
-  Typography,
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardContent,
-} from "@mui/material";
-
-import ReactSvg from "../technologies/ReactSvg.js";
-import AdobeSvg from "../technologies/AdobeSvg.js";
-import CssSvg from "../technologies/CssSvg.js";
-import FirebaseSvg from "../technologies/FirebaseSvg.js";
-import HtmlSvg from "../technologies/HtmlSvg.js";
-import JavascriptSvg from "../technologies/JavascriptSvg.js";
-import MaterialuiSvg from "../technologies/MaterialuiSvg.js";
-import NextjsSvg from "../technologies/NextjsSvg.js";
-import NodejsSvg from "../technologies/NodejsSvg.js";
-import VercelSvg from "../technologies/VercelSvg.js";
-import VscodeSvg from "../technologies/VscodeSvg.js";
-import VueSvg from "../technologies/VueSvg.js";
+import ToolsStepper from "./ToolsStepper";
 
 const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
   height: "30vh",
@@ -52,7 +33,7 @@ const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
 
 const StyledRightTitleText = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
-    fontSize: "1.7rem",
+    fontSize: "2rem",
   },
 }));
 
@@ -71,170 +52,334 @@ const StyledRightTitleGrid = styled(Grid)(({ theme }) => ({
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "#1E1F26",
   position: "relative",
-  [theme.breakpoints.up("md")]: {
-    padding: "80px",
+  [theme.breakpoints.up("xl")]: {
+    padding: "0px 80px 80px 80px",
   },
   [theme.breakpoints.down("md")]: {
-    padding: "32px 0px",
+    padding: "18px",
   },
 }));
-const Toolspage = () => {
+
+const Toolspage = (props) => {
+  const [activeStep, setActiveStep] = useState(0);
+  const [isLocked, setIsLocked] = useState(false);
+
+  const handleStep = (data) => {
+    setActiveStep(data);
+  };
+
   return (
     <StyledContainer
       disableGutters
       maxWidth='false'
-      //   sx={{ display: isShowWorkspage ? "block" : "none" }}
+      sx={{
+        position: "relative",
+        height: isLocked ? "300vh" : "220vh",
+      }}
     >
-      <StyledHeaderGrid
-        container
-        spacing={0}
-        sx={{ padding: { xs: "0 10px" } }}
+      <Parallax
+        style={{
+          height: "100px",
+          width: "100px",
+          // backgroundColor: "green",
+          position: "absolute",
+          top: "-110px",
+          left: 0,
+        }}
+        onEnter={() => {
+          setIsLocked(false);
+          // console.log("onEnter");
+          handleStep(0);
+        }}
+        onExit={() => {
+          setIsLocked(true);
+          // console.log("onExit");
+          handleStep(0);
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          // backgroundColor: "purple",
+          position: "absolute",
+          top: "2px",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 1) {
+            handleStep(0);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 0) {
+            handleStep(1);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          // backgroundColor: "yellow",
+          position: "absolute",
+          top: "5%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 2) {
+            handleStep(1);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 1) {
+            handleStep(2);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          // backgroundColor: "orange",
+          position: "absolute",
+          top: "10%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 3) {
+            handleStep(2);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 2) {
+            handleStep(3);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          // backgroundColor: "darkred",
+          position: "absolute",
+          top: "15%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 4) {
+            handleStep(3);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 3) {
+            handleStep(4);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          // backgroundColor: "gray",
+          position: "absolute",
+          top: "20%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 5) {
+            handleStep(4);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 4) {
+            handleStep(5);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          // backgroundColor: "yellow",
+          position: "absolute",
+          top: "25%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 6) {
+            handleStep(5);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 5) {
+            handleStep(6);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          // backgroundColor: "blue",
+          position: "absolute",
+          top: "30%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 7) {
+            handleStep(6);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 6) {
+            handleStep(7);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          // backgroundColor: "white",
+          position: "absolute",
+          top: "35%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 8) {
+            handleStep(7);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 7) {
+            handleStep(8);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          // backgroundColor: "black",
+          position: "absolute",
+          top: "40%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 9) {
+            handleStep(8);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 8) {
+            handleStep(9);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          // backgroundColor: "yellow",
+          position: "absolute",
+          top: "45%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 10) {
+            handleStep(9);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 9) {
+            handleStep(10);
+          }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "5%",
+          width: "100px",
+          // backgroundColor: "purple",
+          position: "absolute",
+          top: "50%",
+          left: 0,
+        }}
+        onEnter={() => {
+          if (activeStep === 11) {
+            handleStep(10);
+          }
+        }}
+        onExit={() => {
+          if (activeStep === 10) {
+            handleStep(11);
+          }
+        }}
+      />
+
+      <Parallax
+        style={{
+          height: "100px",
+          width: "100px",
+          // backgroundColor: "red",
+          position: "absolute",
+          bottom: isLocked ? 0 : "-120px",
+          left: 0,
+        }}
+        onEnter={() => {
+          // props.setNextWorkspage(true);
+        }}
+        onExit={() => {}}
+      />
+
+      <Box
+        sx={{
+          position: "sticky",
+          top: 0,
+          left: 0,
+          height: "100vh",
+        }}
       >
-        <StyledLeftTitleGrid item xs={4} md={5}>
-          <StyledLeftTitleText variant='smallTitle' sx={{ color: "white" }}>
-            TECH
-          </StyledLeftTitleText>
-          <StyledLeftTitleText
-            variant='smallTitle'
-            sx={{ paddingLeft: "12px", color: "white" }}
-          >
-            STACK
-          </StyledLeftTitleText>
-        </StyledLeftTitleGrid>
-        <StyledRightTitleGrid item xs={8} md={7}>
-          <StyledRightTitleText variant='bigTitle' sx={{ color: "white" }}>
-            INHOUSE
-          </StyledRightTitleText>
-          <StyledRightTitleText
-            variant='bigTitle'
-            sx={{ color: "white", paddingLeft: { xl: "96px", xs: "12px" } }}
-          >
-            TECHNOLOGIES
-          </StyledRightTitleText>
-        </StyledRightTitleGrid>
-      </StyledHeaderGrid>
-      <Grid
-        container
-        spacing={1}
-        sx={{ justifyContent: "center", alignItems: "center" }}
-      >
-        {technologies.map((data) => (
-          <Grid
-            item
-            xs={12}
-            md={2}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Card sx={{ backgroundColor: "#1E1F26", maxWidth: "80%" }}>
-              <CardActionArea
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                {data.logo}
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant='h5'
-                    component='div'
-                    color='white'
-                  >
-                    {data.title}
-                  </Typography>
-                  <Typography variant='body2' color='white'>
-                    {data.content}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+        <StyledHeaderGrid container spacing={0}>
+          <StyledLeftTitleGrid item xs={3} md={5}>
+            <StyledLeftTitleText
+              variant='smallTitle'
+              sx={{ color: "common.white" }}
+            >
+              TECH
+            </StyledLeftTitleText>
+            <StyledLeftTitleText
+              variant='smallTitle'
+              sx={{ paddingLeft: "12px", color: "common.white" }}
+            >
+              STACK
+            </StyledLeftTitleText>
+          </StyledLeftTitleGrid>
+          <StyledRightTitleGrid item xs={9} md={7}>
+            <StyledRightTitleText
+              variant='bigTitle'
+              sx={{ color: "common.white" }}
+            >
+              INHOUSE
+            </StyledRightTitleText>
+            <StyledRightTitleText
+              variant='bigTitle'
+              sx={{
+                color: "common.white",
+                paddingLeft: { xl: "64px", xs: "12px" },
+              }}
+            >
+              TECHNOLOGIES
+            </StyledRightTitleText>
+          </StyledRightTitleGrid>
+        </StyledHeaderGrid>
+        <Box sx={{ padding: "64px 0", marginTop: { xs: 0, md: 30 } }}>
+          <ToolsStepper activeStep={activeStep} />
+        </Box>
+      </Box>
     </StyledContainer>
   );
 };
 
 export default Toolspage;
-
-const technologies = [
-  {
-    logo: <ReactSvg />,
-    title: "REACT",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-  {
-    logo: <MaterialuiSvg />,
-    title: "Material UI",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-  {
-    logo: <AdobeSvg />,
-    title: "ADOBE",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-  {
-    logo: <CssSvg />,
-    title: "CSS",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-  {
-    logo: <FirebaseSvg />,
-    title: "FIREBASE",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-  {
-    logo: <HtmlSvg />,
-    title: "HTML",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-  {
-    logo: <JavascriptSvg />,
-    title: "JAVASCRIPT",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-  {
-    logo: <NextjsSvg />,
-    title: "NEXT.JS",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-  {
-    logo: <NodejsSvg />,
-    title: "NODE.JS",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-  {
-    logo: <VercelSvg />,
-    title: "VERCEL",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-  {
-    logo: <VscodeSvg />,
-    title: "VSCODE",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-  {
-    logo: <VueSvg />,
-    title: "VUE",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
-  },
-];

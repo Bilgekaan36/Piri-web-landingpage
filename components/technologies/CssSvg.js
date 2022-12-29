@@ -2,7 +2,7 @@ import React from "react";
 
 const CssSvg = () => {
   return (
-    <svg width='100%' height='100%' viewBox='-37 -1 160 112'>
+    <svg width='100%' height='100%' viewBox='-47 -1 160 112'>
       <defs>
         <linearGradient
           id='a'
