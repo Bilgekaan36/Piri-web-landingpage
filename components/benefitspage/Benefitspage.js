@@ -1,5 +1,3 @@
-import styles from "./Benefitspage.module.css";
-
 import React, { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import Grid from "@mui/material/Grid";
@@ -90,12 +88,10 @@ const Benefitspage = (props) => {
         }}
         onEnter={() => {
           setIsLocked(false);
-          // console.log("onEnter");
           handleStep(0);
         }}
         onExit={() => {
           setIsLocked(true);
-          // console.log("onExit");
           handleStep(0);
         }}
       />
@@ -130,7 +126,9 @@ const Benefitspage = (props) => {
           }
         }}
         onExit={() => {
-          handleStep(2);
+          if (activeStep === 1) {
+            handleStep(2);
+          }
         }}
       />
       <Parallax
@@ -148,7 +146,9 @@ const Benefitspage = (props) => {
           }
         }}
         onExit={() => {
-          handleStep(3);
+          if (activeStep === 2) {
+            handleStep(3);
+          }
         }}
       />
       <Parallax
@@ -166,7 +166,9 @@ const Benefitspage = (props) => {
           }
         }}
         onExit={() => {
-          handleStep(4);
+          if (activeStep === 3) {
+            handleStep(4);
+          }
         }}
       />
       <Parallax
@@ -184,7 +186,9 @@ const Benefitspage = (props) => {
           }
         }}
         onExit={() => {
-          handleStep(5);
+          if (activeStep === 4) {
+            handleStep(5);
+          }
         }}
       />
       <Parallax

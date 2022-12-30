@@ -1,13 +1,12 @@
 import styles from "./Landingpage.module.css";
 
-import { useRef } from "react";
 import MobileStepper from "@mui/material/MobileStepper";
 import { Box, styled, Typography, Button } from "@mui/material";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import letterW from "../../public/letter-W.json";
-import letterA from "../../public/letter-A.json";
-import letterM from "../../public/letter-M.json";
-import letterO from "../../public/letter-O.json";
+import letterW from "../../public/landingpage_assets/letter-W.json";
+import letterA from "../../public/landingpage_assets/letter-A.json";
+import letterM from "../../public/landingpage_assets/letter-M.json";
+import letterO from "../../public/landingpage_assets/letter-O.json";
 
 const StyledHeader = styled(Typography)(({ theme }) => ({
   textAlign: "center",
@@ -156,16 +155,11 @@ const LandingStepper = ({ activeStep }) => {
           nextButton={
             <Button
               size='small'
-              // onClick={handleNext}
               disabled={activeStep === maxSteps - 1}
             ></Button>
           }
           backButton={
-            <Button
-              size='small'
-              // onClick={handleBack}
-              disabled={activeStep === 0}
-            ></Button>
+            <Button size='small' disabled={activeStep === 0}></Button>
           }
         />
       </Box>

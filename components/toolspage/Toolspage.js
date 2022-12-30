@@ -88,12 +88,10 @@ const Toolspage = (props) => {
         }}
         onEnter={() => {
           setIsLocked(false);
-          // console.log("onEnter");
           handleStep(0);
         }}
         onExit={() => {
           setIsLocked(true);
-          // console.log("onExit");
           handleStep(0);
         }}
       />
@@ -328,7 +326,6 @@ const Toolspage = (props) => {
           left: 0,
         }}
         onEnter={() => {
-          // props.setNextWorkspage(true);
         }}
         onExit={() => {}}
       />

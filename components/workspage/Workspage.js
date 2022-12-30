@@ -131,12 +131,6 @@ const Workspage = ({ isShowWorkspage }) => {
             key={item.id}
             sx={{ overflow: "hidden", position: "relative" }}
           >
-            {/* <img
-              src={item.img}
-              srcSet={item.img}
-              alt={item.title}
-              loading='lazy'
-            /> */}
             <video
               src={item.video}
               type='video/mp4'
@@ -181,70 +175,60 @@ export default Workspage;
 
 const itemData = [
   {
-    // img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
     id: 0,
     title: "Next.js",
     author: "@bkristastucchio",
     video: nextjs,
   },
   {
-    // img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
     id: 1,
     title: "bilgekaanyilmaz.com",
     author: "@rollelflex_graphy726",
     video: portfolio,
   },
   {
-    // img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
     id: 2,
     title: "Next.js",
     author: "@bkristastucchio",
     video: nextjs,
   },
   {
-    // img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
     id: 3,
     title: "bilgekaanyilmaz.com",
     author: "@rollelflex_graphy726",
     video: portfolio,
   },
   {
-    // img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
     id: 4,
     title: "Next.js",
     author: "@bkristastucchio",
     video: nextjs,
   },
   {
-    // img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
     id: 5,
     title: "bilgekaanyilmaz.com",
     author: "@rollelflex_graphy726",
     video: portfolio,
   },
   {
-    // img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
     id: 6,
     title: "Next.js",
     author: "@bkristastucchio",
     video: nextjs,
   },
   {
-    // img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
     id: 7,
     title: "bilgekaanyilmaz.com",
     author: "@rollelflex_graphy726",
     video: portfolio,
   },
   {
-    // img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
     id: 8,
     title: "Next.js",
     author: "@bkristastucchio",
     video: nextjs,
   },
   {
-    // img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
     id: 9,
     title: "bilgekaanyilmaz.com",
     author: "@rollelflex_graphy726",

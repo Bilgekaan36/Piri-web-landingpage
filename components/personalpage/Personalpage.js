@@ -1,9 +1,53 @@
 import React from "react";
 import styles from "./Personalpage.module.css";
 
-import { Container, styled, Grid, Typography, Box } from "@mui/material";
+import { Container, styled, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import profil from "../../public/profil.png";
+
+const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
+  height: "30vh",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  [theme.breakpoints.down("md")]: {
+    height: "12vh",
+  },
+}));
+
+const StyledLeftTitleGrid = styled(Grid)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  paddingTop: "148px",
+  height: "100%",
+  [theme.breakpoints.down("md")]: {
+    paddingTop: "18px",
+  },
+}));
+
+const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    fontSize: "0.6rem",
+  },
+}));
+
+const StyledRightTitleText = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    fontSize: "2rem",
+  },
+}));
+
+const StyledRightTitleGrid = styled(Grid)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "flex-start",
+  height: "100%",
+  paddingTop: "148px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "1rem",
+    paddingTop: "18px",
+  },
+}));
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
@@ -12,10 +56,10 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   alignItems: "center",
 
   [theme.breakpoints.up("md")]: {
-    padding: "80px 80px 0px 80px",
+    padding: "0px 80px 0px 80px",
   },
   [theme.breakpoints.down("md")]: {
-    padding: "18px",
+    padding: "0px 18px 0px 18px",
     height: "inherit",
   },
 }));
@@ -45,10 +89,38 @@ const Personalpage = ({ isShowWorkspage }) => {
     <StyledContainer
       maxWidth='false'
       sx={{
-        display: isShowWorkspage ? "flex" : "none",
-        paddingTop: { xs: "42px", md: "160px" },
+        display: isShowWorkspage ? "flex" : "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
       }}
     >
+      <StyledHeaderGrid container spacing={0}>
+        <StyledLeftTitleGrid item xs={3} md={5}>
+          <StyledLeftTitleText variant='smallTitle' sx={{ color: "#1e1f26" }}>
+            ABOUT
+          </StyledLeftTitleText>
+          <StyledLeftTitleText
+            variant='smallTitle'
+            sx={{ paddingLeft: "12px", color: "#1e1f26" }}
+          >
+            MYSELF
+          </StyledLeftTitleText>
+        </StyledLeftTitleGrid>
+        <StyledRightTitleGrid item xs={9} md={7}>
+          <StyledRightTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
+            INTERN
+          </StyledRightTitleText>
+          <StyledRightTitleText
+            variant='bigTitle'
+            sx={{
+              color: "#1e1f26",
+              paddingLeft: { xl: "64px", xs: "12px" },
+            }}
+          >
+            PERSONALITY
+          </StyledRightTitleText>
+        </StyledRightTitleGrid>
+      </StyledHeaderGrid>
       <Grid
         container
         spacing={0}

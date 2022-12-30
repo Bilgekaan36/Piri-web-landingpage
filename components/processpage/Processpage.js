@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, styled, Grid, Typography, Box } from "@mui/material";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import discoveryCall from "../../public/process/discovery-call.json";
-import strategy from "../../public/process/strategy.json";
-import design from "../../public/process/design.json";
-import development from "../../public/process/development.json";
-import onboarding from "../../public/process/onboarding.json";
-import launching from "../../public/process/launching.json";
+
+import discoveryCall from "../../public/processpage_assets/discovery-call.json";
+import strategy from "../../public/processpage_assets/strategy.json";
+import design from "../../public/processpage_assets/design.json";
+import development from "../../public/processpage_assets/development.json";
+import onboarding from "../../public/processpage_assets/onboarding.json";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
@@ -14,9 +14,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     padding: "80px",
   },
-  [theme.breakpoints.down("md")]: {
-    // padding: "18px",
-  },
+  [theme.breakpoints.down("md")]: {},
 }));
 
 const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
@@ -265,18 +263,6 @@ const textData = [
     ],
     lottieFile: onboarding,
   },
-  // {
-  //   title: "LAUNCHING",
-  //   content:
-  //     " Beim Discovery Call schauen wir erstmal, ob es denn auch klick macht zwischen uns. D.h. wir lernen uns ein wenig besser kennen. Eine vertrauensvolle Zusammenarbeit ist mir wichtig. Denn sie macht nicht nur mehr Spaß, sondern führt auch zu einem erfolgreichem Ergebnis.Bevor es allerdings losgeht, finden wir heraus wie und obich Dir überhaupt helfen kann. Welche Anforderungen hast du an deine neue Webseite? Wieso brauchst du überhaupt eine neue Webseite? Welche Ziele hast du und welche Probleme können wir mit einer neuen Webseite lösen?",
-  //   subtitles: [
-  //     "Service Anfragen und Betreuung",
-  //     "technische Informationen zur Wartung",
-  //     "Service Anfragen und Produkte",
-  //     "technische Informationen zur Umsetzung",
-  //   ],
-  //   lottieFile: launching,
-  // },
 ];
 
 export default Process;

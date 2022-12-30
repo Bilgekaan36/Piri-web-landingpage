@@ -1,4 +1,4 @@
-import styles from "./Benefitspage.module.css";
+import styles from "./BenefitsStepper.module.css";
 
 import * as React from "react";
 import Box from "@mui/material/Box";
@@ -6,9 +6,9 @@ import MobileStepper from "@mui/material/MobileStepper";
 import { Paper, Typography, Button } from "@mui/material";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 
-import lottieJson from "../../public/bar-chart.json";
-import astronaut from "../../public/astronaut-in-tea-break.json";
-import developer from "../../public/hacker-thinking-about-code.json";
+import lottieJson from "../../public/benefitspage_assets/barChart.json";
+import astronaut from "../../public/benefitspage_assets/astronaut.json";
+import developer from "../../public/benefitspage_assets/hacker.json";
 
 const BenefitsStepper = ({ activeStep }) => {
   const maxSteps = steps.length;
@@ -56,7 +56,6 @@ const BenefitsStepper = ({ activeStep }) => {
           loop={false}
           src={steps[activeStep].lottieFile}
           keepLastFrame={true}
-          // style={{ height: "600px", width: "700px" }}
           className={styles.lottiePlayer}
         >
           <Controls
@@ -72,19 +71,9 @@ const BenefitsStepper = ({ activeStep }) => {
         activeStep={activeStep}
         sx={{ bgcolor: "transparent" }}
         nextButton={
-          <Button
-            size='small'
-            // onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          ></Button>
+          <Button size='small' disabled={activeStep === maxSteps - 1}></Button>
         }
-        backButton={
-          <Button
-            size='small'
-            // onClick={handleBack}
-            disabled={activeStep === 0}
-          ></Button>
-        }
+        backButton={<Button size='small' disabled={activeStep === 0}></Button>}
       />
     </Box>
   );

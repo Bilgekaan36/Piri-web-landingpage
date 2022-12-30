@@ -4,9 +4,8 @@ import React, { useState, useRef } from "react";
 import { Parallax } from "react-scroll-parallax";
 import { Box, Container, styled, Typography } from "@mui/material";
 
-import LaunchStepper from "./LaunchStepper";
-import rocket from "../../public/rocket.json";
-import confetti from "../../public/confetti.json";
+import rocket from "../../public/launchpage_assets/rocket.json";
+import confetti from "../../public/launchpage_assets/confetti.json";
 import Lottie from "lottie-react";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
@@ -71,13 +70,7 @@ const confettiInteractivity = {
 };
 
 const Launchpage = (props) => {
-  const [activeStep, setActiveStep] = useState(0);
   const [progress, setProgress] = useState(100);
-  const [isLocked, setIsLocked] = useState(false);
-
-  const handleStep = (data) => {
-    setActiveStep(data);
-  };
 
   const handleProgress = (data) => {
     setProgress(data);
@@ -89,7 +82,7 @@ const Launchpage = (props) => {
       maxWidth='false'
       sx={{
         position: "relative",
-        height: isLocked ? "240vh" : "240vh",
+        height: "240vh",
         backgroundColor: "#1E1F26",
         backgroundImage: `linear-gradient(to top, white ${progress}%, #1E1F26 ${progress}%)`,
         transition: "400ms all ease-in-out",
@@ -104,30 +97,7 @@ const Launchpage = (props) => {
           top: "-110px",
           left: 0,
         }}
-        onEnter={() => {
-          setIsLocked(false);
-          // console.log("onEnter");
-          handleStep(0);
-        }}
-        onExit={() => {
-          setIsLocked(true);
-          // console.log("onExit");
-          handleStep(0);
-        }}
-      />
-
-      <Parallax
-        style={{
-          height: "100px",
-          width: "100px",
-          backgroundColor: "red",
-          position: "absolute",
-          bottom: isLocked ? 0 : "-120px",
-          left: 0,
-        }}
-        onEnter={() => {
-          //   props.setNextWorkspage(true);
-        }}
+        onEnter={() => {}}
         onExit={() => {}}
       />
 
