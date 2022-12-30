@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import Grid from "@mui/material/Grid";
 import { Box, Container, styled, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 import ToolsStepper from "./ToolsStepper";
 
@@ -63,6 +64,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 const Toolspage = (props) => {
   const [activeStep, setActiveStep] = useState(0);
   const [isLocked, setIsLocked] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const handleStep = (data) => {
     setActiveStep(data);
@@ -325,8 +327,7 @@ const Toolspage = (props) => {
           bottom: isLocked ? 0 : "-120px",
           left: 0,
         }}
-        onEnter={() => {
-        }}
+        onEnter={() => {}}
         onExit={() => {}}
       />
 
@@ -344,13 +345,13 @@ const Toolspage = (props) => {
               variant='smallTitle'
               sx={{ color: "common.white" }}
             >
-              TECH
+              {t("toolspage.leftTitle1")}
             </StyledLeftTitleText>
             <StyledLeftTitleText
               variant='smallTitle'
               sx={{ paddingLeft: "12px", color: "common.white" }}
             >
-              STACK
+              {t("toolspage.leftTitle2")}
             </StyledLeftTitleText>
           </StyledLeftTitleGrid>
           <StyledRightTitleGrid item xs={9} md={7}>
@@ -358,7 +359,7 @@ const Toolspage = (props) => {
               variant='bigTitle'
               sx={{ color: "common.white" }}
             >
-              INHOUSE
+              {t("toolspage.rightTitle1")}
             </StyledRightTitleText>
             <StyledRightTitleText
               variant='bigTitle'
@@ -367,7 +368,7 @@ const Toolspage = (props) => {
                 paddingLeft: { xl: "64px", xs: "12px" },
               }}
             >
-              TECHNOLOGIES
+              {t("toolspage.rightTitle2")}
             </StyledRightTitleText>
           </StyledRightTitleGrid>
         </StyledHeaderGrid>

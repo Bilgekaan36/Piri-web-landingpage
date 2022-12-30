@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import Grid from "@mui/material/Grid";
 import { Box, Container, styled, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 import BenefitsStepper from "./BenefitsStepper";
 
@@ -63,6 +64,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 const Benefitspage = (props) => {
   const [activeStep, setActiveStep] = useState(0);
   const [isLocked, setIsLocked] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const handleStep = (data) => {
     setActiveStep(data);
@@ -220,13 +222,13 @@ const Benefitspage = (props) => {
               variant='smallTitle'
               sx={{ color: "common.white" }}
             >
-              YOUR
+              {t("benefitspage.leftTitle1")}
             </StyledLeftTitleText>
             <StyledLeftTitleText
               variant='smallTitle'
               sx={{ paddingLeft: "12px", color: "common.white" }}
             >
-              BENEFITS
+              {t("benefitspage.leftTitle2")}
             </StyledLeftTitleText>
           </StyledLeftTitleGrid>
           <StyledRightTitleGrid item xs={8} md={6}>
@@ -234,7 +236,7 @@ const Benefitspage = (props) => {
               variant='bigTitle'
               sx={{ color: "common.white" }}
             >
-              A NEW
+              {t("benefitspage.rightTitle1")}
             </StyledRightTitleText>
             <StyledRightTitleText
               variant='bigTitle'
@@ -243,13 +245,13 @@ const Benefitspage = (props) => {
                 paddingLeft: { xl: "96px", xs: "12px" },
               }}
             >
-              EXPERIENCE
+              {t("benefitspage.rightTitle2")}
             </StyledRightTitleText>
             <StyledRightTitleText
               variant='bigTitle'
               sx={{ color: "common.white" }}
             >
-              IT ALL
+              {t("benefitspage.rightTitle3")}
             </StyledRightTitleText>
           </StyledRightTitleGrid>
         </StyledHeaderGrid>

@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import { Paper, Typography, Grid, CircularProgress } from "@mui/material";
+import { Translation } from "react-i18next";
 
 import ReactSvg from "../technologies/ReactSvg.js";
 import AdobeSvg from "../technologies/AdobeSvg.js";
@@ -110,74 +111,110 @@ const technologies = [
   {
     logo: <ReactSvg />,
     title: "REACT",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentReact")}</>}
+      </Translation>
+    ),
   },
   {
     logo: <MaterialuiSvg />,
     title: "Material UI",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentMaterialUi")}</>}
+      </Translation>
+    ),
   },
   {
     logo: <NodejsSvg />,
     title: "NODE.JS",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentNodejs")}</>}
+      </Translation>
+    ),
   },
   {
     logo: <VercelSvg />,
     title: "VERCEL",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentVercel")}</>}
+      </Translation>
+    ),
   },
   {
     logo: <NextjsSvg />,
     title: "NEXT.JS",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentNextjs")}</>}
+      </Translation>
+    ),
   },
   {
     logo: <VueSvg />,
     title: "VUE",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentVue")}</>}
+      </Translation>
+    ),
   },
   {
     logo: <FirebaseSvg />,
     title: "FIREBASE",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentFirebase")}</>}
+      </Translation>
+    ),
   },
 
   {
     logo: <HtmlSvg />,
     title: "HTML",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentHtml")}</>}
+      </Translation>
+    ),
   },
   {
     logo: <CssSvg />,
     title: "CSS",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentCss")}</>}
+      </Translation>
+    ),
   },
   {
     logo: <JavascriptSvg />,
     title: "JAVASCRIPT",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentJavascript")}</>}
+      </Translation>
+    ),
   },
   {
     logo: <AdobeSvg />,
     title: "ADOBE",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentAdobe")}</>}
+      </Translation>
+    ),
   },
   {
     logo: <VscodeSvg />,
     title: "VSCODE",
-    content:
-      "prefetch - Prefetch the page in the background. Defaults to true. Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetch can be disabled by passing prefetch={false}. When prefetch is set to false, prefetching will still occur on hover. Pages using Static Generation will preload JSON files with the data for faster page transitions. Prefetching is only enabled in production.",
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("toolsStepper.contentVscode")}</>}
+      </Translation>
+    ),
   },
 ];

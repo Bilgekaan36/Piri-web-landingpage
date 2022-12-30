@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
 import { Paper, Typography, Button } from "@mui/material";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import { Translation } from "react-i18next";
 
 import lottieJson from "../../public/benefitspage_assets/barChart.json";
 import astronaut from "../../public/benefitspage_assets/astronaut.json";
@@ -83,99 +84,81 @@ export default BenefitsStepper;
 
 const steps = [
   {
-    label: "CONVERSION RATE",
-    description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
+    label: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.label1")}</>}
+      </Translation>
+    ),
+    description: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.description1")}</>}
+      </Translation>
+    ),
     lottieFile: lottieJson,
   },
   {
-    label: "QUALITY IN DESIGN",
-    description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
+    label: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.label2")}</>}
+      </Translation>
+    ),
+    description: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.description2")}</>}
+      </Translation>
+    ),
     lottieFile: astronaut,
   },
   {
-    label: "PROFESSIONAL CODING",
-    description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
+    label: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.label3")}</>}
+      </Translation>
+    ),
+    description: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.description3")}</>}
+      </Translation>
+    ),
     lottieFile: developer,
   },
   {
-    label: "THE DIFFERENCE",
-    description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
+    label: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.label4")}</>}
+      </Translation>
+    ),
+    description: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.description4")}</>}
+      </Translation>
+    ),
     lottieFile: astronaut,
   },
   {
-    label: "YOUR VISION",
-    description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
+    label: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.label5")}</>}
+      </Translation>
+    ),
+    description: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.description5")}</>}
+      </Translation>
+    ),
     lottieFile: lottieJson,
   },
   {
-    label: "FAST & SAFE",
-    description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.
-                For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
+    label: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.label6")}</>}
+      </Translation>
+    ),
+    description: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.description6")}</>}
+      </Translation>
+    ),
     lottieFile: astronaut,
   },
 ];

@@ -13,6 +13,7 @@ import {
 
 import nextjs from "../../public/videos/nextjs.mp4";
 import portfolio from "../../public/videos/portfolio.mp4";
+import { useTranslation } from "react-i18next";
 
 const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
   height: "30vh",
@@ -95,6 +96,7 @@ const StyledFooterAuthor = styled(Typography)(({ theme }) => ({
 const Workspage = ({ isShowWorkspage }) => {
   const theme = useTheme();
   const matchDownMd = useMediaQuery(theme.breakpoints.down("md"));
+  const { t, i18n } = useTranslation();
 
   return (
     <StyledContainer
@@ -109,18 +111,18 @@ const Workspage = ({ isShowWorkspage }) => {
       >
         <StyledLeftTitleGrid item xs={4} md={5}>
           <StyledLeftTitleText variant='smallTitle' sx={{ color: "#1e1f26" }}>
-            MY
+            {t("workspage.leftTitle1")}
           </StyledLeftTitleText>
           <StyledLeftTitleText
             variant='smallTitle'
             sx={{ paddingLeft: "12px", color: "#1e1f26" }}
           >
-            WORK
+            {t("workspage.leftTitle2")}
           </StyledLeftTitleText>
         </StyledLeftTitleGrid>
         <StyledRightTitleGrid item xs={8} md={7}>
           <StyledRightTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
-            SELECTED WORK
+            {t("workspage.rightTitle1")}
           </StyledRightTitleText>
         </StyledRightTitleGrid>
       </StyledHeaderGrid>

@@ -1,4 +1,5 @@
 import React from "react";
+import i18n from "../internationalization/i18n";
 
 import {
   Box,
@@ -9,6 +10,7 @@ import {
   styled,
   Container,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: "transparent",
@@ -31,6 +33,11 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 const Navbar = (props) => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <Container disableGutters maxWidth='xl'>
       <Box>
@@ -45,15 +52,15 @@ const Navbar = (props) => {
             </Typography>
             <Button sx={{ width: { xs: 100, sm: 300 } }}>
               <Typography variant='header' sx={{ color: "#1E1F26" }}>
-                work
+                {t("navbar.work")}
               </Typography>
             </Button>
-            <StyledButton>
+            <StyledButton onClick={() => changeLanguage("fr")}>
               <Typography
                 variant='header'
                 sx={{ color: "primary.contrastText" }}
               >
-                contact
+                {t("navbar.contact")}
               </Typography>
             </StyledButton>
           </Toolbar>

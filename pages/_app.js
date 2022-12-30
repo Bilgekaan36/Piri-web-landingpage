@@ -12,8 +12,8 @@ import Layout from "../components/layout/Layout";
 
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
-import { grey } from "@mui/material/colors";
 import { ParallaxProvider } from "react-scroll-parallax";
+import "../components/internationalization/i18n";
 
 const theme = createTheme({
   palette: {

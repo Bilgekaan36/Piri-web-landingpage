@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Personalpage.module.css";
-
-import { Container, styled, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import profil from "../../public/profil.png";
+
+import { Container, styled, Grid, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
   height: "30vh",
@@ -85,6 +86,8 @@ const StyledHeadContent = styled(Typography)(({ theme }) => ({
 }));
 
 const Personalpage = ({ isShowWorkspage }) => {
+  const { t, i18n } = useTranslation();
+
   return (
     <StyledContainer
       maxWidth='false'
@@ -97,18 +100,18 @@ const Personalpage = ({ isShowWorkspage }) => {
       <StyledHeaderGrid container spacing={0}>
         <StyledLeftTitleGrid item xs={3} md={5}>
           <StyledLeftTitleText variant='smallTitle' sx={{ color: "#1e1f26" }}>
-            ABOUT
+            {t("personalpage.leftTitle1")}
           </StyledLeftTitleText>
           <StyledLeftTitleText
             variant='smallTitle'
             sx={{ paddingLeft: "12px", color: "#1e1f26" }}
           >
-            MYSELF
+            {t("personalpage.leftTitle2")}
           </StyledLeftTitleText>
         </StyledLeftTitleGrid>
         <StyledRightTitleGrid item xs={9} md={7}>
           <StyledRightTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
-            INTERN
+            {t("personalpage.rightTitle1")}
           </StyledRightTitleText>
           <StyledRightTitleText
             variant='bigTitle'
@@ -117,7 +120,7 @@ const Personalpage = ({ isShowWorkspage }) => {
               paddingLeft: { xl: "64px", xs: "12px" },
             }}
           >
-            PERSONALITY
+            {t("personalpage.rightTitle2")}
           </StyledRightTitleText>
         </StyledRightTitleGrid>
       </StyledHeaderGrid>
@@ -152,20 +155,10 @@ const Personalpage = ({ isShowWorkspage }) => {
             alignItems: "flex-start",
           }}
         >
-          <StyledHeadTitle>Deine Web-Applikation,</StyledHeadTitle>
-          <StyledHeadTitle>deine Signifikanz!</StyledHeadTitle>
+          <StyledHeadTitle> {t("personalpage.personalTitle1")}</StyledHeadTitle>
+          <StyledHeadTitle> {t("personalpage.personalTitle2")}</StyledHeadTitle>
           <StyledHeadContent>
-            In einem persönlichen Webflow Workshop zeige ich Dir wie Du schnell
-            und problemlos Änderungen auf Deiner neuen Webseite vornehmen
-            kannst. Zusätzlich bekommst Du personalisierte Webflow Video
-            Tutorials, die Du jederzeit abrufen kannst. Editiere Deine Webflow
-            Webseite ohne kompliziertes Backend oder gar zusätzlichem
-            Programmierer. So einfach ist das. In einem persönlichen Webflow
-            Workshop zeige ich Dir wie Du schnell und problemlos Änderungen auf
-            Deiner neuen Webseite vornehmen kannst. Zusätzlich bekommst Du
-            personalisierte Webflow Video Tutorials, die Du jederzeit abrufen
-            kannst. Editiere Deine Webflow Webseite ohne kompliziertes Backend
-            oder gar zusätzlichem Programmierer. So einfach ist das.
+            {t("personalpage.personalContent")}
           </StyledHeadContent>
         </Grid>
       </Grid>

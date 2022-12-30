@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, styled, Grid, Typography, Box } from "@mui/material";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import { useTranslation } from "react-i18next";
+import { Translation } from "react-i18next";
 
 import discoveryCall from "../../public/processpage_assets/discovery-call.json";
 import strategy from "../../public/processpage_assets/strategy.json";
@@ -98,6 +100,8 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
 }));
 
 const Process = (props) => {
+  const { t, i18n } = useTranslation();
+
   return (
     <StyledContainer
       maxWidth='false'
@@ -109,21 +113,21 @@ const Process = (props) => {
         <StyledHeaderGrid container spacing={0}>
           <StyledRightTitleGrid item xs={7}>
             <StyledRightTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
-              YOUR
+              {t("processpage.leftTitle1")}
             </StyledRightTitleText>
             <StyledRightTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
-              APPLICATION
+              {t("processpage.leftTitle2")}
             </StyledRightTitleText>
             <StyledSmallTitle variant='h4' sx={{ color: "#1e1f26" }}>
-              Alles aus einer Hand wie aus einem Guss.
+              {t("processpage.leftTitle3")}
             </StyledSmallTitle>
             <StyledSmallTitle variant='h4' sx={{ color: "#1e1f26" }}>
-              Ein Prozess. Ein Preis.
+              {t("processpage.leftTitle4")}
             </StyledSmallTitle>
           </StyledRightTitleGrid>
           <StyledLeftTitleGrid item xs={5}>
             <StyledLeftTitleText variant='smallTitle' sx={{ color: "#1e1f26" }}>
-              THE PROCESS
+              {t("processpage.rightTitle1")}
             </StyledLeftTitleText>
           </StyledLeftTitleGrid>
         </StyledHeaderGrid>
@@ -211,55 +215,125 @@ const Process = (props) => {
 
 const textData = [
   {
-    title: "DISCOVERY CALL",
-    content:
-      " Beim Discovery Call schauen wir erstmal, ob es denn auch klick macht zwischen uns. D.h. wir lernen uns ein wenig besser kennen. Eine vertrauensvolle Zusammenarbeit ist mir wichtig. Denn sie macht nicht nur mehr Spaß, sondern führt auch zu einem erfolgreichem Ergebnis.Bevor es allerdings losgeht, finden wir heraus wie und obich Dir überhaupt helfen kann. Welche Anforderungen hast du an deine neue Webseite? Wieso brauchst du überhaupt eine neue Webseite? Welche Ziele hast du und welche Probleme können wir mit einer neuen Webseite lösen?",
+    title: (
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.titleDiscovery")}</>}
+      </Translation>
+    ),
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.contentDiscovery")}</>}
+      </Translation>
+    ),
     subtitles: [
-      "Wir lernen uns besser kennen",
-      "Wie kann ich dir am besten helfen?",
-      "Verstehen welche Ziele Du mit der Webseite hast",
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleDiscovery1")}</>}
+      </Translation>,
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleDiscovery2")}</>}
+      </Translation>,
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleDiscovery3")}</>}
+      </Translation>,
     ],
     lottieFile: discoveryCall,
   },
   {
-    title: "CONCEPT & STRATEGY",
-    content:
-      " Beim Discovery Call schauen wir erstmal, ob es denn auch klick macht zwischen uns. D.h. wir lernen uns ein wenig besser kennen. Eine vertrauensvolle Zusammenarbeit ist mir wichtig. Denn sie macht nicht nur mehr Spaß, sondern führt auch zu einem erfolgreichem Ergebnis.Bevor es allerdings losgeht, finden wir heraus wie und obich Dir überhaupt helfen kann. Welche Anforderungen hast du an deine neue Webseite? Wieso brauchst du überhaupt eine neue Webseite? Welche Ziele hast du und welche Probleme können wir mit einer neuen Webseite lösen?",
+    title: (
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.titleStrategy")}</>}
+      </Translation>
+    ),
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.contentStrategy")}</>}
+      </Translation>
+    ),
     subtitles: [
-      "UX Design",
-      "Wireframes",
-      "Interaktiver Prototyp der Wireframes",
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleStrategy1")}</>}
+      </Translation>,
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleStrategy2")}</>}
+      </Translation>,
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleStrategy3")}</>}
+      </Translation>,
     ],
     lottieFile: strategy,
   },
   {
-    title: "DESIGN",
-    content:
-      " Beim Discovery Call schauen wir erstmal, ob es denn auch klick macht zwischen uns. D.h. wir lernen uns ein wenig besser kennen. Eine vertrauensvolle Zusammenarbeit ist mir wichtig. Denn sie macht nicht nur mehr Spaß, sondern führt auch zu einem erfolgreichem Ergebnis.Bevor es allerdings losgeht, finden wir heraus wie und obich Dir überhaupt helfen kann. Welche Anforderungen hast du an deine neue Webseite? Wieso brauchst du überhaupt eine neue Webseite? Welche Ziele hast du und welche Probleme können wir mit einer neuen Webseite lösen?",
-    subtitles: ["High-End Webdesign", "Interaktiver Prototyp des Designs"],
+    title: (
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.titleDesign")}</>}
+      </Translation>
+    ),
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.contentDesign")}</>}
+      </Translation>
+    ),
+    subtitles: [
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleDesign1")}</>}
+      </Translation>,
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleDesign2")}</>}
+      </Translation>,
+    ],
     lottieFile: design,
   },
   {
-    title: "DEVELOPMENT",
-    content:
-      " Beim Discovery Call schauen wir erstmal, ob es denn auch klick macht zwischen uns. D.h. wir lernen uns ein wenig besser kennen. Eine vertrauensvolle Zusammenarbeit ist mir wichtig. Denn sie macht nicht nur mehr Spaß, sondern führt auch zu einem erfolgreichem Ergebnis.Bevor es allerdings losgeht, finden wir heraus wie und obich Dir überhaupt helfen kann. Welche Anforderungen hast du an deine neue Webseite? Wieso brauchst du überhaupt eine neue Webseite? Welche Ziele hast du und welche Probleme können wir mit einer neuen Webseite lösen?",
+    title: (
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.titleDevelopment")}</>}
+      </Translation>
+    ),
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.contentDevelopment")}</>}
+      </Translation>
+    ),
     subtitles: [
-      "Custom React Website",
-      "Modulares Webdesign System",
-      "Server Side Rendering",
-      "React Javascript",
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleDevelopment1")}</>}
+      </Translation>,
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleDevelopment2")}</>}
+      </Translation>,
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleDevelopment3")}</>}
+      </Translation>,
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleDevelopment4")}</>}
+      </Translation>,
     ],
     lottieFile: development,
   },
   {
-    title: "ONBOARDING",
-    content:
-      " Beim Discovery Call schauen wir erstmal, ob es denn auch klick macht zwischen uns. D.h. wir lernen uns ein wenig besser kennen. Eine vertrauensvolle Zusammenarbeit ist mir wichtig. Denn sie macht nicht nur mehr Spaß, sondern führt auch zu einem erfolgreichem Ergebnis.Bevor es allerdings losgeht, finden wir heraus wie und obich Dir überhaupt helfen kann. Welche Anforderungen hast du an deine neue Webseite? Wieso brauchst du überhaupt eine neue Webseite? Welche Ziele hast du und welche Probleme können wir mit einer neuen Webseite lösen?",
+    title: (
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.titleOnboarding")}</>}
+      </Translation>
+    ),
+    content: (
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.contentOnboarding")}</>}
+      </Translation>
+    ),
     subtitles: [
-      "Hosting der Applikation",
-      "Übergabe der Benutzerdaten und Lizenzen",
-      "Hosting der Website",
-      "Übergabe der Benutzerdaten und Formularen",
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleOnboarding1")}</>}
+      </Translation>,
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleOnboarding2")}</>}
+      </Translation>,
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleOnboarding3")}</>}
+      </Translation>,
+      <Translation>
+        {(t, { i18n }) => <>{t("processpage.subtitleOnboarding4")}</>}
+      </Translation>,
     ],
     lottieFile: onboarding,
   },

@@ -18,14 +18,15 @@
     "@next/font": "^13.0.5",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
-    "framer-motion": "^7.6.19",
+    "framer-motion": "^8.0.2",
+    "i18next": "^22.4.6",
+    "i18next-browser-languagedetector": "^7.0.1",
     "lottie-react": "^2.3.1",
     "next": "13.0.5",
     "next-videos": "^1.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-scroll-parallax": "^3.3.2",
-    "react-tsparticles": "^2.7.0",
-    "tsparticles": "^2.7.0"
+    "react-i18next": "^12.1.1",
+    "react-scroll-parallax": "^3.3.2"
   }
 }

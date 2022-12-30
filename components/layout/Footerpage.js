@@ -11,6 +11,7 @@ import {
   Button,
 } from "@mui/material";
 import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 import Link from "next/link";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
@@ -112,6 +113,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
 }));
 
 const Footerpage = () => {
+  const { t, i18n } = useTranslation();
   return (
     <StyledContainer maxWidth='false'>
       <Grid container spacing={0} height='100%'>
@@ -130,7 +132,7 @@ const Footerpage = () => {
               }}
             >
               <StyledLeftTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
-                LET'S
+                {t("footerpage.leftTitle1")}
               </StyledLeftTitleText>
               <StyledLeftTitleText
                 variant='bigTitle'
@@ -139,10 +141,10 @@ const Footerpage = () => {
                   color: "#1e1f26",
                 }}
               >
-                TALK
+                {t("footerpage.leftTitle2")}
               </StyledLeftTitleText>
               <StyledLeftTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
-                ABOUT
+                {t("footerpage.leftTitle3")}
               </StyledLeftTitleText>
             </StyledLeftTitleGrid>
             <StyledRightTitleGrid
@@ -156,16 +158,13 @@ const Footerpage = () => {
             >
               <Box sx={{ width: { sx: "100%", md: "50%" } }}>
                 <StyledHeadContent>
-                  Lass uns mit einem unverbindlichem Erstgespräch starten. Wir
-                  schauen gemeinsam über Deine aktuelle Website, Deine Ziele und
-                  Herausforderungen und wie wir diese lösen können.
+                  {t("footerpage.footerContent1")}
                 </StyledHeadContent>
                 <StyledHeadContent>
-                  Außerdem erhältst Du in diesem Erstgespräch praktische Tipps
-                  für Deine Website, die Du direkt selbst umsetzen kannst.
+                  {t("footerpage.footerContent2")}
                 </StyledHeadContent>
                 <StyledHeadContent>
-                  Ich freue mich Dich kennenzulernen.
+                  {t("footerpage.footerContent3")}
                 </StyledHeadContent>
               </Box>
             </StyledRightTitleGrid>
@@ -220,7 +219,10 @@ const Footerpage = () => {
               },
             }}
           >
-            <StyledFooterTitle>Arrange a meeting</StyledFooterTitle>
+            <StyledFooterTitle>
+              {" "}
+              {t("footerpage.meetingTitle")}
+            </StyledFooterTitle>
             <Box className={styles.iconArrow} />
           </StyledBox>
           <StyledBox
@@ -232,7 +234,7 @@ const Footerpage = () => {
               },
             }}
           >
-            <StyledFooterTitle>Write e-mail</StyledFooterTitle>
+            <StyledFooterTitle> {t("footerpage.emailTitle")}</StyledFooterTitle>
             <Box className={styles.iconArrow} />
           </StyledBox>
         </Grid>
@@ -270,7 +272,7 @@ const Footerpage = () => {
                 color='common.black'
                 sx={{ fontSize: { xs: "0.7rem" } }}
               >
-                IMPRESSUM
+                {t("footerpage.imprint")}
               </Typography>
             </Button>
             <Button variant='text'>
@@ -279,7 +281,7 @@ const Footerpage = () => {
                 color='common.black'
                 sx={{ fontSize: { xs: "0.7rem" } }}
               >
-                DATENSCHUTZ
+                {t("footerpage.privacyPolicy")}
               </Typography>
             </Button>
           </Box>

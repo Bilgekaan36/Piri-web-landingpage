@@ -7,6 +7,8 @@ import letterW from "../../public/landingpage_assets/letter-W.json";
 import letterA from "../../public/landingpage_assets/letter-A.json";
 import letterM from "../../public/landingpage_assets/letter-M.json";
 import letterO from "../../public/landingpage_assets/letter-O.json";
+import { useTranslation } from "react-i18next";
+import { Translation } from "react-i18next";
 
 const StyledHeader = styled(Typography)(({ theme }) => ({
   textAlign: "center",
@@ -63,6 +65,7 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
 
 const LandingStepper = ({ activeStep }) => {
   const maxSteps = steps.length;
+  const { t, i18n } = useTranslation();
 
   return (
     <Box
@@ -123,6 +126,7 @@ const LandingStepper = ({ activeStep }) => {
         >
           <StyledHeader variant='secondHeader' component='div'>
             {steps[activeStep].firstLabel}
+            {/* {t("test.title")} */}
           </StyledHeader>
           <StyledHeaderModular
             variant='mainHeader'
@@ -171,42 +175,138 @@ export default LandingStepper;
 
 const steps = [
   {
-    firstLabel: "DEINE",
-    secondLabel: "WEBSITE",
-    thirdLabel: `modern & innovativ`,
-    description1: "Bringe deine Vison ins Web!",
-    description2: "Ob Frontend- oder Backend du bekommst hier alles",
-    description3: "aus einer Hand",
+    firstLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.firstLabelWebsite")}</>}
+      </Translation>
+    ),
+    secondLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.secondLabelWebsite")}</>}
+      </Translation>
+    ),
+    thirdLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.thirdLabelWebsite")}</>}
+      </Translation>
+    ),
+    description1: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description1Website")}</>}
+      </Translation>
+    ),
+    description2: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description2Website")}</>}
+      </Translation>
+    ),
+    description3: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description3Website")}</>}
+      </Translation>
+    ),
     lottieFile: letterW,
     color: "#6691c3",
   },
   {
-    firstLabel: "DEINE",
-    secondLabel: "APPLIKATION",
-    thirdLabel: `custom & hightec`,
-    description1: "Deine personalisierte Applikation!",
-    description2: "Mit modernsten Technologien für das beste Kundenerlebnis",
-    description3: "Professionalität zalht sich aus",
+    firstLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.firstLabelApplication")}</>}
+      </Translation>
+    ),
+    secondLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.secondLabelApplication")}</>}
+      </Translation>
+    ),
+    thirdLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.thirdLabelApplication")}</>}
+      </Translation>
+    ),
+    description1: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description1Application")}</>}
+      </Translation>
+    ),
+    description2: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description2Application")}</>}
+      </Translation>
+    ),
+    description3: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description3Application")}</>}
+      </Translation>
+    ),
     lottieFile: letterA,
     color: "#F76B6C",
   },
   {
-    firstLabel: "DEINE",
-    secondLabel: "MOBILEAPP",
-    thirdLabel: `fast & beautiful`,
-    description1: "Erlange den entscheidenden Vorteil!",
-    description2: "Durch ansprechendes Design, entstehen bessere Ergebnisse",
-    description3: "weil Design verbindet",
+    firstLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.firstLabelMobileapp")}</>}
+      </Translation>
+    ),
+    secondLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.secondLabelMobileapp")}</>}
+      </Translation>
+    ),
+    thirdLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.thirdLabelMobileapp")}</>}
+      </Translation>
+    ),
+    description1: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description1Mobileapp")}</>}
+      </Translation>
+    ),
+    description2: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description2Mobileapp")}</>}
+      </Translation>
+    ),
+    description3: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description3Mobileapp")}</>}
+      </Translation>
+    ),
     lottieFile: letterM,
     color: "#79C4C8",
   },
   {
-    firstLabel: "DEIN",
-    secondLabel: "ONLINESHOP",
-    thirdLabel: `efficient & rentable`,
-    description1: "Deine Ware professionell Vertreiben!",
-    description2: "Die höchste Conversion durch richtige Positionierung",
-    description3: "Mache aus Besuchern bares Geld",
+    firstLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.firstLabelOnlineshop")}</>}
+      </Translation>
+    ),
+    secondLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.secondLabelOnlineshop")}</>}
+      </Translation>
+    ),
+    thirdLabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.thirdLabelOnlineshop")}</>}
+      </Translation>
+    ),
+    description1: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description1Onlineshop")}</>}
+      </Translation>
+    ),
+    description2: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description2Onlineshop")}</>}
+      </Translation>
+    ),
+    description3: (
+      <Translation>
+        {(t, { i18n }) => <>{t("landingpage.description3Onlineshop")}</>}
+      </Translation>
+    ),
     lottieFile: letterO,
     color: "#f7be02",
   },
