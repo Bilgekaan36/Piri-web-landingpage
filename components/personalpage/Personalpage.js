@@ -98,7 +98,7 @@ const Personalpage = ({ isShowWorkspage }) => {
       }}
     >
       <StyledHeaderGrid container spacing={0}>
-        <StyledLeftTitleGrid item xs={3} md={5}>
+        <StyledLeftTitleGrid item xs={3} md={6}>
           <StyledLeftTitleText variant='smallTitle' sx={{ color: "#1e1f26" }}>
             {t("personalpage.leftTitle1")}
           </StyledLeftTitleText>
@@ -109,7 +109,7 @@ const Personalpage = ({ isShowWorkspage }) => {
             {t("personalpage.leftTitle2")}
           </StyledLeftTitleText>
         </StyledLeftTitleGrid>
-        <StyledRightTitleGrid item xs={9} md={7}>
+        <StyledRightTitleGrid item xs={9} md={6}>
           <StyledRightTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
             {t("personalpage.rightTitle1")}
           </StyledRightTitleText>

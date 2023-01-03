@@ -10,8 +10,7 @@ import "@fontsource/sora/800.css";
 
 import Layout from "../components/layout/Layout";
 
-import { createTheme } from "@mui/material";
-import { ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material";
 import { ParallaxProvider } from "react-scroll-parallax";
 import "../components/internationalization/i18n";
 
@@ -19,6 +18,17 @@ const theme = createTheme({
   palette: {
     background: {
       custom: "#1E1F26",
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 830,
+      mm: 1000,
+      lg: 1200,
+      xl: 1536,
+      xxl: 1950,
     },
   },
   typography: {
@@ -41,14 +51,14 @@ const theme = createTheme({
     mainHeader: {
       fontFamily: "Sora",
       fontWeight: 700,
-      fontSize: "12rem",
+      fontSize: "8vw",
       lineHeight: 0.8,
       letterSpacing: "-0.5rem",
     },
     secondHeader: {
       fontFamily: "Sora",
       fontWeight: 200,
-      fontSize: "6rem",
+      fontSize: "4vw",
       lineHeight: 0.8,
       letterSpacing: "-0.5rem",
     },
@@ -62,7 +72,7 @@ const theme = createTheme({
     bigTitle: {
       fontFamily: "Sora",
       fontWeight: 800,
-      fontSize: "10rem",
+      fontSize: "6vw",
       lineHeight: 0.8,
       letterSpacing: "0em",
     },

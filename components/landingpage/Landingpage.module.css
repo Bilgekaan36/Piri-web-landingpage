@@ -1,81 +1,27 @@
-/* .iconArrow {
-  width: 1px;
-  height: 100px;
-  background-color: #1e1f26;
-  position: relative;
-  top: 150px;
-  border-radius: 1px;
+.lottiePlayer svg {
+  scale: 140%;
 }
 
-.iconArrow:after {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 1px;
-  border-radius: 1px;
-  background-color: #1e1f26;
-  transform: rotate(45deg);
-  position: absolute;
-  right: -2px;
-  bottom: 7px;
+@media (min-width: 1536px) {
+  .lottiePlayer svg {
+    scale: 160%;
+  }
 }
 
-.iconArrow:before {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 1px;
-  border-radius: 1px;
-  background-color: #1e1f26;
-  transform: rotate(-45deg);
-  position: absolute;
-  right: -17px;
-  bottom: 7px;
+@media (max-width: 1200px) {
+  .lottiePlayer svg {
+    scale: 140%;
+  }
 }
 
 @media (max-width: 900px) {
-  .iconArrow {
-    width: 1px;
-    height: 35px;
-    background-color: #1e1f26;
-    position: relative;
-    top: 10px;
-    border-radius: 1px;
-  }
-
-  .iconArrow:after {
-    content: "";
-    display: inline-block;
-    width: 10px;
-    height: 1px;
-    border-radius: 1px;
-    background-color: #1e1f26;
-    transform: rotate(45deg);
-    position: absolute;
-    right: -1px;
-    bottom: 3px;
-  }
-
-  .iconArrow:before {
-    content: "";
-    display: inline-block;
-    width: 10px;
-    height: 1px;
-    border-radius: 1px;
-    background-color: #1e1f26;
-    transform: rotate(-45deg);
-    position: absolute;
-    right: -8px;
-    bottom: 3px;
+  .lottiePlayer svg {
+    scale: 140%;
   }
 }
 
 @media (max-width: 600px) {
-  .iconArrow {
-    top: 50px;
+  .lottiePlayer svg {
+    scale: 160%;
   }
-} */
-
-.lottiePlayer svg {
-  scale: 2;
 }

@@ -15,8 +15,12 @@ const StyledHeader = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
   transition: "all 1s ease-in-out",
   color: "#1e1f26",
-  [theme.breakpoints.down("md")]: {
-    fontSize: "2rem",
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "5vw",
+    letterSpacing: "-0.1rem",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "8vw",
     letterSpacing: "-0.1rem",
   },
 }));
@@ -26,9 +30,12 @@ const StyledHeaderSubTitle = styled(Typography)(({ theme }) => ({
   zIndex: 10,
   transition: "all 1s ease-in-out",
   color: "#1e1f26",
-  [theme.breakpoints.down("md")]: {
-    fontSize: "2rem",
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "7vw",
     letterSpacing: "-0.1rem",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "8.5vw",
   },
 }));
 
@@ -38,8 +45,12 @@ const StyledHeaderModular = styled(Typography)(({ theme }) => ({
   padding: "24px",
   zIndex: 10,
   transition: "all 1s ease-in-out",
-  [theme.breakpoints.down("md")]: {
-    fontSize: "2rem",
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "11vw",
+    letterSpacing: "-0.1em",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "13vw",
     letterSpacing: "-0.1em",
     minWidth: 300,
   },
@@ -50,16 +61,16 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
   color: "#1e1f26",
   zIndex: 10,
+  fontWeight: 200,
+
   transition: "all 1s ease-in-out",
-  [theme.breakpoints.down("md")]: {
-    fontSize: "1rem",
-    fontWeight: 200,
-    letterSpacing: "0rem",
+  [theme.breakpoints.down("lg")]: {
+    // fontSize: "1rem",
+    // fontWeight: 200,
+    // letterSpacing: "0rem",
   },
   [theme.breakpoints.down("sm")]: {
     fontSize: "1rem",
-    fontWeight: 200,
-    letterSpacing: "0rem",
   },
 }));
 
@@ -121,12 +132,11 @@ const LandingStepper = ({ activeStep }) => {
       >
         <Box
           sx={{
-            mb: { xs: 2, md: 10 },
+            mb: { xs: 2, md: { xs: 1, md: 10 } },
           }}
         >
           <StyledHeader variant='secondHeader' component='div'>
             {steps[activeStep].firstLabel}
-            {/* {t("test.title")} */}
           </StyledHeader>
           <StyledHeaderModular
             variant='mainHeader'

@@ -1,11 +1,11 @@
 .lottiePlayer {
-  height: 700px;
-  width: 900px;
+  height: 100%;
+  width: 100%;
 }
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .lottiePlayer {
     height: 270px;
-    width: 100%;
+
   }
-}
+} */

@@ -76,7 +76,6 @@ const Landingpage = (props) => {
         }}
       />
       <StyledContainer
-        disableGutters
         maxWidth='false'
         sx={{
           position: "relative",

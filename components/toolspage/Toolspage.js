@@ -5,37 +5,46 @@ import { Box, Container, styled, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 import ToolsStepper from "./ToolsStepper";
-
 const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
-  height: "30vh",
   display: "flex",
   justifyContent: "space-between",
-  alignItems: "center",
-  [theme.breakpoints.down("md")]: {
-    height: "12vh",
-  },
+  alignItems: "flex-start",
+  // height: "30%",
 }));
 
 const StyledLeftTitleGrid = styled(Grid)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  paddingTop: "148px",
+  paddingTop: "18px",
   height: "100%",
-  [theme.breakpoints.down("md")]: {
-    paddingTop: "18px",
+  [theme.breakpoints.down("lg")]: {
+    // paddingTop: "18px",
   },
 }));
 
 const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.down("md")]: {
+  fontSize: "0.75vw",
+  [theme.breakpoints.down("lg")]: {
     fontSize: "0.6rem",
   },
 }));
 
 const StyledRightTitleText = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.down("md")]: {
-    fontSize: "2rem",
+  fontSize: "3vw",
+  // [theme.breakpoints.down("xxl")]: {
+  //   fontSize: "3.5vw",
+  // },
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("mm")]: {
+    fontSize: "3vw",
   },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "3vw",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "4.5vw",
+  },
+  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledRightTitleGrid = styled(Grid)(({ theme }) => ({
@@ -43,10 +52,9 @@ const StyledRightTitleGrid = styled(Grid)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "flex-start",
   height: "100%",
-  paddingTop: "148px",
-  [theme.breakpoints.down("md")]: {
-    fontSize: "1rem",
-    paddingTop: "18px",
+  paddingTop: "18px",
+  [theme.breakpoints.down("lg")]: {
+    // paddingTop: "18px",
   },
 }));
 
@@ -72,7 +80,6 @@ const Toolspage = (props) => {
 
   return (
     <StyledContainer
-      disableGutters
       maxWidth='false'
       sx={{
         position: "relative",
@@ -330,7 +337,45 @@ const Toolspage = (props) => {
         onEnter={() => {}}
         onExit={() => {}}
       />
-
+      <StyledHeaderGrid container spacing={0}>
+        <StyledLeftTitleGrid item xs={8} sm={8}>
+          <StyledLeftTitleText
+            variant='smallTitle'
+            sx={{ color: "common.white" }}
+          >
+            {t("toolspage.leftTitle1")}
+          </StyledLeftTitleText>
+          <StyledLeftTitleText
+            variant='smallTitle'
+            sx={{ paddingLeft: "12px", color: "common.white" }}
+          >
+            {t("toolspage.leftTitle2")}
+          </StyledLeftTitleText>
+        </StyledLeftTitleGrid>
+        <StyledRightTitleGrid item xs={4} md={4}>
+          <StyledRightTitleText
+            variant='bigTitle'
+            sx={{ color: "common.white" }}
+          >
+            {t("toolspage.rightTitle1")}
+          </StyledRightTitleText>
+          <StyledRightTitleText
+            variant='bigTitle'
+            sx={{
+              color: "common.white",
+              paddingLeft: {
+                // xs: "1.75vw",
+                // sm: "1.5vw",
+                // lg: "1.5vw",
+                // xl: "1.5vw",
+                // xxl: "1.5vw",
+              },
+            }}
+          >
+            {t("toolspage.rightTitle2")}
+          </StyledRightTitleText>
+        </StyledRightTitleGrid>
+      </StyledHeaderGrid>
       <Box
         sx={{
           position: "sticky",
@@ -339,39 +384,6 @@ const Toolspage = (props) => {
           height: "100vh",
         }}
       >
-        <StyledHeaderGrid container spacing={0}>
-          <StyledLeftTitleGrid item xs={3} md={5}>
-            <StyledLeftTitleText
-              variant='smallTitle'
-              sx={{ color: "common.white" }}
-            >
-              {t("toolspage.leftTitle1")}
-            </StyledLeftTitleText>
-            <StyledLeftTitleText
-              variant='smallTitle'
-              sx={{ paddingLeft: "12px", color: "common.white" }}
-            >
-              {t("toolspage.leftTitle2")}
-            </StyledLeftTitleText>
-          </StyledLeftTitleGrid>
-          <StyledRightTitleGrid item xs={9} md={7}>
-            <StyledRightTitleText
-              variant='bigTitle'
-              sx={{ color: "common.white" }}
-            >
-              {t("toolspage.rightTitle1")}
-            </StyledRightTitleText>
-            <StyledRightTitleText
-              variant='bigTitle'
-              sx={{
-                color: "common.white",
-                paddingLeft: { xl: "64px", xs: "12px" },
-              }}
-            >
-              {t("toolspage.rightTitle2")}
-            </StyledRightTitleText>
-          </StyledRightTitleGrid>
-        </StyledHeaderGrid>
         <Box sx={{ padding: "64px 0", marginTop: { xs: 0, md: 30 } }}>
           <ToolsStepper activeStep={activeStep} />
         </Box>

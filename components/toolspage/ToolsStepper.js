@@ -54,21 +54,24 @@ const ToolsStepper = ({ activeStep }) => {
         </Grid>
         <Grid
           item
-          xs={10}
+          xs={8}
           md={3}
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             position: "relative",
+            overflow: "hidden",
           }}
         >
           <Box
             sx={{
               position: "absolute",
-              top: "25%",
-              left: "15%",
-              height: "50%",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              overflow: "hidden",
             }}
           >
             {technologies[activeStep].logo}
@@ -92,9 +95,10 @@ const ToolsStepper = ({ activeStep }) => {
         >
           <Typography
             sx={{
-              fontSize: { xs: "0.75rem", md: "1.75rem" },
+              fontSize: { xs: "0.8rem", md: "1.75rem" },
               fontWeight: "200",
               color: "white",
+              width: "60%",
             }}
           >
             {technologies[activeStep].content}

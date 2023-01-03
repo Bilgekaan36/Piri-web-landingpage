@@ -133,7 +133,7 @@ const Process = (props) => {
         </StyledHeaderGrid>
         <Box>
           {textData.map((text) => (
-            <div key={text.title}>
+            <div key={text.id}>
               <StyledHeadTitle sx={{ display: { xs: "inherit", md: "none" } }}>
                 {text.title}
               </StyledHeadTitle>
@@ -167,7 +167,9 @@ const Process = (props) => {
                   </StyledHeadTitle>
                   <StyledHeadContent>{text.content}</StyledHeadContent>
                   {text.subtitles.map((subtitle) => (
-                    <StyledSubtitle key={subtitle}>{subtitle}</StyledSubtitle>
+                    <StyledSubtitle key={subtitle.textId}>
+                      {subtitle.text}
+                    </StyledSubtitle>
                   ))}
                 </Grid>
 
@@ -215,6 +217,7 @@ const Process = (props) => {
 
 const textData = [
   {
+    id: 0,
     title: (
       <Translation>
         {(t, { i18n }) => <>{t("processpage.titleDiscovery")}</>}
@@ -226,19 +229,35 @@ const textData = [
       </Translation>
     ),
     subtitles: [
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleDiscovery1")}</>}
-      </Translation>,
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleDiscovery2")}</>}
-      </Translation>,
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleDiscovery3")}</>}
-      </Translation>,
+      {
+        textId: "subtitleDiscovery1",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleDiscovery1")}</>}
+          </Translation>
+        ),
+      },
+      {
+        textId: "subtitleDiscovery2",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleDiscovery2")}</>}
+          </Translation>
+        ),
+      },
+      {
+        textId: "subtitleDiscovery3",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleDiscovery3")}</>}
+          </Translation>
+        ),
+      },
     ],
     lottieFile: discoveryCall,
   },
   {
+    id: 1,
     title: (
       <Translation>
         {(t, { i18n }) => <>{t("processpage.titleStrategy")}</>}
@@ -250,19 +269,35 @@ const textData = [
       </Translation>
     ),
     subtitles: [
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleStrategy1")}</>}
-      </Translation>,
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleStrategy2")}</>}
-      </Translation>,
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleStrategy3")}</>}
-      </Translation>,
+      {
+        textId: "subtitleStrategy1",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleStrategy1")}</>}
+          </Translation>
+        ),
+      },
+      {
+        textId: "subtitleStrategy2",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleStrategy2")}</>}
+          </Translation>
+        ),
+      },
+      {
+        textId: "subtitleStrategy3",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleStrategy3")}</>}
+          </Translation>
+        ),
+      },
     ],
     lottieFile: strategy,
   },
   {
+    id: 2,
     title: (
       <Translation>
         {(t, { i18n }) => <>{t("processpage.titleDesign")}</>}
@@ -274,16 +309,27 @@ const textData = [
       </Translation>
     ),
     subtitles: [
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleDesign1")}</>}
-      </Translation>,
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleDesign2")}</>}
-      </Translation>,
+      {
+        textId: "subtitleDesign1",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleDesign1")}</>}
+          </Translation>
+        ),
+      },
+      {
+        textId: "subtitleDesign2",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleDesign2")}</>}
+          </Translation>
+        ),
+      },
     ],
     lottieFile: design,
   },
   {
+    id: 3,
     title: (
       <Translation>
         {(t, { i18n }) => <>{t("processpage.titleDevelopment")}</>}
@@ -295,22 +341,43 @@ const textData = [
       </Translation>
     ),
     subtitles: [
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleDevelopment1")}</>}
-      </Translation>,
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleDevelopment2")}</>}
-      </Translation>,
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleDevelopment3")}</>}
-      </Translation>,
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleDevelopment4")}</>}
-      </Translation>,
+      {
+        textId: "subtitleDevelopment1",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleDevelopment1")}</>}
+          </Translation>
+        ),
+      },
+      {
+        textId: "subtitleDevelopment2",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleDevelopment2")}</>}
+          </Translation>
+        ),
+      },
+      {
+        textId: "subtitleDevelopment3",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleDevelopment3")}</>}
+          </Translation>
+        ),
+      },
+      {
+        textId: "subtitleDevelopment4",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleDevelopment4")}</>}
+          </Translation>
+        ),
+      },
     ],
     lottieFile: development,
   },
   {
+    id: 4,
     title: (
       <Translation>
         {(t, { i18n }) => <>{t("processpage.titleOnboarding")}</>}
@@ -322,18 +389,38 @@ const textData = [
       </Translation>
     ),
     subtitles: [
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleOnboarding1")}</>}
-      </Translation>,
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleOnboarding2")}</>}
-      </Translation>,
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleOnboarding3")}</>}
-      </Translation>,
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.subtitleOnboarding4")}</>}
-      </Translation>,
+      {
+        textId: "subtitleOnboarding1",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleOnboarding1")}</>}
+          </Translation>
+        ),
+      },
+      {
+        textId: "subtitleOnboarding2",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleOnboarding2")}</>}
+          </Translation>
+        ),
+      },
+      {
+        textId: "subtitleOnboarding3",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleOnboarding3")}</>}
+          </Translation>
+        ),
+      },
+      {
+        textId: "subtitleOnboarding4",
+        text: (
+          <Translation>
+            {(t, { i18n }) => <>{t("processpage.subtitleOnboarding4")}</>}
+          </Translation>
+        ),
+      },
     ],
     lottieFile: onboarding,
   },

@@ -3,74 +3,148 @@ import styles from "./BenefitsStepper.module.css";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
-import { Paper, Typography, Button } from "@mui/material";
+import { Typography, Button, styled, Grid } from "@mui/material";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { Translation } from "react-i18next";
 
-import lottieJson from "../../public/benefitspage_assets/barChart.json";
-import astronaut from "../../public/benefitspage_assets/astronaut.json";
-import developer from "../../public/benefitspage_assets/hacker.json";
+import conversion from "../../public/benefitspage_assets/conversion.json";
+import webdesign from "../../public/benefitspage_assets/web-design.json";
+import webdevelopment from "../../public/benefitspage_assets/web-development.json";
+import responsivedesign from "../../public/benefitspage_assets/responsive-design.json";
+import brandingdesign from "../../public/benefitspage_assets/branding-design.json";
+import mission from "../../public/benefitspage_assets/mission.json";
 
 const BenefitsStepper = ({ activeStep }) => {
   const maxSteps = steps.length;
 
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          pl: 2,
-          color: "white",
-          bgcolor: "transparent",
-        }}
-      >
-        <Typography
-          sx={{ fontSize: { xs: "1.5rem", md: "5rem" }, fontWeight: "700" }}
-        >
-          {steps[activeStep].label}
-        </Typography>
-      </Paper>
-      <Box
-        sx={{
-          minHeight: { xs: "none", md: 700 },
-          maxWidth: { xs: "100%", md: "100%" },
-          display: "flex",
-          alignItems: "center",
-          width: "100%",
-          flexDirection: { xs: "column-reverse", md: "row" },
-          p: 2,
-          color: "white",
-          bgcolor: "transparent",
-        }}
-      >
-        <Typography
-          sx={{ fontSize: { xs: "0.75rem", md: "1.75rem" }, fontWeight: "200" }}
-        >
-          {steps[activeStep].description}
-        </Typography>
+  const StyledStepperTitle = styled(Typography)(({ theme }) => ({
+    fontSize: "3vw",
+    fontWeight: "700",
+    color: "white",
+    marginBottom: "32px",
+    textAlign: "center",
+    transition: "all 1s ease-in-out",
 
-        <Player
-          autoplay
-          loop={false}
-          src={steps[activeStep].lottieFile}
-          keepLastFrame={true}
-          className={styles.lottiePlayer}
-        >
-          <Controls
-            visible={false}
-            buttons={["play", "repeat", "frame", "debug"]}
-          />
-        </Player>
-      </Box>
+    [theme.breakpoints.down("xxl")]: {
+      fontSize: "3.5vw",
+    },
+    [theme.breakpoints.down("lg")]: {},
+    [theme.breakpoints.down("mm")]: {},
+    [theme.breakpoints.down("md")]: {},
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "5vw",
+    },
+    [theme.breakpoints.down("xs")]: {},
+  }));
+
+  const StyledStepperContent = styled(Typography)(({ theme }) => ({
+    fontSize: "1.25vw",
+    fontWeight: "200",
+    transition: "all 1s ease-in-out",
+    paddingRight: "1vw",
+    [theme.breakpoints.down("xxl")]: {
+      fontSize: "1.8vw",
+    },
+    [theme.breakpoints.down("xl")]: {
+      fontSize: "2vw",
+    },
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "2vw",
+    },
+    [theme.breakpoints.down("mm")]: {
+      fontSize: "1.7vw",
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "3vw",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "3.75vw",
+    },
+    [theme.breakpoints.down("xs")]: {},
+  }));
+
+  const StyledStepperGrid = styled(Grid)(({ theme }) => ({
+    color: "white",
+    bgcolor: "transparent",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    transition: "all 1s ease-in-out",
+    [theme.breakpoints.down("xl")]: {},
+    [theme.breakpoints.down("lg")]: {},
+    [theme.breakpoints.down("md")]: {},
+    [theme.breakpoints.down("sm")]: {},
+    [theme.breakpoints.down("xs")]: {},
+  }));
+
+  const StyledGrid = styled(Grid)(({ theme }) => ({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    transition: "all 1s ease-in-out",
+    // border: "1px solid red",
+    height: "50vh",
+    [theme.breakpoints.down("xxl")]: {
+      height: "50vh",
+    },
+    [theme.breakpoints.down("xl")]: {
+      height: "50vh",
+    },
+    [theme.breakpoints.down("lg")]: {
+      height: "50vh",
+    },
+    [theme.breakpoints.down("mm")]: {
+      height: "50vh",
+    },
+    [theme.breakpoints.down("md")]: {
+      height: "30vh",
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "30vh",
+    },
+    [theme.breakpoints.down("xs")]: {},
+  }));
+
+  return (
+    <Box
+      sx={{
+        // display: "flex",
+        // flexDirection: "column",
+        // justifyContent: "center",
+        // alignItems: "center",
+        transition: "all 1s ease-in-out",
+      }}
+    >
+      <StyledStepperTitle>{steps[activeStep].label}</StyledStepperTitle>
+      <StyledStepperGrid container spacing={0}>
+        <StyledGrid item xs={12} sm={12} md={6} lg={6}>
+          <Player
+            autoplay
+            loop={true}
+            src={steps[activeStep].lottieFile}
+            // keepLastFrame={true}
+            className={styles.lottiePlayer}
+          >
+            <Controls
+              visible={false}
+              buttons={["play", "repeat", "frame", "debug"]}
+            />
+          </Player>
+        </StyledGrid>
+        <StyledGrid item xs={12} sm={12} md={6} lg={6}>
+          <StyledStepperContent>
+            {steps[activeStep].description}
+          </StyledStepperContent>
+        </StyledGrid>
+      </StyledStepperGrid>
       <MobileStepper
         variant='progress'
         steps={maxSteps}
         position='static'
         activeStep={activeStep}
-        sx={{ bgcolor: "transparent" }}
+        sx={{
+          bgcolor: "transparent",
+        }}
         nextButton={
           <Button size='small' disabled={activeStep === maxSteps - 1}></Button>
         }
@@ -94,7 +168,7 @@ const steps = [
         {(t, { i18n }) => <>{t("benefitsStepper.description1")}</>}
       </Translation>
     ),
-    lottieFile: lottieJson,
+    lottieFile: conversion,
   },
   {
     label: (
@@ -107,7 +181,7 @@ const steps = [
         {(t, { i18n }) => <>{t("benefitsStepper.description2")}</>}
       </Translation>
     ),
-    lottieFile: astronaut,
+    lottieFile: webdesign,
   },
   {
     label: (
@@ -120,7 +194,7 @@ const steps = [
         {(t, { i18n }) => <>{t("benefitsStepper.description3")}</>}
       </Translation>
     ),
-    lottieFile: developer,
+    lottieFile: webdevelopment,
   },
   {
     label: (
@@ -133,7 +207,7 @@ const steps = [
         {(t, { i18n }) => <>{t("benefitsStepper.description4")}</>}
       </Translation>
     ),
-    lottieFile: astronaut,
+    lottieFile: responsivedesign,
   },
   {
     label: (
@@ -146,7 +220,7 @@ const steps = [
         {(t, { i18n }) => <>{t("benefitsStepper.description5")}</>}
       </Translation>
     ),
-    lottieFile: lottieJson,
+    lottieFile: brandingdesign,
   },
   {
     label: (
@@ -159,6 +233,6 @@ const steps = [
         {(t, { i18n }) => <>{t("benefitsStepper.description6")}</>}
       </Translation>
     ),
-    lottieFile: astronaut,
+    lottieFile: mission,
   },
 ];

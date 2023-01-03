@@ -56,73 +56,6 @@ a {
   opacity: 0;
 } */
 
-#cursor.-activated {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.tags-cloud {
-  height: 1000px;
-  width: 1000px;
-  list-style: none;
-  opacity: 0;
-  color: white;
-}
-
-.tags-cloud.-loaded {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.tags-cloud > .tag {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 5rem;
-  font-weight: bold;
-  transition: transform 0.5s linear, opacity 0.5s linear;
-}
-
-.tags-cloud > .tag > .wrap {
-  display: inline-block;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@media (max-width: 900px) {
-  .tags-cloud {
-    height: 300px;
-    width: 300px;
-    overflow: hidden;
-    z-index: 1;
-  }
-
-  .tags-cloud > .tag {
-    position: absolute;
-    top: 30%;
-    left: 30%;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-
-  .tags-cloud > .tag > .wrap {
-    display: inline-block;
-    transform: translateX(-1%) translateY(-1%);
-  }
-
-  .MuiImageListItemBar-title {
-    font-size: 1rem;
-    line-height: normal;
-    border-bottom: 1px solid white;
-  }
-}
-
 .MuiCircularProgress-root {
   display: flex;
   justify-content: center;
@@ -133,3 +66,17 @@ a {
 .MuiCircularProgress-colorPrimary {
   color: white;
 }
+
+.lf-player-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* @media (max-width: 900px) {
+  .lf-player-container {
+    height: auto;
+    width: 50%;
+    overflow: hidden;
+  }
+} */

@@ -20,31 +20,46 @@ const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
+
+  [theme.breakpoints.down("mm")]: {
+    height: "50vh",
+  },
   [theme.breakpoints.down("md")]: {
-    height: "12vh",
+    height: "15vh",
   },
 }));
 
 const StyledLeftTitleGrid = styled(Grid)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  paddingTop: "148px",
+  paddingTop: "18px",
   height: "100%",
-  [theme.breakpoints.down("md")]: {
-    paddingTop: "18px",
-  },
+  [theme.breakpoints.down("md")]: {},
 }));
 
 const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.down("md")]: {
+  fontSize: "0.75vw",
+  [theme.breakpoints.down("lg")]: {
     fontSize: "0.6rem",
   },
 }));
 
 const StyledRightTitleText = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.down("md")]: {
-    fontSize: "1.7rem",
+  fontSize: "4vw",
+  // [theme.breakpoints.down("xxl")]: {
+  //   fontSize: "3.5vw",
+  // },
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("mm")]: {
+    fontSize: "4vw",
   },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "4vw",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "4vw",
+  },
+  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledRightTitleGrid = styled(Grid)(({ theme }) => ({
@@ -52,42 +67,40 @@ const StyledRightTitleGrid = styled(Grid)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "flex-start",
   height: "100%",
-  paddingTop: "148px",
+  paddingTop: "18px",
   [theme.breakpoints.down("md")]: {
     fontSize: "1rem",
-    paddingTop: "18px",
   },
 }));
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
   position: "relative",
-  [theme.breakpoints.up("md")]: {
-    padding: "80px",
-  },
-  [theme.breakpoints.down("md")]: {
-    padding: "32px 0px",
-  },
+  [theme.breakpoints.down("md")]: {},
 }));
 
 const StyledFooterBox = styled(Box)(({ theme }) => ({
-  padding: "132px 0",
+  padding: "12vw 0",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("md")]: {
+    padding: "14vw 0",
+  },
 }));
 
 const StyledFooterText = styled(Typography)(({ theme }) => ({
   lineHeight: "1.2",
   fontWeight: "700",
+  textAlign: "center",
   [theme.breakpoints.down("md")]: {
-    fontSize: "2rem",
+    fontSize: "1.75rem",
   },
 }));
 
 const StyledFooterAuthor = styled(Typography)(({ theme }) => ({
+  textAlign: "center",
   [theme.breakpoints.down("md")]: {
     fontSize: "1rem",
   },
@@ -95,21 +108,16 @@ const StyledFooterAuthor = styled(Typography)(({ theme }) => ({
 
 const Workspage = ({ isShowWorkspage }) => {
   const theme = useTheme();
-  const matchDownMd = useMediaQuery(theme.breakpoints.down("md"));
+  const matchDownMd = useMediaQuery(theme.breakpoints.down("lg"));
   const { t, i18n } = useTranslation();
 
   return (
     <StyledContainer
-      disableGutters
       maxWidth='false'
       sx={{ display: isShowWorkspage ? "block" : "none" }}
     >
-      <StyledHeaderGrid
-        container
-        spacing={0}
-        sx={{ padding: { xs: "0 10px" } }}
-      >
-        <StyledLeftTitleGrid item xs={4} md={5}>
+      <StyledHeaderGrid container spacing={0}>
+        <StyledLeftTitleGrid item xs={7} sm={7} md={8}>
           <StyledLeftTitleText variant='smallTitle' sx={{ color: "#1e1f26" }}>
             {t("workspage.leftTitle1")}
           </StyledLeftTitleText>
@@ -120,13 +128,13 @@ const Workspage = ({ isShowWorkspage }) => {
             {t("workspage.leftTitle2")}
           </StyledLeftTitleText>
         </StyledLeftTitleGrid>
-        <StyledRightTitleGrid item xs={8} md={7}>
+        <StyledRightTitleGrid item xs={4} sm={4} md={4}>
           <StyledRightTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
             {t("workspage.rightTitle1")}
           </StyledRightTitleText>
         </StyledRightTitleGrid>
       </StyledHeaderGrid>
-      <ImageList cols={matchDownMd ? 1 : 2} rowHeight={matchDownMd ? 120 : 400}>
+      <ImageList cols={matchDownMd ? 1 : 1} rowHeight={matchDownMd ? 120 : 380}>
         {itemData.map((item) => (
           <ImageListItem
             rows={4}
@@ -150,24 +158,24 @@ const Workspage = ({ isShowWorkspage }) => {
               autoPlay={"autoplay"}
               loop
             />
-            <ImageListItemBar
+            {/* <ImageListItemBar
               title={item.title}
               sx={{
                 background: "rgba(0, 0, 0, 0)",
-                margin: { xs: "25px 50px", md: "100px 200px" },
+                margin: { xs: "10vw 10vw", md: "10vw 10vw" },
               }}
-            />
+            /> */}
           </ImageListItem>
         ))}
       </ImageList>
       <StyledFooterBox>
         <StyledFooterText variant='bigTitle' sx={{ color: "#1e1f26" }}>
-          "MAKE IT SIMPLE,
+          {t("workspage.quote1")}
         </StyledFooterText>
         <StyledFooterText variant='bigTitle' sx={{ color: "#1e1f26" }}>
-          BUT SIGINIFICANT."
+          {t("workspage.quote2")}
         </StyledFooterText>
-        <StyledFooterAuthor variant='h4'>Dieter Rams</StyledFooterAuthor>
+        <StyledFooterAuthor variant='h4'>Don Draper</StyledFooterAuthor>
       </StyledFooterBox>
     </StyledContainer>
   );
@@ -217,23 +225,5 @@ const itemData = [
     title: "Next.js",
     author: "@bkristastucchio",
     video: nextjs,
-  },
-  {
-    id: 7,
-    title: "bilgekaanyilmaz.com",
-    author: "@rollelflex_graphy726",
-    video: portfolio,
-  },
-  {
-    id: 8,
-    title: "Next.js",
-    author: "@bkristastucchio",
-    video: nextjs,
-  },
-  {
-    id: 9,
-    title: "bilgekaanyilmaz.com",
-    author: "@rollelflex_graphy726",
-    video: portfolio,
   },
 ];
