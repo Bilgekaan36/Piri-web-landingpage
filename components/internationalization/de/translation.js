@@ -35,55 +35,51 @@ const translation = {
     description3Onlineshop: "Mache aus Besuchern echte Kunden",
   },
   benefitspage: {
-    leftTitle1: "DEINE",
-    leftTitle2: "VORTEILE",
-    rightTitle1: "EINE NEUE",
-    rightTitle2: "ERFAHRUNG",
-    rightTitle3: "IN ALLEM",
+    title1: "DEINE",
+    title2: "VORTEILE",
   },
   benefitsStepper: {
     label1: "HOHE KONVERSION - DEIN ERFOLG",
-    description1: `Eine hohe Konversion ist das Ziel einer jeden Website oder Applikation. 
-                   Die sogenannte Conversion-Rate bezeichnet die Anzahl der Besucher im Verhältnis zur Anzahl der Abschlüsse. 
+    sublabel1:
+      "Eine hohe Konversion ist das Ziel einer jeden Website oder Applikation. ",
+    description1: `Die sogenannte Conversion-Rate bezeichnet die Anzahl der Besucher im Verhältnis zur Anzahl der Abschlüsse. 
                    Kaufen beispielsweise 10 von insgesamt 1.000 Besuchern der Webseite das angebotene Produkt, liegt die Conversion Rate bei 1 %.
-                   Nachdem wir unsere Strategie und Ziele festgelegt haben setzen wir die entscheidenden Faktoren ein und positionieren uns optimal im Markt.
                    `,
     label2: "QUALITÄT IM DESIGN - MEIN ANSPRUCH",
-    description2: `Dass gutes Design gut für das Unternehmensimage und somit auch für den Verkaufsprozess ist, steht außer Zweifel.
-                   Gutes Design beruht nie auf Zufall oder Willkür, die Form wird von der Funktion bestimmt und jedes Gestaltungselement muss einen Zweck erfüllen. 
-                   Die Marke, das Produkt ist ausschlaggebend für seine Gestaltung. 
-                   Weniger ist mehr, die Gestaltung konzentriert sich auf das Wesentliche. Einfachheit steht im Vordergrund.`,
+    sublabel2:
+      "Dass gutes Design gut für das Unternehmensimage und somit auch für den Verkaufsprozess ist, steht außer Zweifel.",
+    description2: `Gutes Design beruht nie auf Zufall oder Willkür, die Form wird von der Funktion bestimmt und jedes Gestaltungselement muss einen Zweck erfüllen. 
+                   Die Marke, das Produkt ist ausschlaggebend für seine Gestaltung.`,
     label3: "FRONTEND & BACKEND - AUS EINER HAND",
-    description3: `Frontend und Backend sind zwei Begriffe aus der Software Entwicklung. 
-                   Das Frontend umfasst alles, was der Benutzer einer Software oder einer Webseite sieht, berührt und erlebt.
-                   Das Back-End bezieht sich auf alles, was der Benutzer einer Software oder einer Website nicht sehen kann. 
-                   Hierzu zählt beispielsweise der Server, die Datenbank in dem die Daten gespeichert sind.`,
+    sublabel3:
+      "Frontend und Backend sind zwei Begriffe aus der Software Entwicklung. ",
+    description3: `Das Frontend umfasst alles, was der Benutzer einer Software oder einer Webseite sieht, berührt und erlebt.
+                   Das Back-End bezieht sich auf alles, was der Benutzer einer Software oder einer Website nicht sehen kann. `,
     label4: "RESPONSIVE WEBDESIGN - FÜR JEDES PROJEKT",
-    description4: `Neben der Ladegeschwindigkeit spielt auch Responsive Design für gutes Frontend eine wichtige Rolle. 
-                   Gerade in Zeiten von Mobile First verwenden User Endgeräte mit unterschiedlichen Größen und Displays. 
-                   Daher sollten Websites und Bilder immer so gestaltet werden, dass sie für alle Viewports optimal geeignet sind. 
-                   Das hilft nicht nur (mobilen) Nutzern, sondern erleichtert auch den Suchmaschinenbots das Crawlen einer Website.`,
+    sublabel4:
+      "Neben der Ladegeschwindigkeit spielt auch Responsive Design für gutes Frontend eine wichtige Rolle.",
+    description4: ` 
+                   Gerade in Zeiten von Mobile First verwenden User Endgeräte mit unterschiedlichen Größen und Displays.`,
     label5: "DEINE VISITENKARTE - DEIN KUNDENKONTAKT",
-    description5: `Oft ist Deine Website der erste Kontaktpunkt mit Deiner Marke und repräsentiert somit auch Dein Unternehmen.
-                   Steche heraus mit einer klaren Struktur und einem guten Benutzerlebnis.
-                   Überzeuge deine Nutzer in den ersten Sekunden und stärke das Vertrauen in Deine Marke.`,
+    sublabel5:
+      "Oft ist Deine Website der erste Kontaktpunkt mit Deiner Marke und repräsentiert somit auch Dein Unternehmen.",
+    description5: `
+                   Steche heraus mit einer klaren Struktur und einem guten Benutzerlebnis.`,
     label6: "SCHNELL & SICHER - OPTIMALES KUNDENERLEBNIS",
-    description6: `Eine Website wird von ihren Besuchern häufiger vorzeitig verlassen, wenn sie nicht schnell genug geladen wird. 
-                   Drei Sekunden gelten in der Regel als Maximalwert für die Ladedauer, wobei 200ms als optimaler Wert gilt. 
-                   Je schneller Deine Webseite lädt, desto höher sind die Chancen auf gute Rankings.`,
+    sublabel6:
+      "Eine Website wird von ihren Besuchern häufiger vorzeitig verlassen, wenn sie nicht schnell genug geladen wird. ",
+    description6: `
+                   Drei Sekunden gelten in der Regel als Maximalwert für die Ladedauer, wobei 200ms als optimaler Wert gilt.`,
   },
   workspage: {
-    leftTitle1: "MEINE",
-    leftTitle2: "PROJEKTE",
-    rightTitle1: "AUSGEWÄHLTE PROJEKTE",
+    title1: "MEINE",
+    title2: "PROJEKTE",
     quote1: "Machen Sie es einfach,",
     quote2: "aber bedeutsam.",
   },
   toolspage: {
-    leftTitle1: "TECH",
-    leftTitle2: "STACK",
-    rightTitle1: "BENUTZTE",
-    rightTitle2: "TECHNOLOGIEN",
+    title1: "TECH",
+    title2: "STACK",
   },
   toolsStepper: {
     contentReact:

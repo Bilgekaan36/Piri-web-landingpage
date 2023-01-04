@@ -1,5 +1,14 @@
 import Box from "@mui/material/Box";
-import { Paper, Typography, Grid, CircularProgress } from "@mui/material";
+import {
+  Paper,
+  Typography,
+  Grid,
+  CircularProgress,
+  Card,
+  CardActionArea,
+  CardMedia,
+  CardContent,
+} from "@mui/material";
 import { Translation } from "react-i18next";
 
 import ReactSvg from "../technologies/ReactSvg.js";
@@ -19,93 +28,81 @@ const ToolsStepper = ({ activeStep }) => {
   const maxSteps = technologies.length;
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid
-        container
-        spacing={4}
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-      >
+    <Grid
+      container
+      spacing={4}
+      columns={10}
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: { xs: "0 32px", lg: "0 132px" },
+      }}
+    >
+      {technologies.map((data) => (
         <Grid
           item
-          xs={12}
+          xs={10}
+          sm={4}
           md={4}
+          mm={3}
+          lg={3}
+          xl={2}
+          xxl={2}
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <Paper
-            square
-            elevation={0}
+          <Card
             sx={{
-              display: "flex",
-              alignItems: "center",
-              color: "white",
-              bgcolor: "transparent",
+              height: 400,
+              width: {
+                xs: "100%",
+                sm: "100%",
+                md: "100%",
+                mm: "100%",
+                lg: "100%",
+              },
             }}
           >
-            <Typography
-              sx={{ fontSize: { xs: "3rem", md: "7rem" }, fontWeight: "700" }}
+            <CardActionArea
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
             >
-              {technologies[activeStep].title}
-            </Typography>
-          </Paper>
+              {/* <CardMedia
+                component='img'
+                height='300'
+                image='/static/images/cards/contemplative-reptile.jpg'
+                alt='green iguana'
+              /> */}
+              <Box
+                sx={{
+                  width: "150px",
+                  height: "100px",
+                  margin: "32px",
+                }}
+              >
+                {data.logo}
+              </Box>
+              <Typography gutterBottom variant='h5' component='div'>
+                {data.title}
+              </Typography>
+              <CardContent>
+                <Typography variant='body2' color='text.secondary'>
+                  {data.content}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
         </Grid>
-        <Grid
-          item
-          xs={8}
-          md={3}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <Box
-            sx={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              overflow: "hidden",
-            }}
-          >
-            {technologies[activeStep].logo}
-          </Box>
-          <CircularProgress
-            size='100'
-            thickness={0.5}
-            variant='determinate'
-            value={activeStep * 9.09}
-          />
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          md={4}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: { xs: "0.8rem", md: "1.75rem" },
-              fontWeight: "200",
-              color: "white",
-              width: "60%",
-            }}
-          >
-            {technologies[activeStep].content}
-          </Typography>
-        </Grid>
-      </Grid>
-    </Box>
+      ))}
+    </Grid>
   );
 };
 
@@ -176,24 +173,24 @@ const technologies = [
     ),
   },
 
-  {
-    logo: <HtmlSvg />,
-    title: "HTML",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentHtml")}</>}
-      </Translation>
-    ),
-  },
-  {
-    logo: <CssSvg />,
-    title: "CSS",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentCss")}</>}
-      </Translation>
-    ),
-  },
+  // {
+  //   logo: <HtmlSvg />,
+  //   title: "HTML",
+  //   content: (
+  //     <Translation>
+  //       {(t, { i18n }) => <>{t("toolsStepper.contentHtml")}</>}
+  //     </Translation>
+  //   ),
+  // },
+  // {
+  //   logo: <CssSvg />,
+  //   title: "CSS",
+  //   content: (
+  //     <Translation>
+  //       {(t, { i18n }) => <>{t("toolsStepper.contentCss")}</>}
+  //     </Translation>
+  //   ),
+  // },
   {
     logo: <JavascriptSvg />,
     title: "JAVASCRIPT",

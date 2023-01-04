@@ -18,47 +18,79 @@ const BenefitsStepper = ({ activeStep }) => {
   const maxSteps = steps.length;
 
   const StyledStepperTitle = styled(Typography)(({ theme }) => ({
-    fontSize: "3vw",
-    fontWeight: "700",
+    fontSize: "1.2rem",
+    fontWeight: "400",
+    color: "#a0a0a0",
+    transition: "all 1s ease-in-out",
+    [theme.breakpoints.down("xxl")]: {
+      // fontSize: "1.8vw",
+    },
+    [theme.breakpoints.down("xl")]: {
+      fontSize: "1rem",
+    },
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "1.1rem",
+    },
+    [theme.breakpoints.down("mm")]: {
+      fontSize: "0.85rem",
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "0.85rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "0.8rem",
+    },
+    [theme.breakpoints.down("xs")]: {},
+  }));
+
+  const StyledStepperSubTitle = styled(Typography)(({ theme }) => ({
+    fontSize: "2rem",
+    fontWeight: "500",
     color: "white",
-    marginBottom: "32px",
-    textAlign: "center",
+    marginBottom: "12px",
     transition: "all 1s ease-in-out",
 
     [theme.breakpoints.down("xxl")]: {
-      fontSize: "3.5vw",
+      fontSize: "2rem",
     },
-    [theme.breakpoints.down("lg")]: {},
-    [theme.breakpoints.down("mm")]: {},
+    [theme.breakpoints.down("xl")]: {
+      fontSize: "1.5rem",
+    },
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "1.7rem",
+    },
+    [theme.breakpoints.down("mm")]: {
+      fontSize: "1.3rem",
+    },
     [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {
-      fontSize: "5vw",
+      fontSize: "1.25rem",
     },
     [theme.breakpoints.down("xs")]: {},
   }));
 
   const StyledStepperContent = styled(Typography)(({ theme }) => ({
-    fontSize: "1.25vw",
+    fontSize: "1.2rem",
     fontWeight: "200",
+    color: "#a0a0a0",
     transition: "all 1s ease-in-out",
-    paddingRight: "1vw",
     [theme.breakpoints.down("xxl")]: {
-      fontSize: "1.8vw",
+      // fontSize: "1.8vw",
     },
     [theme.breakpoints.down("xl")]: {
-      fontSize: "2vw",
+      fontSize: "1rem",
     },
     [theme.breakpoints.down("lg")]: {
-      fontSize: "2vw",
+      fontSize: "1.1rem",
     },
     [theme.breakpoints.down("mm")]: {
-      fontSize: "1.7vw",
+      fontSize: "0.85rem",
     },
     [theme.breakpoints.down("md")]: {
-      fontSize: "3vw",
+      fontSize: "0.85rem",
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "3.75vw",
+      fontSize: "0.8rem",
     },
     [theme.breakpoints.down("xs")]: {},
   }));
@@ -70,87 +102,72 @@ const BenefitsStepper = ({ activeStep }) => {
     justifyContent: "center",
     alignItems: "center",
     transition: "all 1s ease-in-out",
+    marginBottom: "100px",
+
     [theme.breakpoints.down("xl")]: {},
     [theme.breakpoints.down("lg")]: {},
-    [theme.breakpoints.down("md")]: {},
+    [theme.breakpoints.down("mm")]: {},
+    [theme.breakpoints.down("md")]: {
+      marginBottom: "80px",
+    },
     [theme.breakpoints.down("sm")]: {},
     [theme.breakpoints.down("xs")]: {},
   }));
 
   const StyledGrid = styled(Grid)(({ theme }) => ({
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
     transition: "all 1s ease-in-out",
     // border: "1px solid red",
-    height: "50vh",
-    [theme.breakpoints.down("xxl")]: {
-      height: "50vh",
-    },
-    [theme.breakpoints.down("xl")]: {
-      height: "50vh",
-    },
+    height: "350px",
+    [theme.breakpoints.down("xxl")]: {},
+    [theme.breakpoints.down("xl")]: {},
     [theme.breakpoints.down("lg")]: {
-      height: "50vh",
+      height: "300px",
     },
     [theme.breakpoints.down("mm")]: {
-      height: "50vh",
+      height: "250px",
     },
     [theme.breakpoints.down("md")]: {
-      height: "30vh",
+      height: "300px",
     },
     [theme.breakpoints.down("sm")]: {
-      height: "30vh",
+      height: "300px",
     },
     [theme.breakpoints.down("xs")]: {},
   }));
 
   return (
-    <Box
-      sx={{
-        // display: "flex",
-        // flexDirection: "column",
-        // justifyContent: "center",
-        // alignItems: "center",
-        transition: "all 1s ease-in-out",
-      }}
-    >
-      <StyledStepperTitle>{steps[activeStep].label}</StyledStepperTitle>
-      <StyledStepperGrid container spacing={0}>
-        <StyledGrid item xs={12} sm={12} md={6} lg={6}>
-          <Player
-            autoplay
-            loop={true}
-            src={steps[activeStep].lottieFile}
-            // keepLastFrame={true}
-            className={styles.lottiePlayer}
-          >
-            <Controls
-              visible={false}
-              buttons={["play", "repeat", "frame", "debug"]}
-            />
-          </Player>
-        </StyledGrid>
-        <StyledGrid item xs={12} sm={12} md={6} lg={6}>
-          <StyledStepperContent>
-            {steps[activeStep].description}
-          </StyledStepperContent>
-        </StyledGrid>
-      </StyledStepperGrid>
-      <MobileStepper
-        variant='progress'
-        steps={maxSteps}
-        position='static'
-        activeStep={activeStep}
-        sx={{
-          bgcolor: "transparent",
-        }}
-        nextButton={
-          <Button size='small' disabled={activeStep === maxSteps - 1}></Button>
-        }
-        backButton={<Button size='small' disabled={activeStep === 0}></Button>}
-      />
-    </Box>
+    <>
+      {steps.map((step) => (
+        <StyledStepperGrid
+          container
+          spacing={0}
+          sx={{ flexDirection: step.flexDirection }}
+        >
+          <StyledGrid item xs={10} sm={4} mm={4} md={4} lg={3}>
+            <Player
+              autoplay
+              loop={true}
+              src={step.lottieFile}
+              // keepLastFrame={true}
+              className={styles.lottiePlayer}
+            >
+              <Controls
+                visible={false}
+                buttons={["play", "repeat", "frame", "debug"]}
+              />
+            </Player>
+          </StyledGrid>
+          <StyledGrid item xs={10} sm={6} mm={6} md={6} lg={5}>
+            <StyledStepperTitle>{step.label}</StyledStepperTitle>
+            <StyledStepperSubTitle>{step.sublabel}</StyledStepperSubTitle>
+            <StyledStepperContent>{step.description}</StyledStepperContent>
+          </StyledGrid>
+        </StyledStepperGrid>
+      ))}
+    </>
   );
 };
 
@@ -158,9 +175,15 @@ export default BenefitsStepper;
 
 const steps = [
   {
+    flexDirection: "row",
     label: (
       <Translation>
         {(t, { i18n }) => <>{t("benefitsStepper.label1")}</>}
+      </Translation>
+    ),
+    sublabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.sublabel1")}</>}
       </Translation>
     ),
     description: (
@@ -171,9 +194,15 @@ const steps = [
     lottieFile: conversion,
   },
   {
+    flexDirection: "row-reverse",
     label: (
       <Translation>
         {(t, { i18n }) => <>{t("benefitsStepper.label2")}</>}
+      </Translation>
+    ),
+    sublabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.sublabel2")}</>}
       </Translation>
     ),
     description: (
@@ -184,9 +213,15 @@ const steps = [
     lottieFile: webdesign,
   },
   {
+    flexDirection: "row",
     label: (
       <Translation>
         {(t, { i18n }) => <>{t("benefitsStepper.label3")}</>}
+      </Translation>
+    ),
+    sublabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.sublabel3")}</>}
       </Translation>
     ),
     description: (
@@ -197,9 +232,15 @@ const steps = [
     lottieFile: webdevelopment,
   },
   {
+    flexDirection: "row-reverse",
     label: (
       <Translation>
         {(t, { i18n }) => <>{t("benefitsStepper.label4")}</>}
+      </Translation>
+    ),
+    sublabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.sublabel4")}</>}
       </Translation>
     ),
     description: (
@@ -210,9 +251,15 @@ const steps = [
     lottieFile: responsivedesign,
   },
   {
+    flexDirection: "row",
     label: (
       <Translation>
         {(t, { i18n }) => <>{t("benefitsStepper.label5")}</>}
+      </Translation>
+    ),
+    sublabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.sublabel5")}</>}
       </Translation>
     ),
     description: (
@@ -223,9 +270,15 @@ const steps = [
     lottieFile: brandingdesign,
   },
   {
+    flexDirection: "row-reverse",
     label: (
       <Translation>
         {(t, { i18n }) => <>{t("benefitsStepper.label6")}</>}
+      </Translation>
+    ),
+    sublabel: (
+      <Translation>
+        {(t, { i18n }) => <>{t("benefitsStepper.sublabel6")}</>}
       </Translation>
     ),
     description: (

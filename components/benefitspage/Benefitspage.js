@@ -6,70 +6,155 @@ import { useTranslation } from "react-i18next";
 
 import BenefitsStepper from "./BenefitsStepper";
 
-const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
+const StyledHeader = styled(Box)(({ theme }) => ({
   display: "flex",
-  justifyContent: "space-between",
-  alignItems: "flex-start",
-  // height: "30%",
+  // height: "30vh",
+  overflow: "hidden",
 }));
 
-const StyledLeftTitleGrid = styled(Grid)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  paddingTop: "18px",
-  height: "100%",
+const StyledTitleText = styled(Typography)(({ theme }) => ({
+  color: "white",
+  fontSize: "10vw",
+  fontWeight: "700",
+  paddingRight: "12px",
+  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
-    // paddingTop: "18px",
+    fontSize: "15vw",
   },
-}));
-
-const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
-  fontSize: "0.75vw",
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "0.6rem",
-  },
-}));
-
-const StyledRightTitleText = styled(Typography)(({ theme }) => ({
-  fontSize: "3vw",
-  // [theme.breakpoints.down("xxl")]: {
-  //   fontSize: "3.5vw",
-  // },
-  [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("mm")]: {
-    fontSize: "3vw",
+    fontSize: "15vw",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "3vw",
+    fontSize: "17vw",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "4.5vw",
+    fontSize: "20vw",
   },
   [theme.breakpoints.down("xs")]: {},
 }));
 
-const StyledRightTitleGrid = styled(Grid)(({ theme }) => ({
+const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
+  fontSize: "10vw",
+  fontWeight: "700",
+  textShadow: "0px 0px 3px white",
+  paddingRight: "64px",
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "15vw",
+    paddingRight: "32px",
+  },
+  [theme.breakpoints.down("mm")]: {
+    fontSize: "15vw",
+    paddingRight: "32px",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "17vw",
+    paddingRight: "32px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "20vw",
+    paddingRight: "24px",
+  },
+  [theme.breakpoints.down("xs")]: {},
+}));
+
+const StyledMainTitle = styled(Typography)(({ theme }) => ({
+  color: "white",
+  fontSize: "4.5rem",
+  fontWeight: "700",
+  lineHeight: 1,
+  // textShadow: "0px 0px 3px white",
+
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "2.5rem",
+  },
+  [theme.breakpoints.down("mm")]: {
+    fontSize: "2rem",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "1.5rem",
+  },
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+
+const StyledStepperGrid = styled(Grid)(({ theme }) => ({
+  color: "white",
+  bgcolor: "transparent",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  transition: "all 1s ease-in-out",
+  marginBottom: "200px",
+  marginTop: "120px",
+
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {
+    marginTop: "120px",
+    marginBottom: "120px",
+  },
+  [theme.breakpoints.down("mm")]: {},
+  [theme.breakpoints.down("md")]: {
+    marginBottom: "120px",
+  },
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+
+const StyledGrid = styled(Grid)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  justifyContent: "flex-start",
-  height: "100%",
-  paddingTop: "18px",
+  justifyContent: "center",
+  transition: "all 1s ease-in-out",
+  // border: "1px solid red",
+  // height: "350px",
+  [theme.breakpoints.down("xxl")]: {},
+  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
-    // paddingTop: "18px",
+    // height: "300px",
   },
+  [theme.breakpoints.down("mm")]: {
+    // height: "250px",
+  },
+  [theme.breakpoints.down("md")]: {
+    // height: "300px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    // height: "300px",
+  },
+  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "#1E1F26",
   position: "relative",
+  // height: "100vh",
+  [theme.breakpoints.down("xxl")]: {
+    // height: "100vh",
+  },
+  [theme.breakpoints.down("xl")]: {
+    height: "inherit",
+  },
   [theme.breakpoints.down("lg")]: {
-    // padding: "18px",
+    height: "inherit",
+  },
+  [theme.breakpoints.down("mm")]: {
+    height: "inherit",
+  },
+  [theme.breakpoints.down("md")]: {
+    height: "inherit",
+  },
+  [theme.breakpoints.down("sm")]: {
+    height: "inherit",
+  },
+  [theme.breakpoints.down("xs")]: {
+    height: "inherit",
   },
 }));
 
 const Benefitspage = (props) => {
   const [activeStep, setActiveStep] = useState(0);
-  const [isLocked, setIsLocked] = useState(false);
   const { t, i18n } = useTranslation();
 
   const handleStep = (data) => {
@@ -81,194 +166,48 @@ const Benefitspage = (props) => {
       maxWidth='false'
       sx={{
         position: "relative",
-        height: isLocked ? "240vh" : "100vh",
       }}
     >
-      <Parallax
-        style={{
-          height: "100px",
-          width: "100px",
-          // backgroundColor: "green",
-          position: "absolute",
-          top: "-110px",
-          left: 0,
-        }}
-        onEnter={() => {
-          setIsLocked(false);
-          handleStep(0);
-        }}
-        onExit={() => {
-          setIsLocked(true);
-          handleStep(0);
-        }}
-      />
-      <Parallax
-        style={{
-          height: "10%",
-          width: "100px",
-          // backgroundColor: "purple",
-          position: "absolute",
-          top: "2px",
-          left: 0,
-        }}
-        onEnter={() => {
-          handleStep(0);
-        }}
-        onExit={() => {
-          handleStep(1);
-        }}
-      />
-      <Parallax
-        style={{
-          height: "10%",
-          width: "100px",
-          // backgroundColor: "yellow",
-          position: "absolute",
-          top: "10%",
-          left: 0,
-        }}
-        onEnter={() => {
-          if (activeStep === 2) {
-            handleStep(1);
-          }
-        }}
-        onExit={() => {
-          if (activeStep === 1) {
-            handleStep(2);
-          }
-        }}
-      />
-      <Parallax
-        style={{
-          height: "10%",
-          width: "100px",
-          // backgroundColor: "orange",
-          position: "absolute",
-          top: "20%",
-          left: 0,
-        }}
-        onEnter={() => {
-          if (activeStep === 3) {
-            handleStep(2);
-          }
-        }}
-        onExit={() => {
-          if (activeStep === 2) {
-            handleStep(3);
-          }
-        }}
-      />
-      <Parallax
-        style={{
-          height: "10%",
-          width: "100px",
-          // backgroundColor: "darkred",
-          position: "absolute",
-          top: "30%",
-          left: 0,
-        }}
-        onEnter={() => {
-          if (activeStep === 4) {
-            handleStep(3);
-          }
-        }}
-        onExit={() => {
-          if (activeStep === 3) {
-            handleStep(4);
-          }
-        }}
-      />
-      <Parallax
-        style={{
-          height: "10%",
-          width: "100px",
-          // backgroundColor: "gray",
-          position: "absolute",
-          top: "40%",
-          left: 0,
-        }}
-        onEnter={() => {
-          if (activeStep === 5) {
-            handleStep(4);
-          }
-        }}
-        onExit={() => {
-          if (activeStep === 4) {
-            handleStep(5);
-          }
-        }}
-      />
-      <Parallax
-        style={{
-          height: "100px",
-          width: "100px",
-          // backgroundColor: "red",
-          position: "absolute",
-          bottom: isLocked ? 0 : "-120px",
-          left: 0,
-        }}
-        onEnter={() => {
-          props.setNextWorkspage(true);
-        }}
-        onExit={() => {}}
-      />
-      <StyledHeaderGrid container spacing={0}>
-        <StyledLeftTitleGrid item xs={8} sm={9}>
-          <StyledLeftTitleText
-            variant='smallTitle'
-            sx={{ color: "common.white" }}
-          >
-            {t("benefitspage.leftTitle1")}
-          </StyledLeftTitleText>
-          <StyledLeftTitleText
-            variant='smallTitle'
-            sx={{ paddingLeft: "12px", color: "common.white" }}
-          >
-            {t("benefitspage.leftTitle2")}
-          </StyledLeftTitleText>
-        </StyledLeftTitleGrid>
-        <StyledRightTitleGrid item xs={4} sm={3}>
-          <StyledRightTitleText
-            variant='bigTitle'
-            sx={{ color: "common.white" }}
-          >
-            {t("benefitspage.rightTitle1")}
-          </StyledRightTitleText>
-          <StyledRightTitleText
-            variant='bigTitle'
-            sx={{
-              color: "common.white",
-              paddingLeft: {
-                xs: "1.75vw",
-                sm: "1.5vw",
-                lg: "1.5vw",
-                xl: "1.5vw",
-                xxl: "1.5vw",
-              },
-            }}
-          >
-            {t("benefitspage.rightTitle2")}
-          </StyledRightTitleText>
-          <StyledRightTitleText
-            variant='bigTitle'
-            sx={{ color: "common.white" }}
-          >
-            {t("benefitspage.rightTitle3")}
-          </StyledRightTitleText>
-        </StyledRightTitleGrid>
-      </StyledHeaderGrid>
-      <Box
+      <StyledHeader>
+        <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
+          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
+          <StyledTitleTextSecond>
+            {t("benefitspage.title2")}
+          </StyledTitleTextSecond>
+          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
+          <StyledTitleTextSecond>
+            {t("benefitspage.title2")}
+          </StyledTitleTextSecond>
+          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
+          <StyledTitleTextSecond>
+            {t("benefitspage.title2")}
+          </StyledTitleTextSecond>
+          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
+          <StyledTitleTextSecond>
+            {t("benefitspage.title2")}
+          </StyledTitleTextSecond>
+        </Parallax>
+      </StyledHeader>
+      <Container
+        disableGutters
+        maxWidth='xxl'
         sx={{
-          position: "sticky",
-          top: 0,
-          left: 0,
-          height: "100vh",
           display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
           alignItems: "center",
         }}
       >
+        <StyledStepperGrid container spacing={0}>
+          <StyledGrid item xs={10} sm={8} mm={8} md={8} lg={6}>
+            <StyledMainTitle>
+              Alles, was Sie brauchen, um Sichtbarkeit, Traffic und Umsatz zu
+              steigern.
+            </StyledMainTitle>
+          </StyledGrid>
+        </StyledStepperGrid>
         <BenefitsStepper activeStep={activeStep} />
-      </Box>
+      </Container>
     </StyledContainer>
   );
 };

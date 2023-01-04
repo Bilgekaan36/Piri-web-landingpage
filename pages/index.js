@@ -12,10 +12,6 @@ import Launchpage from "../components/launchpage/Launchpage";
 export default function Main() {
   const [isShowWorkspage, setWorkspage] = useState(false);
 
-  const setNextWorkspage = (data) => {
-    setWorkspage(data);
-  };
-
   return (
     <Container
       disableGutters
@@ -25,7 +21,7 @@ export default function Main() {
       }}
     >
       <Landingpage />
-      <Benefitspage setNextWorkspage={setNextWorkspage} />
+      <Benefitspage />
       <Workspage isShowWorkspage={isShowWorkspage} />
       <Toolspage />
       <Processpage isShowWorkspage={isShowWorkspage} />

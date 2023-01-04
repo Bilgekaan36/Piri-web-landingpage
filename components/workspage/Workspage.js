@@ -14,68 +14,65 @@ import {
 import nextjs from "../../public/videos/nextjs.mp4";
 import portfolio from "../../public/videos/portfolio.mp4";
 import { useTranslation } from "react-i18next";
+import { Parallax } from "react-scroll-parallax";
 
-const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
-  height: "30vh",
+const StyledHeader = styled(Box)(({ theme }) => ({
   display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-
-  [theme.breakpoints.down("mm")]: {
-    height: "50vh",
-  },
-  [theme.breakpoints.down("md")]: {
-    height: "15vh",
-  },
+  // height: "30vh",
+  overflow: "hidden",
 }));
 
-const StyledLeftTitleGrid = styled(Grid)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  paddingTop: "18px",
-  height: "100%",
-  [theme.breakpoints.down("md")]: {},
-}));
-
-const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
-  fontSize: "0.75vw",
+const StyledTitleText = styled(Typography)(({ theme }) => ({
+  color: "#1e1f26",
+  fontSize: "10vw",
+  fontWeight: "700",
+  paddingRight: "12px",
+  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
-    fontSize: "0.6rem",
+    fontSize: "15vw",
   },
-}));
-
-const StyledRightTitleText = styled(Typography)(({ theme }) => ({
-  fontSize: "4vw",
-  // [theme.breakpoints.down("xxl")]: {
-  //   fontSize: "3.5vw",
-  // },
-  [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("mm")]: {
-    fontSize: "4vw",
+    fontSize: "15vw",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "4vw",
+    fontSize: "17vw",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "4vw",
+    fontSize: "20vw",
   },
   [theme.breakpoints.down("xs")]: {},
 }));
 
-const StyledRightTitleGrid = styled(Grid)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "flex-start",
-  height: "100%",
-  paddingTop: "18px",
-  [theme.breakpoints.down("md")]: {
-    fontSize: "1rem",
+const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
+  fontSize: "10vw",
+  color: "white",
+  fontWeight: "700",
+  textShadow: "0px 0px 3px #1e1f26",
+  paddingRight: "64px",
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "15vw",
+    paddingRight: "32px",
   },
+  [theme.breakpoints.down("mm")]: {
+    fontSize: "15vw",
+    paddingRight: "32px",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "17vw",
+    paddingRight: "32px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "20vw",
+    paddingRight: "24px",
+  },
+  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
   position: "relative",
+  marginTop: "200px",
   [theme.breakpoints.down("md")]: {},
 }));
 
@@ -94,8 +91,12 @@ const StyledFooterText = styled(Typography)(({ theme }) => ({
   lineHeight: "1.2",
   fontWeight: "700",
   textAlign: "center",
+  fontSize: "4vw",
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "5vw",
+  },
   [theme.breakpoints.down("md")]: {
-    fontSize: "1.75rem",
+    fontSize: "6vw",
   },
 }));
 
@@ -112,72 +113,68 @@ const Workspage = ({ isShowWorkspage }) => {
   const { t, i18n } = useTranslation();
 
   return (
-    <StyledContainer
-      maxWidth='false'
-      sx={{ display: isShowWorkspage ? "block" : "none" }}
-    >
-      <StyledHeaderGrid container spacing={0}>
-        <StyledLeftTitleGrid item xs={7} sm={7} md={8}>
-          <StyledLeftTitleText variant='smallTitle' sx={{ color: "#1e1f26" }}>
-            {t("workspage.leftTitle1")}
-          </StyledLeftTitleText>
-          <StyledLeftTitleText
-            variant='smallTitle'
-            sx={{ paddingLeft: "12px", color: "#1e1f26" }}
-          >
-            {t("workspage.leftTitle2")}
-          </StyledLeftTitleText>
-        </StyledLeftTitleGrid>
-        <StyledRightTitleGrid item xs={4} sm={4} md={4}>
-          <StyledRightTitleText variant='bigTitle' sx={{ color: "#1e1f26" }}>
-            {t("workspage.rightTitle1")}
-          </StyledRightTitleText>
-        </StyledRightTitleGrid>
-      </StyledHeaderGrid>
-      <ImageList cols={matchDownMd ? 1 : 1} rowHeight={matchDownMd ? 120 : 380}>
-        {itemData.map((item) => (
-          <ImageListItem
-            rows={4}
-            key={item.id}
-            sx={{ overflow: "hidden", position: "relative" }}
-          >
-            <video
-              src={item.video}
-              type='video/mp4'
-              muted
-              height='100%'
-              width='100%'
-              style={{
-                objectFit: "cover",
-                width: "100%",
-                height: "100%",
-                position: "absolute",
-                top: 0,
-                left: 0,
-              }}
-              autoPlay={"autoplay"}
-              loop
-            />
-            {/* <ImageListItemBar
+    <Container maxWidth='false' sx={{ backgroundColor: "white" }}>
+      <StyledHeader>
+        <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
+          <StyledTitleText>{t("workspage.title1")}</StyledTitleText>
+          <StyledTitleTextSecond>{t("workspage.title2")}</StyledTitleTextSecond>
+          <StyledTitleText>{t("workspage.title1")}</StyledTitleText>
+          <StyledTitleTextSecond>{t("workspage.title2")}</StyledTitleTextSecond>
+          <StyledTitleText>{t("workspage.title1")}</StyledTitleText>
+          <StyledTitleTextSecond>{t("workspage.title2")}</StyledTitleTextSecond>
+          <StyledTitleText>{t("workspage.title1")}</StyledTitleText>
+          <StyledTitleTextSecond>{t("workspage.title2")}</StyledTitleTextSecond>
+        </Parallax>
+      </StyledHeader>
+      <StyledContainer maxWidth='xxl'>
+        <ImageList
+          cols={matchDownMd ? 1 : 2}
+          rowHeight={matchDownMd ? 120 : 280}
+        >
+          {itemData.map((item) => (
+            <ImageListItem
+              rows={4}
+              key={item.id}
+              sx={{ overflow: "hidden", position: "relative" }}
+            >
+              <video
+                src={item.video}
+                type='video/mp4'
+                muted
+                height='100%'
+                width='100%'
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                  height: "100%",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                }}
+                autoPlay={"autoplay"}
+                loop
+              />
+              {/* <ImageListItemBar
               title={item.title}
               sx={{
                 background: "rgba(0, 0, 0, 0)",
                 margin: { xs: "10vw 10vw", md: "10vw 10vw" },
               }}
             /> */}
-          </ImageListItem>
-        ))}
-      </ImageList>
-      <StyledFooterBox>
-        <StyledFooterText variant='bigTitle' sx={{ color: "#1e1f26" }}>
-          {t("workspage.quote1")}
-        </StyledFooterText>
-        <StyledFooterText variant='bigTitle' sx={{ color: "#1e1f26" }}>
-          {t("workspage.quote2")}
-        </StyledFooterText>
-        <StyledFooterAuthor variant='h4'>Don Draper</StyledFooterAuthor>
-      </StyledFooterBox>
-    </StyledContainer>
+            </ImageListItem>
+          ))}
+        </ImageList>
+        <StyledFooterBox>
+          <StyledFooterText variant='bigTitle' sx={{ color: "#1e1f26" }}>
+            {t("workspage.quote1")}
+          </StyledFooterText>
+          <StyledFooterText variant='bigTitle' sx={{ color: "#1e1f26" }}>
+            {t("workspage.quote2")}
+          </StyledFooterText>
+          <StyledFooterAuthor variant='h4'>Don Draper</StyledFooterAuthor>
+        </StyledFooterBox>
+      </StyledContainer>
+    </Container>
   );
 };
 
@@ -219,11 +216,5 @@ const itemData = [
     title: "bilgekaanyilmaz.com",
     author: "@rollelflex_graphy726",
     video: portfolio,
-  },
-  {
-    id: 6,
-    title: "Next.js",
-    author: "@bkristastucchio",
-    video: nextjs,
   },
 ];
