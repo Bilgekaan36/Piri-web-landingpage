@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
-import Grid from "@mui/material/Grid";
 import { Box, Container, styled, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
@@ -88,10 +87,11 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 
 const Toolspage = (props) => {
   const [activeStep, setActiveStep] = useState(0);
+  const [activeBackground, setActiveBackground] = useState("white");
   const { t, i18n } = useTranslation();
 
-  const handleStep = (data) => {
-    setActiveStep(data);
+  const handleBackground = (data) => {
+    setActiveBackground(data);
   };
 
   return (
@@ -99,8 +99,30 @@ const Toolspage = (props) => {
       maxWidth='false'
       sx={{
         position: "relative",
+        backgroundColor: activeBackground,
       }}
     >
+      <Parallax
+        style={{
+          height: "50px",
+          width: "100px",
+          backgroundColor: "transparent",
+          position: "absolute",
+          bottom: "50%",
+          left: 0,
+          zIndex: 10,
+        }}
+        onProgressChange={(progressData) => {
+          if (progressData >= 1) {
+            handleBackground("white");
+          }
+          if (progressData < 1) {
+            handleBackground("#1e1f26");
+          }
+        }}
+        onEnter={() => {}}
+        onExit={() => {}}
+      />
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
           <StyledTitleText>{t("toolspage.title1")}</StyledTitleText>

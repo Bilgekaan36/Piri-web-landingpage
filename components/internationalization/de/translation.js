@@ -153,16 +153,15 @@ const translation = {
     launchsubTitle2: "abzuheben!",
   },
   personalpage: {
-    leftTitle1: "ÜBER",
-    leftTitle2: "MICH",
-    rightTitle1: "PERSÖNLICHE",
-    rightTitle2: "INFORMATION",
-    personalTitle1: "Deine Web-Applikation,",
-    personalTitle2: "deine Signifikanz!",
+    title1: "ÜBER",
+    title2: "MICH",
+    personalTitle1: "Deine Web-Applikation, deine Signifikanz!",
+    // personalTitle2: "deine Signifikanz!",
     personalContent:
       "In einem persönlichen Webflow Workshop zeige ich Dir wie Du schnellund problemlos Änderungen auf Deiner neuen Webseite vornehmen kannst. Zusätzlich bekommst Du personalisierte Webflow Video Tutorials, die Du jederzeit abrufen kannst. Editiere Deine Webflow Webseite ohne kompliziertes Backend oder gar zusätzlichem Programmierer. So einfach ist das. In einem persönlichen Webflow Workshop zeige ich Dir wie Du schnell und problemlos Änderungen auf Deiner neuen Webseite vornehmen kannst. Zusätzlich bekommst Du personalisierte Webflow Video Tutorials, die Du jederzeit abrufen kannst. Editiere Deine Webflow Webseite ohne kompliziertes Backend oder gar zusätzlichem Programmierer. So einfach ist das.",
   },
   footerpage: {
+    title1: "KONTAKT",
     leftTitle1: "LASS",
     leftTitle2: "UNS",
     leftTitle3: "REDEN",

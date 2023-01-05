@@ -155,11 +155,10 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 }));
 
 const Benefitspage = (props) => {
-  const [activeStep, setActiveStep] = useState(0);
   const { t, i18n } = useTranslation();
-
-  const handleStep = (data) => {
-    setActiveStep(data);
+  const [activeBackground, setActiveBackground] = useState("#1e1f26");
+  const handleBackground = (data) => {
+    setActiveBackground(data);
   };
 
   return (
@@ -167,8 +166,30 @@ const Benefitspage = (props) => {
       maxWidth='false'
       sx={{
         position: "relative",
+        backgroundColor: activeBackground,
       }}
     >
+      <Parallax
+        style={{
+          height: "50px",
+          width: "100px",
+          backgroundColor: "transparent",
+          position: "absolute",
+          bottom: "30%",
+          left: 0,
+          zIndex: 10,
+        }}
+        onProgressChange={(progressData) => {
+          if (progressData >= 1) {
+            handleBackground("white");
+          }
+          if (progressData < 1) {
+            handleBackground("#1e1f26");
+          }
+        }}
+        onEnter={() => {}}
+        onExit={() => {}}
+      />
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
           <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
@@ -207,7 +228,7 @@ const Benefitspage = (props) => {
             </StyledMainTitle>
           </StyledGrid>
         </StyledStepperGrid>
-        <BenefitsStepper activeStep={activeStep} />
+        <BenefitsStepper activeBackground={activeBackground} />
       </Container>
     </StyledContainer>
   );

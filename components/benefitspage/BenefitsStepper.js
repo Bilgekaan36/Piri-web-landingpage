@@ -14,9 +14,7 @@ import responsivedesign from "../../public/benefitspage_assets/responsive-design
 import brandingdesign from "../../public/benefitspage_assets/branding-design.json";
 import mission from "../../public/benefitspage_assets/mission.json";
 
-const BenefitsStepper = ({ activeStep }) => {
-  const maxSteps = steps.length;
-
+const BenefitsStepper = ({ activeBackground }) => {
   const StyledStepperTitle = styled(Typography)(({ theme }) => ({
     fontSize: "1.2rem",
     fontWeight: "400",
@@ -163,7 +161,13 @@ const BenefitsStepper = ({ activeStep }) => {
           </StyledGrid>
           <StyledGrid item xs={10} sm={6} mm={6} md={6} lg={5}>
             <StyledStepperTitle>{step.label}</StyledStepperTitle>
-            <StyledStepperSubTitle>{step.sublabel}</StyledStepperSubTitle>
+            <StyledStepperSubTitle
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {step.sublabel}
+            </StyledStepperSubTitle>
             <StyledStepperContent>{step.description}</StyledStepperContent>
           </StyledGrid>
         </StyledStepperGrid>

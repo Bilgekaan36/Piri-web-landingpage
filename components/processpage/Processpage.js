@@ -5,11 +5,6 @@ import { Container, styled, Grid, Typography, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Translation } from "react-i18next";
 import { Parallax } from "react-scroll-parallax";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
-
-import chatting from "../../public/processpage_assets/chatting.json";
-import design from "../../public/processpage_assets/design.json";
-import focusTool from "../../public/processpage_assets/focus-tool.json";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   position: "relative",
@@ -419,17 +414,15 @@ const Process = (props) => {
           width: "100px",
           backgroundColor: "transparent",
           position: "absolute",
-          bottom: "40%",
+          bottom: "30%",
           left: 0,
           zIndex: 10,
         }}
         onProgressChange={(progressData) => {
           if (progressData >= 1) {
-            console.log("progress: ", progressData);
             handleStep("#1e1f26");
           }
           if (progressData < 1) {
-            console.log("progress: ", progressData);
             handleStep("white");
           }
         }}
@@ -480,7 +473,6 @@ const textData = [
         ),
       },
     ],
-    lottieFile: chatting,
   },
   {
     id: 1,
@@ -521,7 +513,6 @@ const textData = [
         ),
       },
     ],
-    lottieFile: focusTool,
   },
   {
     id: 2,
@@ -554,7 +545,6 @@ const textData = [
         ),
       },
     ],
-    lottieFile: chatting,
   },
   {
     id: 3,
@@ -603,7 +593,6 @@ const textData = [
         ),
       },
     ],
-    lottieFile: chatting,
   },
   {
     id: 4,
@@ -652,7 +641,6 @@ const textData = [
         ),
       },
     ],
-    lottieFile: focusTool,
   },
 ];
 

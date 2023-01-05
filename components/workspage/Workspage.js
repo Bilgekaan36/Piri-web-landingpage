@@ -211,11 +211,9 @@ const Workspage = ({ isShowWorkspage }) => {
         }}
         onProgressChange={(progressData) => {
           if (progressData >= 1) {
-            console.log("progress: ", progressData);
             handleStep("#1e1f26");
           }
           if (progressData < 1) {
-            console.log("progress: ", progressData);
             handleStep("white");
           }
         }}

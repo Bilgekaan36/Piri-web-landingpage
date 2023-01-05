@@ -25,8 +25,6 @@ import VscodeSvg from "../technologies/VscodeSvg.js";
 import VueSvg from "../technologies/VueSvg.js";
 
 const ToolsStepper = ({ activeStep }) => {
-  const maxSteps = technologies.length;
-
   return (
     <Grid
       container
@@ -36,6 +34,7 @@ const ToolsStepper = ({ activeStep }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        position: "relativ",
         padding: { xs: "0 32px", lg: "0 132px" },
       }}
     >
@@ -66,6 +65,7 @@ const ToolsStepper = ({ activeStep }) => {
                 mm: "100%",
                 lg: "100%",
               },
+              boxShadow: "none",
             }}
           >
             <CardActionArea
