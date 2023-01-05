@@ -1,28 +1,17 @@
+import styles from "./Processpage.module.css";
+
 import React, { useEffect, useState } from "react";
-import {
-  Container,
-  styled,
-  Grid,
-  Typography,
-  Box,
-  Stepper,
-  Step,
-  StepLabel,
-  StepContent,
-} from "@mui/material";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import { Container, styled, Grid, Typography, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Translation } from "react-i18next";
 import { Parallax } from "react-scroll-parallax";
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
 
-import discoveryCall from "../../public/processpage_assets/discovery-call.json";
-import strategy from "../../public/processpage_assets/strategy.json";
+import chatting from "../../public/processpage_assets/chatting.json";
 import design from "../../public/processpage_assets/design.json";
-import development from "../../public/processpage_assets/development.json";
-import onboarding from "../../public/processpage_assets/onboarding.json";
+import focusTool from "../../public/processpage_assets/focus-tool.json";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
-  backgroundColor: "white",
   position: "relative",
   [theme.breakpoints.up("md")]: {},
   [theme.breakpoints.down("md")]: {},
@@ -84,7 +73,6 @@ const StyledStepperTitle = styled(Typography)(({ theme }) => ({
   fontSize: "1.2rem",
   fontWeight: "400",
   color: "#a0a0a0",
-  transition: "all 1s ease-in-out",
   [theme.breakpoints.down("xxl")]: {
     // fontSize: "1.8vw",
   },
@@ -110,7 +98,6 @@ const StyledStepperSubTitle = styled(Typography)(({ theme }) => ({
   fontSize: "2rem",
   fontWeight: "500",
   marginBottom: "12px",
-  transition: "all 1s ease-in-out",
   color: "#1e1f26",
   [theme.breakpoints.down("xxl")]: {
     fontSize: "2rem",
@@ -135,7 +122,6 @@ const StyledStepperSubText = styled(Typography)(({ theme }) => ({
   fontSize: "1.5rem",
   fontWeight: "500",
   marginBottom: "12px",
-  transition: "all 1s ease-in-out",
   color: "#1e1f26",
   [theme.breakpoints.down("xxl")]: {
     fontSize: "1.5rem",
@@ -160,7 +146,6 @@ const StyledStepperContent = styled(Typography)(({ theme }) => ({
   fontSize: "1.2rem",
   fontWeight: "200",
   color: "#a0a0a0",
-  transition: "all 1s ease-in-out",
   [theme.breakpoints.down("xxl")]: {
     // fontSize: "1.8vw",
   },
@@ -182,30 +167,75 @@ const StyledStepperContent = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {},
 }));
 
+const StyledMainTitle = styled(Typography)(({ theme }) => ({
+  color: "#1e1f26",
+  fontSize: "4.5rem",
+  fontWeight: "700",
+  lineHeight: 1,
+  // textShadow: "0px 0px 3px white",
+
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "2.5rem",
+  },
+  [theme.breakpoints.down("mm")]: {
+    fontSize: "2rem",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "2rem",
+  },
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+
+const StyledSubTitle = styled(Typography)(({ theme }) => ({
+  color: "#a0a0a0",
+  fontSize: "2rem",
+  fontWeight: "400",
+  lineHeight: 1,
+  // textShadow: "0px 0px 3px white",
+
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "1.5rem",
+  },
+  [theme.breakpoints.down("mm")]: {
+    fontSize: "1rem",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "1rem",
+  },
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+
 const StyledStepperGrid = styled(Grid)(({ theme }) => ({
   color: "white",
   bgcolor: "transparent",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  transition: "all 1s ease-in-out",
-  marginTop: "100px",
-  width: "1000px",
+  marginBottom: "150px",
+  position: "relative",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("mm")]: {},
   [theme.breakpoints.down("md")]: {
-    marginTop: "80px",
+    marginBottom: "80px",
   },
-  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "40px",
+  },
   [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center",
+  justifyContent: "flex-start",
   transition: "all 1s ease-in-out",
+  position: "relative",
+
   // border: "1px solid red",
   height: "450px",
   [theme.breakpoints.down("xxl")]: {},
@@ -220,200 +250,192 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
     height: "450px",
   },
   [theme.breakpoints.down("sm")]: {
-    height: "450px",
+    height: "500px",
+  },
+  [theme.breakpoints.down("xs")]: {},
+}));
+
+const StyledStepperNumbers = styled(Typography)(({ theme }) => ({
+  position: "absolute",
+  top: "0",
+  left: "-70px",
+  color: "#1e1f26",
+  width: "100px",
+
+  fontWeight: 900,
+  fontSize: "3vw",
+  textAlign: "center",
+  [theme.breakpoints.down("xxl")]: {
+    // fontSize: "1.8vw",
+    left: "-50px",
+  },
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "6vw",
+  },
+  [theme.breakpoints.down("mm")]: {
+    fontSize: "6vw",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "6vw",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "6vw",
   },
   [theme.breakpoints.down("xs")]: {},
 }));
 
 const Process = (props) => {
-  const [activeStep, setActiveStep] = useState(0);
+  const [progress, setProgress] = useState(100);
+
+  const [activeBackground, setActiveBackground] = useState("white");
   const { t, i18n } = useTranslation();
 
   const handleStep = (data) => {
-    setActiveStep(data);
+    setActiveBackground(data);
+  };
+
+  const handleProgress = (data) => {
+    setProgress(data);
   };
 
   useEffect(() => {
-    handleStep(0);
+    handleStep("white");
   }, []);
 
   return (
     <StyledContainer
       maxWidth='false'
-      sx={{
-        position: "relative",
-        height: "320vh",
-      }}
+      sx={{ backgroundColor: activeBackground }}
     >
-      <Parallax
-        style={{
-          height: "10%",
-          width: "100px",
-          backgroundColor: "transparent",
-          position: "absolute",
-          top: "2px",
-          left: 0,
-          zIndex: 10,
-        }}
-        onEnter={() => {
-          handleStep(0);
-        }}
-        onExit={() => {
-          handleStep(1);
-        }}
-      />
-      <Parallax
-        style={{
-          height: "10%",
-          width: "100px",
-          backgroundColor: "transparent",
-          position: "absolute",
-          top: "10%",
-          left: 0,
-          zIndex: 10,
-        }}
-        onEnter={() => {
-          if (activeStep === 2) {
-            handleStep(1);
-          }
-        }}
-        onExit={() => {
-          if (activeStep === 1) {
-            handleStep(2);
-          }
-        }}
-      />
-      <Parallax
-        style={{
-          height: "10%",
-          width: "100px",
-          backgroundColor: "transparent",
-          position: "absolute",
-          top: "20%",
-          left: 0,
-          zIndex: 10,
-        }}
-        onEnter={() => {
-          if (activeStep === 3) {
-            handleStep(2);
-          }
-        }}
-        onExit={() => {
-          if (activeStep === 2) {
-            handleStep(3);
-          }
-        }}
-      />
-      <Parallax
-        style={{
-          height: "10%",
-          width: "100px",
-          backgroundColor: "purple",
-          position: "absolute",
-          top: "30%",
-          left: 0,
-          zIndex: 10,
-        }}
-        onEnter={() => {
-          if (activeStep === 4) {
-            handleStep(3);
-          }
-        }}
-        onExit={() => {
-          if (activeStep === 3) {
-            handleStep(4);
-          }
-        }}
-      />
-      <Parallax
-        style={{
-          height: "10%",
-          width: "100px",
-          backgroundColor: "green",
-          position: "absolute",
-          top: "40%",
-          left: 0,
-          zIndex: 10,
-        }}
-        onEnter={() => {
-          if (activeStep === 5) {
-            handleStep(4);
-          }
-        }}
-        onExit={() => {
-          if (activeStep === 4) {
-            handleStep(5);
-          }
-        }}
-      />
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
+          <StyledTitleText>{t("processpage.title1")}</StyledTitleText>
           <StyledTitleTextSecond>
-            {t("benefitspage.title2")}
+            {t("processpage.title2")}
           </StyledTitleTextSecond>
-          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
+          <StyledTitleText>{t("processpage.title1")}</StyledTitleText>
           <StyledTitleTextSecond>
-            {t("benefitspage.title2")}
+            {t("processpage.title2")}
           </StyledTitleTextSecond>
-          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
+          <StyledTitleText>{t("processpage.title1")}</StyledTitleText>
           <StyledTitleTextSecond>
-            {t("benefitspage.title2")}
+            {t("processpage.title2")}
           </StyledTitleTextSecond>
-          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
+          <StyledTitleText>{t("processpage.title1")}</StyledTitleText>
           <StyledTitleTextSecond>
-            {t("benefitspage.title2")}
+            {t("processpage.title2")}
           </StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
-      <Box
-        sx={{
-          position: "sticky",
-          top: 0,
-          left: 0,
-          height: "100vh",
-          overflow: "hidden",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+
+      <StyledStepperGrid
+        container
+        spacing={0}
+        sx={{ marginBottom: { xs: "0px" } }}
+      >
+        <StyledGrid item xs={10} sm={8} mm={8} md={8} lg={6}>
+          <StyledMainTitle>{t("processpage.mainTitle1")}</StyledMainTitle>
+          <StyledMainTitle>{t("processpage.mainTitle2")}</StyledMainTitle>
+          <StyledSubTitle>{t("processpage.mainTitle3")}</StyledSubTitle>
+          <StyledSubTitle>{t("processpage.mainTitle4")}</StyledSubTitle>
+        </StyledGrid>
+      </StyledStepperGrid>
+      <Parallax
+        onProgressChange={(progressData) => {
+          const result = progressData * 3000;
+          handleProgress(result);
         }}
       >
-        <Stepper activeStep={activeStep} orientation='vertical'>
-          {textData.map((text, index) => (
-            <Step key={text.title}>
-              <StepLabel>{text.title}</StepLabel>
-              <StepContent>
-                <StyledStepperGrid container spacing={0} key={text.id}>
-                  <StyledGrid item xs={10} sm={6} mm={6} md={6} lg={5}>
-                    <StyledStepperTitle> {text.title}</StyledStepperTitle>
-                    <StyledStepperSubTitle> {text.title}</StyledStepperSubTitle>
-                    <StyledStepperContent>{text.content}</StyledStepperContent>
-                    {text.subtitles.map((subtitle) => (
-                      <StyledStepperSubText key={subtitle.textId}>
-                        {subtitle.text}
-                      </StyledStepperSubText>
-                    ))}
-                  </StyledGrid>
-                </StyledStepperGrid>
-              </StepContent>
-            </Step>
-          ))}
-        </Stepper>
-      </Box>
-      {/* {textData.map((text) => (
-        <StyledStepperGrid container spacing={0} key={text.id}>
-          <StyledGrid item xs={10} sm={6} mm={6} md={6} lg={5}>
-            <StyledStepperTitle> {text.title}</StyledStepperTitle>
-            <StyledStepperSubTitle> {text.title}</StyledStepperSubTitle>
-            <StyledStepperContent>{text.content}</StyledStepperContent>
-            {text.subtitles.map((subtitle) => (
-              <StyledStepperSubText key={subtitle.textId}>
-                {subtitle.text}
-              </StyledStepperSubText>
+        <Grid
+          container
+          spacing={0}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Grid
+            item
+            xs={12}
+            sm={8}
+            mm={8}
+            md={8}
+            lg={6}
+            sx={{ position: "relative" }}
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                backgroundColor: "#1e1f26",
+                width: { xs: "2px", sm: "5px" },
+                height: `${progress}px`,
+              }}
+            />
+            {textData.map((text, index) => (
+              <StyledStepperGrid container spacing={0} key={index}>
+                <StyledStepperNumbers
+                  sx={{
+                    backgroundColor: activeBackground,
+                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                  }}
+                >
+                  {text.number}
+                </StyledStepperNumbers>
+                <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
+                  <StyledStepperTitle> {text.title}</StyledStepperTitle>
+                  <StyledStepperSubTitle
+                    sx={{
+                      color:
+                        activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                    }}
+                  >
+                    {text.title}
+                  </StyledStepperSubTitle>
+                  <StyledStepperContent>{text.content}</StyledStepperContent>
+                  {text.subtitles.map((subtitle) => (
+                    <StyledStepperSubText
+                      key={subtitle.textId}
+                      sx={{
+                        color:
+                          activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                      }}
+                    >
+                      {subtitle.text}
+                    </StyledStepperSubText>
+                  ))}
+                </StyledGrid>
+              </StyledStepperGrid>
             ))}
-          </StyledGrid>
-        </StyledStepperGrid>
-      ))} */}
+          </Grid>
+        </Grid>
+      </Parallax>
+      <Parallax
+        style={{
+          height: "50px",
+          width: "100px",
+          backgroundColor: "transparent",
+          position: "absolute",
+          bottom: "40%",
+          left: 0,
+          zIndex: 10,
+        }}
+        onProgressChange={(progressData) => {
+          if (progressData >= 1) {
+            console.log("progress: ", progressData);
+            handleStep("#1e1f26");
+          }
+          if (progressData < 1) {
+            console.log("progress: ", progressData);
+            handleStep("white");
+          }
+        }}
+        onEnter={() => {}}
+        onExit={() => {}}
+      />
     </StyledContainer>
   );
 };
@@ -421,6 +443,7 @@ const Process = (props) => {
 const textData = [
   {
     id: 0,
+    number: "01",
     title: (
       <Translation>
         {(t, { i18n }) => <>{t("processpage.titleDiscovery")}</>}
@@ -457,10 +480,11 @@ const textData = [
         ),
       },
     ],
-    lottieFile: discoveryCall,
+    lottieFile: chatting,
   },
   {
     id: 1,
+    number: "02",
     title: (
       <Translation>
         {(t, { i18n }) => <>{t("processpage.titleStrategy")}</>}
@@ -497,10 +521,11 @@ const textData = [
         ),
       },
     ],
-    lottieFile: strategy,
+    lottieFile: focusTool,
   },
   {
     id: 2,
+    number: "03",
     title: (
       <Translation>
         {(t, { i18n }) => <>{t("processpage.titleDesign")}</>}
@@ -529,10 +554,11 @@ const textData = [
         ),
       },
     ],
-    lottieFile: design,
+    lottieFile: chatting,
   },
   {
     id: 3,
+    number: "04",
     title: (
       <Translation>
         {(t, { i18n }) => <>{t("processpage.titleDevelopment")}</>}
@@ -577,10 +603,11 @@ const textData = [
         ),
       },
     ],
-    lottieFile: development,
+    lottieFile: chatting,
   },
   {
     id: 4,
+    number: "05",
     title: (
       <Translation>
         {(t, { i18n }) => <>{t("processpage.titleOnboarding")}</>}
@@ -625,7 +652,7 @@ const textData = [
         ),
       },
     ],
-    lottieFile: onboarding,
+    lottieFile: focusTool,
   },
 ];
 

@@ -140,11 +140,12 @@ const BenefitsStepper = ({ activeStep }) => {
 
   return (
     <>
-      {steps.map((step) => (
+      {steps.map((step, index) => (
         <StyledStepperGrid
           container
           spacing={0}
           sx={{ flexDirection: step.flexDirection }}
+          key={index}
         >
           <StyledGrid item xs={10} sm={4} mm={4} md={4} lg={3}>
             <Player

@@ -36,6 +36,7 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
 const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
   fontSize: "10vw",
   fontWeight: "700",
+  color: "#1e1f26",
   textShadow: "0px 0px 3px white",
   paddingRight: "64px",
   [theme.breakpoints.down("xl")]: {},
@@ -73,7 +74,7 @@ const StyledMainTitle = styled(Typography)(({ theme }) => ({
     fontSize: "2rem",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "1.5rem",
+    fontSize: "2rem",
   },
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},

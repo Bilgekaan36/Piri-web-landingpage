@@ -15,6 +15,7 @@ import nextjs from "../../public/videos/nextjs.mp4";
 import portfolio from "../../public/videos/portfolio.mp4";
 import { useTranslation } from "react-i18next";
 import { Parallax } from "react-scroll-parallax";
+import { useState } from "react";
 
 const StyledHeader = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -111,9 +112,16 @@ const Workspage = ({ isShowWorkspage }) => {
   const theme = useTheme();
   const matchDownMd = useMediaQuery(theme.breakpoints.down("lg"));
   const { t, i18n } = useTranslation();
+  const [activeBackground, setActiveBackground] = useState("white");
+  const handleStep = (data) => {
+    setActiveBackground(data);
+  };
 
   return (
-    <Container maxWidth='false' sx={{ backgroundColor: "white" }}>
+    <Container
+      maxWidth='false'
+      sx={{ backgroundColor: activeBackground, position: "relative" }}
+    >
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
           <StyledTitleText>{t("workspage.title1")}</StyledTitleText>
@@ -126,7 +134,7 @@ const Workspage = ({ isShowWorkspage }) => {
           <StyledTitleTextSecond>{t("workspage.title2")}</StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
-      <StyledContainer maxWidth='xxl'>
+      <StyledContainer disableGutters maxWidth='xxl'>
         <ImageList
           cols={matchDownMd ? 1 : 2}
           rowHeight={matchDownMd ? 120 : 280}
@@ -164,16 +172,56 @@ const Workspage = ({ isShowWorkspage }) => {
             </ImageListItem>
           ))}
         </ImageList>
-        <StyledFooterBox>
-          <StyledFooterText variant='bigTitle' sx={{ color: "#1e1f26" }}>
+        <StyledFooterBox sx={{ backgroundColor: activeBackground }}>
+          <StyledFooterText
+            variant='bigTitle'
+            sx={{
+              color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+            }}
+          >
             {t("workspage.quote1")}
           </StyledFooterText>
-          <StyledFooterText variant='bigTitle' sx={{ color: "#1e1f26" }}>
+          <StyledFooterText
+            variant='bigTitle'
+            sx={{
+              color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+            }}
+          >
             {t("workspage.quote2")}
           </StyledFooterText>
-          <StyledFooterAuthor variant='h4'>Don Draper</StyledFooterAuthor>
+          <StyledFooterAuthor
+            variant='h4'
+            sx={{
+              color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+            }}
+          >
+            Don Draper
+          </StyledFooterAuthor>
         </StyledFooterBox>
       </StyledContainer>
+      <Parallax
+        style={{
+          height: "50px",
+          width: "100px",
+          backgroundColor: "transparent",
+          position: "absolute",
+          bottom: "25%",
+          left: 0,
+          zIndex: 10,
+        }}
+        onProgressChange={(progressData) => {
+          if (progressData >= 1) {
+            console.log("progress: ", progressData);
+            handleStep("#1e1f26");
+          }
+          if (progressData < 1) {
+            console.log("progress: ", progressData);
+            handleStep("white");
+          }
+        }}
+        onEnter={() => {}}
+        onExit={() => {}}
+      />
     </Container>
   );
 };

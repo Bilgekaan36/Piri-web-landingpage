@@ -108,11 +108,12 @@ const translation = {
       "Visual Studio Code, also commonly referred to as VS Code, is a source-code editor made by Microsoft with the Electron Framework, for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git.",
   },
   processpage: {
-    leftTitle1: "DEINE",
-    leftTitle2: "APPLIKATION",
-    leftTitle3: "Alles aus einer Hand wie aus einem Guss.",
-    leftTitle4: "Ein Prozess. Ein Preis.",
-    rightTitle1: "DER PROZESS",
+    title1: "MEINE",
+    title2: "PROJEKTE",
+    mainTitle1: "DEINE",
+    mainTitle2: "APPLIKATION",
+    mainTitle3: "Alles aus einer Hand wie aus einem Guss.",
+    mainTitle4: "Ein Prozess. Ein Preis.",
     titleDiscovery: "ERSTGESPRÄCH",
     contentDiscovery:
       " Beim Erstgespräch lernen wir uns ein wenig besser kennen. Eine vertrauensvolle Zusammenarbeit ist mir wichtig. Denn sie vermittelt nicht nur einen ersten Eindruck, sondern führt auch zu einem erfolgreichem Ergebnis.Bevor es allerdings losgeht, finden wir heraus wie und ob ich Dir überhaupt helfen kann. Welche Anforderungen hast du an deine neue Webseite oder Applikation? Wieso brauchst du überhaupt eine neue Webseite? Welche Ziele hast du und welche Probleme können wir mit einer neuen Webseite lösen?",

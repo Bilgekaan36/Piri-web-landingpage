@@ -39,7 +39,7 @@ const ToolsStepper = ({ activeStep }) => {
         padding: { xs: "0 32px", lg: "0 132px" },
       }}
     >
-      {technologies.map((data) => (
+      {technologies.map((data, index) => (
         <Grid
           item
           xs={10}
@@ -54,6 +54,7 @@ const ToolsStepper = ({ activeStep }) => {
             justifyContent: "center",
             alignItems: "center",
           }}
+          key={index}
         >
           <Card
             sx={{
