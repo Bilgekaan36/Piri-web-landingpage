@@ -5,11 +5,9 @@ import profil from "../../public/profil.png";
 import { Parallax } from "react-scroll-parallax";
 
 import { Container, styled, Grid, Typography, Box } from "@mui/material";
-import { useTranslation } from "react-i18next";
 
 const StyledHeader = styled(Box)(({ theme }) => ({
   display: "flex",
-  // height: "30vh",
   overflow: "hidden",
 }));
 
@@ -17,6 +15,7 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
   fontSize: "10vw",
   fontWeight: "700",
   paddingRight: "12px",
+  color: "#1e1f26",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
@@ -80,6 +79,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 const StyledHeadTitle = styled(Typography)(({ theme }) => ({
   fontSize: "3rem",
   fontWeight: "900",
+  lineHeight: 1.2,
   color: "#1e1f26",
   [theme.breakpoints.down("lg")]: {
     fontSize: "1.5rem",
@@ -97,10 +97,8 @@ const StyledHeadContent = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const Personalpage = ({ isShowWorkspage }) => {
-  const [activeStep, setActiveStep] = useState(0);
+const Personalpage = ({ t }) => {
   const [activeBackground, setActiveBackground] = useState("white");
-  const { t, i18n } = useTranslation();
 
   const handleBackground = (data) => {
     setActiveBackground(data);
@@ -135,21 +133,21 @@ const Personalpage = ({ isShowWorkspage }) => {
         />
         <StyledHeader>
           <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-            <StyledTitleText>{t("personalpage.title1")}</StyledTitleText>
+            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
             <StyledTitleTextSecond>
-              {t("personalpage.title2")}
+              {t.personalpage.title2}
             </StyledTitleTextSecond>
-            <StyledTitleText>{t("personalpage.title1")}</StyledTitleText>
+            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
             <StyledTitleTextSecond>
-              {t("personalpage.title2")}
+              {t.personalpage.title2}
             </StyledTitleTextSecond>
-            <StyledTitleText>{t("personalpage.title1")}</StyledTitleText>
+            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
             <StyledTitleTextSecond>
-              {t("personalpage.title2")}
+              {t.personalpage.title2}
             </StyledTitleTextSecond>
-            <StyledTitleText>{t("personalpage.title1")}</StyledTitleText>
+            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
             <StyledTitleTextSecond>
-              {t("personalpage.title2")}
+              {t.personalpage.title2}
             </StyledTitleTextSecond>
           </Parallax>
         </StyledHeader>
@@ -182,14 +180,28 @@ const Personalpage = ({ isShowWorkspage }) => {
                   color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
                 }}
               >
-                {t("personalpage.personalTitle1")}
+                {t.personalpage.personalTitle1}
               </StyledHeadTitle>
               <StyledHeadContent
                 sx={{
                   color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
                 }}
               >
-                {t("personalpage.personalContent")}
+                {t.personalpage.personalContent1}
+              </StyledHeadContent>
+              <StyledHeadContent
+                sx={{
+                  color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                }}
+              >
+                {t.personalpage.personalContent2}
+              </StyledHeadContent>
+              <StyledHeadContent
+                sx={{
+                  color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                }}
+              >
+                {t.personalpage.personalContent3}
               </StyledHeadContent>
             </Grid>
             <Grid
@@ -219,7 +231,7 @@ const Personalpage = ({ isShowWorkspage }) => {
               color: activeBackground === "white" ? "white" : "#1e1f26",
             }}
           >
-            {t("footerpage.title1")}
+            {t.footerpage.title1}
           </StyledTitleText>
           <StyledTitleTextSecond
             sx={{
@@ -229,14 +241,14 @@ const Personalpage = ({ isShowWorkspage }) => {
               color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
             }}
           >
-            {t("footerpage.title1")}
+            {t.footerpage.title1}
           </StyledTitleTextSecond>
           <StyledTitleText
             sx={{
               color: activeBackground === "white" ? "white" : "#1e1f26",
             }}
           >
-            {t("footerpage.title1")}
+            {t.footerpage.title1}
           </StyledTitleText>
           <StyledTitleTextSecond
             sx={{
@@ -246,14 +258,14 @@ const Personalpage = ({ isShowWorkspage }) => {
               color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
             }}
           >
-            {t("footerpage.title1")}
+            {t.footerpage.title1}
           </StyledTitleTextSecond>
           <StyledTitleText
             sx={{
               color: activeBackground === "white" ? "white" : "#1e1f26",
             }}
           >
-            {t("footerpage.title1")}
+            {t.footerpage.title1}
           </StyledTitleText>
           <StyledTitleTextSecond
             sx={{
@@ -263,14 +275,14 @@ const Personalpage = ({ isShowWorkspage }) => {
               color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
             }}
           >
-            {t("footerpage.title1")}
+            {t.footerpage.title1}
           </StyledTitleTextSecond>
           <StyledTitleText
             sx={{
               color: activeBackground === "white" ? "white" : "#1e1f26",
             }}
           >
-            {t("footerpage.title1")}
+            {t.footerpage.title1}
           </StyledTitleText>
           <StyledTitleTextSecond
             sx={{
@@ -280,7 +292,7 @@ const Personalpage = ({ isShowWorkspage }) => {
               color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
             }}
           >
-            {t("footerpage.title1")}
+            {t.footerpage.title1}
           </StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>

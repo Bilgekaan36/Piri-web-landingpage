@@ -3,7 +3,6 @@ import styles from "./Launchpage.module.css";
 import React, { useState, useRef } from "react";
 import { Parallax } from "react-scroll-parallax";
 import { Box, Container, styled, Typography } from "@mui/material";
-import { useTranslation } from "react-i18next";
 
 import rocket from "../../public/launchpage_assets/rocket.json";
 import confetti from "../../public/launchpage_assets/confetti.json";
@@ -70,9 +69,8 @@ const confettiInteractivity = {
   ],
 };
 
-const Launchpage = (props) => {
+const Launchpage = ({ t }) => {
   const [progress, setProgress] = useState(100);
-  const { t, i18n } = useTranslation();
 
   const handleProgress = (data) => {
     setProgress(data);
@@ -119,7 +117,7 @@ const Launchpage = (props) => {
           variant='bigTitle'
           sx={{ color: "white", fontSize: { xs: "8vw", sm: "6vw", md: "5vw" } }}
         >
-          {t("launchpage.launchTitle")}
+          {t.launchpage.launchTitle}
         </Typography>
         <Typography
           variant='smallTitle'
@@ -129,7 +127,7 @@ const Launchpage = (props) => {
             paddingTop: { xs: "32px", md: "64px", mm: "100px" },
           }}
         >
-          {t("launchpage.launchsubTitle1")}
+          {t.launchpage.launchsubTitle1}
         </Typography>
         <Typography
           variant='smallTitle'
@@ -138,7 +136,7 @@ const Launchpage = (props) => {
             fontSize: { xs: "4.5vw", sm: "3vw", md: "2vw", fontWeight: "500" },
           }}
         >
-          {t("launchpage.launchsubTitle2")}
+          {t.launchpage.launchsubTitle2}
         </Typography>
       </Box>
       <Lottie

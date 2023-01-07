@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import { Box, Container, styled, Typography } from "@mui/material";
-import { useTranslation } from "react-i18next";
 
 import ToolStepper from "./ToolStepper";
 
 const StyledHeader = styled(Box)(({ theme }) => ({
   display: "flex",
-  // height: "30vh",
   overflow: "hidden",
 }));
 
@@ -85,10 +83,8 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
-const Toolspage = (props) => {
-  const [activeStep, setActiveStep] = useState(0);
+const Toolspage = ({ t }) => {
   const [activeBackground, setActiveBackground] = useState("white");
-  const { t, i18n } = useTranslation();
 
   const handleBackground = (data) => {
     setActiveBackground(data);
@@ -125,14 +121,14 @@ const Toolspage = (props) => {
       />
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-          <StyledTitleText>{t("toolspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>{t("toolspage.title2")}</StyledTitleTextSecond>
-          <StyledTitleText>{t("toolspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>{t("toolspage.title2")}</StyledTitleTextSecond>
-          <StyledTitleText>{t("toolspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>{t("toolspage.title2")}</StyledTitleTextSecond>
-          <StyledTitleText>{t("toolspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>{t("toolspage.title2")}</StyledTitleTextSecond>
+          <StyledTitleText>{t.toolspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.toolspage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.toolspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.toolspage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.toolspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.toolspage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.toolspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.toolspage.title2}</StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
       <Container
@@ -140,7 +136,7 @@ const Toolspage = (props) => {
         maxWidth='xxl'
         sx={{ paddingBottom: "132px", marginTop: "200px" }}
       >
-        <ToolStepper activeStep={activeStep} />
+        <ToolStepper t={t} activeBackground={activeBackground} />
       </Container>
     </StyledContainer>
   );

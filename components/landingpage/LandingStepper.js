@@ -7,14 +7,14 @@ import letterW from "../../public/landingpage_assets/letter-W.json";
 import letterA from "../../public/landingpage_assets/letter-A.json";
 import letterM from "../../public/landingpage_assets/letter-M.json";
 import letterO from "../../public/landingpage_assets/letter-O.json";
-import { useTranslation } from "react-i18next";
-import { Translation } from "react-i18next";
+import letterU from "../../public/landingpage_assets/letter-U.json";
 
 const StyledHeader = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   flexGrow: 1,
   transition: "all 1s ease-in-out",
   color: "#1e1f26",
+  zIndex: 100,
   [theme.breakpoints.down("lg")]: {
     fontSize: "5vw",
     letterSpacing: "-0.1rem",
@@ -43,7 +43,6 @@ const StyledHeaderModular = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   flexGrow: 1,
   padding: "24px",
-  zIndex: 10,
   transition: "all 1s ease-in-out",
   [theme.breakpoints.down("lg")]: {
     fontSize: "11vw",
@@ -61,22 +60,63 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
   color: "#1e1f26",
   zIndex: 10,
-  fontWeight: 200,
+  fontWeight: 400,
 
   transition: "all 1s ease-in-out",
-  [theme.breakpoints.down("lg")]: {
-    // fontSize: "1rem",
-    // fontWeight: 200,
-    // letterSpacing: "0rem",
-  },
+  [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("sm")]: {
     fontSize: "1rem",
   },
 }));
 
-const LandingStepper = ({ activeStep }) => {
+const LandingStepper = ({ activeStep, t }) => {
+  const steps = [
+    {
+      firstLabel: t.landingpage.firstLabelWebsite,
+      secondLabel: t.landingpage.secondLabelWebsite,
+      thirdLabel: t.landingpage.thirdLabelWebsite,
+      description1: t.landingpage.description1Website,
+      description2: t.landingpage.description2Website,
+      description3: t.landingpage.description3Website,
+      lottieFile: letterW,
+      color: "#6691c3",
+    },
+    {
+      firstLabel: t.landingpage.firstLabelApplication,
+      secondLabel: t.landingpage.secondLabelApplication,
+      thirdLabel: t.landingpage.thirdLabelApplication,
+      description1: t.landingpage.description1Application,
+      description2: t.landingpage.description2Application,
+      description3: t.landingpage.description3Application,
+      lottieFile: letterA,
+      color: "#F76B6C",
+    },
+    {
+      firstLabel: t.landingpage.firstLabelMobileapp,
+      secondLabel: t.landingpage.secondLabelMobileapp,
+      thirdLabel: t.landingpage.thirdLabelMobileapp,
+      description1: t.landingpage.description1Mobileapp,
+      description2: t.landingpage.description2Mobileapp,
+      description3: t.landingpage.description3Mobileapp,
+      lottieFile: letterM,
+      color: "#79C4C8",
+    },
+    {
+      firstLabel: t.landingpage.firstLabelOnlineshop,
+      secondLabel: t.landingpage.secondLabelOnlineshop,
+      thirdLabel: t.landingpage.thirdLabelOnlineshop,
+      description1: t.landingpage.description1Onlineshop,
+      description2: t.landingpage.description2Onlineshop,
+      description3: t.landingpage.description3Onlineshop,
+      lottieFile: letterO,
+      color: "#f7be02",
+    },
+  ];
+  if (t.landingpage.secondLabelApplication === "UYGULAMANIZ") {
+    steps[1].lottieFile = letterU;
+  }
+
   const maxSteps = steps.length;
-  const { t, i18n } = useTranslation();
 
   return (
     <Box
@@ -182,142 +222,3 @@ const LandingStepper = ({ activeStep }) => {
 };
 
 export default LandingStepper;
-
-const steps = [
-  {
-    firstLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.firstLabelWebsite")}</>}
-      </Translation>
-    ),
-    secondLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.secondLabelWebsite")}</>}
-      </Translation>
-    ),
-    thirdLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.thirdLabelWebsite")}</>}
-      </Translation>
-    ),
-    description1: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description1Website")}</>}
-      </Translation>
-    ),
-    description2: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description2Website")}</>}
-      </Translation>
-    ),
-    description3: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description3Website")}</>}
-      </Translation>
-    ),
-    lottieFile: letterW,
-    color: "#6691c3",
-  },
-  {
-    firstLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.firstLabelApplication")}</>}
-      </Translation>
-    ),
-    secondLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.secondLabelApplication")}</>}
-      </Translation>
-    ),
-    thirdLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.thirdLabelApplication")}</>}
-      </Translation>
-    ),
-    description1: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description1Application")}</>}
-      </Translation>
-    ),
-    description2: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description2Application")}</>}
-      </Translation>
-    ),
-    description3: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description3Application")}</>}
-      </Translation>
-    ),
-    lottieFile: letterA,
-    color: "#F76B6C",
-  },
-  {
-    firstLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.firstLabelMobileapp")}</>}
-      </Translation>
-    ),
-    secondLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.secondLabelMobileapp")}</>}
-      </Translation>
-    ),
-    thirdLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.thirdLabelMobileapp")}</>}
-      </Translation>
-    ),
-    description1: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description1Mobileapp")}</>}
-      </Translation>
-    ),
-    description2: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description2Mobileapp")}</>}
-      </Translation>
-    ),
-    description3: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description3Mobileapp")}</>}
-      </Translation>
-    ),
-    lottieFile: letterM,
-    color: "#79C4C8",
-  },
-  {
-    firstLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.firstLabelOnlineshop")}</>}
-      </Translation>
-    ),
-    secondLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.secondLabelOnlineshop")}</>}
-      </Translation>
-    ),
-    thirdLabel: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.thirdLabelOnlineshop")}</>}
-      </Translation>
-    ),
-    description1: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description1Onlineshop")}</>}
-      </Translation>
-    ),
-    description2: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description2Onlineshop")}</>}
-      </Translation>
-    ),
-    description3: (
-      <Translation>
-        {(t, { i18n }) => <>{t("landingpage.description3Onlineshop")}</>}
-      </Translation>
-    ),
-    lottieFile: letterO,
-    color: "#f7be02",
-  },
-];

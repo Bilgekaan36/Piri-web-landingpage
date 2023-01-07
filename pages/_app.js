@@ -12,7 +12,6 @@ import Layout from "../components/layout/Layout";
 
 import { createTheme, ThemeProvider } from "@mui/material";
 import { ParallaxProvider } from "react-scroll-parallax";
-import "../components/internationalization/i18n";
 
 const theme = createTheme({
   palette: {
@@ -36,17 +35,17 @@ const theme = createTheme({
 
     logo: {
       fontFamily: "Sora",
-      fontWeight: 700,
-      fontSize: "2.5rem",
-      lineHeight: 1.334,
+      fontWeight: 100,
+      color: "#1E1F26",
+      fontSize: "1.5rem",
       letterSpacing: "-0.1em",
     },
     header: {
       fontFamily: "Sora",
-      fontWeight: 800,
-      fontSize: "1.3rem",
-      lineHeight: 1.334,
-      letterSpacing: "0em",
+      fontWeight: 100,
+      color: "#1E1F26",
+      fontSize: "1.5rem",
+      letterSpacing: "-0.1em",
     },
     mainHeader: {
       fontFamily: "Sora",

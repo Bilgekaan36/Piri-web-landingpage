@@ -5,7 +5,7 @@ const translation = {
   },
   landingpage: {
     firstLabelWebsite: "DEINE",
-    secondLabelWebsite: "WEBSITE",
+    secondLabelWebsite: "WEBSEITE",
     thirdLabelWebsite: `modern & innovativ`,
     description1Website: "Bringe deine Vision ins Web!",
     description2Website: "Ob Frontend- oder Backend du bekommst hier alles",
@@ -17,7 +17,7 @@ const translation = {
     description1Application: "Deine personalisierte Applikation!",
     description2Application:
       "Mit modernsten Technologien für das beste Kundenerlebnis",
-    description3Application: "Professionalität zalht sich aus",
+    description3Application: "Professionalität zahlt sich aus",
 
     firstLabelMobileapp: "DEINE",
     secondLabelMobileapp: "MOBILEAPP",
@@ -37,6 +37,8 @@ const translation = {
   benefitspage: {
     title1: "DEINE",
     title2: "VORTEILE",
+    headTitle:
+      "Alles, was du brauchst, um Sichtbarkeit, Traffic und Umsatz zu steigern.",
   },
   benefitsStepper: {
     label1: "HOHE KONVERSION - DEIN ERFOLG",
@@ -83,36 +85,36 @@ const translation = {
   },
   toolsStepper: {
     contentReact:
-      "React is a JavaScript-based UI development library. Facebook and an open-source developer community run it. Although React is a library rather than a language, it is widely used in web development. The library first appeared in May 2013 and is now one of the most commonly used frontend libraries for web development.",
+      "React ist eine JavaScript-basierte UI-Entwicklungsbibliothek. Facebook und eine Open-Source-Entwickler-Community betreiben es.",
     contentMaterialUi:
-      "MUI is a massive library of UI components designers and developers can use to build React applications. The open-source project follows Google's guidelines for creating components, giving you a customizable library of foundational and advanced UI elements.",
+      "MUI ist eine riesige Bibliothek von UI-Komponenten, die Designer und Entwickler verwenden können, um React-Anwendungen zu erstellen.",
     contentNodejs:
-      "Node. js (Node) is an open source, cross-platform runtime environment for executing JavaScript code. Node is used extensively for server-side programming, making it possible for developers to use JavaScript for client-side and server-side code without needing to learn an additional language.",
+      "Node. js ist eine plattformübergreifende Open-Source-Laufzeitumgebung zum Ausführen von JavaScript-Code. Node wird ausgiebig für die serverseitige Programmierung verwendet.",
     contentVercel:
-      "Vercel is a cloud platform for static sites and Serverless Functions that fits perfectly with your workflow. It enables developers to host websites and web services that deploy instantly, scale automatically, and requires no supervision, all with no configuration.",
+      "Vercel ist eine Cloud-Plattform für statische Websites und serverlose Funktionen, die sich perfekt in Ihren Workflow einfügt.",
     contentNextjs:
-      "Next.js is a React framework that gives you building blocks to create web applications. By framework, we mean Next.js handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your application.",
+      "Next.js ist ein React-Framework, das Ihnen Bausteine zum Erstellen von Webanwendungen bietet.",
     contentVue:
-      "Vue is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS, and JavaScript and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be they simple or complex.",
+      "Vue ist ein JavaScript-Framework zum Erstellen von Benutzeroberflächen. Es baut auf Standard-HTML, CSS und JavaScript auf.",
     contentFirebase:
-      "Google Firebase is a Google-backed application development software that enables developers to develop iOS, Android and Web apps. Firebase provides tools for tracking analytics, reporting and fixing app crashes, creating marketing and product experiment.",
+      "Google Firebase ist eine von Google unterstützte Anwendungsentwicklungssoftware, mit der Entwickler iOS-, Android- und Web-Apps entwickeln können.",
     contentHtml:
-      "HTML (HyperText Markup Language) is the code that is used to structure a web page and its content. For example, content could be structured within a set of paragraphs, a list of bulleted points, or using images and data tables.",
+      "HTML (HyperText Markup Language) ist der Code, der verwendet wird, um eine Webseite und ihren Inhalt zu strukturieren.",
     contentCss:
-      "CSS stands for Cascading Style Sheets. It is a style sheet language which is used to describe the look and formatting of a document written in markup language. It provides an additional feature to HTML. It is generally used with HTML to change the style of web pages and user interfaces.",
+      "CSS steht für Cascading Style Sheets. Es ist eine Stylesheet-Sprache, die verwendet wird, um das Aussehen und die Formatierung eines in Markup-Sprache geschriebenen Dokuments zu beschreiben.",
     contentJavascript:
-      "JavaScript is a dynamic programming language that's used for web development, in web applications, for game development, and lots more. It allows you to implement dynamic features on web pages that cannot be done with only HTML and CSS.",
+      "JavaScript ist eine dynamische Programmiersprache, die für die Webentwicklung, in Webanwendungen, für die Spieleentwicklung und vieles mehr verwendet wird.",
     contentAdobe:
-      "Adobe Creative Cloud is a set of applications and services from Adobe Inc. that gives subscribers access to a collection of software used for graphic design, video editing, web development, photography, along with a set of mobile applications and also some optional cloud services.",
+      "Adobe Creative Cloud ist eine Reihe von Anwendungen und Diensten von Adobe Inc., die Abonnenten Zugriff auf eine Sammlung von Software für Grafikdesign geben.",
     contentVscode:
-      "Visual Studio Code, also commonly referred to as VS Code, is a source-code editor made by Microsoft with the Electron Framework, for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git.",
+      "Visual Studio Code, allgemein auch als VS Code bezeichnet, ist ein Quellcode-Editor von Microsoft.",
   },
   processpage: {
-    title1: "MEINE",
-    title2: "PROJEKTE",
+    title1: "DER",
+    title2: "PROZESS",
     mainTitle1: "DEINE",
     mainTitle2: "APPLIKATION",
-    mainTitle3: "Alles aus einer Hand wie aus einem Guss.",
+    mainTitle3: "Alles aus einer Hand wie aus einem Stück.",
     mainTitle4: "Ein Prozess. Ein Preis.",
     titleDiscovery: "ERSTGESPRÄCH",
     contentDiscovery:
@@ -156,9 +158,12 @@ const translation = {
     title1: "ÜBER",
     title2: "MICH",
     personalTitle1: "Deine Web-Applikation, deine Signifikanz!",
-    // personalTitle2: "deine Signifikanz!",
-    personalContent:
-      "In einem persönlichen Webflow Workshop zeige ich Dir wie Du schnellund problemlos Änderungen auf Deiner neuen Webseite vornehmen kannst. Zusätzlich bekommst Du personalisierte Webflow Video Tutorials, die Du jederzeit abrufen kannst. Editiere Deine Webflow Webseite ohne kompliziertes Backend oder gar zusätzlichem Programmierer. So einfach ist das. In einem persönlichen Webflow Workshop zeige ich Dir wie Du schnell und problemlos Änderungen auf Deiner neuen Webseite vornehmen kannst. Zusätzlich bekommst Du personalisierte Webflow Video Tutorials, die Du jederzeit abrufen kannst. Editiere Deine Webflow Webseite ohne kompliziertes Backend oder gar zusätzlichem Programmierer. So einfach ist das.",
+    personalContent1:
+      "Ich bin als Fullstack Webentwickler tätig. Ich liebe es, Ideen und Projekte mit großer Begeisterung zu erstellen.",
+    personalContent2:
+      "Mit meinem Wissen aus beiden Welten verbinde ich die Backend- sowie Frontendtechnologien. Vom Design bis hin zur fertigen Applikation habe ich die volle Kontrolle. Kein Detail bleibt aus.",
+    personalContent3:
+      "Mein Ziel ist es, aus deiner Idee das beste Produkt zu erstellen. Auf den ersten Blick soll es den Kunden überzeugen und mitnehmen. Einfach, aber bedeutsam soll es werden.",
   },
   footerpage: {
     title1: "KONTAKT",
@@ -166,9 +171,9 @@ const translation = {
     leftTitle2: "UNS",
     leftTitle3: "REDEN",
     footerContent1:
-      "Lass uns mit einem unverbindlichem Erstgespräch starten. Wir schauen gemeinsam über Deine aktuelle Website, Deine Ziele und Herausforderungen und wie wir diese lösen können.",
+      "Lass uns mit einem unverbindlichen Erstgespräch starten. Wir schauen uns gemeinsam deinen aktuellen Stand an und erarbeiten zusammen einen Lösungsweg.",
     footerContent2:
-      "Außerdem erhältst Du in diesem Erstgespräch praktische Tipps für Deine Website, die Du direkt selbst umsetzen kannst.",
+      "Außerdem bekommst du im Erstgespräch von mir Tipps und praktische Informationen, um deine Internetpräsenz zu verbessern.",
     footerContent3: "Ich freue mich Dich kennenzulernen.",
     meetingTitle: "Erstgespräch vereinbaren",
     emailTitle: "Email schreiben",

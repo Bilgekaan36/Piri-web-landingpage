@@ -3,23 +3,17 @@ import {
   styled,
   ImageList,
   ImageListItem,
-  ImageListItemBar,
-  Grid,
   Typography,
   useMediaQuery,
   useTheme,
   Box,
 } from "@mui/material";
 
-import nextjs from "../../public/videos/nextjs.mp4";
-import portfolio from "../../public/videos/portfolio.mp4";
-import { useTranslation } from "react-i18next";
 import { Parallax } from "react-scroll-parallax";
 import { useState } from "react";
 
 const StyledHeader = styled(Box)(({ theme }) => ({
   display: "flex",
-  // height: "30vh",
   overflow: "hidden",
 }));
 
@@ -108,10 +102,9 @@ const StyledFooterAuthor = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const Workspage = ({ isShowWorkspage }) => {
+const Workspage = ({ t }) => {
   const theme = useTheme();
-  const matchDownMd = useMediaQuery(theme.breakpoints.down("lg"));
-  const { t, i18n } = useTranslation();
+  const matchDownLg = useMediaQuery(theme.breakpoints.down("lg"));
   const [activeBackground, setActiveBackground] = useState("white");
   const handleStep = (data) => {
     setActiveBackground(data);
@@ -124,20 +117,20 @@ const Workspage = ({ isShowWorkspage }) => {
     >
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-          <StyledTitleText>{t("workspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>{t("workspage.title2")}</StyledTitleTextSecond>
-          <StyledTitleText>{t("workspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>{t("workspage.title2")}</StyledTitleTextSecond>
-          <StyledTitleText>{t("workspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>{t("workspage.title2")}</StyledTitleTextSecond>
-          <StyledTitleText>{t("workspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>{t("workspage.title2")}</StyledTitleTextSecond>
+          <StyledTitleText>{t.workspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.workspage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.workspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.workspage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.workspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.workspage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.workspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.workspage.title2}</StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
       <StyledContainer disableGutters maxWidth='xxl'>
         <ImageList
-          cols={matchDownMd ? 1 : 2}
-          rowHeight={matchDownMd ? 120 : 280}
+          cols={matchDownLg ? 1 : 2}
+          rowHeight={matchDownLg ? 120 : 280}
         >
           {itemData.map((item) => (
             <ImageListItem
@@ -162,13 +155,6 @@ const Workspage = ({ isShowWorkspage }) => {
                 autoPlay={"autoplay"}
                 loop
               />
-              {/* <ImageListItemBar
-              title={item.title}
-              sx={{
-                background: "rgba(0, 0, 0, 0)",
-                margin: { xs: "10vw 10vw", md: "10vw 10vw" },
-              }}
-            /> */}
             </ImageListItem>
           ))}
         </ImageList>
@@ -179,7 +165,7 @@ const Workspage = ({ isShowWorkspage }) => {
               color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
             }}
           >
-            {t("workspage.quote1")}
+            {t.workspage.quote1}
           </StyledFooterText>
           <StyledFooterText
             variant='bigTitle'
@@ -187,7 +173,7 @@ const Workspage = ({ isShowWorkspage }) => {
               color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
             }}
           >
-            {t("workspage.quote2")}
+            {t.workspage.quote2}
           </StyledFooterText>
           <StyledFooterAuthor
             variant='h4'
@@ -231,36 +217,36 @@ const itemData = [
     id: 0,
     title: "Next.js",
     author: "@bkristastucchio",
-    video: nextjs,
+    video: "./videos/nextjs.mp4",
   },
   {
     id: 1,
     title: "bilgekaanyilmaz.com",
     author: "@rollelflex_graphy726",
-    video: portfolio,
+    video: "./videos/nextjs.mp4",
   },
   {
     id: 2,
     title: "Next.js",
     author: "@bkristastucchio",
-    video: nextjs,
+    video: "./videos/nextjs.mp4",
   },
   {
     id: 3,
     title: "bilgekaanyilmaz.com",
     author: "@rollelflex_graphy726",
-    video: portfolio,
+    video: "./videos/nextjs.mp4",
   },
   {
     id: 4,
     title: "Next.js",
     author: "@bkristastucchio",
-    video: nextjs,
+    video: "./videos/nextjs.mp4",
   },
   {
     id: 5,
     title: "bilgekaanyilmaz.com",
     author: "@rollelflex_graphy726",
-    video: portfolio,
+    video: "./videos/nextjs.mp4",
   },
 ];

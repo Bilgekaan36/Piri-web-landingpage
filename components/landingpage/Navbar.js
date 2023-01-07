@@ -1,5 +1,4 @@
 import React from "react";
-import i18n from "../internationalization/i18n";
 
 import {
   Box,
@@ -10,7 +9,6 @@ import {
   styled,
   Container,
 } from "@mui/material";
-import { useTranslation } from "react-i18next";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: "transparent",
@@ -32,12 +30,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const Navbar = (props) => {
-  const { t, i18n } = useTranslation();
-
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
+const Navbar = ({ t }) => {
   return (
     <Container disableGutters sx={{ width: { xxl: 1536, xl: 900, md: 700 } }}>
       <Box>
@@ -48,16 +41,9 @@ const Navbar = (props) => {
               component='div'
               sx={{
                 flexGrow: 1,
-                color: "#1E1F26",
-                fontSize: {
-                  xxl: "2.5rem",
-                  xl: "2rem",
-                  sm: "1.75rem",
-                  xs: "1.75rem",
-                },
               }}
             >
-              by.
+              bilgekaan yılmaz
             </Typography>
             <Button sx={{ width: { xs: 100, sm: 300 } }}>
               <Typography
@@ -72,14 +58,14 @@ const Navbar = (props) => {
                   },
                 }}
               >
-                {t("navbar.work")}
+                {t.navbar.work}
               </Typography>
             </Button>
-            <StyledButton onClick={() => changeLanguage("en")}>
+            <StyledButton>
               <Typography
                 variant='header'
                 sx={{
-                  color: "primary.contrastText",
+                  color: "white",
                   fontSize: {
                     xxl: "1.3rem",
                     xl: "1rem",
@@ -88,7 +74,7 @@ const Navbar = (props) => {
                   },
                 }}
               >
-                {t("navbar.contact")}
+                {t.navbar.contact}
               </Typography>
             </StyledButton>
           </Toolbar>

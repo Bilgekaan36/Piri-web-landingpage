@@ -30,7 +30,6 @@ a {
 }
 
 .MuiMobileStepper-progress {
-  /* width: 100%; */
   background-color: #ffffff;
 }
 
@@ -43,18 +42,6 @@ a {
   line-height: normal;
   border-bottom: 2px solid white;
 }
-
-/* #cursor {
-  position: fixed;
-  top: -16px;
-  left: -16px;
-  z-index: 1;
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  background: #e0e1dd;
-  opacity: 0;
-} */
 
 .MuiCircularProgress-root {
   display: flex;
@@ -72,11 +59,3 @@ a {
   width: 100%;
   overflow: hidden;
 }
-
-/* @media (max-width: 900px) {
-  .lf-player-container {
-    height: auto;
-    width: 50%;
-    overflow: hidden;
-  }
-} */

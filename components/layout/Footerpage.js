@@ -1,7 +1,8 @@
-import React from "react";
-
 import styles from "./Footerpage.module.css";
 
+import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   Container,
   styled,
@@ -10,73 +11,17 @@ import {
   Box,
   Button,
 } from "@mui/material";
-import { Parallax } from "react-scroll-parallax";
 import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
-import { useTranslation } from "react-i18next";
-import Link from "next/link";
 
-const StyledHeader = styled(Box)(({ theme }) => ({
-  display: "flex",
-  // height: "30vh",
-  overflow: "hidden",
-}));
-
-const StyledTitleText = styled(Typography)(({ theme }) => ({
-  color: "white",
-  fontSize: "10vw",
-  fontWeight: "700",
-  paddingRight: "12px",
-  [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "15vw",
-  },
-  [theme.breakpoints.down("mm")]: {
-    fontSize: "15vw",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "17vw",
-  },
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "20vw",
-  },
-  [theme.breakpoints.down("xs")]: {},
-}));
-
-const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
-  fontSize: "10vw",
-  fontWeight: "700",
-  color: "#1e1f26",
-  textShadow: "0px 0px 3px white",
-  paddingRight: "64px",
-  [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "15vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("mm")]: {
-    fontSize: "15vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "17vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "20vw",
-    paddingRight: "24px",
-  },
-  [theme.breakpoints.down("xs")]: {},
-}));
+import en from "../../locales/en";
+import de from "../../locales/de";
+import tr from "../../locales/tr";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "#1e1f26",
   color: "white",
-
-  height: "100vh",
   position: "relative",
-  [theme.breakpoints.down("lg")]: {
-    height: "inherit",
-  },
+  [theme.breakpoints.down("lg")]: {},
 }));
 
 const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
@@ -88,7 +33,6 @@ const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
 
 const StyledLeftTitleGrid = styled(Grid)(({ theme }) => ({
   display: "flex",
-
   flexDirection: "column",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "64px",
@@ -98,7 +42,7 @@ const StyledLeftTitleGrid = styled(Grid)(({ theme }) => ({
 const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
   fontSize: "2rem",
   color: "white",
-
+  fontWeight: 600,
   [theme.breakpoints.down("mm")]: {
     fontSize: "1rem",
   },
@@ -117,7 +61,7 @@ const StyledHeadContent = styled(Typography)(({ theme }) => ({
   fontSize: "1.4rem",
   fontWeight: "200",
   color: "white",
-
+  marginBottom: "12px",
   [theme.breakpoints.down("xxl")]: {
     // fontSize: "1.8vw",
   },
@@ -143,7 +87,6 @@ const StyledFooterTitle = styled(Typography)(({ theme }) => ({
   fontSize: "4rem",
   fontWeight: "700",
   color: "white",
-
   paddingTop: "4rem",
   paddingBottom: "4rem",
   [theme.breakpoints.down("lg")]: {
@@ -171,34 +114,35 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
 }));
 
 const Footerpage = () => {
-  const { t, i18n } = useTranslation();
+  const router = useRouter();
+  const { locale, locales, defaultLocale } = router;
+  // const t = locale === "en" ? en : de;
+  let t;
+  switch (locale) {
+    case "en":
+      t = en;
+      console.log("locale = english");
+      break;
+    case "de":
+      t = de;
+      console.log("locale = german");
+      break;
+    case "tr":
+      t = tr;
+      console.log("locale = turkish");
+      break;
+  }
   return (
     <StyledContainer maxWidth='false'>
-      {/* <StyledHeader>
-        <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-          <StyledTitleText>{t("footerpage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("footerpage.title1")}
-          </StyledTitleTextSecond>
-          <StyledTitleText>{t("footerpage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("footerpage.title1")}
-          </StyledTitleTextSecond>
-          <StyledTitleText>{t("footerpage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("footerpage.title1")}
-          </StyledTitleTextSecond>
-          <StyledTitleText>{t("footerpage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("footerpage.title1")}
-          </StyledTitleTextSecond>
-        </Parallax>
-      </StyledHeader> */}
-      <Container disableGutters maxWidth='xxl' sx={{ paddingBottom: "10rem" }}>
+      <Container
+        disableGutters
+        maxWidth='xxl'
+        sx={{ position: "relative", height: "100%" }}
+      >
         <StyledHeaderGrid container spacing={0}>
           <StyledLeftTitleGrid item xs={10} sm={5} lg={4}>
             <StyledLeftTitleText variant='bigTitle' sx={{ color: "white" }}>
-              {t("footerpage.leftTitle1")}
+              {t.footerpage.leftTitle1}
             </StyledLeftTitleText>
             <StyledLeftTitleText
               variant='bigTitle'
@@ -206,22 +150,22 @@ const Footerpage = () => {
                 color: "white",
               }}
             >
-              {t("footerpage.leftTitle2")}
+              {t.footerpage.leftTitle2}
             </StyledLeftTitleText>
             <StyledLeftTitleText variant='bigTitle' sx={{ color: "white" }}>
-              {t("footerpage.leftTitle3")}
+              {t.footerpage.leftTitle3}
             </StyledLeftTitleText>
           </StyledLeftTitleGrid>
           <StyledRightTitleGrid item xs={10} sm={5} lg={4}>
             <Box>
               <StyledHeadContent>
-                {t("footerpage.footerContent1")}
+                {t.footerpage.footerContent1}
               </StyledHeadContent>
               <StyledHeadContent>
-                {t("footerpage.footerContent2")}
+                {t.footerpage.footerContent2}
               </StyledHeadContent>
               <StyledHeadContent>
-                {t("footerpage.footerContent3")}
+                {t.footerpage.footerContent3}
               </StyledHeadContent>
             </Box>
           </StyledRightTitleGrid>
@@ -229,7 +173,11 @@ const Footerpage = () => {
         <Grid
           container
           spacing={0}
-          sx={{ display: "flex", justifyContent: "center" }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "126px",
+          }}
         >
           <StyledGrid
             item
@@ -242,9 +190,7 @@ const Footerpage = () => {
               },
             }}
           >
-            <StyledFooterTitle>
-              {t("footerpage.meetingTitle")}
-            </StyledFooterTitle>
+            <StyledFooterTitle>{t.footerpage.meetingTitle}</StyledFooterTitle>
             <Box className={styles.iconArrow} />
           </StyledGrid>
           <StyledGrid
@@ -259,86 +205,94 @@ const Footerpage = () => {
               },
             }}
           >
-            <StyledFooterTitle> {t("footerpage.emailTitle")}</StyledFooterTitle>
+            <StyledFooterTitle> {t.footerpage.emailTitle}</StyledFooterTitle>
             <Box className={styles.iconArrow} />
           </StyledGrid>
         </Grid>
+        <Grid
+          container
+          spacing={0}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Grid item xs={10} lg={8}>
+            <Box
+              sx={{
+                padding: "32px 0",
+                display: "flex",
+                justifyContent: { xs: "center", md: "" },
+                alignItems: { xs: "center", md: "" },
+                flexDirection: { xs: "column-reverse", md: "row" },
+              }}
+            >
+              <Typography variant='h7' sx={{ fontSize: { xs: "0.75rem" } }}>
+                © 2022 by bilgekaan yilmaz
+              </Typography>
+              <Box
+                flexGrow={1}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Link href='https://github.com/Kaan36'>
+                  <GitHub
+                    sx={{
+                      fontSize: "24px",
+                      margin: "15px",
+                    }}
+                  />
+                </Link>
+                <Link href='https://www.linkedin.com/in/bilgekaan-yilmaz-107888228/'>
+                  <LinkedIn
+                    sx={{
+                      fontSize: "24px",
+                      margin: "15px",
+                    }}
+                  />
+                </Link>
+                <Link href=''>
+                  <Twitter
+                    sx={{
+                      fontSize: "24px",
+                      margin: "15px",
+                    }}
+                  />
+                </Link>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Button variant='text'>
+                  <Typography
+                    variant='h7'
+                    color='white'
+                    sx={{ fontSize: { xs: "0.7rem" } }}
+                  >
+                    {t.footerpage.imprint}
+                  </Typography>
+                </Button>
+                <Button variant='text'>
+                  <Typography
+                    variant='h7'
+                    color='white'
+                    sx={{ fontSize: { xs: "0.7rem" } }}
+                  >
+                    {t.footerpage.privacyPolicy}
+                  </Typography>
+                </Button>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
       </Container>
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: 12,
-          left: "18px",
-          right: "18px",
-          display: "flex",
-          justifyContent: { xs: "center", md: "" },
-          alignItems: { xs: "center", md: "" },
-          flexDirection: { xs: "column-reverse", md: "row" },
-        }}
-      >
-        <Typography variant='h7' sx={{ fontSize: { xs: "0.75rem" } }}>
-          © 2022 by bilgekaan yilmaz
-        </Typography>
-        <Box
-          flexGrow={1}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Link href='https://github.com/Kaan36'>
-            <GitHub
-              sx={{
-                fontSize: "24px",
-                margin: "0 15px",
-              }}
-            />
-          </Link>
-          <Link href='https://www.linkedin.com/in/bilgekaan-yilmaz-107888228/'>
-            <LinkedIn
-              sx={{
-                fontSize: "24px",
-                margin: "0 15px",
-              }}
-            />
-          </Link>
-          <Link href=''>
-            <Twitter
-              sx={{
-                fontSize: "24px",
-                margin: "0 15px",
-              }}
-            />
-          </Link>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Button variant='text'>
-            <Typography
-              variant='h7'
-              color='white'
-              sx={{ fontSize: { xs: "0.7rem" } }}
-            >
-              {t("footerpage.imprint")}
-            </Typography>
-          </Button>
-          <Button variant='text'>
-            <Typography
-              variant='h7'
-              color='white'
-              sx={{ fontSize: { xs: "0.7rem" } }}
-            >
-              {t("footerpage.privacyPolicy")}
-            </Typography>
-          </Button>
-        </Box>
-      </Box>
     </StyledContainer>
   );
 };

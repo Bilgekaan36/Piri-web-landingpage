@@ -1,9 +1,5 @@
-import styles from "./Processpage.module.css";
-
 import React, { useEffect, useState } from "react";
 import { Container, styled, Grid, Typography, Box } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import { Translation } from "react-i18next";
 import { Parallax } from "react-scroll-parallax";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
@@ -14,7 +10,6 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 
 const StyledHeader = styled(Box)(({ theme }) => ({
   display: "flex",
-  // height: "30vh",
   overflow: "hidden",
 }));
 
@@ -280,11 +275,10 @@ const StyledStepperNumbers = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {},
 }));
 
-const Process = (props) => {
+const Process = ({ t }) => {
   const [progress, setProgress] = useState(100);
 
   const [activeBackground, setActiveBackground] = useState("white");
-  const { t, i18n } = useTranslation();
 
   const handleStep = (data) => {
     setActiveBackground(data);
@@ -298,6 +292,113 @@ const Process = (props) => {
     handleStep("white");
   }, []);
 
+  const textData = [
+    {
+      id: 0,
+      number: "01",
+      title: t.processpage.titleDiscovery,
+      content: t.processpage.contentDiscovery,
+      subtitles: [
+        {
+          textId: "subtitleDiscovery1",
+          text: t.processpage.subtitleDiscovery1,
+        },
+        {
+          textId: "subtitleDiscovery2",
+          text: t.processpage.subtitleDiscovery2,
+        },
+        {
+          textId: "subtitleDiscovery3",
+          text: t.processpage.subtitleDiscovery3,
+        },
+      ],
+    },
+    {
+      id: 1,
+      number: "02",
+      title: t.processpage.titleStrategy,
+      content: t.processpage.contentStrategy,
+      subtitles: [
+        {
+          textId: "subtitleStrategy1",
+          text: t.processpage.subtitleStrategy1,
+        },
+        {
+          textId: "subtitleStrategy2",
+          text: t.processpage.subtitleStrategy2,
+        },
+        {
+          textId: "subtitleStrategy3",
+          text: t.processpage.subtitleStrategy3,
+        },
+      ],
+    },
+    {
+      id: 2,
+      number: "03",
+      title: t.processpage.titleDesign,
+      content: t.processpage.contentDesign,
+      subtitles: [
+        {
+          textId: "subtitleDesign1",
+          text: t.processpage.subtitleDesign1,
+        },
+        {
+          textId: "subtitleDesign2",
+          text: t.processpage.subtitleDesign2,
+        },
+      ],
+    },
+    {
+      id: 3,
+      number: "04",
+      title: t.processpage.titleDevelopment,
+      content: t.processpage.contentDevelopment,
+      subtitles: [
+        {
+          textId: "subtitleDevelopment1",
+          text: t.processpage.subtitleDevelopment1,
+        },
+        {
+          textId: "subtitleDevelopment2",
+          text: t.processpage.subtitleDevelopment2,
+        },
+        {
+          textId: "subtitleDevelopment3",
+          text: t.processpage.subtitleDevelopment3,
+        },
+        {
+          textId: "subtitleDevelopment4",
+          text: t.processpage.subtitleDevelopment4,
+        },
+      ],
+    },
+    {
+      id: 4,
+      number: "05",
+      title: t.processpage.titleOnboarding,
+      content: t.processpage.contentOnboarding,
+      subtitles: [
+        {
+          textId: "subtitleOnboarding1",
+          text: t.processpage.subtitleOnboarding1,
+        },
+        {
+          textId: "subtitleOnboarding2",
+          text: t.processpage.subtitleOnboarding2,
+        },
+        {
+          textId: "subtitleOnboarding3",
+          text: t.processpage.subtitleOnboarding3,
+        },
+        {
+          textId: "subtitleOnboarding4",
+          text: t.processpage.subtitleOnboarding4,
+        },
+      ],
+    },
+  ];
+
   return (
     <StyledContainer
       maxWidth='false'
@@ -305,22 +406,14 @@ const Process = (props) => {
     >
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-          <StyledTitleText>{t("processpage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("processpage.title2")}
-          </StyledTitleTextSecond>
-          <StyledTitleText>{t("processpage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("processpage.title2")}
-          </StyledTitleTextSecond>
-          <StyledTitleText>{t("processpage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("processpage.title2")}
-          </StyledTitleTextSecond>
-          <StyledTitleText>{t("processpage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("processpage.title2")}
-          </StyledTitleTextSecond>
+          <StyledTitleText>{t.processpage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.processpage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.processpage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.processpage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.processpage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.processpage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.processpage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.processpage.title2}</StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
 
@@ -330,10 +423,10 @@ const Process = (props) => {
         sx={{ marginBottom: { xs: "0px" } }}
       >
         <StyledGrid item xs={10} sm={8} mm={8} md={8} lg={6}>
-          <StyledMainTitle>{t("processpage.mainTitle1")}</StyledMainTitle>
-          <StyledMainTitle>{t("processpage.mainTitle2")}</StyledMainTitle>
-          <StyledSubTitle>{t("processpage.mainTitle3")}</StyledSubTitle>
-          <StyledSubTitle>{t("processpage.mainTitle4")}</StyledSubTitle>
+          <StyledMainTitle>{t.processpage.mainTitle1}</StyledMainTitle>
+          <StyledMainTitle>{t.processpage.mainTitle2}</StyledMainTitle>
+          <StyledSubTitle>{t.processpage.mainTitle3}</StyledSubTitle>
+          <StyledSubTitle>{t.processpage.mainTitle4}</StyledSubTitle>
         </StyledGrid>
       </StyledStepperGrid>
       <Parallax
@@ -432,216 +525,5 @@ const Process = (props) => {
     </StyledContainer>
   );
 };
-
-const textData = [
-  {
-    id: 0,
-    number: "01",
-    title: (
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.titleDiscovery")}</>}
-      </Translation>
-    ),
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.contentDiscovery")}</>}
-      </Translation>
-    ),
-    subtitles: [
-      {
-        textId: "subtitleDiscovery1",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleDiscovery1")}</>}
-          </Translation>
-        ),
-      },
-      {
-        textId: "subtitleDiscovery2",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleDiscovery2")}</>}
-          </Translation>
-        ),
-      },
-      {
-        textId: "subtitleDiscovery3",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleDiscovery3")}</>}
-          </Translation>
-        ),
-      },
-    ],
-  },
-  {
-    id: 1,
-    number: "02",
-    title: (
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.titleStrategy")}</>}
-      </Translation>
-    ),
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.contentStrategy")}</>}
-      </Translation>
-    ),
-    subtitles: [
-      {
-        textId: "subtitleStrategy1",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleStrategy1")}</>}
-          </Translation>
-        ),
-      },
-      {
-        textId: "subtitleStrategy2",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleStrategy2")}</>}
-          </Translation>
-        ),
-      },
-      {
-        textId: "subtitleStrategy3",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleStrategy3")}</>}
-          </Translation>
-        ),
-      },
-    ],
-  },
-  {
-    id: 2,
-    number: "03",
-    title: (
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.titleDesign")}</>}
-      </Translation>
-    ),
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.contentDesign")}</>}
-      </Translation>
-    ),
-    subtitles: [
-      {
-        textId: "subtitleDesign1",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleDesign1")}</>}
-          </Translation>
-        ),
-      },
-      {
-        textId: "subtitleDesign2",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleDesign2")}</>}
-          </Translation>
-        ),
-      },
-    ],
-  },
-  {
-    id: 3,
-    number: "04",
-    title: (
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.titleDevelopment")}</>}
-      </Translation>
-    ),
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.contentDevelopment")}</>}
-      </Translation>
-    ),
-    subtitles: [
-      {
-        textId: "subtitleDevelopment1",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleDevelopment1")}</>}
-          </Translation>
-        ),
-      },
-      {
-        textId: "subtitleDevelopment2",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleDevelopment2")}</>}
-          </Translation>
-        ),
-      },
-      {
-        textId: "subtitleDevelopment3",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleDevelopment3")}</>}
-          </Translation>
-        ),
-      },
-      {
-        textId: "subtitleDevelopment4",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleDevelopment4")}</>}
-          </Translation>
-        ),
-      },
-    ],
-  },
-  {
-    id: 4,
-    number: "05",
-    title: (
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.titleOnboarding")}</>}
-      </Translation>
-    ),
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("processpage.contentOnboarding")}</>}
-      </Translation>
-    ),
-    subtitles: [
-      {
-        textId: "subtitleOnboarding1",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleOnboarding1")}</>}
-          </Translation>
-        ),
-      },
-      {
-        textId: "subtitleOnboarding2",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleOnboarding2")}</>}
-          </Translation>
-        ),
-      },
-      {
-        textId: "subtitleOnboarding3",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleOnboarding3")}</>}
-          </Translation>
-        ),
-      },
-      {
-        textId: "subtitleOnboarding4",
-        text: (
-          <Translation>
-            {(t, { i18n }) => <>{t("processpage.subtitleOnboarding4")}</>}
-          </Translation>
-        ),
-      },
-    ],
-  },
-];
 
 export default Process;

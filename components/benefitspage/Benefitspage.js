@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import Grid from "@mui/material/Grid";
 import { Box, Container, styled, Typography } from "@mui/material";
-import { useTranslation } from "react-i18next";
 
 import BenefitsStepper from "./BenefitsStepper";
 
@@ -154,8 +153,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
-const Benefitspage = (props) => {
-  const { t, i18n } = useTranslation();
+const Benefitspage = ({ t }) => {
   const [activeBackground, setActiveBackground] = useState("#1e1f26");
   const handleBackground = (data) => {
     setActiveBackground(data);
@@ -175,7 +173,7 @@ const Benefitspage = (props) => {
           width: "100px",
           backgroundColor: "transparent",
           position: "absolute",
-          bottom: "30%",
+          bottom: "40%",
           left: 0,
           zIndex: 10,
         }}
@@ -192,22 +190,14 @@ const Benefitspage = (props) => {
       />
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("benefitspage.title2")}
-          </StyledTitleTextSecond>
-          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("benefitspage.title2")}
-          </StyledTitleTextSecond>
-          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("benefitspage.title2")}
-          </StyledTitleTextSecond>
-          <StyledTitleText>{t("benefitspage.title1")}</StyledTitleText>
-          <StyledTitleTextSecond>
-            {t("benefitspage.title2")}
-          </StyledTitleTextSecond>
+          <StyledTitleText>{t.benefitspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.benefitspage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.benefitspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.benefitspage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.benefitspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.benefitspage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.benefitspage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.benefitspage.title2}</StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
       <Container
@@ -222,13 +212,16 @@ const Benefitspage = (props) => {
       >
         <StyledStepperGrid container spacing={0}>
           <StyledGrid item xs={10} sm={8} mm={8} md={8} lg={6}>
-            <StyledMainTitle>
-              Alles, was Sie brauchen, um Sichtbarkeit, Traffic und Umsatz zu
-              steigern.
+            <StyledMainTitle
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {t.benefitspage.headTitle}
             </StyledMainTitle>
           </StyledGrid>
         </StyledStepperGrid>
-        <BenefitsStepper activeBackground={activeBackground} />
+        <BenefitsStepper t={t} activeBackground={activeBackground} />
       </Container>
     </StyledContainer>
   );

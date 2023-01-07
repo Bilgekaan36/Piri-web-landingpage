@@ -1,15 +1,11 @@
 import Box from "@mui/material/Box";
 import {
-  Paper,
   Typography,
   Grid,
-  CircularProgress,
   Card,
   CardActionArea,
-  CardMedia,
   CardContent,
 } from "@mui/material";
-import { Translation } from "react-i18next";
 
 import ReactSvg from "../technologies/ReactSvg.js";
 import AdobeSvg from "../technologies/AdobeSvg.js";
@@ -24,7 +20,71 @@ import VercelSvg from "../technologies/VercelSvg.js";
 import VscodeSvg from "../technologies/VscodeSvg.js";
 import VueSvg from "../technologies/VueSvg.js";
 
-const ToolsStepper = ({ activeStep }) => {
+const ToolsStepper = ({ activeBackground, t }) => {
+  const technologies = [
+    {
+      logo: <ReactSvg />,
+      title: "REACT",
+      content: t.toolsStepper.contentReact,
+    },
+    {
+      logo: <MaterialuiSvg />,
+      title: "Material UI",
+      content: t.toolsStepper.contentMaterialUi,
+    },
+    {
+      logo: <NodejsSvg />,
+      title: "NODE.JS",
+      content: t.toolsStepper.contentNodejs,
+    },
+    {
+      logo: <VercelSvg />,
+      title: "VERCEL",
+      content: t.toolsStepper.contentVercel,
+    },
+    {
+      logo: <NextjsSvg />,
+      title: "NEXT.JS",
+      content: t.toolsStepper.contentNextjs,
+    },
+    {
+      logo: <VueSvg />,
+      title: "VUE",
+      content: t.toolsStepper.contentVue,
+    },
+    {
+      logo: <FirebaseSvg />,
+      title: "FIREBASE",
+      content: t.toolsStepper.contentFirebase,
+    },
+
+    // {
+    //   logo: <HtmlSvg />,
+    //   title: "HTML",
+    //   content: toolsStepper.contentHtml,
+    // },
+    // {
+    //   logo: <CssSvg />,
+    //   title: "CSS",
+    //   content: toolsStepper.contentCss,
+    // },
+    {
+      logo: <JavascriptSvg />,
+      title: "JAVASCRIPT",
+      content: t.toolsStepper.contentJavascript,
+    },
+    {
+      logo: <AdobeSvg />,
+      title: "ADOBE",
+      content: t.toolsStepper.contentAdobe,
+    },
+    {
+      logo: <VscodeSvg />,
+      title: "VSCODE",
+      content: t.toolsStepper.contentVscode,
+    },
+  ];
+
   return (
     <Grid
       container
@@ -57,7 +117,7 @@ const ToolsStepper = ({ activeStep }) => {
         >
           <Card
             sx={{
-              height: 400,
+              height: 370,
               width: {
                 xs: "100%",
                 sm: "100%",
@@ -65,7 +125,9 @@ const ToolsStepper = ({ activeStep }) => {
                 mm: "100%",
                 lg: "100%",
               },
-              boxShadow: "none",
+              boxShadow: `1px 1px 0px ${
+                activeBackground === "#1e1f26" ? "white" : "#1e1f26"
+              }`,
             }}
           >
             <CardActionArea
@@ -76,12 +138,6 @@ const ToolsStepper = ({ activeStep }) => {
                 alignItems: "center",
               }}
             >
-              {/* <CardMedia
-                component='img'
-                height='300'
-                image='/static/images/cards/contemplative-reptile.jpg'
-                alt='green iguana'
-              /> */}
               <Box
                 sx={{
                   width: "150px",
@@ -108,115 +164,3 @@ const ToolsStepper = ({ activeStep }) => {
 };
 
 export default ToolsStepper;
-
-const technologies = [
-  {
-    logo: <ReactSvg />,
-    title: "REACT",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentReact")}</>}
-      </Translation>
-    ),
-  },
-  {
-    logo: <MaterialuiSvg />,
-    title: "Material UI",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentMaterialUi")}</>}
-      </Translation>
-    ),
-  },
-  {
-    logo: <NodejsSvg />,
-    title: "NODE.JS",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentNodejs")}</>}
-      </Translation>
-    ),
-  },
-  {
-    logo: <VercelSvg />,
-    title: "VERCEL",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentVercel")}</>}
-      </Translation>
-    ),
-  },
-  {
-    logo: <NextjsSvg />,
-    title: "NEXT.JS",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentNextjs")}</>}
-      </Translation>
-    ),
-  },
-  {
-    logo: <VueSvg />,
-    title: "VUE",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentVue")}</>}
-      </Translation>
-    ),
-  },
-  {
-    logo: <FirebaseSvg />,
-    title: "FIREBASE",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentFirebase")}</>}
-      </Translation>
-    ),
-  },
-
-  // {
-  //   logo: <HtmlSvg />,
-  //   title: "HTML",
-  //   content: (
-  //     <Translation>
-  //       {(t, { i18n }) => <>{t("toolsStepper.contentHtml")}</>}
-  //     </Translation>
-  //   ),
-  // },
-  // {
-  //   logo: <CssSvg />,
-  //   title: "CSS",
-  //   content: (
-  //     <Translation>
-  //       {(t, { i18n }) => <>{t("toolsStepper.contentCss")}</>}
-  //     </Translation>
-  //   ),
-  // },
-  {
-    logo: <JavascriptSvg />,
-    title: "JAVASCRIPT",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentJavascript")}</>}
-      </Translation>
-    ),
-  },
-  {
-    logo: <AdobeSvg />,
-    title: "ADOBE",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentAdobe")}</>}
-      </Translation>
-    ),
-  },
-  {
-    logo: <VscodeSvg />,
-    title: "VSCODE",
-    content: (
-      <Translation>
-        {(t, { i18n }) => <>{t("toolsStepper.contentVscode")}</>}
-      </Translation>
-    ),
-  },
-];

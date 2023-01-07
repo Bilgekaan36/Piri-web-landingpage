@@ -11,7 +11,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   position: "relative",
 }));
 
-const Landingpage = (props) => {
+const Landingpage = ({ t }) => {
   const [activeStep, setActiveStep] = useState(0);
 
   const handleStep = (data) => {
@@ -82,7 +82,7 @@ const Landingpage = (props) => {
           height: "220vh",
         }}
       >
-        <Navbar></Navbar>
+        <Navbar t={t}></Navbar>
         <Box
           sx={{
             position: "sticky",
@@ -92,7 +92,7 @@ const Landingpage = (props) => {
             overflow: "hidden",
           }}
         >
-          <LandingStepper activeStep={activeStep} />
+          <LandingStepper t={t} activeStep={activeStep} />
         </Box>
       </StyledContainer>
     </div>
