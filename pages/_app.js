@@ -96,9 +96,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ParallaxProvider>
       <ThemeProvider theme={theme}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </ThemeProvider>
     </ParallaxProvider>
   );

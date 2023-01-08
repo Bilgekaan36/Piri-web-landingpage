@@ -121,15 +121,12 @@ const Footerpage = () => {
   switch (locale) {
     case "en":
       t = en;
-      console.log("locale = english");
       break;
     case "de":
       t = de;
-      console.log("locale = german");
       break;
     case "tr":
       t = tr;
-      console.log("locale = turkish");
       break;
   }
   return (
@@ -270,7 +267,7 @@ const Footerpage = () => {
                   alignItems: "center",
                 }}
               >
-                <Button variant='text'>
+                <Link href='/datapolicy'>
                   <Typography
                     variant='h7'
                     color='white'
@@ -278,8 +275,8 @@ const Footerpage = () => {
                   >
                     {t.footerpage.imprint}
                   </Typography>
-                </Button>
-                <Button variant='text'>
+                </Link>
+                <Link href='/datapolicy' style={{ marginLeft: "12px" }}>
                   <Typography
                     variant='h7'
                     color='white'
@@ -287,7 +284,7 @@ const Footerpage = () => {
                   >
                     {t.footerpage.privacyPolicy}
                   </Typography>
-                </Button>
+                </Link>
               </Box>
             </Box>
           </Grid>

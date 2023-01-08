@@ -181,7 +181,12 @@ const LandingStepper = ({ activeStep, t }) => {
           <StyledHeaderModular
             variant='mainHeader'
             component='div'
-            sx={{ color: steps[activeStep].color }}
+            sx={{
+              color: steps[activeStep].color,
+              mt: {
+                xxl: t.landingpage.secondLabelWebsite === "WEB SİTENİZ" ? 4 : 0,
+              },
+            }}
           >
             {steps[activeStep].secondLabel}
           </StyledHeaderModular>

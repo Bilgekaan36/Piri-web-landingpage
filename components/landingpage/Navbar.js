@@ -8,7 +8,12 @@ import {
   Button,
   styled,
   Container,
+  FormControl,
+  InputLabel,
+  NativeSelect,
 } from "@mui/material";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: "transparent",
@@ -25,42 +30,59 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 
 const StyledButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.background.custom,
+  height: "55px",
+  marginLeft: "12px",
   "&:hover": {
     backgroundColor: "#6691C3",
   },
 }));
 
 const Navbar = ({ t }) => {
+  const router = useRouter();
+  const { locale, locales, defaultLocale } = router;
+
+  const handleChange = (event) => {
+    const locale = event.target.value;
+    router.push("/", "/", { locale });
+  };
+
   return (
     <Container disableGutters sx={{ width: { xxl: 1536, xl: 900, md: 700 } }}>
       <Box>
         <StyledAppBar>
           <Toolbar>
-            <Typography
-              variant='logo'
-              component='div'
-              sx={{
-                flexGrow: 1,
-              }}
-            >
-              bilgekaan yılmaz
-            </Typography>
-            <Button sx={{ width: { xs: 100, sm: 300 } }}>
-              <Typography
-                variant='header'
-                sx={{
-                  color: "#1E1F26",
-                  fontSize: {
-                    xxl: "1.3rem",
-                    xl: "1rem",
-                    sm: "0.9rem",
-                    xs: "0.9rem",
-                  },
+            <Box sx={{ flexGrow: 1 }}>
+              <Link href='/'>
+                <Typography
+                  variant='logo'
+                  component='div'
+                  sx={{
+                    letterSpacing: "0.5em",
+                  }}
+                >
+                  PIRI WEB
+                </Typography>
+              </Link>
+            </Box>
+            <FormControl sx={{ width: 100 }}>
+              {/* <InputLabel variant='standard' htmlFor='uncontrolled-native'>
+                language
+              </InputLabel> */}
+              <NativeSelect
+                defaultValue={locale}
+                inputProps={{
+                  name: "language",
+                  id: "uncontrolled-native",
                 }}
+                onChange={handleChange}
               >
-                {t.navbar.work}
-              </Typography>
-            </Button>
+                {locales.map((locale) => (
+                  <option value={locale} key={locale}>
+                    {locale.toUpperCase()}
+                  </option>
+                ))}
+              </NativeSelect>
+            </FormControl>
             <StyledButton>
               <Typography
                 variant='header'
