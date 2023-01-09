@@ -181,7 +181,7 @@ const translation = {
     privacyPolicy: "DATENSCHUTZ",
   },
   imprint: {
-    title: "Impressum Angaben gemäß § 5 TMG",
+    title: "Impressum",
     contentName: "Bilgekaan Yilmaz",
     contentStreet: "Yagmur Sokak No.10/A/7",
     contentCity: "Nilüfer/Cumhuriyet Mahallesi",

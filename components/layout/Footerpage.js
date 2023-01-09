@@ -267,7 +267,7 @@ const Footerpage = () => {
                   alignItems: "center",
                 }}
               >
-                <Link href='/datapolicy'>
+                <Link href='/imprint'>
                   <Typography
                     variant='h7'
                     color='white'
