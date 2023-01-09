@@ -12,6 +12,7 @@ import Layout from "../components/layout/Layout";
 
 import { createTheme, ThemeProvider } from "@mui/material";
 import { ParallaxProvider } from "react-scroll-parallax";
+import Head from "next/head";
 
 const theme = createTheme({
   palette: {
@@ -95,11 +96,16 @@ const theme = createTheme({
 function MyApp({ Component, pageProps }) {
   return (
     <ParallaxProvider>
-      <Layout>
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <Head>
+            <title>PIRI WEB | Web Development & Web Design</title>
+            <link rel='shortcut icon' href='/favicon//favicon.ico' />
+          </Head>
+
           <Component {...pageProps} />
-        </ThemeProvider>
-      </Layout>
+        </Layout>
+      </ThemeProvider>
     </ParallaxProvider>
   );
 }

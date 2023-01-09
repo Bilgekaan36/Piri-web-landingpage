@@ -28,7 +28,7 @@ const Landingpage = (props) => {
   };
 
   return (
-    <div>
+    <>
       <Parallax
         style={{
           height: "30%",
@@ -100,7 +100,7 @@ const Landingpage = (props) => {
           <LandingStepper t={t} activeStep={activeStep} />
         </Box>
       </StyledContainer>
-    </div>
+    </>
   );
 };
 

@@ -189,7 +189,13 @@ const Footerpage = (props, ref) => {
               },
             }}
           >
-            <StyledFooterTitle>{t.footerpage.meetingTitle}</StyledFooterTitle>
+            <Link href='https://calendly.com/piri-web/30min' legacyBehavior>
+              <a target='_blank' rel='noopener noreferrer'>
+                <StyledFooterTitle>
+                  {t.footerpage.meetingTitle}
+                </StyledFooterTitle>
+              </a>
+            </Link>
             <Box className={styles.iconArrow} />
           </StyledGrid>
           <StyledGrid
@@ -204,7 +210,11 @@ const Footerpage = (props, ref) => {
               },
             }}
           >
-            <StyledFooterTitle> {t.footerpage.emailTitle}</StyledFooterTitle>
+            <a
+              href={`mailto:bilgekaan.yilmaz36@gmail.com?subject=${""}&body=${""}`}
+            >
+              <StyledFooterTitle> {t.footerpage.emailTitle}</StyledFooterTitle>
+            </a>
             <Box className={styles.iconArrow} />
           </StyledGrid>
         </Grid>

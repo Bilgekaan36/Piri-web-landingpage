@@ -1,5 +1,5 @@
 import ProgressBar from "./ProgressBar";
-import { Box, Container } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const Layout = (props) => {
   return (

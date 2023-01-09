@@ -33,13 +33,13 @@ const StyledButton = styled(Button)(({ theme }) => ({
   height: "55px",
   marginLeft: "12px",
   "&:hover": {
-    backgroundColor: "#6691C3",
+    backgroundColor: "#1CEAD9",
   },
 }));
 
 const Navbar = (props) => {
   const router = useRouter();
-  const { locale, locales, defaultLocale, pathname, asPath } = router;
+  const { locale, locales, defaultLocale, pathname } = router;
 
   const changeLanguage = (event) => {
     const locale = event.target.value;
@@ -93,6 +93,9 @@ const Navbar = (props) => {
                     xl: "1rem",
                     sm: "0.9rem",
                     xs: "0.9rem",
+                  },
+                  "&:hover": {
+                    color: "#1e1f26",
                   },
                 }}
               >
