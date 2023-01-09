@@ -95,9 +95,11 @@ const theme = createTheme({
 function MyApp({ Component, pageProps }) {
   return (
     <ParallaxProvider>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Layout>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </Layout>
     </ParallaxProvider>
   );
 }

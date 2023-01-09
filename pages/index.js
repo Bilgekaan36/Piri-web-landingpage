@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { Container } from "@mui/material";
+import { useRef } from "react";
 
 import Benefitspage from "../components/benefitspage/Benefitspage";
 import Landingpage from "../components/landingpage/Landingpage";
@@ -15,6 +16,7 @@ import tr from "../locales/tr";
 import Footerpage from "../components/layout/Footerpage";
 
 export default function Main() {
+  const ref = useRef();
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   // const t = locale === "en" ? en : de;
@@ -30,6 +32,12 @@ export default function Main() {
       t = tr;
       break;
   }
+
+  const scrollToBottom = () => {
+    console.log("scrollTOBOTTOM");
+
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <Container
       disableGutters
@@ -38,14 +46,14 @@ export default function Main() {
         transition: "all 1s ease-in-out",
       }}
     >
-      <Landingpage t={t} />
+      <Landingpage t={t} scrollToBottom={scrollToBottom} />
       <Benefitspage t={t} />
       <Workspage t={t} />
       <Toolspage t={t} />
       <Processpage t={t} />
       <Launchpage t={t} />
       <Personalpage t={t} />
-      <Footerpage />
+      <Footerpage ref={ref} />
     </Container>
   );
 }

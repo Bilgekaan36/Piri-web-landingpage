@@ -140,7 +140,7 @@ const Imprint = () => {
             width: "100px",
             backgroundColor: "transparent",
             position: "absolute",
-            bottom: "65%",
+            bottom: "17%",
             left: 0,
             zIndex: 10,
           }}

@@ -1,6 +1,6 @@
 import styles from "./Footerpage.module.css";
 
-import React from "react";
+import { forwardRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
@@ -28,7 +28,9 @@ const StyledHeaderGrid = styled(Grid)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   padding: "12rem 0",
-  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("sm")]: {
+    padding: "6rem 0",
+  },
 }));
 
 const StyledLeftTitleGrid = styled(Grid)(({ theme }) => ({
@@ -113,7 +115,7 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   },
 }));
 
-const Footerpage = () => {
+const Footerpage = (props, ref) => {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   // const t = locale === "en" ? en : de;
@@ -207,6 +209,7 @@ const Footerpage = () => {
           </StyledGrid>
         </Grid>
         <Grid
+          ref={ref}
           container
           spacing={0}
           sx={{
@@ -294,4 +297,4 @@ const Footerpage = () => {
   );
 };
 
-export default Footerpage;
+export default forwardRef(Footerpage);

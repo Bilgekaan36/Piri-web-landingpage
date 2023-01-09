@@ -208,7 +208,11 @@ const Personalpage = ({ t }) => {
               item
               xs={12}
               sm={4.5}
+              md={3}
               mm={3.5}
+              lg={4.5}
+              xl={4}
+              xxl={3.5}
               sx={{ display: "flex", alignItems: "flex-end" }}
             >
               <Image

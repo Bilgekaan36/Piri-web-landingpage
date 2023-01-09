@@ -11,7 +11,8 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   position: "relative",
 }));
 
-const Landingpage = ({ t }) => {
+const Landingpage = (props) => {
+  const { t } = props;
   const [activeStep, setActiveStep] = useState(0);
 
   const handleStep = (data) => {
@@ -21,6 +22,10 @@ const Landingpage = ({ t }) => {
   useEffect(() => {
     handleStep(0);
   }, []);
+
+  const scrollToBottom = () => {
+    props.scrollToBottom();
+  };
 
   return (
     <div>
@@ -82,7 +87,7 @@ const Landingpage = ({ t }) => {
           height: "220vh",
         }}
       >
-        <Navbar t={t}></Navbar>
+        <Navbar t={t} scrollToBottom={scrollToBottom}></Navbar>
         <Box
           sx={{
             position: "sticky",

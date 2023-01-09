@@ -37,13 +37,13 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const Navbar = ({ t }) => {
+const Navbar = (props) => {
   const router = useRouter();
-  const { locale, locales, defaultLocale } = router;
+  const { locale, locales, defaultLocale, pathname, asPath } = router;
 
-  const handleChange = (event) => {
+  const changeLanguage = (event) => {
     const locale = event.target.value;
-    router.push("/", "/", { locale });
+    router.push(pathname, pathname, { locale });
   };
 
   return (
@@ -74,7 +74,7 @@ const Navbar = ({ t }) => {
                   name: "language",
                   id: "uncontrolled-native",
                 }}
-                onChange={handleChange}
+                onChange={changeLanguage}
               >
                 {locales.map((locale) => (
                   <option value={locale} key={locale}>
@@ -83,7 +83,7 @@ const Navbar = ({ t }) => {
                 ))}
               </NativeSelect>
             </FormControl>
-            <StyledButton>
+            <StyledButton onClick={props.scrollToBottom}>
               <Typography
                 variant='header'
                 sx={{
@@ -96,7 +96,7 @@ const Navbar = ({ t }) => {
                   },
                 }}
               >
-                {t.navbar.contact}
+                {props.t.navbar.contact}
               </Typography>
             </StyledButton>
           </Toolbar>
