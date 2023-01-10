@@ -8,11 +8,12 @@ import "@fontsource/sora/600.css";
 import "@fontsource/sora/700.css";
 import "@fontsource/sora/800.css";
 
-import Layout from "../components/layout/Layout";
-
+import Head from "next/head";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { ParallaxProvider } from "react-scroll-parallax";
-import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
+
+import Layout from "../components/layout/Layout";
 
 const theme = createTheme({
   palette: {
@@ -102,8 +103,8 @@ function MyApp({ Component, pageProps }) {
             <title>PIRI WEB | Web Development & Web Design</title>
             <link rel='shortcut icon' href='/favicon//favicon.ico' />
           </Head>
-
           <Component {...pageProps} />
+          <Analytics />
         </Layout>
       </ThemeProvider>
     </ParallaxProvider>
