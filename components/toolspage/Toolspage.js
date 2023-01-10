@@ -84,7 +84,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 }));
 
 const Toolspage = ({ t }) => {
-  const [activeBackground, setActiveBackground] = useState("white");
+  const [activeBackground, setActiveBackground] = useState("#1e1f26");
 
   const handleBackground = (data) => {
     setActiveBackground(data);

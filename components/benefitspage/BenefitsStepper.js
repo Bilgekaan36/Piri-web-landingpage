@@ -187,7 +187,7 @@ const BenefitsStepper = ({ activeBackground, t }) => {
           sx={{ flexDirection: step.flexDirection }}
           key={index}
         >
-          <StyledGrid item xs={10} sm={4} mm={4} md={4} lg={3}>
+          <StyledGrid item xs={12} sm={4} mm={4} md={4} lg={3}>
             <Player
               autoplay
               loop={true}
@@ -201,7 +201,7 @@ const BenefitsStepper = ({ activeBackground, t }) => {
               />
             </Player>
           </StyledGrid>
-          <StyledGrid item xs={10} sm={6} mm={6} md={6} lg={5}>
+          <StyledGrid item xs={12} sm={6} mm={6} md={6} lg={5}>
             <StyledStepperTitle>{step.label}</StyledStepperTitle>
             <StyledStepperSubTitle
               sx={{

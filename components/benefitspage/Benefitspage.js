@@ -211,7 +211,7 @@ const Benefitspage = ({ t }) => {
         }}
       >
         <StyledStepperGrid container spacing={0}>
-          <StyledGrid item xs={10} sm={8} mm={8} md={8} lg={6}>
+          <StyledGrid item xs={12} sm={8} mm={8} md={8} lg={6}>
             <StyledMainTitle
               sx={{
                 color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
