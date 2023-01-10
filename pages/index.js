@@ -4,6 +4,11 @@ import { useRouter } from "next/router";
 import { Container, Typography } from "@mui/material";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock";
 
 import Benefitspage from "../components/benefitspage/Benefitspage";
 import Landingpage from "../components/landingpage/Landingpage";
@@ -20,6 +25,7 @@ import tr from "../locales/tr";
 
 export default function Main() {
   const ref = useRef();
+  const refBody = useRef();
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   // const t = locale === "en" ? en : de;
@@ -40,8 +46,15 @@ export default function Main() {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const changeHandler = () => {
+    disableBodyScroll(refBody);
+    setTimeout(() => {
+      enableBodyScroll(refBody);
+    }, 500);
+  };
+
   return (
-    <Container disableGutters maxWidth='false'>
+    <Container disableGutters maxWidth='false' ref={refBody}>
       <motion.div
         className={styles.transitionPage}
         initial={{ opacity: 1, translateY: 0 }}
@@ -53,7 +66,6 @@ export default function Main() {
         }}
       >
         <motion.div
-          className={styles.transitionLogo}
           initial={{ opacity: 0, translateX: -100 }}
           animate={{ opacity: 1, translateX: 0 }}
           transition={{
@@ -74,7 +86,11 @@ export default function Main() {
           </Typography>
         </motion.div>
       </motion.div>
-      <Landingpage t={t} scrollToBottom={scrollToBottom} />
+      <Landingpage
+        t={t}
+        scrollToBottom={scrollToBottom}
+        changeHandler={changeHandler}
+      />
       <Benefitspage t={t} />
       <Workspage t={t} />
       <Toolspage t={t} />

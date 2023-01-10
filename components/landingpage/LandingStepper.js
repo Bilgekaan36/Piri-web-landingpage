@@ -175,7 +175,19 @@ const LandingStepper = ({ activeStep, t }) => {
             mb: { xs: 2, md: { xs: 1, md: 10 } },
           }}
         >
-          <StyledHeader variant='secondHeader' component='div'>
+          <StyledHeader
+            variant='secondHeader'
+            component='div'
+            sx={{
+              fontSize: {
+                sm:
+                  t.landingpage.secondLabelWebsite === "WEB SİTENİZ"
+                    ? "3.5vw"
+                    : "4vw",
+                mm: "4vw",
+              },
+            }}
+          >
             {steps[activeStep].firstLabel}
           </StyledHeader>
           <StyledHeaderModular
@@ -186,22 +198,77 @@ const LandingStepper = ({ activeStep, t }) => {
               mt: {
                 xxl: t.landingpage.secondLabelWebsite === "WEB SİTENİZ" ? 4 : 0,
               },
+              fontSize: {
+                sm:
+                  t.landingpage.secondLabelWebsite === "WEB SİTENİZ"
+                    ? "7vw"
+                    : "8vw",
+                mm: "8vw",
+              },
             }}
           >
             {steps[activeStep].secondLabel}
           </StyledHeaderModular>
-          <StyledHeaderSubTitle variant='bigTitle' component='div'>
+          <StyledHeaderSubTitle
+            variant='bigTitle'
+            component='div'
+            sx={{
+              fontSize: {
+                sm:
+                  t.landingpage.secondLabelWebsite === "WEB SİTENİZ"
+                    ? "5vw"
+                    : "6vw",
+                mm: "6vw",
+              },
+            }}
+          >
             {steps[activeStep].thirdLabel}
           </StyledHeaderSubTitle>
         </Box>
         <Box>
-          <StyledSubtitle variant='h5' component='div'>
+          <StyledSubtitle
+            variant='h5'
+            component='div'
+            sx={{
+              fontSize: {
+                sm:
+                  t.landingpage.secondLabelWebsite === "WEB SİTENİZ"
+                    ? "1.25rem"
+                    : "1.5rem",
+                mm: "1.5rem",
+              },
+            }}
+          >
             {steps[activeStep].description1}
           </StyledSubtitle>
-          <StyledSubtitle variant='h5' component='div'>
+          <StyledSubtitle
+            variant='h5'
+            component='div'
+            sx={{
+              fontSize: {
+                sm:
+                  t.landingpage.secondLabelWebsite === "WEB SİTENİZ"
+                    ? "1.25rem"
+                    : "1.5rem",
+                mm: "1.5rem",
+              },
+            }}
+          >
             {steps[activeStep].description2}
           </StyledSubtitle>
-          <StyledSubtitle variant='h5' component='div'>
+          <StyledSubtitle
+            variant='h5'
+            component='div'
+            sx={{
+              fontSize: {
+                sm:
+                  t.landingpage.secondLabelWebsite === "WEB SİTENİZ"
+                    ? "1.25rem"
+                    : "1.5rem",
+                mm: "1.5rem",
+              },
+            }}
+          >
             {steps[activeStep].description3}
           </StyledSubtitle>
         </Box>

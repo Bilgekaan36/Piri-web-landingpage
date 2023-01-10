@@ -96,18 +96,20 @@ const theme = createTheme({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ParallaxProvider>
-      <ThemeProvider theme={theme}>
-        <Layout>
-          <Head>
-            <title>PIRI WEB | Web Development & Web Design</title>
-            <link rel='shortcut icon' href='/favicon//favicon.ico' />
-          </Head>
-          <Component {...pageProps} />
-          <Analytics />
-        </Layout>
-      </ThemeProvider>
-    </ParallaxProvider>
+    <>
+      <ParallaxProvider>
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <Head>
+              <title>PIRI WEB | Web Development & Web Design</title>
+              <link rel='shortcut icon' href='/favicon//favicon.ico' />
+            </Head>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
+      </ParallaxProvider>
+      <Analytics />
+    </>
   );
 }
 

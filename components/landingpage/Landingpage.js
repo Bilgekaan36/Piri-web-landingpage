@@ -40,10 +40,16 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
-          handleStep(0);
+          if (activeStep === 1) {
+            handleStep(0);
+            props.changeHandler();
+          }
         }}
         onExit={() => {
-          handleStep(1);
+          if (activeStep === 0) {
+            handleStep(1);
+            props.changeHandler();
+          }
         }}
       />
       <Parallax
@@ -57,10 +63,16 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
-          handleStep(1);
+          if (activeStep === 2) {
+            handleStep(1);
+            props.changeHandler();
+          }
         }}
         onExit={() => {
-          handleStep(2);
+          if (activeStep === 1) {
+            handleStep(2);
+            props.changeHandler();
+          }
         }}
       />
       <Parallax
@@ -74,10 +86,16 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
-          handleStep(2);
+          if (activeStep === 3) {
+            handleStep(2);
+            props.changeHandler();
+          }
         }}
         onExit={() => {
-          handleStep(3);
+          if (activeStep === 2) {
+            handleStep(3);
+            props.changeHandler();
+          }
         }}
       />
       <StyledContainer

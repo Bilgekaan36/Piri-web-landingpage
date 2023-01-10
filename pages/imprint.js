@@ -119,7 +119,7 @@ const Imprint = () => {
   };
 
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box sx={{ position: "relative", width: "100%" }}>
       <motion.div
         className={styles.transitionPage}
         initial={{ opacity: 1, translateY: 0 }}
@@ -144,7 +144,7 @@ const Imprint = () => {
             variant='logo'
             component='div'
             sx={{
-              letterSpacing: "1.5em",
+              letterSpacing: { xs: "0.5em", sm: "1.5em" },
               color: "white",
             }}
           >

@@ -50,14 +50,15 @@ const Navbar = (props) => {
     <Container disableGutters sx={{ width: { xxl: 1536, xl: 900, md: 700 } }}>
       <Box>
         <StyledAppBar>
-          <Toolbar>
+          <Toolbar sx={{ padding: "0px" }}>
             <Box sx={{ flexGrow: 1 }}>
               <Link href='/'>
                 <Typography
                   variant='logo'
                   component='div'
                   sx={{
-                    letterSpacing: "0.5em",
+                    letterSpacing: "0.3em",
+                    fontSize: { xs: "1rem", sm: "1.5rem" },
                   }}
                 >
                   PIRI WEB

@@ -156,7 +156,7 @@ const Imprint = () => {
             variant='logo'
             component='div'
             sx={{
-              letterSpacing: "1.5em",
+              letterSpacing: { xs: "0.5em", sm: "1.5em" },
               color: "white",
             }}
           >
