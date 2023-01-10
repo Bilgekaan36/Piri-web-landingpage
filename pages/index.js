@@ -4,11 +4,6 @@ import { useRouter } from "next/router";
 import { Container, Typography } from "@mui/material";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from "body-scroll-lock";
 
 import Benefitspage from "../components/benefitspage/Benefitspage";
 import Landingpage from "../components/landingpage/Landingpage";
@@ -46,16 +41,6 @@ export default function Main() {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const changeLock = () => {
-    console.log("lock");
-    disableBodyScroll(refBody);
-  };
-
-  const changeUnlock = () => {
-    console.log("unlock");
-    enableBodyScroll(refBody);
-  };
-
   return (
     <Container disableGutters maxWidth='false' ref={refBody}>
       <motion.div
@@ -89,12 +74,7 @@ export default function Main() {
           </Typography>
         </motion.div>
       </motion.div>
-      <Landingpage
-        t={t}
-        scrollToBottom={scrollToBottom}
-        changeLock={changeLock}
-        changeUnlock={changeUnlock}
-      />
+      <Landingpage t={t} scrollToBottom={scrollToBottom} />
       <Benefitspage t={t} />
       <Workspage t={t} />
       <Toolspage t={t} />

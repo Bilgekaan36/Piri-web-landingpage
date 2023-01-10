@@ -23,14 +23,6 @@ const Landingpage = (props) => {
     handleStep(0);
   }, []);
 
-  useEffect(() => {
-    props.changeLock();
-    const timer = setTimeout(() => {
-      props.changeUnlock();
-    }, 500);
-    return () => clearTimeout(timer);
-  }, [activeStep]);
-
   const scrollToBottom = () => {
     props.scrollToBottom();
   };
