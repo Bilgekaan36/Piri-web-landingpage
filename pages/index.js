@@ -48,8 +48,9 @@ export default function Main() {
 
   const changeHandler = () => {
     disableBodyScroll(refBody);
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       enableBodyScroll(refBody);
+      clearTimeout(timer);
     }, 500);
   };
 
