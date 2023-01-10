@@ -23,6 +23,14 @@ const Landingpage = (props) => {
     handleStep(0);
   }, []);
 
+  useEffect(() => {
+    props.changeLock();
+    const timer = setTimeout(() => {
+      props.changeUnlock();
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [activeStep]);
+
   const scrollToBottom = () => {
     props.scrollToBottom();
   };
@@ -42,13 +50,11 @@ const Landingpage = (props) => {
         onEnter={() => {
           if (activeStep === 1) {
             handleStep(0);
-            props.changeHandler();
           }
         }}
         onExit={() => {
           if (activeStep === 0) {
             handleStep(1);
-            props.changeHandler();
           }
         }}
       />
@@ -65,13 +71,11 @@ const Landingpage = (props) => {
         onEnter={() => {
           if (activeStep === 2) {
             handleStep(1);
-            props.changeHandler();
           }
         }}
         onExit={() => {
           if (activeStep === 1) {
             handleStep(2);
-            props.changeHandler();
           }
         }}
       />
@@ -88,13 +92,11 @@ const Landingpage = (props) => {
         onEnter={() => {
           if (activeStep === 3) {
             handleStep(2);
-            props.changeHandler();
           }
         }}
         onExit={() => {
           if (activeStep === 2) {
             handleStep(3);
-            props.changeHandler();
           }
         }}
       />

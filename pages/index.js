@@ -46,12 +46,14 @@ export default function Main() {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const changeHandler = () => {
+  const changeLock = () => {
+    console.log("lock");
     disableBodyScroll(refBody);
-    const timer = setTimeout(() => {
-      enableBodyScroll(refBody);
-      clearTimeout(timer);
-    }, 500);
+  };
+
+  const changeUnlock = () => {
+    console.log("unlock");
+    enableBodyScroll(refBody);
   };
 
   return (
@@ -90,7 +92,8 @@ export default function Main() {
       <Landingpage
         t={t}
         scrollToBottom={scrollToBottom}
-        changeHandler={changeHandler}
+        changeLock={changeLock}
+        changeUnlock={changeUnlock}
       />
       <Benefitspage t={t} />
       <Workspage t={t} />
