@@ -144,6 +144,7 @@ const LandingStepper = ({ activeStep, t }) => {
           // right: 0,
           border: "6px solid red",
         }}
+        className={styles.lottiePlayer}
       >
         <Controls
           visible={false}
