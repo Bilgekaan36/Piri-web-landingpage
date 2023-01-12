@@ -42,7 +42,7 @@ const StyledHeaderSubTitle = styled(Typography)(({ theme }) => ({
 const StyledHeaderModular = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   flexGrow: 1,
-  padding: "12px",
+  padding: "24px",
   transition: "all 1s ease-in-out",
   [theme.breakpoints.down("lg")]: {
     fontSize: "11vw",
@@ -129,10 +129,10 @@ const LandingStepper = ({ activeStep, t }) => {
       <Player
         autoplay
         loop={false}
-        src={letterW}
+        src={steps[activeStep].lottieFile}
         keepLastFrame={true}
         style={{
-          // height: "100vh",
+          // height: "100%",
           // width: "100%",
           opacity: "0.4",
           position: "absolute",

@@ -19,9 +19,9 @@ const Landingpage = (props) => {
     setActiveStep(data);
   };
 
-  // useEffect(() => {
-  //   handleStep(0);
-  // }, []);
+  useEffect(() => {
+    handleStep(0);
+  }, []);
 
   return (
     <>
@@ -41,9 +41,7 @@ const Landingpage = (props) => {
           }
         }}
         onExit={() => {
-          if (activeStep === 0) {
-            handleStep(1);
-          }
+          handleStep(1);
         }}
       />
       <Parallax
