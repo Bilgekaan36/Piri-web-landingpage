@@ -69,6 +69,21 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
+const lottieFiles = [
+  {
+    lottieFile: letterW,
+  },
+  {
+    lottieFile: letterA,
+  },
+  {
+    lottieFile: letterM,
+  },
+  {
+    lottieFile: letterO,
+  },
+];
+
 const LandingStepper = ({ activeStep, t }) => {
   const steps = [
     {
@@ -78,7 +93,7 @@ const LandingStepper = ({ activeStep, t }) => {
       description1: t.landingpage.description1Website,
       description2: t.landingpage.description2Website,
       description3: t.landingpage.description3Website,
-      lottieFile: letterW,
+      // lottieFile: letterW,
       color: "#6691c3",
     },
     {
@@ -88,7 +103,7 @@ const LandingStepper = ({ activeStep, t }) => {
       description1: t.landingpage.description1Application,
       description2: t.landingpage.description2Application,
       description3: t.landingpage.description3Application,
-      lottieFile: letterA,
+      // lottieFile: letterA,
       color: "#F76B6C",
     },
     {
@@ -98,7 +113,7 @@ const LandingStepper = ({ activeStep, t }) => {
       description1: t.landingpage.description1Mobileapp,
       description2: t.landingpage.description2Mobileapp,
       description3: t.landingpage.description3Mobileapp,
-      lottieFile: letterM,
+      // lottieFile: letterM,
       color: "#79C4C8",
     },
     {
@@ -108,7 +123,7 @@ const LandingStepper = ({ activeStep, t }) => {
       description1: t.landingpage.description1Onlineshop,
       description2: t.landingpage.description2Onlineshop,
       description3: t.landingpage.description3Onlineshop,
-      lottieFile: letterO,
+      // lottieFile: letterO,
       color: "#f7be02",
     },
   ];
@@ -129,7 +144,7 @@ const LandingStepper = ({ activeStep, t }) => {
       <Player
         autoplay
         loop={false}
-        src={steps[activeStep].lottieFile}
+        src={lottieFiles[activeStep].lottieFile}
         keepLastFrame={true}
         style={{
           height: "100%",
