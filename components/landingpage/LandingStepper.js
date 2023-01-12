@@ -134,8 +134,8 @@ const LandingStepper = ({ activeStep, t }) => {
         src={steps[activeStep].lottieFile}
         keepLastFrame={true}
         style={{
-          // height: "100%",
-          // width: "100%",
+          height: "200px",
+          width: "200px",
           opacity: "0.4",
           // position: "absolute",
           // top: 0,
