@@ -19,13 +19,7 @@ const Landingpage = (props) => {
     setActiveStep(data);
   };
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      console.log("Called after 1 sec!");
-      handleStep(0);
-    }, 1000);
-    return () => clearTimeout(timeout);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <>
@@ -40,9 +34,7 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
-          if (activeStep === 1) {
-            handleStep(0);
-          }
+          handleStep(0);
         }}
         onExit={() => {
           handleStep(1);
