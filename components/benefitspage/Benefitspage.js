@@ -160,34 +160,11 @@ const Benefitspage = ({ t }) => {
   };
 
   return (
-    <StyledContainer
-      maxWidth='false'
+    <Box
       sx={{
-        position: "relative",
         backgroundColor: activeBackground,
       }}
     >
-      <Parallax
-        style={{
-          height: "50px",
-          width: "100px",
-          backgroundColor: "transparent",
-          position: "absolute",
-          bottom: "40%",
-          left: 0,
-          zIndex: 10,
-        }}
-        onProgressChange={(progressData) => {
-          if (progressData >= 1) {
-            handleBackground("white");
-          }
-          if (progressData < 1) {
-            handleBackground("#1e1f26");
-          }
-        }}
-        onEnter={() => {}}
-        onExit={() => {}}
-      />
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
           <StyledTitleText>{t.benefitspage.title1}</StyledTitleText>
@@ -200,30 +177,60 @@ const Benefitspage = ({ t }) => {
           <StyledTitleTextSecond>{t.benefitspage.title2}</StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
-      <Container
-        disableGutters
-        maxWidth='xxl'
+      <StyledContainer
+        maxWidth='false'
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          position: "relative",
+          backgroundColor: activeBackground,
         }}
       >
-        <StyledStepperGrid container spacing={0}>
-          <StyledGrid item xs={12} sm={8} mm={8} md={8} lg={6}>
-            <StyledMainTitle
-              sx={{
-                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-              }}
-            >
-              {t.benefitspage.headTitle}
-            </StyledMainTitle>
-          </StyledGrid>
-        </StyledStepperGrid>
-        <BenefitsStepper t={t} activeBackground={activeBackground} />
-      </Container>
-    </StyledContainer>
+        <Parallax
+          style={{
+            height: "50px",
+            width: "100px",
+            backgroundColor: "transparent",
+            position: "absolute",
+            bottom: "40%",
+            left: 0,
+            zIndex: 10,
+          }}
+          onProgressChange={(progressData) => {
+            if (progressData >= 1) {
+              handleBackground("white");
+            }
+            if (progressData < 1) {
+              handleBackground("#1e1f26");
+            }
+          }}
+          onEnter={() => {}}
+          onExit={() => {}}
+        />
+
+        <Container
+          disableGutters
+          maxWidth='xxl'
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <StyledStepperGrid container spacing={0}>
+            <StyledGrid item xs={12} sm={8} mm={8} md={8} lg={6}>
+              <StyledMainTitle
+                sx={{
+                  color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                }}
+              >
+                {t.benefitspage.headTitle}
+              </StyledMainTitle>
+            </StyledGrid>
+          </StyledStepperGrid>
+          <BenefitsStepper t={t} activeBackground={activeBackground} />
+        </Container>
+      </StyledContainer>
+    </Box>
   );
 };
 

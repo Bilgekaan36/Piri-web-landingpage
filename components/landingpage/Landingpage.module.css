@@ -1,4 +1,4 @@
-.lottiePlayer svg {
+/* .lottiePlayer svg {
   scale: 140%;
 }
 
@@ -24,18 +24,4 @@
   .lottiePlayer svg {
     scale: 160%;
   }
-}
-
-.website {
-  height: 1000px;
-  width: 100%;
-  background-color: red;
-  z-index: 1;
-}
-
-.application {
-  height: 1000px;
-  width: 100%;
-  background-color: blue;
-  z-index: 10;
-}
+} */

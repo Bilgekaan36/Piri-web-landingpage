@@ -400,9 +400,10 @@ const Process = ({ t }) => {
   ];
 
   return (
-    <StyledContainer
-      maxWidth='false'
-      sx={{ backgroundColor: activeBackground }}
+    <Box
+      sx={{
+        backgroundColor: activeBackground,
+      }}
     >
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
@@ -416,113 +417,120 @@ const Process = ({ t }) => {
           <StyledTitleTextSecond>{t.processpage.title2}</StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
-
-      <StyledStepperGrid
-        container
-        spacing={0}
-        sx={{ marginBottom: { xs: "0px" } }}
+      <StyledContainer
+        maxWidth='false'
+        sx={{ backgroundColor: activeBackground }}
       >
-        <StyledGrid item xs={10} sm={8} mm={8} md={8} lg={6}>
-          <StyledMainTitle>{t.processpage.mainTitle1}</StyledMainTitle>
-          <StyledMainTitle>{t.processpage.mainTitle2}</StyledMainTitle>
-          <StyledSubTitle>{t.processpage.mainTitle3}</StyledSubTitle>
-          <StyledSubTitle>{t.processpage.mainTitle4}</StyledSubTitle>
-        </StyledGrid>
-      </StyledStepperGrid>
-      <Parallax
-        onProgressChange={(progressData) => {
-          const result = progressData * 3000;
-          handleProgress(result);
-        }}
-      >
-        <Grid
+        <StyledStepperGrid
           container
           spacing={0}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+          sx={{ marginBottom: { xs: "0px" } }}
+        >
+          <StyledGrid item xs={10} sm={8} mm={8} md={8} lg={6}>
+            <StyledMainTitle>{t.processpage.mainTitle1}</StyledMainTitle>
+            <StyledMainTitle>{t.processpage.mainTitle2}</StyledMainTitle>
+            <StyledSubTitle>{t.processpage.mainTitle3}</StyledSubTitle>
+            <StyledSubTitle>{t.processpage.mainTitle4}</StyledSubTitle>
+          </StyledGrid>
+        </StyledStepperGrid>
+        <Parallax
+          onProgressChange={(progressData) => {
+            const result = progressData * 3000;
+            handleProgress(result);
           }}
         >
           <Grid
-            item
-            xs={12}
-            sm={8}
-            mm={8}
-            md={8}
-            lg={6}
-            sx={{ position: "relative" }}
+            container
+            spacing={0}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            <Box
-              sx={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                backgroundColor: "#1e1f26",
-                width: { xs: "2px", sm: "5px" },
-                height: `${progress}px`,
-              }}
-            />
-            {textData.map((text, index) => (
-              <StyledStepperGrid container spacing={0} key={index}>
-                <StyledStepperNumbers
-                  sx={{
-                    backgroundColor: activeBackground,
-                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                  }}
-                >
-                  {text.number}
-                </StyledStepperNumbers>
-                <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
-                  <StyledStepperTitle> {text.title}</StyledStepperTitle>
-                  <StyledStepperSubTitle
+            <Grid
+              item
+              xs={12}
+              sm={8}
+              mm={8}
+              md={8}
+              lg={6}
+              sx={{ position: "relative" }}
+            >
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  backgroundColor: "#1e1f26",
+                  width: { xs: "2px", sm: "5px" },
+                  height: `${progress}px`,
+                }}
+              />
+              {textData.map((text, index) => (
+                <StyledStepperGrid container spacing={0} key={index}>
+                  <StyledStepperNumbers
                     sx={{
+                      backgroundColor: activeBackground,
                       color:
                         activeBackground === "#1e1f26" ? "white" : "#1e1f26",
                     }}
                   >
-                    {text.title}
-                  </StyledStepperSubTitle>
-                  <StyledStepperContent>{text.content}</StyledStepperContent>
-                  {text.subtitles.map((subtitle) => (
-                    <StyledStepperSubText
-                      key={subtitle.textId}
+                    {text.number}
+                  </StyledStepperNumbers>
+                  <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
+                    <StyledStepperTitle> {text.title}</StyledStepperTitle>
+                    <StyledStepperSubTitle
                       sx={{
                         color:
                           activeBackground === "#1e1f26" ? "white" : "#1e1f26",
                       }}
                     >
-                      {subtitle.text}
-                    </StyledStepperSubText>
-                  ))}
-                </StyledGrid>
-              </StyledStepperGrid>
-            ))}
+                      {text.title}
+                    </StyledStepperSubTitle>
+                    <StyledStepperContent>{text.content}</StyledStepperContent>
+                    {text.subtitles.map((subtitle) => (
+                      <StyledStepperSubText
+                        key={subtitle.textId}
+                        sx={{
+                          color:
+                            activeBackground === "#1e1f26"
+                              ? "white"
+                              : "#1e1f26",
+                        }}
+                      >
+                        {subtitle.text}
+                      </StyledStepperSubText>
+                    ))}
+                  </StyledGrid>
+                </StyledStepperGrid>
+              ))}
+            </Grid>
           </Grid>
-        </Grid>
-      </Parallax>
-      <Parallax
-        style={{
-          height: "50px",
-          width: "100px",
-          backgroundColor: "transparent",
-          position: "absolute",
-          bottom: "30%",
-          left: 0,
-          zIndex: 10,
-        }}
-        onProgressChange={(progressData) => {
-          if (progressData >= 1) {
-            handleStep("#1e1f26");
-          }
-          if (progressData < 1) {
-            handleStep("white");
-          }
-        }}
-        onEnter={() => {}}
-        onExit={() => {}}
-      />
-    </StyledContainer>
+        </Parallax>
+        <Parallax
+          style={{
+            height: "50px",
+            width: "100px",
+            backgroundColor: "transparent",
+            position: "absolute",
+            bottom: "30%",
+            left: 0,
+            zIndex: 10,
+          }}
+          onProgressChange={(progressData) => {
+            if (progressData >= 1) {
+              handleStep("#1e1f26");
+            }
+            if (progressData < 1) {
+              handleStep("white");
+            }
+          }}
+          onEnter={() => {}}
+          onExit={() => {}}
+        />
+      </StyledContainer>
+    </Box>
   );
 };
 

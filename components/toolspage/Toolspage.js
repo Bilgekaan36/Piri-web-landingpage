@@ -91,34 +91,11 @@ const Toolspage = ({ t }) => {
   };
 
   return (
-    <StyledContainer
-      maxWidth='false'
+    <Box
       sx={{
-        position: "relative",
         backgroundColor: activeBackground,
       }}
     >
-      <Parallax
-        style={{
-          height: "50px",
-          width: "100px",
-          backgroundColor: "transparent",
-          position: "absolute",
-          bottom: "50%",
-          left: 0,
-          zIndex: 10,
-        }}
-        onProgressChange={(progressData) => {
-          if (progressData >= 1) {
-            handleBackground("white");
-          }
-          if (progressData < 1) {
-            handleBackground("#1e1f26");
-          }
-        }}
-        onEnter={() => {}}
-        onExit={() => {}}
-      />
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
           <StyledTitleText>{t.toolspage.title1}</StyledTitleText>
@@ -131,14 +108,44 @@ const Toolspage = ({ t }) => {
           <StyledTitleTextSecond>{t.toolspage.title2}</StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
-      <Container
-        disableGutters
-        maxWidth='xxl'
-        sx={{ paddingBottom: "132px", marginTop: "200px" }}
+      <StyledContainer
+        maxWidth='false'
+        sx={{
+          position: "relative",
+          backgroundColor: activeBackground,
+        }}
       >
-        <ToolStepper t={t} activeBackground={activeBackground} />
-      </Container>
-    </StyledContainer>
+        <Parallax
+          style={{
+            height: "50px",
+            width: "100px",
+            backgroundColor: "transparent",
+            position: "absolute",
+            bottom: "50%",
+            left: 0,
+            zIndex: 10,
+          }}
+          onProgressChange={(progressData) => {
+            if (progressData >= 1) {
+              handleBackground("white");
+            }
+            if (progressData < 1) {
+              handleBackground("#1e1f26");
+            }
+          }}
+          onEnter={() => {}}
+          onExit={() => {}}
+        />
+
+        <Container
+          disableGutters
+          maxWidth='xxl'
+          sx={{ paddingBottom: "132px", marginTop: "200px" }}
+        >
+          <ToolStepper t={t} activeBackground={activeBackground} />
+        </Container>
+      </StyledContainer>
+    </Box>
   );
 };
 

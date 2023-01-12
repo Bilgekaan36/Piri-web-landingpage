@@ -111,10 +111,7 @@ const Workspage = ({ t }) => {
   };
 
   return (
-    <Container
-      maxWidth='false'
-      sx={{ backgroundColor: activeBackground, position: "relative" }}
-    >
+    <Box sx={{ backgroundColor: activeBackground }}>
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
           <StyledTitleText>{t.workspage.title1}</StyledTitleText>
@@ -127,86 +124,91 @@ const Workspage = ({ t }) => {
           <StyledTitleTextSecond>{t.workspage.title2}</StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
-      <StyledContainer disableGutters maxWidth='xxl'>
-        <ImageList
-          cols={matchDownLg ? 1 : 2}
-          rowHeight={matchDownLg ? 120 : 280}
-        >
-          {itemData.map((item) => (
-            <ImageListItem
-              rows={4}
-              key={item.id}
-              sx={{ overflow: "hidden", position: "relative" }}
+      <Container
+        maxWidth='false'
+        sx={{ backgroundColor: activeBackground, position: "relative" }}
+      >
+        <StyledContainer disableGutters maxWidth='xxl'>
+          <ImageList
+            cols={matchDownLg ? 1 : 2}
+            rowHeight={matchDownLg ? 120 : 280}
+          >
+            {itemData.map((item) => (
+              <ImageListItem
+                rows={4}
+                key={item.id}
+                sx={{ overflow: "hidden", position: "relative" }}
+              >
+                <video
+                  src={item.video}
+                  type='video/mp4'
+                  muted
+                  height='100%'
+                  width='100%'
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                  }}
+                  autoPlay={true}
+                  loop
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+          <StyledFooterBox sx={{ backgroundColor: activeBackground }}>
+            <StyledFooterText
+              variant='bigTitle'
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
             >
-              <video
-                src={item.video}
-                type='video/mp4'
-                muted
-                height='100%'
-                width='100%'
-                style={{
-                  objectFit: "cover",
-                  width: "100%",
-                  height: "100%",
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                }}
-                autoPlay={true}
-                loop
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-        <StyledFooterBox sx={{ backgroundColor: activeBackground }}>
-          <StyledFooterText
-            variant='bigTitle'
-            sx={{
-              color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-            }}
-          >
-            {t.workspage.quote1}
-          </StyledFooterText>
-          <StyledFooterText
-            variant='bigTitle'
-            sx={{
-              color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-            }}
-          >
-            {t.workspage.quote2}
-          </StyledFooterText>
-          <StyledFooterAuthor
-            variant='h4'
-            sx={{
-              color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-            }}
-          >
-            Don Draper
-          </StyledFooterAuthor>
-        </StyledFooterBox>
-      </StyledContainer>
-      <Parallax
-        style={{
-          height: "50px",
-          width: "100px",
-          backgroundColor: "transparent",
-          position: "absolute",
-          bottom: "25%",
-          left: 0,
-          zIndex: 10,
-        }}
-        onProgressChange={(progressData) => {
-          if (progressData >= 1) {
-            handleStep("#1e1f26");
-          }
-          if (progressData < 1) {
-            handleStep("white");
-          }
-        }}
-        onEnter={() => {}}
-        onExit={() => {}}
-      />
-    </Container>
+              {t.workspage.quote1}
+            </StyledFooterText>
+            <StyledFooterText
+              variant='bigTitle'
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {t.workspage.quote2}
+            </StyledFooterText>
+            <StyledFooterAuthor
+              variant='h4'
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              Don Draper
+            </StyledFooterAuthor>
+          </StyledFooterBox>
+        </StyledContainer>
+        <Parallax
+          style={{
+            height: "50px",
+            width: "100px",
+            backgroundColor: "transparent",
+            position: "absolute",
+            bottom: "25%",
+            left: 0,
+            zIndex: 10,
+          }}
+          onProgressChange={(progressData) => {
+            if (progressData >= 1) {
+              handleStep("#1e1f26");
+            }
+            if (progressData < 1) {
+              handleStep("white");
+            }
+          }}
+          onEnter={() => {}}
+          onExit={() => {}}
+        />
+      </Container>
+    </Box>
   );
 };
 

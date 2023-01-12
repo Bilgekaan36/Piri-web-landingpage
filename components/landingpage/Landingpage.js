@@ -92,7 +92,7 @@ const Landingpage = (props) => {
         maxWidth='false'
         sx={{
           position: "relative",
-          height: "450vh",
+          height: "550vh",
         }}
       >
         <Navbar t={t}></Navbar>

@@ -105,7 +105,23 @@ const Personalpage = ({ t }) => {
   };
 
   return (
-    <>
+    <Box
+      sx={{
+        backgroundColor: activeBackground,
+      }}
+    >
+      <StyledHeader>
+        <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
+          <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.personalpage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.personalpage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.personalpage.title2}</StyledTitleTextSecond>
+          <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
+          <StyledTitleTextSecond>{t.personalpage.title2}</StyledTitleTextSecond>
+        </Parallax>
+      </StyledHeader>
       <StyledContainer
         maxWidth='false'
         sx={{ backgroundColor: activeBackground }}
@@ -131,26 +147,7 @@ const Personalpage = ({ t }) => {
           onEnter={() => {}}
           onExit={() => {}}
         />
-        <StyledHeader>
-          <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-            <StyledTitleTextSecond>
-              {t.personalpage.title2}
-            </StyledTitleTextSecond>
-            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-            <StyledTitleTextSecond>
-              {t.personalpage.title2}
-            </StyledTitleTextSecond>
-            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-            <StyledTitleTextSecond>
-              {t.personalpage.title2}
-            </StyledTitleTextSecond>
-            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-            <StyledTitleTextSecond>
-              {t.personalpage.title2}
-            </StyledTitleTextSecond>
-          </Parallax>
-        </StyledHeader>
+
         <Container
           disableGutters
           maxWidth='xxl'
@@ -300,7 +297,7 @@ const Personalpage = ({ t }) => {
           </StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
-    </>
+    </Box>
   );
 };
 
