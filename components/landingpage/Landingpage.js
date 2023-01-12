@@ -4,6 +4,7 @@ import { Box, Container, styled } from "@mui/material";
 import Navbar from "./Navbar";
 import { Parallax } from "react-scroll-parallax";
 import LandingStepper from "./LandingStepper";
+import { animateScroll as scroll } from "react-scroll";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
@@ -20,21 +21,24 @@ const Landingpage = (props) => {
   };
 
   useEffect(() => {
-    const lastActiveStep = JSON.parse(localStorage.getItem("lastActiveStep"));
-    if (lastActiveStep > 3) {
-      setActiveStep(4);
-    } else {
-      setActiveStep(lastActiveStep);
-    }
-    // return () => {
-    //   localStorage.setItem("lastActiveStep", JSON.stringify(activeStep));
-    //   console.log("unmount");
-    // };
+    scroll.scrollToTop();
+
+    // const lastActiveStep = JSON.parse(localStorage.getItem("lastActiveStep"));
+    // if (lastActiveStep > 3) {
+    //   setActiveStep(4);
+    // } else {
+    //   setActiveStep(lastActiveStep);
+    // }
+    return () => {
+      // localStorage.setItem("lastActiveStep", JSON.stringify(activeStep));
+      console.log("unmount");
+      scroll.scrollToTop();
+    };
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("lastActiveStep", JSON.stringify(activeStep));
-  }, [activeStep]);
+  // useEffect(() => {
+  //   localStorage.setItem("lastActiveStep", JSON.stringify(activeStep));
+  // }, [activeStep]);
 
   return (
     <>

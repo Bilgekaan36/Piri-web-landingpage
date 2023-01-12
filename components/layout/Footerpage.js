@@ -134,6 +134,7 @@ const Footerpage = (props, ref) => {
   return (
     <StyledContainer maxWidth='false'>
       <Container
+        className='footer'
         disableGutters
         maxWidth='xxl'
         sx={{ position: "relative", height: "100%" }}

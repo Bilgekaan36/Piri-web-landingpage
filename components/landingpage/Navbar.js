@@ -12,7 +12,8 @@ import {
   InputLabel,
   NativeSelect,
 } from "@mui/material";
-import { animateScroll as scroll } from "react-scroll";
+import * as Scroll from "react-scroll";
+
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -46,6 +47,8 @@ const Navbar = (props) => {
     const locale = event.target.value;
     router.push(pathname, pathname, { locale });
   };
+
+  let ScrollLink = Scroll.Link;
 
   return (
     <Container disableGutters sx={{ width: { xxl: 1536, xl: 900, md: 700 } }}>
@@ -85,24 +88,29 @@ const Navbar = (props) => {
                 ))}
               </NativeSelect>
             </FormControl>
-            <StyledButton
-              // onClick={props.scrollToBottom}
-              onClick={() => scroll.scrollToBottom(5000)}
-            >
-              <Typography
-                variant='header'
-                sx={{
-                  color: "white",
-                  fontSize: {
-                    xxl: "1.3rem",
-                    xl: "1rem",
-                    sm: "0.9rem",
-                    xs: "0.9rem",
-                  },
-                }}
+            <StyledButton>
+              <ScrollLink
+                to='footer'
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={3000}
               >
-                {props.t.navbar.contact}
-              </Typography>
+                <Typography
+                  variant='header'
+                  sx={{
+                    color: "white",
+                    fontSize: {
+                      xxl: "1.3rem",
+                      xl: "1rem",
+                      sm: "0.9rem",
+                      xs: "0.9rem",
+                    },
+                  }}
+                >
+                  {props.t.navbar.contact}
+                </Typography>
+              </ScrollLink>
             </StyledButton>
           </Toolbar>
         </StyledAppBar>
