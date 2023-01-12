@@ -123,11 +123,7 @@ const LandingStepper = ({ activeStep, t }) => {
       sx={{
         height: "100%",
         width: "100%",
-        display: "flex",
         position: "relative",
-        flexDirection: "column",
-        justifyContent: "center",
-        overflow: "hidden",
       }}
     >
       <Player
@@ -135,9 +131,8 @@ const LandingStepper = ({ activeStep, t }) => {
         loop={false}
         src={steps[activeStep].lottieFile}
         keepLastFrame={true}
-        height
         style={{
-          height: "100%",
+          height: "100vh",
           width: "100%",
           opacity: "0.4",
           // position: "absolute",
