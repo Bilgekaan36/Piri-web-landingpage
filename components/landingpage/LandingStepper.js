@@ -129,7 +129,7 @@ const LandingStepper = ({ activeStep, t }) => {
       <Player
         autoplay
         loop={false}
-        src={steps[activeStep].lottieFile}
+        src={letterW}
         keepLastFrame={true}
         style={{
           // height: "100vh",
