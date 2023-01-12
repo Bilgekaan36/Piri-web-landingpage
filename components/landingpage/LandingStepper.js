@@ -8,6 +8,8 @@ import letterA from "../../public/landingpage_assets/letter-A.json";
 import letterM from "../../public/landingpage_assets/letter-M.json";
 import letterO from "../../public/landingpage_assets/letter-O.json";
 import letterU from "../../public/landingpage_assets/letter-U.json";
+import letterWDefault from "../../public/landingpage_assets/letter-WDefault.json";
+import { useEffect, useState } from "react";
 
 const StyledHeader = styled(Typography)(({ theme }) => ({
   textAlign: "center",
@@ -42,7 +44,7 @@ const StyledHeaderSubTitle = styled(Typography)(({ theme }) => ({
 const StyledHeaderModular = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   flexGrow: 1,
-  padding: "24px",
+  padding: "12px",
   transition: "all 1s ease-in-out",
   [theme.breakpoints.down("lg")]: {
     fontSize: "11vw",
@@ -69,7 +71,19 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
 }));
 
 const LandingStepper = ({ activeStep, t }) => {
+  const [initial, setInitial] = useState(false);
+
   const steps = [
+    {
+      firstLabel: t.landingpage.firstLabelWebsite,
+      secondLabel: t.landingpage.secondLabelWebsite,
+      thirdLabel: t.landingpage.thirdLabelWebsite,
+      description1: t.landingpage.description1Website,
+      description2: t.landingpage.description2Website,
+      description3: t.landingpage.description3Website,
+      lottieFile: letterWDefault,
+      color: "#6691c3",
+    },
     {
       firstLabel: t.landingpage.firstLabelWebsite,
       secondLabel: t.landingpage.secondLabelWebsite,
@@ -112,7 +126,7 @@ const LandingStepper = ({ activeStep, t }) => {
     },
   ];
   if (t.landingpage.secondLabelApplication === "UYGULAMANIZ") {
-    steps[1].lottieFile = letterU;
+    steps[2].lottieFile = letterU;
   }
 
   const maxSteps = steps.length;
@@ -134,14 +148,9 @@ const LandingStepper = ({ activeStep, t }) => {
         src={steps[activeStep].lottieFile}
         keepLastFrame={true}
         style={{
-          height: "200px",
-          width: "200px",
+          height: "100%",
+          width: "100%",
           opacity: "0.4",
-          // position: "absolute",
-          // top: 0,
-          // bottom: 0,
-          // left: 0,
-          // right: 0,
           border: "6px solid red",
         }}
         className={styles.lottiePlayer}
@@ -151,6 +160,27 @@ const LandingStepper = ({ activeStep, t }) => {
           buttons={["play", "repeat", "frame", "debug"]}
         />
       </Player>
+      {/* {initial && (
+        <Player
+          autoplay
+          loop={false}
+          src={letterWDefault}
+          keepLastFrame={true}
+          style={{
+            height: "100%",
+            width: "100%",
+            opacity: "0.4",
+
+            border: "6px solid red",
+          }}
+          className={styles.lottiePlayer}
+        >
+          <Controls
+            visible={false}
+            buttons={["play", "repeat", "frame", "debug"]}
+          />
+        </Player>
+      )} */}
       <Box
         sx={{
           height: "100%",

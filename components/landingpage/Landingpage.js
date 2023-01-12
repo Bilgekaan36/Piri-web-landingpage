@@ -34,10 +34,10 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
-          handleStep(0);
+          handleStep(1);
         }}
         onExit={() => {
-          handleStep(1);
+          handleStep(2);
         }}
       />
       <Parallax
@@ -51,13 +51,13 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
-          if (activeStep === 2) {
-            handleStep(1);
+          if (activeStep === 3) {
+            handleStep(2);
           }
         }}
         onExit={() => {
-          if (activeStep === 1) {
-            handleStep(2);
+          if (activeStep === 2) {
+            handleStep(3);
           }
         }}
       />
@@ -72,13 +72,13 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
-          if (activeStep === 3) {
-            handleStep(2);
+          if (activeStep === 4) {
+            handleStep(3);
           }
         }}
         onExit={() => {
-          if (activeStep === 2) {
-            handleStep(3);
+          if (activeStep === 3) {
+            handleStep(4);
           }
         }}
       />
