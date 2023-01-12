@@ -121,7 +121,7 @@ const LandingStepper = ({ activeStep, t }) => {
   return (
     <Box
       sx={{
-        height: "100%",
+        height: "100vh",
         width: "100%",
         position: "relative",
       }}
@@ -132,8 +132,8 @@ const LandingStepper = ({ activeStep, t }) => {
         src={steps[activeStep].lottieFile}
         keepLastFrame={true}
         style={{
-          // height: "100%",
-          // width: "100%",
+          height: "100%",
+          width: "100%",
           opacity: "0.4",
           position: "absolute",
           top: 0,
