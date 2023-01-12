@@ -174,6 +174,7 @@ const Personalpage = ({ t }) => {
               sm={5}
               md={4}
               mm={3}
+              lg={4}
               sx={{
                 display: "flex",
                 flexDirection: "column",

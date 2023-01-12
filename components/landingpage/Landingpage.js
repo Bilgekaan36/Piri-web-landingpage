@@ -20,7 +20,20 @@ const Landingpage = (props) => {
   };
 
   useEffect(() => {
-    console.log("activeStep: ", activeStep);
+    const lastActiveStep = JSON.parse(localStorage.getItem("lastActiveStep"));
+    if (lastActiveStep > 3) {
+      setActiveStep(4);
+    } else {
+      setActiveStep(lastActiveStep);
+    }
+    // return () => {
+    //   localStorage.setItem("lastActiveStep", JSON.stringify(activeStep));
+    //   console.log("unmount");
+    // };
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("lastActiveStep", JSON.stringify(activeStep));
   }, [activeStep]);
 
   return (
@@ -36,11 +49,6 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
-          // if (activeStep === 0) {
-          //   handleStep(2);
-          // } else if (activeStep === 2) {
-          //   handleStep(1);
-          // }
           handleStep(1);
         }}
         onExit={() => {

@@ -9,7 +9,6 @@ import letterM from "../../public/landingpage_assets/letter-M.json";
 import letterO from "../../public/landingpage_assets/letter-O.json";
 import letterU from "../../public/landingpage_assets/letter-U.json";
 import letterWDefault from "../../public/landingpage_assets/letter-WDefault.json";
-import { useEffect, useState } from "react";
 
 const StyledHeader = styled(Typography)(({ theme }) => ({
   textAlign: "center",
@@ -71,8 +70,6 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
 }));
 
 const LandingStepper = ({ activeStep, t }) => {
-  const [initial, setInitial] = useState(false);
-
   const steps = [
     {
       firstLabel: t.landingpage.firstLabelWebsite,
@@ -129,7 +126,7 @@ const LandingStepper = ({ activeStep, t }) => {
     steps[2].lottieFile = letterU;
   }
 
-  const maxSteps = steps.length;
+  const maxSteps = steps.length - 1;
 
   return (
     <Box
@@ -279,7 +276,7 @@ const LandingStepper = ({ activeStep, t }) => {
           variant='text'
           steps={maxSteps}
           position='static'
-          activeStep={activeStep}
+          activeStep={activeStep - 1}
           sx={{ bgcolor: "transparent" }}
           nextButton={
             <Button
