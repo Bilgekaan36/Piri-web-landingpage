@@ -37,10 +37,6 @@ export default function Main() {
       break;
   }
 
-  const scrollToBottom = () => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <Container disableGutters maxWidth='false' ref={refBody}>
       <motion.div
@@ -74,7 +70,7 @@ export default function Main() {
           </Typography>
         </motion.div>
       </motion.div>
-      <Landingpage t={t} scrollToBottom={scrollToBottom} />
+      <Landingpage t={t} />
       <Benefitspage t={t} />
       <Workspage t={t} />
       <Toolspage t={t} />

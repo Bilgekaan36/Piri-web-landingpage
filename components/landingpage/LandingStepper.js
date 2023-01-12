@@ -225,7 +225,7 @@ const LandingStepper = ({ activeStep, t }) => {
             {steps[activeStep].thirdLabel}
           </StyledHeaderSubTitle>
         </Box>
-        <Box>
+        <Box sx={{ marginTop: { xs: "", lg: "100px" } }}>
           <StyledSubtitle
             variant='h5'
             component='div'
@@ -234,8 +234,8 @@ const LandingStepper = ({ activeStep, t }) => {
                 sm:
                   t.landingpage.secondLabelWebsite === "WEB SİTENİZ"
                     ? "1.25rem"
-                    : "1.5rem",
-                mm: "1.5rem",
+                    : "1.25rem",
+                mm: "1.25rem",
               },
             }}
           >
@@ -249,8 +249,8 @@ const LandingStepper = ({ activeStep, t }) => {
                 sm:
                   t.landingpage.secondLabelWebsite === "WEB SİTENİZ"
                     ? "1.25rem"
-                    : "1.5rem",
-                mm: "1.5rem",
+                    : "1.25rem",
+                mm: "1.25rem",
               },
             }}
           >
@@ -264,8 +264,8 @@ const LandingStepper = ({ activeStep, t }) => {
                 sm:
                   t.landingpage.secondLabelWebsite === "WEB SİTENİZ"
                     ? "1.25rem"
-                    : "1.5rem",
-                mm: "1.5rem",
+                    : "1.25rem",
+                mm: "1.25rem",
               },
             }}
           >

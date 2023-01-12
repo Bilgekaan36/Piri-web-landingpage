@@ -137,6 +137,7 @@ const Footerpage = (props, ref) => {
         disableGutters
         maxWidth='xxl'
         sx={{ position: "relative", height: "100%" }}
+        id='test2'
       >
         <StyledHeaderGrid container spacing={0}>
           <StyledLeftTitleGrid item xs={10} sm={5} lg={4}>

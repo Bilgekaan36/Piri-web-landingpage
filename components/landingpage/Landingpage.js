@@ -23,15 +23,11 @@ const Landingpage = (props) => {
     handleStep(0);
   }, []);
 
-  const scrollToBottom = () => {
-    props.scrollToBottom();
-  };
-
   return (
     <>
       <Parallax
         style={{
-          height: "30%",
+          height: "100vh",
           width: "100px",
           backgroundColor: "transparent",
           position: "absolute",
@@ -52,11 +48,11 @@ const Landingpage = (props) => {
       />
       <Parallax
         style={{
-          height: "30%",
+          height: "100vh",
           width: "100px",
           backgroundColor: "transparent",
           position: "absolute",
-          top: "30%",
+          top: "100vh",
           left: 0,
           zIndex: 10,
         }}
@@ -73,11 +69,11 @@ const Landingpage = (props) => {
       />
       <Parallax
         style={{
-          height: "30%",
+          height: "100vh",
           width: "100px",
           backgroundColor: "transparent",
           position: "absolute",
-          top: "60%",
+          top: "200vh",
           left: 0,
           zIndex: 10,
         }}
@@ -96,10 +92,10 @@ const Landingpage = (props) => {
         maxWidth='false'
         sx={{
           position: "relative",
-          height: "220vh",
+          height: "450vh",
         }}
       >
-        <Navbar t={t} scrollToBottom={scrollToBottom}></Navbar>
+        <Navbar t={t}></Navbar>
         <Box
           sx={{
             position: "sticky",

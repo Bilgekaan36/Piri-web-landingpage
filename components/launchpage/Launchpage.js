@@ -1,6 +1,6 @@
 import styles from "./Launchpage.module.css";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import { Box, Container, styled, Typography } from "@mui/material";
 

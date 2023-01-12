@@ -12,6 +12,7 @@ import {
   InputLabel,
   NativeSelect,
 } from "@mui/material";
+import { animateScroll as scroll } from "react-scroll";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -33,7 +34,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   height: "55px",
   marginLeft: "12px",
   "&:hover": {
-    backgroundColor: "#1CEAD9",
+    backgroundColor: "#6691c3",
   },
 }));
 
@@ -84,7 +85,10 @@ const Navbar = (props) => {
                 ))}
               </NativeSelect>
             </FormControl>
-            <StyledButton onClick={props.scrollToBottom}>
+            <StyledButton
+              // onClick={props.scrollToBottom}
+              onClick={() => scroll.scrollToBottom(5000)}
+            >
               <Typography
                 variant='header'
                 sx={{
@@ -94,9 +98,6 @@ const Navbar = (props) => {
                     xl: "1rem",
                     sm: "0.9rem",
                     xs: "0.9rem",
-                  },
-                  "&:hover": {
-                    color: "#1e1f26",
                   },
                 }}
               >

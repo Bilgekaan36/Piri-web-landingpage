@@ -152,8 +152,7 @@ const Workspage = ({ t }) => {
                   top: 0,
                   left: 0,
                 }}
-                autoPlay='true'
-                playsinline
+                autoPlay={true}
                 loop
               />
             </ImageListItem>
