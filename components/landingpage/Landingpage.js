@@ -20,7 +20,11 @@ const Landingpage = (props) => {
   };
 
   useEffect(() => {
-    handleStep(0);
+    const timeout = setTimeout(() => {
+      console.log("Called after 1 sec!");
+      handleStep(0);
+    }, 1000);
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
