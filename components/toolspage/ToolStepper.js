@@ -125,9 +125,10 @@ const ToolsStepper = ({ activeBackground, t }) => {
                 mm: "100%",
                 lg: "100%",
               },
-              boxShadow: `1px 1px 0px ${
-                activeBackground === "#1e1f26" ? "white" : "#1e1f26"
-              }`,
+              boxShadow: "none",
+              // boxShadow: `1px 1px 0px ${
+              //   activeBackground === "#1e1f26" ? "white" : "#1e1f26"
+              // }`,
             }}
           >
             <CardActionArea

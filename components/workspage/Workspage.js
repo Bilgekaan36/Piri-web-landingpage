@@ -128,10 +128,14 @@ const Workspage = ({ t }) => {
         maxWidth='false'
         sx={{ backgroundColor: activeBackground, position: "relative" }}
       >
-        <StyledContainer disableGutters maxWidth='xxl'>
+        <StyledContainer
+          disableGutters
+          maxWidth='xxl'
+          sx={{ backgroundColor: activeBackground }}
+        >
           <ImageList
             cols={matchDownLg ? 1 : 2}
-            rowHeight={matchDownLg ? 120 : 280}
+            rowHeight={matchDownLg ? 120 : 250}
           >
             {itemData.map((item) => (
               <ImageListItem
@@ -143,6 +147,7 @@ const Workspage = ({ t }) => {
                   src={item.video}
                   type='video/mp4'
                   muted
+                  playsInline
                   height='100%'
                   width='100%'
                   style={{

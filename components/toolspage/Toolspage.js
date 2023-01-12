@@ -93,6 +93,7 @@ const Toolspage = ({ t }) => {
   return (
     <Box
       sx={{
+        position: "relative",
         backgroundColor: activeBackground,
       }}
     >
@@ -108,35 +109,33 @@ const Toolspage = ({ t }) => {
           <StyledTitleTextSecond>{t.toolspage.title2}</StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
+      <Parallax
+        style={{
+          height: "50px",
+          width: "100px",
+          backgroundColor: "transparent",
+          position: "absolute",
+          top: "20%",
+          left: 0,
+          zIndex: 10,
+        }}
+        onProgressChange={(progressData) => {
+          if (progressData >= 1) {
+            handleBackground("white");
+          }
+          if (progressData < 1) {
+            handleBackground("#1e1f26");
+          }
+        }}
+        onEnter={() => {}}
+        onExit={() => {}}
+      />
       <StyledContainer
         maxWidth='false'
         sx={{
-          position: "relative",
           backgroundColor: activeBackground,
         }}
       >
-        <Parallax
-          style={{
-            height: "50px",
-            width: "100px",
-            backgroundColor: "transparent",
-            position: "absolute",
-            bottom: "50%",
-            left: 0,
-            zIndex: 10,
-          }}
-          onProgressChange={(progressData) => {
-            if (progressData >= 1) {
-              handleBackground("white");
-            }
-            if (progressData < 1) {
-              handleBackground("#1e1f26");
-            }
-          }}
-          onEnter={() => {}}
-          onExit={() => {}}
-        />
-
         <Container
           disableGutters
           maxWidth='xxl'

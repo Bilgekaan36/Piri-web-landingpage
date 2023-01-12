@@ -221,7 +221,7 @@ const LandingStepper = ({ activeStep, t }) => {
             {steps[activeStep].thirdLabel}
           </StyledHeaderSubTitle>
         </Box>
-        <Box sx={{ marginTop: { xs: "", lg: "100px" } }}>
+        <Box sx={{ marginTop: { xs: "", lg: "32px" } }}>
           <StyledSubtitle
             variant='h5'
             component='div'

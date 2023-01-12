@@ -19,9 +19,9 @@ const Landingpage = (props) => {
     setActiveStep(data);
   };
 
-  useEffect(() => {
-    handleStep(0);
-  }, []);
+  // useEffect(() => {
+  //   handleStep(0);
+  // }, []);
 
   return (
     <>
@@ -92,7 +92,7 @@ const Landingpage = (props) => {
         maxWidth='false'
         sx={{
           position: "relative",
-          height: "550vh",
+          height: "500vh",
         }}
       >
         <Navbar t={t}></Navbar>
