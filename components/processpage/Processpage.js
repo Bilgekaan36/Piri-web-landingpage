@@ -508,7 +508,7 @@ const Process = ({ t }) => {
             </Grid>
           </Grid>
         </Parallax>
-        <Parallax
+        {/* <Parallax
           style={{
             height: "50px",
             width: "100px",
@@ -528,7 +528,7 @@ const Process = ({ t }) => {
           }}
           onEnter={() => {}}
           onExit={() => {}}
-        />
+        /> */}
       </StyledContainer>
     </Box>
   );

@@ -19,7 +19,9 @@ const Landingpage = (props) => {
     setActiveStep(data);
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log("activeStep: ", activeStep);
+  }, [activeStep]);
 
   return (
     <>
@@ -34,6 +36,11 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
+          // if (activeStep === 0) {
+          //   handleStep(2);
+          // } else if (activeStep === 2) {
+          //   handleStep(1);
+          // }
           handleStep(1);
         }}
         onExit={() => {

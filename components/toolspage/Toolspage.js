@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
-import { Box, Container, styled, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  styled,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 import ToolStepper from "./ToolStepper";
 
@@ -85,6 +92,8 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 
 const Toolspage = ({ t }) => {
   const [activeBackground, setActiveBackground] = useState("#1e1f26");
+  const theme = useTheme();
+  const matchDownLg = useMediaQuery(theme.breakpoints.down("lg"));
 
   const handleBackground = (data) => {
     setActiveBackground(data);
@@ -115,7 +124,7 @@ const Toolspage = ({ t }) => {
           width: "100px",
           backgroundColor: "transparent",
           position: "absolute",
-          top: "20%",
+          top: matchDownLg ? "50%" : "20%",
           left: 0,
           zIndex: 10,
         }}

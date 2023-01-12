@@ -110,18 +110,6 @@ const Personalpage = ({ t }) => {
         backgroundColor: activeBackground,
       }}
     >
-      <StyledHeader>
-        <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-          <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.personalpage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.personalpage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.personalpage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.personalpage.title2}</StyledTitleTextSecond>
-        </Parallax>
-      </StyledHeader>
       <StyledContainer
         maxWidth='false'
         sx={{ backgroundColor: activeBackground }}
@@ -147,7 +135,26 @@ const Personalpage = ({ t }) => {
           onEnter={() => {}}
           onExit={() => {}}
         />
-
+        <StyledHeader>
+          <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
+            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
+            <StyledTitleTextSecond>
+              {t.personalpage.title2}
+            </StyledTitleTextSecond>
+            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
+            <StyledTitleTextSecond>
+              {t.personalpage.title2}
+            </StyledTitleTextSecond>
+            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
+            <StyledTitleTextSecond>
+              {t.personalpage.title2}
+            </StyledTitleTextSecond>
+            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
+            <StyledTitleTextSecond>
+              {t.personalpage.title2}
+            </StyledTitleTextSecond>
+          </Parallax>
+        </StyledHeader>
         <Container
           disableGutters
           maxWidth='xxl'
@@ -165,7 +172,8 @@ const Personalpage = ({ t }) => {
               item
               xs={12}
               sm={5}
-              mm={4}
+              md={4}
+              mm={3}
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -203,10 +211,10 @@ const Personalpage = ({ t }) => {
             </Grid>
             <Grid
               item
-              xs={12}
+              xs={11}
               sm={4.5}
-              md={3}
-              mm={3.5}
+              md={4}
+              mm={3}
               lg={4.5}
               xl={4}
               xxl={3.5}
