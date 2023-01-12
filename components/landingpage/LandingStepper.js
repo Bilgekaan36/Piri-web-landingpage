@@ -61,7 +61,6 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
   color: "#1e1f26",
   zIndex: 10,
   fontWeight: 400,
-
   transition: "all 1s ease-in-out",
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("sm")]: {
@@ -121,8 +120,11 @@ const LandingStepper = ({ activeStep, t }) => {
   return (
     <Box
       sx={{
-        height: "100vh",
+        height: "100%",
         width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         position: "relative",
       }}
     >
@@ -132,14 +134,15 @@ const LandingStepper = ({ activeStep, t }) => {
         src={steps[activeStep].lottieFile}
         keepLastFrame={true}
         style={{
-          height: "75%",
-          width: "75%",
+          height: "100%",
+          width: "100%",
           opacity: "0.4",
-          position: "absolute",
-          top: "20%",
-          bottom: 0,
-          left: 0,
-          right: 0,
+          // position: "absolute",
+          // top: 0,
+          // bottom: 0,
+          // left: 0,
+          // right: 0,
+          border: "6px solid red",
         }}
       >
         <Controls
