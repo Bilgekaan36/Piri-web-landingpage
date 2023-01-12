@@ -55,11 +55,8 @@ a {
 }
 
 .lf-player-container {
-  /* height: 100%;
-  width: 100%; */
-  border: 6px solid blue;
+  height: 100%;
+  width: 100%;
+  /* border: 6px solid blue; */
   overflow: hidden;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }

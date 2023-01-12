@@ -151,7 +151,7 @@ const LandingStepper = ({ activeStep, t }) => {
           height: "100%",
           width: "100%",
           opacity: "0.4",
-          border: "6px solid red",
+          // border: "6px solid red",
         }}
         className={styles.lottiePlayer}
       >
@@ -160,27 +160,6 @@ const LandingStepper = ({ activeStep, t }) => {
           buttons={["play", "repeat", "frame", "debug"]}
         />
       </Player>
-      {/* {initial && (
-        <Player
-          autoplay
-          loop={false}
-          src={letterWDefault}
-          keepLastFrame={true}
-          style={{
-            height: "100%",
-            width: "100%",
-            opacity: "0.4",
-
-            border: "6px solid red",
-          }}
-          className={styles.lottiePlayer}
-        >
-          <Controls
-            visible={false}
-            buttons={["play", "repeat", "frame", "debug"]}
-          />
-        </Player>
-      )} */}
       <Box
         sx={{
           height: "100%",
