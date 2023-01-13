@@ -44,7 +44,7 @@ const Landingpage = (props) => {
           style={{
             height: "25%",
             width: "100px",
-            backgroundColor: "purple",
+            backgroundColor: "transparent",
             position: "absolute",
             top: "2px",
             left: 0,
@@ -63,7 +63,7 @@ const Landingpage = (props) => {
           style={{
             height: "25%",
             width: "100px",
-            backgroundColor: "red",
+            backgroundColor: "transparent",
             position: "absolute",
             top: "25%",
             left: 0,
@@ -84,7 +84,7 @@ const Landingpage = (props) => {
           style={{
             height: "25%",
             width: "100px",
-            backgroundColor: "blue",
+            backgroundColor: "transparent",
             position: "absolute",
             top: "50%",
             left: 0,
@@ -105,7 +105,7 @@ const Landingpage = (props) => {
           style={{
             height: "25%",
             width: "100px",
-            backgroundColor: "green",
+            backgroundColor: "transparent",
             position: "absolute",
             top: "75%",
             left: 0,
