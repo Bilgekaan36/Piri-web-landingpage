@@ -23,7 +23,7 @@ export default function Main() {
   const refBody = useRef();
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
-  const [showPage, setShowPage] = useState(false);
+  const [showPage, setShowPage] = useState(true);
   // const t = locale === "en" ? en : de;
   let t;
   switch (locale) {

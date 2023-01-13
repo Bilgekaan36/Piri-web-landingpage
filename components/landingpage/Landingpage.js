@@ -30,7 +30,10 @@ const Landingpage = (props) => {
 
   useEffect(() => {
     scroll.scrollToTop();
-    return () => clearTimeout(timerRef);
+    return () => {
+      clearTimeout(timerRef);
+      clearAllBodyScrollLocks(ref);
+    };
   }, []);
 
   const next = () => {
@@ -43,7 +46,14 @@ const Landingpage = (props) => {
   };
 
   return (
-    <Box ref={ref}>
+    <StyledContainer
+      maxWidth='false'
+      sx={{
+        position: "relative",
+        height: "150vh",
+      }}
+      ref={ref}
+    >
       <Parallax
         style={{
           height: "10vh",
@@ -132,31 +142,24 @@ const Landingpage = (props) => {
           next();
         }}
         onExit={() => {
-          props.handlePages();
+          // props.handlePages();
         }}
       />
-      <StyledContainer
-        maxWidth='false'
+
+      <Navbar t={t}></Navbar>
+      <Box
         sx={{
-          position: "relative",
-          height: "150vh",
+          position: "sticky",
+          top: 0,
+          left: 0,
+          height: "100vh",
+          width: "100%",
+          overflow: "hidden",
         }}
       >
-        <Navbar t={t}></Navbar>
-        <Box
-          sx={{
-            position: "sticky",
-            top: 0,
-            left: 0,
-            height: "100vh",
-            width: "100%",
-            overflow: "hidden",
-          }}
-        >
-          <LandingStepper t={t} activeStep={activeStep} />
-        </Box>
-      </StyledContainer>
-    </Box>
+        <LandingStepper t={t} activeStep={activeStep} />
+      </Box>
+    </StyledContainer>
   );
 };
 
