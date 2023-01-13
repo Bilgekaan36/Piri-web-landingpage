@@ -27,10 +27,10 @@ const Landingpage = (props) => {
     return () => clearTimeout(timerRef);
   }, []);
 
-  useEffect(() => {
-    // document.body.style.overflow = "hidden";
-    console.log("body: ", document.body.style.overflow);
-  }, [activeStep]);
+  // useEffect(() => {
+  //   // document.body.style.overflow = "hidden";
+  //   console.log("body: ", document.body.style.overflow);
+  // }, [activeStep]);
 
   const next = () => {
     if (document !== undefined) {
@@ -68,12 +68,12 @@ const Landingpage = (props) => {
         }}
         onEnter={() => {
           handleStep(1);
-          // next();
+          next();
         }}
         onExit={() => {
           if (activeStep === 1) {
             handleStep(2);
-            // next();
+            next();
           }
         }}
       />
@@ -90,13 +90,13 @@ const Landingpage = (props) => {
         onEnter={() => {
           if (activeStep === 3) {
             handleStep(2);
-            // next();
+            next();
           }
         }}
         onExit={() => {
           if (activeStep === 2) {
             handleStep(3);
-            // next();
+            next();
           }
         }}
       />
@@ -113,7 +113,7 @@ const Landingpage = (props) => {
         onEnter={() => {
           if (activeStep === 4) {
             handleStep(3);
-            // next();
+            next();
           }
         }}
         onExit={() => {
@@ -134,7 +134,7 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
-          // next();
+          next();
         }}
         onExit={() => {
           // props.handlePages();
