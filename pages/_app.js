@@ -53,9 +53,9 @@ const theme = createTheme({
     mainHeader: {
       fontFamily: "Sora",
       fontWeight: 700,
-      fontSize: "8vw",
+      fontSize: "9rem",
       lineHeight: 0.8,
-      letterSpacing: "-0.5rem",
+      letterSpacing: "-0.1rem",
     },
     secondHeader: {
       fontFamily: "Sora",

@@ -59,7 +59,7 @@ const confettiInteractivity = {
   ],
 };
 
-const Launchpage = ({ t, showPage }) => {
+const Launchpage = ({ t }) => {
   const [progress, setProgress] = useState(100);
 
   const handleProgress = (data) => {
@@ -76,7 +76,6 @@ const Launchpage = ({ t, showPage }) => {
         backgroundColor: "#1E1F26",
         backgroundImage: `linear-gradient(to top, white ${progress}%, #1E1F26 ${progress}%)`,
         transition: "400ms all ease-in-out",
-        display: showPage ? "block" : "none",
       }}
     >
       <Parallax

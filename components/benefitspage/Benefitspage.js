@@ -163,7 +163,6 @@ const Benefitspage = ({ t, showPage }) => {
     <Box
       sx={{
         backgroundColor: activeBackground,
-        display: showPage ? "block" : "none",
       }}
     >
       <StyledHeader>

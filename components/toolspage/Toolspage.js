@@ -90,7 +90,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
-const Toolspage = ({ t, showPage }) => {
+const Toolspage = ({ t }) => {
   const [activeBackground, setActiveBackground] = useState("#1e1f26");
   const theme = useTheme();
   const matchDownLg = useMediaQuery(theme.breakpoints.down("lg"));
@@ -104,7 +104,6 @@ const Toolspage = ({ t, showPage }) => {
       sx={{
         position: "relative",
         backgroundColor: activeBackground,
-        display: showPage ? "block" : "none",
       }}
     >
       <StyledHeader>

@@ -275,7 +275,7 @@ const StyledStepperNumbers = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {},
 }));
 
-const Process = ({ t, showPage }) => {
+const Process = ({ t }) => {
   const [progress, setProgress] = useState(100);
 
   const [activeBackground, setActiveBackground] = useState("white");
@@ -403,7 +403,6 @@ const Process = ({ t, showPage }) => {
     <Box
       sx={{
         backgroundColor: activeBackground,
-        display: showPage ? "block" : "none",
       }}
     >
       <StyledHeader>

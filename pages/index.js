@@ -17,13 +17,12 @@ import Footerpage from "../components/layout/Footerpage";
 import en from "../locales/en";
 import de from "../locales/de";
 import tr from "../locales/tr";
+import TestLandingpage from "../components/landingpage/TestLandingpage";
 
 export default function Main() {
   const ref = useRef();
-  const refBody = useRef();
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
-  const [showPage, setShowPage] = useState(true);
   // const t = locale === "en" ? en : de;
   let t;
   switch (locale) {
@@ -38,13 +37,8 @@ export default function Main() {
       break;
   }
 
-  const handlePages = () => {
-    console.log("handlePages: ", showPage);
-    setShowPage(true);
-  };
-
   return (
-    <Container disableGutters maxWidth='false' ref={refBody}>
+    <Container disableGutters maxWidth='false'>
       <motion.div
         className={styles.transitionPage}
         initial={{ opacity: 1, translateY: 0 }}
@@ -76,14 +70,15 @@ export default function Main() {
           </Typography>
         </motion.div>
       </motion.div>
-      <Landingpage t={t} handlePages={handlePages} />
-      <Benefitspage t={t} showPage={showPage} />
-      <Workspage t={t} showPage={showPage} />
-      <Toolspage t={t} showPage={showPage} />
-      <Processpage t={t} showPage={showPage} />
-      <Launchpage t={t} showPage={showPage} />
-      <Personalpage t={t} showPage={showPage} />
-      <Footerpage ref={ref} showPage={showPage} />
+      {/* <Landingpage t={t} /> */}
+      <TestLandingpage t={t} />
+      <Benefitspage t={t} />
+      <Workspage t={t} />
+      <Toolspage t={t} />
+      <Processpage t={t} />
+      <Launchpage t={t} />
+      <Personalpage t={t} />
+      <Footerpage ref={ref} />
     </Container>
   );
 }

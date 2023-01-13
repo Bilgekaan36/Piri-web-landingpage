@@ -102,7 +102,7 @@ const StyledFooterAuthor = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const Workspage = ({ t, showPage }) => {
+const Workspage = ({ t }) => {
   const theme = useTheme();
   const matchDownLg = useMediaQuery(theme.breakpoints.down("lg"));
   const [activeBackground, setActiveBackground] = useState("white");
@@ -114,7 +114,6 @@ const Workspage = ({ t, showPage }) => {
     <Box
       sx={{
         backgroundColor: activeBackground,
-        display: showPage ? "block" : "none",
       }}
     >
       <StyledHeader>

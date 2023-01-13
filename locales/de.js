@@ -10,7 +10,8 @@ const translation = {
     description1Website: "Bringe deine Vision ins Web!",
     description2Website: "Ob Frontend- oder Backend du bekommst hier alles",
     description3Website: "aus einer Hand",
-
+    descriptionWebsite:
+      "Ob Frontend- oder Backend du bekommst hier alles, aus einer Hand",
     firstLabelApplication: "DEINE",
     secondLabelApplication: "APPLIKATION",
     thirdLabelApplication: `individuell & Hightech`,
@@ -18,7 +19,6 @@ const translation = {
     description2Application:
       "Mit modernsten Technologien für das beste Kundenerlebnis",
     description3Application: "Professionalität zahlt sich aus",
-
     firstLabelMobileapp: "DEINE",
     secondLabelMobileapp: "MOBILEAPP",
     thirdLabelMobileapp: `einzigartig & attraktiv`,
