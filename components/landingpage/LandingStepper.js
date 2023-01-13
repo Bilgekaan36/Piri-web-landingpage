@@ -69,7 +69,7 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const LandingStepper = ({ activeStep, t }) => {
+const LandingStepper = ({ activeStep, t, progress }) => {
   const steps = [
     {
       firstLabel: t.landingpage.firstLabelWebsite,
@@ -139,6 +139,28 @@ const LandingStepper = ({ activeStep, t }) => {
         position: "relative",
       }}
     >
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          right: "0%",
+          backgroundColor: "#1e1f26",
+          width: { xs: "2px", sm: "5px" },
+          height: `${progress}px`,
+          zIndex: 100,
+        }}
+      />
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          right: "0%",
+          backgroundColor: "#dbdbdb",
+          width: { xs: "2px", sm: "5px" },
+          height: `90px`,
+          zIndex: 1,
+        }}
+      />
       <Player
         autoplay
         loop={false}
