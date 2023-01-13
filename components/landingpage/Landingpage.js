@@ -37,7 +37,7 @@ const Landingpage = (props) => {
         maxWidth='false'
         sx={{
           position: "relative",
-          height: matchDownLg ? "2000vh" : "1000vh",
+          height: matchDownLg ? "1200vh" : "1000vh",
         }}
       >
         <Parallax
