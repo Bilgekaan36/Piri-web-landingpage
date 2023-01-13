@@ -37,7 +37,7 @@ const Landingpage = (props) => {
   }, []);
 
   const next = () => {
-    timerRef.current = setTimeout(() => enableBodyScroll(ref), 1000);
+    timerRef.current = setTimeout(() => enableBodyScroll(ref.current), 1000);
     console.log("timerStart");
     // return () => {
     //   console.log("clearTimer1");
@@ -66,7 +66,6 @@ const Landingpage = (props) => {
         }}
         onEnter={() => {
           handleStep(1);
-          // disableBodyScroll(ref);
           // next();
         }}
         onExit={() => {
@@ -122,7 +121,7 @@ const Landingpage = (props) => {
         onExit={() => {
           if (activeStep === 3) {
             handleStep(4);
-            disableBodyScroll(ref);
+            disableBodyScroll(ref.current);
             // next();
           }
         }}
