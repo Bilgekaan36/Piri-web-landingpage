@@ -66,14 +66,14 @@ const Landingpage = (props) => {
         }}
         onEnter={() => {
           handleStep(1);
-          disableBodyScroll(ref);
-          next();
+          // disableBodyScroll(ref);
+          // next();
         }}
         onExit={() => {
           if (activeStep === 1) {
             handleStep(2);
-            disableBodyScroll(ref);
-            next();
+            // disableBodyScroll(ref);
+            // next();
           }
         }}
       />
@@ -90,15 +90,15 @@ const Landingpage = (props) => {
         onEnter={() => {
           if (activeStep === 3) {
             handleStep(2);
-            disableBodyScroll(ref);
-            next();
+            // disableBodyScroll(ref);
+            // next();
           }
         }}
         onExit={() => {
           if (activeStep === 2) {
             handleStep(3);
-            disableBodyScroll(ref);
-            next();
+            // disableBodyScroll(ref);
+            // next();
           }
         }}
       />
@@ -115,15 +115,15 @@ const Landingpage = (props) => {
         onEnter={() => {
           if (activeStep === 4) {
             handleStep(3);
-            disableBodyScroll(ref);
-            next();
+            // disableBodyScroll(ref);
+            // next();
           }
         }}
         onExit={() => {
           if (activeStep === 3) {
             handleStep(4);
             disableBodyScroll(ref);
-            next();
+            // next();
           }
         }}
       />
@@ -138,8 +138,8 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
-          disableBodyScroll(ref);
-          next();
+          // disableBodyScroll(ref);
+          // next();
         }}
         onExit={() => {
           // props.handlePages();
