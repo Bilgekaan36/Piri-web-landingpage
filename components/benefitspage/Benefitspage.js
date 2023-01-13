@@ -153,7 +153,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
-const Benefitspage = ({ t }) => {
+const Benefitspage = ({ t, showPage }) => {
   const [activeBackground, setActiveBackground] = useState("#1e1f26");
   const handleBackground = (data) => {
     setActiveBackground(data);
@@ -163,6 +163,7 @@ const Benefitspage = ({ t }) => {
     <Box
       sx={{
         backgroundColor: activeBackground,
+        display: showPage ? "block" : "none",
       }}
     >
       <StyledHeader>

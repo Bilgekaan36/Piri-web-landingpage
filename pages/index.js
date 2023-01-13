@@ -2,7 +2,7 @@ import styles from "../components/layout/Layout.module.css";
 
 import { useRouter } from "next/router";
 import { Container, Typography } from "@mui/material";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import Benefitspage from "../components/benefitspage/Benefitspage";
@@ -23,6 +23,7 @@ export default function Main() {
   const refBody = useRef();
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
+  const [showPage, setShowPage] = useState(false);
   // const t = locale === "en" ? en : de;
   let t;
   switch (locale) {
@@ -36,6 +37,11 @@ export default function Main() {
       t = tr;
       break;
   }
+
+  const handlePages = () => {
+    console.log("handlePages: ", showPage);
+    setShowPage(true);
+  };
 
   return (
     <Container disableGutters maxWidth='false' ref={refBody}>
@@ -70,14 +76,14 @@ export default function Main() {
           </Typography>
         </motion.div>
       </motion.div>
-      <Landingpage t={t} />
-      <Benefitspage t={t} />
-      <Workspage t={t} />
-      <Toolspage t={t} />
-      <Processpage t={t} />
-      <Launchpage t={t} />
-      <Personalpage t={t} />
-      <Footerpage ref={ref} />
+      <Landingpage t={t} handlePages={handlePages} />
+      <Benefitspage t={t} showPage={showPage} />
+      <Workspage t={t} showPage={showPage} />
+      <Toolspage t={t} showPage={showPage} />
+      <Processpage t={t} showPage={showPage} />
+      <Launchpage t={t} showPage={showPage} />
+      <Personalpage t={t} showPage={showPage} />
+      <Footerpage ref={ref} showPage={showPage} />
     </Container>
   );
 }

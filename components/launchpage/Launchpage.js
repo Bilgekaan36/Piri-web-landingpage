@@ -36,11 +36,6 @@ const rocketInteractivity = {
       type: "seek",
       frames: [1, 90],
     },
-    // {
-    //   visibility: [0.7, 1.0],
-    //   type: "loop",
-    //   frames: [45, 60],
-    // },
   ],
 };
 
@@ -61,15 +56,10 @@ const confettiInteractivity = {
       type: "seek",
       frames: [1, 90],
     },
-    // {
-    //   visibility: [0.7, 1.0],
-    //   type: "loop",
-    //   frames: [45, 60],
-    // },
   ],
 };
 
-const Launchpage = ({ t }) => {
+const Launchpage = ({ t, showPage }) => {
   const [progress, setProgress] = useState(100);
 
   const handleProgress = (data) => {
@@ -86,6 +76,7 @@ const Launchpage = ({ t }) => {
         backgroundColor: "#1E1F26",
         backgroundImage: `linear-gradient(to top, white ${progress}%, #1E1F26 ${progress}%)`,
         transition: "400ms all ease-in-out",
+        display: showPage ? "block" : "none",
       }}
     >
       <Parallax

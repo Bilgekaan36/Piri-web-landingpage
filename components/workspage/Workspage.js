@@ -102,7 +102,7 @@ const StyledFooterAuthor = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const Workspage = ({ t }) => {
+const Workspage = ({ t, showPage }) => {
   const theme = useTheme();
   const matchDownLg = useMediaQuery(theme.breakpoints.down("lg"));
   const [activeBackground, setActiveBackground] = useState("white");
@@ -111,7 +111,12 @@ const Workspage = ({ t }) => {
   };
 
   return (
-    <Box sx={{ backgroundColor: activeBackground }}>
+    <Box
+      sx={{
+        backgroundColor: activeBackground,
+        display: showPage ? "block" : "none",
+      }}
+    >
       <StyledHeader>
         <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
           <StyledTitleText>{t.workspage.title1}</StyledTitleText>

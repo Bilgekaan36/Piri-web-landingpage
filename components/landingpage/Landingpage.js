@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { Box, Container, styled } from "@mui/material";
 import Navbar from "./Navbar";
 import { Parallax } from "react-scroll-parallax";
 import LandingStepper from "./LandingStepper";
 import { animateScroll as scroll } from "react-scroll";
+
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
@@ -15,6 +21,8 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 const Landingpage = (props) => {
   const { t } = props;
   const [activeStep, setActiveStep] = useState(0);
+  const ref = useRef();
+  const timerRef = useRef(null);
 
   const handleStep = (data) => {
     setActiveStep(data);
@@ -22,31 +30,25 @@ const Landingpage = (props) => {
 
   useEffect(() => {
     scroll.scrollToTop();
-
-    // const lastActiveStep = JSON.parse(localStorage.getItem("lastActiveStep"));
-    // if (lastActiveStep > 3) {
-    //   setActiveStep(4);
-    // } else {
-    //   setActiveStep(lastActiveStep);
-    // }
-    return () => {
-      // localStorage.setItem("lastActiveStep", JSON.stringify(activeStep));
-      console.log("unmount");
-      scroll.scrollToTop();
-    };
+    return () => clearTimeout(timerRef);
   }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem("lastActiveStep", JSON.stringify(activeStep));
-  // }, [activeStep]);
+  const next = () => {
+    timerRef.current = setTimeout(() => enableBodyScroll(ref), 1000);
+    console.log("timerStart");
+    // return () => {
+    //   console.log("clearTimer1");
+    //   clearTimeout(timerRef);
+    // };
+  };
 
   return (
-    <>
+    <Box ref={ref}>
       <Parallax
         style={{
-          height: "100vh",
+          height: "10vh",
           width: "100px",
-          backgroundColor: "transparent",
+          backgroundColor: "purple",
           position: "absolute",
           top: "2px",
           left: 0,
@@ -54,58 +56,90 @@ const Landingpage = (props) => {
         }}
         onEnter={() => {
           handleStep(1);
+          disableBodyScroll(ref);
+          next();
         }}
         onExit={() => {
-          handleStep(2);
+          if (activeStep === 1) {
+            handleStep(2);
+            disableBodyScroll(ref);
+            next();
+          }
         }}
       />
       <Parallax
         style={{
-          height: "100vh",
+          height: "10vh",
           width: "100px",
-          backgroundColor: "transparent",
+          backgroundColor: "red",
           position: "absolute",
-          top: "100vh",
+          top: "10vh",
           left: 0,
           zIndex: 10,
         }}
         onEnter={() => {
           if (activeStep === 3) {
             handleStep(2);
+            disableBodyScroll(ref);
+            next();
           }
         }}
         onExit={() => {
           if (activeStep === 2) {
             handleStep(3);
+            disableBodyScroll(ref);
+            next();
           }
         }}
       />
       <Parallax
         style={{
-          height: "100vh",
+          height: "10vh",
           width: "100px",
-          backgroundColor: "transparent",
+          backgroundColor: "blue",
           position: "absolute",
-          top: "200vh",
+          top: "20vh",
           left: 0,
           zIndex: 10,
         }}
         onEnter={() => {
           if (activeStep === 4) {
             handleStep(3);
+            disableBodyScroll(ref);
+            next();
           }
         }}
         onExit={() => {
           if (activeStep === 3) {
             handleStep(4);
+            disableBodyScroll(ref);
+            next();
           }
+        }}
+      />
+      <Parallax
+        style={{
+          height: "10vh",
+          width: "100px",
+          backgroundColor: "green",
+          position: "absolute",
+          top: "30vh",
+          left: 0,
+          zIndex: 10,
+        }}
+        onEnter={() => {
+          disableBodyScroll(ref);
+          next();
+        }}
+        onExit={() => {
+          props.handlePages();
         }}
       />
       <StyledContainer
         maxWidth='false'
         sx={{
           position: "relative",
-          height: "500vh",
+          height: "150vh",
         }}
       >
         <Navbar t={t}></Navbar>
@@ -122,7 +156,7 @@ const Landingpage = (props) => {
           <LandingStepper t={t} activeStep={activeStep} />
         </Box>
       </StyledContainer>
-    </>
+    </Box>
   );
 };
 

@@ -97,7 +97,7 @@ const StyledHeadContent = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const Personalpage = ({ t }) => {
+const Personalpage = ({ t, showPage }) => {
   const [activeBackground, setActiveBackground] = useState("white");
 
   const handleBackground = (data) => {
@@ -108,6 +108,7 @@ const Personalpage = ({ t }) => {
     <Box
       sx={{
         backgroundColor: activeBackground,
+        display: showPage ? "block" : "none",
       }}
     >
       <StyledContainer

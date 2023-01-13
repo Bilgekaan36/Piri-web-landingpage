@@ -132,7 +132,10 @@ const Footerpage = (props, ref) => {
       break;
   }
   return (
-    <StyledContainer maxWidth='false'>
+    <StyledContainer
+      maxWidth='false'
+      sx={{ display: props.showPage ? "block" : "none" }}
+    >
       <Container
         className='footer'
         disableGutters
