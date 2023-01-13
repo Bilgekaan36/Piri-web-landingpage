@@ -6,12 +6,6 @@ import { Parallax } from "react-scroll-parallax";
 import LandingStepper from "./LandingStepper";
 import { animateScroll as scroll } from "react-scroll";
 
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from "body-scroll-lock";
-
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
   height: "100vh",
@@ -30,15 +24,23 @@ const Landingpage = (props) => {
 
   useEffect(() => {
     scroll.scrollToTop();
-    return () => {
-      clearTimeout(timerRef);
-      clearAllBodyScrollLocks(ref);
-    };
+    return () => clearTimeout(timerRef);
   }, []);
 
+  useEffect(() => {
+    // document.body.style.overflow = "hidden";
+    console.log("body: ", document.body.style.overflow);
+  }, [activeStep]);
+
   const next = () => {
-    timerRef.current = setTimeout(() => enableBodyScroll(ref.current), 1000);
-    console.log("timerStart");
+    if (document !== undefined) {
+      document.body.style.overflow = "hidden";
+    }
+    timerRef.current = setTimeout(
+      () => (document.body.style.overflow = "auto"),
+      1000
+    );
+
     // return () => {
     //   console.log("clearTimer1");
     //   clearTimeout(timerRef);
@@ -71,7 +73,6 @@ const Landingpage = (props) => {
         onExit={() => {
           if (activeStep === 1) {
             handleStep(2);
-            // disableBodyScroll(ref);
             // next();
           }
         }}
@@ -89,14 +90,12 @@ const Landingpage = (props) => {
         onEnter={() => {
           if (activeStep === 3) {
             handleStep(2);
-            // disableBodyScroll(ref);
             // next();
           }
         }}
         onExit={() => {
           if (activeStep === 2) {
             handleStep(3);
-            // disableBodyScroll(ref);
             // next();
           }
         }}
@@ -114,15 +113,13 @@ const Landingpage = (props) => {
         onEnter={() => {
           if (activeStep === 4) {
             handleStep(3);
-            // disableBodyScroll(ref);
             // next();
           }
         }}
         onExit={() => {
           if (activeStep === 3) {
             handleStep(4);
-            disableBodyScroll(ref.current);
-            // next();
+            next();
           }
         }}
       />
@@ -137,7 +134,6 @@ const Landingpage = (props) => {
           zIndex: 10,
         }}
         onEnter={() => {
-          // disableBodyScroll(ref);
           // next();
         }}
         onExit={() => {
