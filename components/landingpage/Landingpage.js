@@ -24,7 +24,7 @@ const Landingpage = (props) => {
 
   useEffect(() => {
     scroll.scrollToTop();
-    return () => clearTimeout(timerRef);
+    // return () => clearTimeout(timerRef);
   }, []);
 
   // useEffect(() => {
@@ -36,10 +36,10 @@ const Landingpage = (props) => {
     if (document !== undefined) {
       document.body.style.overflow = "hidden";
     }
-    timerRef.current = setTimeout(
-      () => (document.body.style.overflow = "auto"),
-      1000
-    );
+    timerRef.current = setTimeout(() => {
+      document.body.style.overflow = "auto";
+      clearTimeout(timerRef.current);
+    }, 1000);
 
     // return () => {
     //   console.log("clearTimer1");
