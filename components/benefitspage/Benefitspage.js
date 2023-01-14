@@ -205,7 +205,6 @@ const Benefitspage = ({ t, showPage }) => {
           onEnter={() => {}}
           onExit={() => {}}
         />
-
         <Container
           disableGutters
           maxWidth='xxl'

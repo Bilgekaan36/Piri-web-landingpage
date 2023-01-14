@@ -157,7 +157,6 @@ const Personalpage = ({ t }) => {
           </Parallax>
         </StyledHeader>
         <Container
-          disableGutters
           maxWidth='xxl'
           sx={{ display: "flex", paddingBottom: { xs: "0px", mm: "0px" } }}
         >

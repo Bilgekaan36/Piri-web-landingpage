@@ -227,22 +227,22 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   position: "relative",
 
   // border: "1px solid red",
-  height: "450px",
-  [theme.breakpoints.down("xxl")]: {},
-  [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {
-    height: "450px",
-  },
-  [theme.breakpoints.down("mm")]: {
-    height: "400px",
-  },
-  [theme.breakpoints.down("md")]: {
-    height: "450px",
-  },
-  [theme.breakpoints.down("sm")]: {
-    height: "500px",
-  },
-  [theme.breakpoints.down("xs")]: {},
+  height: "400px",
+  // [theme.breakpoints.down("xxl")]: {},
+  // [theme.breakpoints.down("xl")]: {},
+  // [theme.breakpoints.down("lg")]: {
+  //   height: "450px",
+  // },
+  // [theme.breakpoints.down("mm")]: {
+  //   height: "400px",
+  // },
+  // [theme.breakpoints.down("md")]: {
+  //   height: "450px",
+  // },
+  // [theme.breakpoints.down("sm")]: {
+  //   height: "300px",
+  // },
+  // [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledStepperNumbers = styled(Typography)(({ theme }) => ({
@@ -426,7 +426,15 @@ const Process = ({ t }) => {
           spacing={0}
           sx={{ marginBottom: { xs: "0px" } }}
         >
-          <StyledGrid item xs={10} sm={8} mm={8} md={8} lg={6}>
+          <StyledGrid
+            item
+            xs={10}
+            sm={8}
+            mm={8}
+            md={8}
+            lg={6}
+            sx={{ height: "30vh" }}
+          >
             <StyledMainTitle>{t.processpage.mainTitle1}</StyledMainTitle>
             <StyledMainTitle>{t.processpage.mainTitle2}</StyledMainTitle>
             <StyledSubTitle>{t.processpage.mainTitle3}</StyledSubTitle>
@@ -435,7 +443,7 @@ const Process = ({ t }) => {
         </StyledStepperGrid>
         <Parallax
           onProgressChange={(progressData) => {
-            const result = progressData * 3000;
+            const result = progressData * 2800;
             handleProgress(result);
           }}
         >
@@ -508,27 +516,6 @@ const Process = ({ t }) => {
             </Grid>
           </Grid>
         </Parallax>
-        {/* <Parallax
-          style={{
-            height: "50px",
-            width: "100px",
-            backgroundColor: "transparent",
-            position: "absolute",
-            bottom: "30%",
-            left: 0,
-            zIndex: 10,
-          }}
-          onProgressChange={(progressData) => {
-            if (progressData >= 1) {
-              handleStep("#1e1f26");
-            }
-            if (progressData < 1) {
-              handleStep("white");
-            }
-          }}
-          onEnter={() => {}}
-          onExit={() => {}}
-        /> */}
       </StyledContainer>
     </Box>
   );

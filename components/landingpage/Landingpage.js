@@ -279,7 +279,7 @@ const TestLandingpage = (props) => {
                       sx={{
                         textAlign: "center",
                         fontFamily: "Sora",
-                        fontWeight: 100,
+                        fontWeight: 400,
                         color: "#6691c3",
                         fontSize: "2rem",
                         margin: "0px",
@@ -358,7 +358,7 @@ const TestLandingpage = (props) => {
                       sx={{
                         textAlign: "center",
                         fontFamily: "Sora",
-                        fontWeight: 100,
+                        fontWeight: 400,
                         color: "#F76B6C",
                         fontSize: "2rem",
                         margin: "0px",
@@ -440,7 +440,7 @@ const TestLandingpage = (props) => {
                       sx={{
                         textAlign: "center",
                         fontFamily: "Sora",
-                        fontWeight: 100,
+                        fontWeight: 400,
                         color: "#79C4C8",
                         fontSize: "2rem",
                         margin: "0px",
@@ -519,7 +519,7 @@ const TestLandingpage = (props) => {
                       sx={{
                         textAlign: "center",
                         fontFamily: "Sora",
-                        fontWeight: 100,
+                        fontWeight: 400,
                         color: "#f7be02",
                         fontSize: "2rem",
                       }}

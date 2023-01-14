@@ -139,7 +139,7 @@ const Workspage = ({ t }) => {
         >
           <ImageList
             cols={matchDownLg ? 1 : 2}
-            rowHeight={matchDownLg ? 120 : 250}
+            rowHeight={matchDownLg ? 160 : 340}
           >
             {itemData.map((item) => (
               <ImageListItem
@@ -201,7 +201,7 @@ const Workspage = ({ t }) => {
             width: "100px",
             backgroundColor: "transparent",
             position: "absolute",
-            bottom: "25%",
+            bottom: "20%",
             left: 0,
             zIndex: 10,
           }}
