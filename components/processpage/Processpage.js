@@ -62,7 +62,7 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
 const StyledStepperTitle = styled(Typography)(({ theme }) => ({
   fontSize: "1.2rem",
   fontWeight: "400",
-  color: "#a0a0a0",
+  color: "#848484",
   [theme.breakpoints.down("xxl")]: {
     // fontSize: "1.8vw",
   },
@@ -135,7 +135,7 @@ const StyledStepperSubText = styled(Typography)(({ theme }) => ({
 const StyledStepperContent = styled(Typography)(({ theme }) => ({
   fontSize: "1.2rem",
   fontWeight: "200",
-  color: "#a0a0a0",
+  color: "#848484",
   [theme.breakpoints.down("xxl")]: {
     // fontSize: "1.8vw",
   },
@@ -179,7 +179,7 @@ const StyledMainTitle = styled(Typography)(({ theme }) => ({
 }));
 
 const StyledSubTitle = styled(Typography)(({ theme }) => ({
-  color: "#a0a0a0",
+  color: "#848484",
   fontSize: "2rem",
   fontWeight: "400",
   lineHeight: 1,

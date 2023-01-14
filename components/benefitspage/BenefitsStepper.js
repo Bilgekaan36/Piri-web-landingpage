@@ -14,7 +14,7 @@ import mission from "../../public/benefitspage_assets/mission.json";
 const StyledStepperTitle = styled(Typography)(({ theme }) => ({
   fontSize: "1.2rem",
   fontWeight: "400",
-  color: "#a0a0a0",
+  color: "#848484",
   transition: "all 400ms ease-in-out",
   [theme.breakpoints.down("xxl")]: {
     // fontSize: "1.8vw",
@@ -66,7 +66,7 @@ const StyledStepperSubTitle = styled(Typography)(({ theme }) => ({
 const StyledStepperContent = styled(Typography)(({ theme }) => ({
   fontSize: "1.2rem",
   fontWeight: "200",
-  color: "#a0a0a0",
+  color: "#848484",
   transition: "all 400ms ease-in-out",
   [theme.breakpoints.down("xxl")]: {
     // fontSize: "1.8vw",

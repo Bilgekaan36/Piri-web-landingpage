@@ -11,7 +11,11 @@ import {
 } from "@mui/material";
 import React from "react";
 import Navbar from "./Navbar";
-import PiriwebSvg from "./PiriwebSvg";
+import PiriwebSvg from "./landingpage_svg/PiriwebSvg";
+import WebsiteSvg from "./landingpage_svg/WebsiteSvg";
+import MobileSvg from "./landingpage_svg/MobileSvg";
+import OnlineshopSvg from "./landingpage_svg/OnlineshopSvg";
+import ApplicationSvg from "./landingpage_svg/ApplicationSvg";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
@@ -30,7 +34,7 @@ const StyledHeaderModular = styled(Typography)(({ theme }) => ({
 const StyledSubtitle = styled(Typography)(({ theme }) => ({
   fontSize: "1.5rem",
   fontWeight: "200",
-  color: "#a0a0a0",
+  color: "#848484",
   transition: "all 400ms ease-in-out",
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("sm")]: {
@@ -131,7 +135,7 @@ const TestLandingpage = (props) => {
                       sx={{
                         fontSize: "1.2rem",
                         fontWeight: "200",
-                        color: "#a0a0a0",
+                        color: "#848484",
                         transition: "all 400ms ease-in-out",
                       }}
                     >
@@ -145,7 +149,7 @@ const TestLandingpage = (props) => {
             </Grid>
           </Grid>
           <Grid item xs={4}>
-            <Grid item xs={12} sx={{ height: "400px", margin: "6px" }}>
+            <Grid item xs={12} sx={{ height: "375px", margin: "6px" }}>
               <Card sx={{ height: "100%" }}>
                 <CardActionArea
                   sx={{
@@ -165,7 +169,7 @@ const TestLandingpage = (props) => {
                       alignItems: "center",
                     }}
                   >
-                    <PiriwebSvg />
+                    <WebsiteSvg />
                   </Box>
                   <CardContent>
                     <Typography
@@ -178,7 +182,6 @@ const TestLandingpage = (props) => {
                         fontWeight: 100,
                         color: "#1E1F26",
                         fontSize: "2rem",
-                        letterSpacing: "0.3em",
                       }}
                     >
                       YOUR WEBSITE
@@ -191,7 +194,7 @@ const TestLandingpage = (props) => {
                         textAlign: "center",
                         fontSize: "1.2rem",
                         fontWeight: "200",
-                        color: "#a0a0a0",
+                        color: "#848484",
                         transition: "all 400ms ease-in-out",
                       }}
                     >
@@ -203,7 +206,7 @@ const TestLandingpage = (props) => {
                         textAlign: "center",
                         fontSize: "1.2rem",
                         fontWeight: "200",
-                        color: "#a0a0a0",
+                        color: "#848484",
                         transition: "all 400ms ease-in-out",
                       }}
                     >
@@ -213,7 +216,7 @@ const TestLandingpage = (props) => {
                 </CardActionArea>
               </Card>
             </Grid>
-            <Grid item xs={12} sx={{ height: "300px", margin: "6px" }}>
+            <Grid item xs={12} sx={{ height: "325px", margin: "6px" }}>
               <Card sx={{ height: "100%" }}>
                 <CardActionArea
                   sx={{
@@ -233,7 +236,7 @@ const TestLandingpage = (props) => {
                       alignItems: "center",
                     }}
                   >
-                    <PiriwebSvg />
+                    <ApplicationSvg />
                   </Box>
                   <CardContent>
                     <Typography
@@ -246,7 +249,6 @@ const TestLandingpage = (props) => {
                         fontWeight: 100,
                         color: "#1E1F26",
                         fontSize: "2rem",
-                        letterSpacing: "0.3em",
                       }}
                     >
                       YOUR APPLICATION
@@ -258,7 +260,7 @@ const TestLandingpage = (props) => {
                       sx={{
                         fontSize: "1.2rem",
                         fontWeight: "200",
-                        color: "#a0a0a0",
+                        color: "#848484",
                         transition: "all 400ms ease-in-out",
                       }}
                     >
@@ -272,7 +274,7 @@ const TestLandingpage = (props) => {
             </Grid>
           </Grid>
           <Grid item xs={4}>
-            <Grid item xs={12} sx={{ height: "300px", margin: "6px" }}>
+            <Grid item xs={12} sx={{ height: "325px", margin: "6px" }}>
               <Card sx={{ height: "100%" }}>
                 <CardActionArea
                   sx={{
@@ -292,7 +294,7 @@ const TestLandingpage = (props) => {
                       alignItems: "center",
                     }}
                   >
-                    <PiriwebSvg />
+                    <MobileSvg />
                   </Box>
                   <CardContent>
                     <Typography
@@ -305,7 +307,6 @@ const TestLandingpage = (props) => {
                         fontWeight: 100,
                         color: "#1E1F26",
                         fontSize: "2rem",
-                        letterSpacing: "0.3em",
                       }}
                     >
                       YOUR MOBILEAPP
@@ -317,7 +318,7 @@ const TestLandingpage = (props) => {
                       sx={{
                         fontSize: "1.2rem",
                         fontWeight: "200",
-                        color: "#a0a0a0",
+                        color: "#848484",
                         transition: "all 400ms ease-in-out",
                       }}
                     >
@@ -329,7 +330,7 @@ const TestLandingpage = (props) => {
                 </CardActionArea>
               </Card>
             </Grid>
-            <Grid item xs={12} sx={{ height: "400px", margin: "6px" }}>
+            <Grid item xs={12} sx={{ height: "375px", margin: "6px" }}>
               <Card sx={{ height: "100%" }}>
                 <CardActionArea
                   sx={{
@@ -349,7 +350,7 @@ const TestLandingpage = (props) => {
                       alignItems: "center",
                     }}
                   >
-                    <PiriwebSvg />
+                    <OnlineshopSvg />
                   </Box>
                   <CardContent>
                     <Typography
@@ -362,7 +363,6 @@ const TestLandingpage = (props) => {
                         fontWeight: 100,
                         color: "#1E1F26",
                         fontSize: "2rem",
-                        letterSpacing: "0.3em",
                       }}
                     >
                       YOUR ONLINESHOP
@@ -374,7 +374,7 @@ const TestLandingpage = (props) => {
                       sx={{
                         fontSize: "1.2rem",
                         fontWeight: "200",
-                        color: "#a0a0a0",
+                        color: "#848484",
                         transition: "all 400ms ease-in-out",
                       }}
                     >

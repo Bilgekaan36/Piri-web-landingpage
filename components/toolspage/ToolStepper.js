@@ -152,7 +152,7 @@ const ToolsStepper = ({ activeBackground, t }) => {
                 {data.title}
               </Typography>
               <CardContent>
-                <Typography variant='body2' color='text.secondary'>
+                <Typography variant='body2' color='#848484'>
                   {data.content}
                 </Typography>
               </CardContent>
