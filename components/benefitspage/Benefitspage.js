@@ -7,7 +7,6 @@ import BenefitsStepper from "./BenefitsStepper";
 
 const StyledHeader = styled(Box)(({ theme }) => ({
   display: "flex",
-  // height: "30vh",
   overflow: "hidden",
 }));
 
@@ -65,7 +64,6 @@ const StyledMainTitle = styled(Typography)(({ theme }) => ({
   lineHeight: 1,
   // textShadow: "0px 0px 3px white",
 
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "2.5rem",
   },
@@ -75,8 +73,6 @@ const StyledMainTitle = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     fontSize: "2rem",
   },
-  [theme.breakpoints.down("sm")]: {},
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledStepperGrid = styled(Grid)(({ theme }) => ({
@@ -89,17 +85,13 @@ const StyledStepperGrid = styled(Grid)(({ theme }) => ({
   marginBottom: "200px",
   marginTop: "120px",
 
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     marginTop: "120px",
     marginBottom: "120px",
   },
-  [theme.breakpoints.down("mm")]: {},
   [theme.breakpoints.down("md")]: {
     marginBottom: "120px",
   },
-  [theme.breakpoints.down("sm")]: {},
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
@@ -107,53 +99,18 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   transition: "all 1s ease-in-out",
-  // border: "1px solid red",
-  // height: "350px",
-  [theme.breakpoints.down("xxl")]: {},
-  [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {
-    // height: "300px",
-  },
-  [theme.breakpoints.down("mm")]: {
-    // height: "250px",
-  },
-  [theme.breakpoints.down("md")]: {
-    // height: "300px",
-  },
-  [theme.breakpoints.down("sm")]: {
-    // height: "300px",
-  },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "#1E1F26",
   position: "relative",
-  // height: "100vh",
-  [theme.breakpoints.down("xxl")]: {
-    // height: "100vh",
-  },
+
   [theme.breakpoints.down("xl")]: {
-    height: "inherit",
-  },
-  [theme.breakpoints.down("lg")]: {
-    height: "inherit",
-  },
-  [theme.breakpoints.down("mm")]: {
-    height: "inherit",
-  },
-  [theme.breakpoints.down("md")]: {
-    height: "inherit",
-  },
-  [theme.breakpoints.down("sm")]: {
-    height: "inherit",
-  },
-  [theme.breakpoints.down("xs")]: {
     height: "inherit",
   },
 }));
 
-const Benefitspage = ({ t, showPage }) => {
+const Benefitspage = ({ t }) => {
   const [activeBackground, setActiveBackground] = useState("#1e1f26");
   const handleBackground = (data) => {
     setActiveBackground(data);

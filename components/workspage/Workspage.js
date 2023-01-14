@@ -22,7 +22,6 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
   fontSize: "10vw",
   fontWeight: "400",
   paddingRight: "12px",
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
   },
@@ -35,7 +34,6 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     fontSize: "17vw",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
@@ -44,7 +42,6 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
   fontWeight: "400",
   textShadow: "0px 0px 3px #1e1f26",
   paddingRight: "64px",
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
     paddingRight: "32px",
@@ -61,14 +58,12 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
     fontSize: "17vw",
     paddingRight: "24px",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
   position: "relative",
   marginTop: "200px",
-  [theme.breakpoints.down("md")]: {},
 }));
 
 const StyledFooterBox = styled(Box)(({ theme }) => ({
@@ -213,8 +208,6 @@ const Workspage = ({ t }) => {
               handleStep("white");
             }
           }}
-          onEnter={() => {}}
-          onExit={() => {}}
         />
       </Container>
     </Box>

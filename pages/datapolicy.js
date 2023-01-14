@@ -24,7 +24,6 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
   fontWeight: "400",
   paddingRight: "12px",
   color: "#1e1f26",
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
   },
@@ -37,7 +36,6 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     fontSize: "17vw",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
@@ -46,7 +44,6 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
   fontWeight: "400",
   textShadow: "0px 0px 3px #1e1f26",
   paddingRight: "64px",
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
     paddingRight: "32px",
@@ -63,7 +60,6 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
     fontSize: "17vw",
     paddingRight: "24px",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledContainer = styled(Container)(({ theme }) => ({
@@ -71,9 +67,6 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   minHeight: "100vh",
   display: "flex",
   position: "relative",
-  [theme.breakpoints.down("xxl")]: {},
-  [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("mm")]: {},
 }));
 
 const StyledHeadTitle = styled(Typography)(({ theme }) => ({
@@ -104,7 +97,6 @@ const StyledHeadContent = styled(Typography)(({ theme }) => ({
   fontWeight: "200",
   [theme.breakpoints.down("lg")]: {
     fontSize: "0.75rem",
-    // marginTop: "24px",
   },
 }));
 
@@ -112,7 +104,6 @@ const Imprint = () => {
   const [activeBackground, setActiveBackground] = useState("white");
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
-  // const t = locale === "en" ? en : de;
   let t;
   switch (locale) {
     case "en":

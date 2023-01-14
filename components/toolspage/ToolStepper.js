@@ -20,7 +20,7 @@ import VercelSvg from "../technologies/VercelSvg.js";
 import VscodeSvg from "../technologies/VscodeSvg.js";
 import VueSvg from "../technologies/VueSvg.js";
 
-const ToolsStepper = ({ activeBackground, t }) => {
+const ToolsStepper = ({ t }) => {
   const technologies = [
     {
       logo: <ReactSvg />,
@@ -126,9 +126,6 @@ const ToolsStepper = ({ activeBackground, t }) => {
                 lg: "100%",
               },
               boxShadow: "none",
-              // boxShadow: `1px 1px 0px ${
-              //   activeBackground === "#1e1f26" ? "white" : "#1e1f26"
-              // }`,
             }}
           >
             <CardActionArea

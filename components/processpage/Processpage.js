@@ -4,8 +4,6 @@ import { Parallax } from "react-scroll-parallax";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   position: "relative",
-  [theme.breakpoints.up("md")]: {},
-  [theme.breakpoints.down("md")]: {},
 }));
 
 const StyledHeader = styled(Box)(({ theme }) => ({
@@ -18,7 +16,6 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
   fontSize: "10vw",
   fontWeight: "400",
   paddingRight: "12px",
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
   },
@@ -40,7 +37,6 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
   fontWeight: "400",
   textShadow: "0px 0px 3px #1e1f26",
   paddingRight: "64px",
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
     paddingRight: "32px",
@@ -57,16 +53,13 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
     fontSize: "17vw",
     paddingRight: "24px",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledStepperTitle = styled(Typography)(({ theme }) => ({
   fontSize: "1.2rem",
   fontWeight: "400",
   color: "#848484",
-  [theme.breakpoints.down("xxl")]: {
-    // fontSize: "1.8vw",
-  },
+
   [theme.breakpoints.down("xl")]: {
     fontSize: "1rem",
   },
@@ -82,7 +75,6 @@ const StyledStepperTitle = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     fontSize: "0.8rem",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledStepperSubTitle = styled(Typography)(({ theme }) => ({
@@ -102,7 +94,6 @@ const StyledStepperSubTitle = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("mm")]: {
     fontSize: "1.3rem",
   },
-  [theme.breakpoints.down("md")]: {},
   [theme.breakpoints.down("sm")]: {
     fontSize: "1.25rem",
   },
@@ -126,7 +117,6 @@ const StyledStepperSubText = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("mm")]: {
     fontSize: "1rem",
   },
-  [theme.breakpoints.down("md")]: {},
   [theme.breakpoints.down("sm")]: {
     fontSize: "0.9rem",
   },
@@ -137,9 +127,7 @@ const StyledStepperContent = styled(Typography)(({ theme }) => ({
   fontSize: "1.2rem",
   fontWeight: "200",
   color: "#848484",
-  [theme.breakpoints.down("xxl")]: {
-    // fontSize: "1.8vw",
-  },
+
   [theme.breakpoints.down("xl")]: {
     fontSize: "1rem",
   },
@@ -155,7 +143,6 @@ const StyledStepperContent = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     fontSize: "0.8rem",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledMainTitle = styled(Typography)(({ theme }) => ({
@@ -163,9 +150,6 @@ const StyledMainTitle = styled(Typography)(({ theme }) => ({
   fontSize: "4.5rem",
   fontWeight: "700",
   lineHeight: 1,
-  // textShadow: "0px 0px 3px white",
-
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "2.5rem",
   },
@@ -175,7 +159,6 @@ const StyledMainTitle = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     fontSize: "2rem",
   },
-  [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
 
@@ -184,9 +167,6 @@ const StyledSubTitle = styled(Typography)(({ theme }) => ({
   fontSize: "2rem",
   fontWeight: "400",
   lineHeight: 1,
-  // textShadow: "0px 0px 3px white",
-
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "1.5rem",
   },
@@ -196,8 +176,6 @@ const StyledSubTitle = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     fontSize: "1rem",
   },
-  [theme.breakpoints.down("sm")]: {},
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledStepperGrid = styled(Grid)(({ theme }) => ({
@@ -208,16 +186,13 @@ const StyledStepperGrid = styled(Grid)(({ theme }) => ({
   alignItems: "center",
   marginBottom: "150px",
   position: "relative",
-  [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("mm")]: {},
+
   [theme.breakpoints.down("md")]: {
     marginBottom: "80px",
   },
   [theme.breakpoints.down("sm")]: {
     marginBottom: "40px",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
@@ -226,7 +201,6 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   justifyContent: "flex-start",
   transition: "all 1s ease-in-out",
   position: "relative",
-  // border: "1px solid red",
   height: "400px",
 }));
 
@@ -241,10 +215,8 @@ const StyledStepperNumbers = styled(Typography)(({ theme }) => ({
   fontSize: "3vw",
   textAlign: "center",
   [theme.breakpoints.down("xxl")]: {
-    // fontSize: "1.8vw",
     left: "-50px",
   },
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "6vw",
   },
@@ -257,7 +229,6 @@ const StyledStepperNumbers = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     fontSize: "6vw",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const Process = ({ t }) => {

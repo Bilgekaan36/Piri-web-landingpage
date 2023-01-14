@@ -21,7 +21,6 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
   fontSize: "10vw",
   fontWeight: "400",
   paddingRight: "12px",
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
   },
@@ -34,7 +33,6 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     fontSize: "17vw",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
@@ -43,7 +41,6 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
   color: "#1e1f26",
   textShadow: "0px 0px 3px white",
   paddingRight: "64px",
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
     paddingRight: "32px",
@@ -60,7 +57,6 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
     fontSize: "17vw",
     paddingRight: "24px",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledContainer = styled(Container)(({ theme }) => ({
@@ -68,24 +64,6 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   position: "relative",
   height: "inherit%",
   [theme.breakpoints.down("xxl")]: {
-    height: "inherit",
-  },
-  [theme.breakpoints.down("xl")]: {
-    height: "inherit",
-  },
-  [theme.breakpoints.down("lg")]: {
-    height: "inherit",
-  },
-  [theme.breakpoints.down("mm")]: {
-    height: "inherit",
-  },
-  [theme.breakpoints.down("md")]: {
-    height: "inherit",
-  },
-  [theme.breakpoints.down("sm")]: {
-    height: "inherit",
-  },
-  [theme.breakpoints.down("xs")]: {
     height: "inherit",
   },
 }));

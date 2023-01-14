@@ -3,14 +3,7 @@ import styles from "./Footerpage.module.css";
 import { forwardRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Container,
-  styled,
-  Grid,
-  Typography,
-  Box,
-  Button,
-} from "@mui/material";
+import { Container, styled, Grid, Typography, Box } from "@mui/material";
 import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
 
 import en from "../../locales/en";
@@ -64,9 +57,6 @@ const StyledHeadContent = styled(Typography)(({ theme }) => ({
   fontWeight: "200",
   color: "white",
   marginBottom: "12px",
-  [theme.breakpoints.down("xxl")]: {
-    // fontSize: "1.8vw",
-  },
   [theme.breakpoints.down("xl")]: {
     fontSize: "1rem",
   },
@@ -82,7 +72,6 @@ const StyledHeadContent = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     fontSize: "0.9rem",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledFooterTitle = styled(Typography)(({ theme }) => ({
@@ -104,7 +93,6 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   borderBottom: "1px solid white",
   transition: "400ms all ease-in-out",
   color: "white",
-
   cursor: "pointer",
   display: "flex",
   justifyContent: "space-between",
@@ -134,7 +122,6 @@ const Footerpage = (props, ref) => {
   return (
     <StyledContainer maxWidth='false'>
       <Container
-        className='footer'
         disableGutters
         maxWidth='xxl'
         sx={{ position: "relative", height: "100%" }}
@@ -276,6 +263,7 @@ const Footerpage = (props, ref) => {
                 </Link>
               </Box>
               <Box
+                className='footer'
                 sx={{
                   display: "flex",
                   justifyContent: "center",

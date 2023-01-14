@@ -2,7 +2,7 @@ import styles from "../components/layout/Layout.module.css";
 
 import { useRouter } from "next/router";
 import { Container, Typography } from "@mui/material";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 
 import Benefitspage from "../components/benefitspage/Benefitspage";
@@ -22,7 +22,6 @@ export default function Main() {
   const ref = useRef();
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
-  // const t = locale === "en" ? en : de;
   let t;
   switch (locale) {
     case "en":
@@ -38,33 +37,21 @@ export default function Main() {
 
   return (
     <Container disableGutters maxWidth='false'>
-      {/* <motion.div
-        className={styles.transitionPage}
-        initial={{ opacity: 1, translateY: "100%" }}
-        animate={{ opacity: 0, translateY: 0 }}
-        transition={{
-          duration: 1,
-          delay: 1,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
-      /> */}
       <motion.div
         className={styles.transitionPage}
         initial={{ opacity: 1, translateY: 0 }}
         animate={{ opacity: 1, translateY: "-100%" }}
         transition={{
           duration: 1,
-          delay: 2,
-          ease: [0, 0.71, 0.2, 1.01],
+          delay: 0.75,
         }}
       >
         <motion.div
-          initial={{ opacity: 0, translateX: -100 }}
+          initial={{ opacity: 0, translateX: "-100px" }}
           animate={{ opacity: 1, translateX: 0 }}
           transition={{
-            duration: 1,
+            duration: 0.5,
             delay: 0,
-            ease: [0, 0.71, 0.2, 1.01],
           }}
         >
           <Typography

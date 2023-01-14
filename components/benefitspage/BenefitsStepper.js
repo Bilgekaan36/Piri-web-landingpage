@@ -1,7 +1,7 @@
 import styles from "./BenefitsStepper.module.css";
 
 import * as React from "react";
-import { Typography, Button, styled, Grid } from "@mui/material";
+import { Typography, styled, Grid } from "@mui/material";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 
 import conversion from "../../public/benefitspage_assets/conversion.json";
@@ -16,9 +16,7 @@ const StyledStepperTitle = styled(Typography)(({ theme }) => ({
   fontWeight: "400",
   color: "#848484",
   transition: "all 400ms ease-in-out",
-  [theme.breakpoints.down("xxl")]: {
-    // fontSize: "1.8vw",
-  },
+  [theme.breakpoints.down("xxl")]: {},
   [theme.breakpoints.down("xl")]: {
     fontSize: "1rem",
   },
@@ -34,7 +32,6 @@ const StyledStepperTitle = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     fontSize: "0.8rem",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledStepperSubTitle = styled(Typography)(({ theme }) => ({
@@ -56,11 +53,9 @@ const StyledStepperSubTitle = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("mm")]: {
     fontSize: "1.3rem",
   },
-  [theme.breakpoints.down("md")]: {},
   [theme.breakpoints.down("sm")]: {
     fontSize: "1.25rem",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledStepperContent = styled(Typography)(({ theme }) => ({
@@ -68,9 +63,6 @@ const StyledStepperContent = styled(Typography)(({ theme }) => ({
   fontWeight: "200",
   color: "#848484",
   transition: "all 400ms ease-in-out",
-  [theme.breakpoints.down("xxl")]: {
-    // fontSize: "1.8vw",
-  },
   [theme.breakpoints.down("xl")]: {
     fontSize: "1rem",
   },
@@ -97,15 +89,9 @@ const StyledStepperGrid = styled(Grid)(({ theme }) => ({
   alignItems: "center",
   transition: "all 400ms ease-in-out",
   marginBottom: "100px",
-
-  [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("mm")]: {},
   [theme.breakpoints.down("md")]: {
     marginBottom: "80px",
   },
-  [theme.breakpoints.down("sm")]: {},
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
@@ -113,10 +99,8 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   transition: "all 400ms ease-in-out",
-  // border: "1px solid red",
   height: "350px",
-  [theme.breakpoints.down("xxl")]: {},
-  [theme.breakpoints.down("xl")]: {},
+
   [theme.breakpoints.down("lg")]: {
     height: "300px",
   },
@@ -129,7 +113,6 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     height: "300px",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const BenefitsStepper = ({ activeBackground, t }) => {
@@ -192,7 +175,6 @@ const BenefitsStepper = ({ activeBackground, t }) => {
               autoplay
               loop={true}
               src={step.lottieFile}
-              // keepLastFrame={true}
               className={styles.lottiePlayer}
             >
               <Controls

@@ -16,7 +16,6 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
   fontWeight: "400",
   paddingRight: "12px",
   color: "#1e1f26",
-  [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
   },
@@ -38,7 +37,7 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
   fontWeight: "400",
   textShadow: "0px 0px 3px #1e1f26",
   paddingRight: "64px",
-  [theme.breakpoints.down("xl")]: {},
+
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
     paddingRight: "32px",
@@ -55,7 +54,6 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
     fontSize: "17vw",
     paddingRight: "24px",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledContainer = styled(Container)(({ theme }) => ({
@@ -90,7 +88,6 @@ const StyledHeadContent = styled(Typography)(({ theme }) => ({
   fontSize: "1.5rem",
   color: "#1e1f26",
   marginTop: "32px",
-
   [theme.breakpoints.down("lg")]: {
     fontSize: "0.75rem",
     marginTop: "24px",

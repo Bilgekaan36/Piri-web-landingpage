@@ -9,7 +9,6 @@ import {
   styled,
   Container,
   FormControl,
-  InputLabel,
   NativeSelect,
 } from "@mui/material";
 import * as Scroll from "react-scroll";
@@ -70,9 +69,6 @@ const Navbar = (props) => {
               </Link>
             </Box>
             <FormControl sx={{ width: 100 }}>
-              {/* <InputLabel variant='standard' htmlFor='uncontrolled-native'>
-                language
-              </InputLabel> */}
               <NativeSelect
                 defaultValue={locale}
                 inputProps={{

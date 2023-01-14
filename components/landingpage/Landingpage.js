@@ -1,10 +1,8 @@
 import {
   Box,
-  Button,
   Card,
   CardActionArea,
   CardContent,
-  CardMedia,
   Container,
   Grid,
   styled,
@@ -12,6 +10,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import * as Scroll from "react-scroll";
+import { motion } from "framer-motion";
 
 import Navbar from "./Navbar";
 import PiriwebSvg from "./landingpage_svg/PiriwebSvg";
@@ -32,6 +31,7 @@ const StyledHeaderModular = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
   padding: "3px",
   transition: "all 1s ease-in-out",
+  lineHeight: 1,
   [theme.breakpoints.down("xxl")]: {
     fontSize: "8rem",
   },
@@ -43,9 +43,10 @@ const StyledHeaderModular = styled(Typography)(({ theme }) => ({
   },
   [theme.breakpoints.down("mm")]: {
     fontSize: "4rem",
+    lineHeight: 1.2,
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "10vw",
+    fontSize: "9vw",
   },
 }));
 
@@ -97,35 +98,195 @@ const TestLandingpage = (props) => {
           }}
         >
           <Box>
-            <StyledHeaderModular variant='mainHeader' component='h1'>
-              {t.landingpage.mainHeader1}
-            </StyledHeaderModular>
-            <StyledHeaderModular variant='mainHeader' component='h2'>
-              {t.landingpage.mainHeader2}
-            </StyledHeaderModular>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1.5,
+              }}
+            >
+              <StyledHeaderModular variant='mainHeader' component='h1'>
+                {t.landingpage.mainHeader1}
+              </StyledHeaderModular>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1.5,
+              }}
+            >
+              <StyledHeaderModular variant='mainHeader' component='h2'>
+                {t.landingpage.mainHeader2}
+              </StyledHeaderModular>
+            </motion.div>
           </Box>
           <Box sx={{ width: { xs: "90%", sm: "80%" } }}>
-            <StyledSubtitle variant='body2' component='h2'>
-              {t.landingpage.secondHeader}
-            </StyledSubtitle>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1.5,
+              }}
+            >
+              <StyledSubtitle variant='body2' component='h2'>
+                {t.landingpage.secondHeader}
+              </StyledSubtitle>
+            </motion.div>
           </Box>
         </Box>
         <Grid container spacing={0}>
           <Grid item xs={12} xl={4}>
-            <Grid
-              item
-              xs={12}
-              sx={{
-                height: "756px",
-                margin: "6px",
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1.5,
               }}
             >
-              <ScrollLink
-                to='footer'
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={3000}
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  height: "756px",
+                  margin: "6px",
+                }}
+              >
+                <ScrollLink
+                  to='footer'
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={3000}
+                >
+                  <Card
+                    sx={{
+                      height: "100%",
+                      border: "1px solid #E9E9E9",
+                      boxShadow: "1px 1px 24px #E9E9E9",
+                    }}
+                  >
+                    <CardActionArea
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "100%",
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: "100%",
+                          height: "200px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <PiriwebSvg />
+                      </Box>
+                      <CardContent>
+                        <Typography
+                          gutterBottom
+                          variant='h5'
+                          component='div'
+                          sx={{
+                            textAlign: "center",
+                            fontFamily: "Sora",
+                            fontWeight: 100,
+                            color: "#1E1F26",
+                            fontSize: "3rem",
+                            letterSpacing: "0.3em",
+                          }}
+                        >
+                          PIRI WEB
+                        </Typography>
+                      </CardContent>
+                      <CardContent
+                        sx={{
+                          flexGrow: 0.25,
+                          display: "flex",
+                          alignItems: "center",
+                          textAlign: "center",
+                          width: { xs: "100%", sm: "80%" },
+                        }}
+                      >
+                        <Typography
+                          variant='body2'
+                          sx={{
+                            fontSize: "1.2rem",
+                            fontWeight: "200",
+                            color: "#848484",
+                            transition: "all 400ms ease-in-out",
+                          }}
+                        >
+                          {t.landingpage.companyContent}
+                        </Typography>
+                      </CardContent>
+                      <CardContent
+                        sx={{
+                          flexGrow: 1,
+                          display: "flex",
+                          alignItems: "center",
+                          textAlign: "center",
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            backgroundColor: "#0170F3",
+                            padding: " 6px 8px",
+                            borderRadius: "4px",
+                            boxShadow: "1px 1px 12px #77adea",
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                        >
+                          <Typography
+                            variant='body2'
+                            sx={{
+                              color: "white",
+                              fontSize: {
+                                xxl: "1.3rem",
+                                xl: "1rem",
+                                sm: "0.9rem",
+                                xs: "0.9rem",
+                              },
+                              fontWeight: "200",
+                              transition: "all 400ms ease-in-out",
+                              backgroundColor: "1E1F26",
+                              lineHeight: 1.75,
+                              marginRight: "6px",
+                            }}
+                          >
+                            {t.landingpage.companyButton}
+                          </Typography>
+                          <StartSvg />
+                        </Box>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </ScrollLink>
+              </Grid>
+            </motion.div>
+          </Grid>
+          <Grid item xs={12} md={6} xl={4}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1.75,
+              }}
+            >
+              <Grid
+                item
+                xs={12}
+                sx={{ height: { xs: "600px", lg: "400px" }, margin: "6px" }}
               >
                 <Card
                   sx={{
@@ -146,416 +307,328 @@ const TestLandingpage = (props) => {
                     <Box
                       sx={{
                         width: "100%",
-                        height: "200px",
+                        height: "150px",
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
+                        marginTop: "16px",
                       }}
                     >
-                      <PiriwebSvg />
+                      <WebsiteSvg />
                     </Box>
-                    <CardContent>
+                    <CardContent sx={{ paddingBottom: "0px" }}>
                       <Typography
                         gutterBottom
-                        variant='h5'
-                        component='div'
+                        variant='body'
+                        component='h3'
                         sx={{
                           textAlign: "center",
                           fontFamily: "Sora",
-                          fontWeight: 100,
-                          color: "#1E1F26",
-                          fontSize: "3rem",
-                          letterSpacing: "0.3em",
+                          fontWeight: 400,
+                          color: "#6691c3",
+                          fontSize: "2rem",
+                          margin: "0px",
                         }}
                       >
-                        PIRI WEB
+                        {t.landingpage.labelWebsite}
                       </Typography>
                     </CardContent>
-                    <CardContent
-                      sx={{
-                        flexGrow: 0.25,
-                        display: "flex",
-                        alignItems: "center",
-                        textAlign: "center",
-                        width: "80%",
-                      }}
-                    >
+                    <CardContent sx={{ width: { xs: "100%", mm: "70%" } }}>
                       <Typography
                         variant='body2'
                         sx={{
+                          textAlign: "center",
                           fontSize: "1.2rem",
                           fontWeight: "200",
                           color: "#848484",
                           transition: "all 400ms ease-in-out",
                         }}
                       >
-                        {t.landingpage.companyContent}
+                        {t.landingpage.description1Website}
                       </Typography>
-                    </CardContent>
-                    <CardContent
-                      sx={{
-                        flexGrow: 1,
-                        display: "flex",
-                        alignItems: "center",
-                        textAlign: "center",
-                      }}
-                    >
-                      <Box
+                      <Typography
+                        variant='body2'
                         sx={{
-                          backgroundColor: "#0170F3",
-                          padding: " 6px 8px",
-                          borderRadius: "4px",
-                          boxShadow: "1px 1px 12px #77adea",
-                          display: "flex",
-                          alignItems: "center",
+                          textAlign: "center",
+                          fontSize: "1.2rem",
+                          fontWeight: "200",
+                          color: "#848484",
+                          transition: "all 400ms ease-in-out",
                         }}
                       >
-                        <Typography
-                          variant='body2'
-                          sx={{
-                            color: "white",
-                            fontSize: {
-                              xxl: "1.3rem",
-                              xl: "1rem",
-                              sm: "0.9rem",
-                              xs: "0.9rem",
-                            },
-                            fontWeight: "200",
-                            transition: "all 400ms ease-in-out",
-                            backgroundColor: "1E1F26",
-                            lineHeight: 1.75,
-                            marginRight: "6px",
-                          }}
-                        >
-                          {t.landingpage.companyButton}
-                        </Typography>
-                        <StartSvg />
-                      </Box>
+                        {t.landingpage.description2Website}
+                      </Typography>
                     </CardContent>
                   </CardActionArea>
                 </Card>
-              </ScrollLink>
-            </Grid>
+              </Grid>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 2,
+              }}
+            >
+              <Grid
+                item
+                xs={12}
+                sx={{ height: { xs: "550px", lg: "350px" }, margin: "6px" }}
+              >
+                <Card
+                  sx={{
+                    height: "100%",
+                    border: "1px solid #E9E9E9",
+                    boxShadow: "1px 1px 24px #E9E9E9",
+                  }}
+                >
+                  <CardActionArea
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "100%",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: "100%",
+                        height: "100px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        marginTop: "16px",
+                      }}
+                    >
+                      <ApplicationSvg />
+                    </Box>
+                    <CardContent sx={{ paddingBottom: "0px" }}>
+                      <Typography
+                        gutterBottom
+                        variant='body'
+                        component='h3'
+                        sx={{
+                          textAlign: "center",
+                          fontFamily: "Sora",
+                          fontWeight: 400,
+                          color: "#F76B6C",
+                          fontSize: "2rem",
+                          margin: "0px",
+                          paddingBottom: "0px",
+                        }}
+                      >
+                        {t.landingpage.labelApplication}
+                      </Typography>
+                    </CardContent>
+                    <CardContent sx={{ width: { xs: "100%", mm: "70%" } }}>
+                      <Typography
+                        variant='body2'
+                        sx={{
+                          textAlign: "center",
+                          fontSize: "1.2rem",
+                          fontWeight: "200",
+                          color: "#848484",
+                          transition: "all 400ms ease-in-out",
+                        }}
+                      >
+                        {t.landingpage.description1Application}
+                      </Typography>
+                      <Typography
+                        variant='body2'
+                        sx={{
+                          textAlign: "center",
+                          fontSize: "1.2rem",
+                          fontWeight: "200",
+                          color: "#848484",
+                          transition: "all 400ms ease-in-out",
+                        }}
+                      >
+                        {t.landingpage.description2Application}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            </motion.div>
           </Grid>
           <Grid item xs={12} md={6} xl={4}>
-            <Grid
-              item
-              xs={12}
-              sx={{ height: { xs: "600px", lg: "400px" }, margin: "6px" }}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 2.25,
+              }}
             >
-              <Card
-                sx={{
-                  height: "100%",
-                  border: "1px solid #E9E9E9",
-                  boxShadow: "1px 1px 24px #E9E9E9",
-                }}
+              <Grid
+                item
+                xs={12}
+                sx={{ height: { xs: "550px", lg: "350px" }, margin: "6px" }}
               >
-                <CardActionArea
+                <Card
                   sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
                     height: "100%",
+                    border: "1px solid #E9E9E9",
+                    boxShadow: "1px 1px 24px #E9E9E9",
                   }}
                 >
-                  <Box
+                  <CardActionArea
                     sx={{
-                      width: "100%",
-                      height: "150px",
                       display: "flex",
+                      flexDirection: "column",
                       justifyContent: "center",
                       alignItems: "center",
-                      marginTop: "16px",
+                      height: "100%",
                     }}
                   >
-                    <WebsiteSvg />
-                  </Box>
-                  <CardContent sx={{ paddingBottom: "0px" }}>
-                    <Typography
-                      gutterBottom
-                      variant='body'
-                      component='h3'
+                    <Box
                       sx={{
-                        textAlign: "center",
-                        fontFamily: "Sora",
-                        fontWeight: 400,
-                        color: "#6691c3",
-                        fontSize: "2rem",
-                        margin: "0px",
+                        width: "100%",
+                        height: "100px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        marginTop: "16px",
                       }}
                     >
-                      {t.landingpage.labelWebsite}
-                    </Typography>
-                  </CardContent>
-                  <CardContent sx={{ width: "70%" }}>
-                    <Typography
-                      variant='body2'
-                      sx={{
-                        textAlign: "center",
-                        fontSize: "1.2rem",
-                        fontWeight: "200",
-                        color: "#848484",
-                        transition: "all 400ms ease-in-out",
-                      }}
-                    >
-                      {t.landingpage.description1Website}
-                    </Typography>
-                    <Typography
-                      variant='body2'
-                      sx={{
-                        textAlign: "center",
-                        fontSize: "1.2rem",
-                        fontWeight: "200",
-                        color: "#848484",
-                        transition: "all 400ms ease-in-out",
-                      }}
-                    >
-                      {t.landingpage.description2Website}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sx={{ height: { xs: "550px", lg: "350px" }, margin: "6px" }}
+                      <MobileSvg />
+                    </Box>
+                    <CardContent sx={{ paddingBottom: "0px" }}>
+                      <Typography
+                        gutterBottom
+                        variant='body'
+                        component='h3'
+                        sx={{
+                          textAlign: "center",
+                          fontFamily: "Sora",
+                          fontWeight: 400,
+                          color: "#79C4C8",
+                          fontSize: "2rem",
+                          margin: "0px",
+                        }}
+                      >
+                        {t.landingpage.labelMobileapp}
+                      </Typography>
+                    </CardContent>
+                    <CardContent sx={{ width: { xs: "100%", mm: "70%" } }}>
+                      <Typography
+                        variant='body2'
+                        sx={{
+                          textAlign: "center",
+                          fontSize: "1.2rem",
+                          fontWeight: "200",
+                          color: "#848484",
+                          transition: "all 400ms ease-in-out",
+                        }}
+                      >
+                        {t.landingpage.description1Mobileapp}
+                      </Typography>
+                      <Typography
+                        variant='body2'
+                        sx={{
+                          textAlign: "center",
+                          fontSize: "1.2rem",
+                          fontWeight: "200",
+                          color: "#848484",
+                          transition: "all 400ms ease-in-out",
+                        }}
+                      >
+                        {t.landingpage.description2Mobileapp}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                delay: 2.55,
+              }}
             >
-              <Card
-                sx={{
-                  height: "100%",
-                  border: "1px solid #E9E9E9",
-                  boxShadow: "1px 1px 24px #E9E9E9",
-                }}
+              <Grid
+                item
+                xs={12}
+                sx={{ height: { xs: "600px", lg: "400px" }, margin: "6px" }}
               >
-                <CardActionArea
+                <Card
                   sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
                     height: "100%",
+                    border: "1px solid #E9E9E9",
+                    boxShadow: "1px 1px 24px #E9E9E9",
                   }}
                 >
-                  <Box
+                  <CardActionArea
                     sx={{
-                      width: "100%",
-                      height: "100px",
                       display: "flex",
+                      flexDirection: "column",
                       justifyContent: "center",
                       alignItems: "center",
-                      marginTop: "16px",
+                      height: "100%",
                     }}
                   >
-                    <ApplicationSvg />
-                  </Box>
-                  <CardContent sx={{ paddingBottom: "0px" }}>
-                    <Typography
-                      gutterBottom
-                      variant='body'
-                      component='h3'
+                    <Box
                       sx={{
-                        textAlign: "center",
-                        fontFamily: "Sora",
-                        fontWeight: 400,
-                        color: "#F76B6C",
-                        fontSize: "2rem",
-                        margin: "0px",
-                        paddingBottom: "0px",
+                        width: "100%",
+                        height: "150px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        marginTop: "16px",
                       }}
                     >
-                      {t.landingpage.labelApplication}
-                    </Typography>
-                  </CardContent>
-                  <CardContent sx={{ width: "70%" }}>
-                    <Typography
-                      variant='body2'
-                      sx={{
-                        textAlign: "center",
-                        fontSize: "1.2rem",
-                        fontWeight: "200",
-                        color: "#848484",
-                        transition: "all 400ms ease-in-out",
-                      }}
-                    >
-                      {t.landingpage.description1Application}
-                    </Typography>
-                    <Typography
-                      variant='body2'
-                      sx={{
-                        textAlign: "center",
-                        fontSize: "1.2rem",
-                        fontWeight: "200",
-                        color: "#848484",
-                        transition: "all 400ms ease-in-out",
-                      }}
-                    >
-                      {t.landingpage.description2Application}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} md={6} xl={4}>
-            <Grid
-              item
-              xs={12}
-              sx={{ height: { xs: "550px", lg: "350px" }, margin: "6px" }}
-            >
-              <Card
-                sx={{
-                  height: "100%",
-                  border: "1px solid #E9E9E9",
-                  boxShadow: "1px 1px 24px #E9E9E9",
-                }}
-              >
-                <CardActionArea
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100%",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      height: "100px",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      marginTop: "16px",
-                    }}
-                  >
-                    <MobileSvg />
-                  </Box>
-                  <CardContent sx={{ paddingBottom: "0px" }}>
-                    <Typography
-                      gutterBottom
-                      variant='body'
-                      component='h3'
-                      sx={{
-                        textAlign: "center",
-                        fontFamily: "Sora",
-                        fontWeight: 400,
-                        color: "#79C4C8",
-                        fontSize: "2rem",
-                        margin: "0px",
-                      }}
-                    >
-                      {t.landingpage.labelMobileapp}
-                    </Typography>
-                  </CardContent>
-                  <CardContent sx={{ width: "70%" }}>
-                    <Typography
-                      variant='body2'
-                      sx={{
-                        textAlign: "center",
-                        fontSize: "1.2rem",
-                        fontWeight: "200",
-                        color: "#848484",
-                        transition: "all 400ms ease-in-out",
-                      }}
-                    >
-                      {t.landingpage.description1Mobileapp}
-                    </Typography>
-                    <Typography
-                      variant='body2'
-                      sx={{
-                        textAlign: "center",
-                        fontSize: "1.2rem",
-                        fontWeight: "200",
-                        color: "#848484",
-                        transition: "all 400ms ease-in-out",
-                      }}
-                    >
-                      {t.landingpage.description2Mobileapp}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sx={{ height: { xs: "600px", lg: "400px" }, margin: "6px" }}
-            >
-              <Card
-                sx={{
-                  height: "100%",
-                  border: "1px solid #E9E9E9",
-                  boxShadow: "1px 1px 24px #E9E9E9",
-                }}
-              >
-                <CardActionArea
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100%",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      height: "150px",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      marginTop: "16px",
-                    }}
-                  >
-                    <OnlineshopSvg />
-                  </Box>
-                  <CardContent sx={{ paddingBottom: "0px" }}>
-                    <Typography
-                      gutterBottom
-                      variant='body'
-                      component='h3'
-                      sx={{
-                        textAlign: "center",
-                        fontFamily: "Sora",
-                        fontWeight: 400,
-                        color: "#f7be02",
-                        fontSize: "2rem",
-                      }}
-                    >
-                      {t.landingpage.labelOnlineshop}
-                    </Typography>
-                  </CardContent>
-                  <CardContent sx={{ width: "70%" }}>
-                    <Typography
-                      variant='body2'
-                      sx={{
-                        textAlign: "center",
-                        fontSize: "1.2rem",
-                        fontWeight: "200",
-                        color: "#848484",
-                        transition: "all 400ms ease-in-out",
-                      }}
-                    >
-                      {t.landingpage.description1Onlineshop}
-                    </Typography>
-                    <Typography
-                      variant='body2'
-                      sx={{
-                        textAlign: "center",
-                        fontSize: "1.2rem",
-                        fontWeight: "200",
-                        color: "#848484",
-                        transition: "all 400ms ease-in-out",
-                      }}
-                    >
-                      {t.landingpage.description2Onlineshop}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
+                      <OnlineshopSvg />
+                    </Box>
+                    <CardContent sx={{ paddingBottom: "0px" }}>
+                      <Typography
+                        gutterBottom
+                        variant='body'
+                        component='h3'
+                        sx={{
+                          textAlign: "center",
+                          fontFamily: "Sora",
+                          fontWeight: 400,
+                          color: "#f7be02",
+                          fontSize: "2rem",
+                        }}
+                      >
+                        {t.landingpage.labelOnlineshop}
+                      </Typography>
+                    </CardContent>
+                    <CardContent sx={{ width: { xs: "100%", mm: "70%" } }}>
+                      <Typography
+                        variant='body2'
+                        sx={{
+                          textAlign: "center",
+                          fontSize: "1.2rem",
+                          fontWeight: "200",
+                          color: "#848484",
+                          transition: "all 400ms ease-in-out",
+                        }}
+                      >
+                        {t.landingpage.description1Onlineshop}
+                      </Typography>
+                      <Typography
+                        variant='body2'
+                        sx={{
+                          textAlign: "center",
+                          fontSize: "1.2rem",
+                          fontWeight: "200",
+                          color: "#848484",
+                          transition: "all 400ms ease-in-out",
+                        }}
+                      >
+                        {t.landingpage.description2Onlineshop}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            </motion.div>
           </Grid>
         </Grid>
       </Box>
