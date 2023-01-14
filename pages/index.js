@@ -6,7 +6,6 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import Benefitspage from "../components/benefitspage/Benefitspage";
-import Landingpage from "../components/landingpage/Landingpage";
 import Personalpage from "../components/personalpage/Personalpage";
 import Processpage from "../components/processpage/Processpage";
 import Workspage from "../components/workspage/Workspage";
@@ -17,7 +16,7 @@ import Footerpage from "../components/layout/Footerpage";
 import en from "../locales/en";
 import de from "../locales/de";
 import tr from "../locales/tr";
-import TestLandingpage from "../components/landingpage/TestLandingpage";
+import Landingpage from "../components/landingpage/Landingpage";
 
 export default function Main() {
   const ref = useRef();
@@ -70,8 +69,7 @@ export default function Main() {
           </Typography>
         </motion.div>
       </motion.div>
-      {/* <Landingpage t={t} /> */}
-      <TestLandingpage t={t} />
+      <Landingpage t={t} />
       <Benefitspage t={t} />
       <Workspage t={t} />
       <Toolspage t={t} />

@@ -111,6 +111,7 @@ const Personalpage = ({ t }) => {
       }}
     >
       <StyledContainer
+        disableGutters
         maxWidth='false'
         sx={{ backgroundColor: activeBackground }}
       >

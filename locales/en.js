@@ -7,7 +7,7 @@ const translation = {
     mainHeader1: "Your Web Development",
     mainHeader2: "for your Vision",
     secondHeader:
-      "I develop custom code solutions – digital solutions that inspire. My individual applications help your Companie to simplify their own processes or to make the internet presence experienceable.",
+      "I develop custom code solutions – digital solutions that inspire. My individual applications help your company to simplify their own processes or to make the internet presence experienceable.",
     companyContent:
       "Your partner when it comes to web development. Full-stack web solutions in various areas. you have an idea? Here you have a solution.",
     companyButton: "GET STARTED",
