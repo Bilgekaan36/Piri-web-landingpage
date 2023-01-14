@@ -30,7 +30,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 const StyledHeaderModular = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   flexGrow: 1,
-  padding: "12px",
+  padding: "3px",
   transition: "all 1s ease-in-out",
   [theme.breakpoints.down("xxl")]: {
     fontSize: "8rem",
@@ -45,7 +45,7 @@ const StyledHeaderModular = styled(Typography)(({ theme }) => ({
     fontSize: "4rem",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "9vw",
+    fontSize: "10vw",
   },
 }));
 

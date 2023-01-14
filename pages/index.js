@@ -38,7 +38,7 @@ export default function Main() {
 
   return (
     <Container disableGutters maxWidth='false'>
-      <motion.div
+      {/* <motion.div
         className={styles.transitionPage}
         initial={{ opacity: 1, translateY: "100%" }}
         animate={{ opacity: 0, translateY: 0 }}
@@ -47,7 +47,7 @@ export default function Main() {
           delay: 1,
           ease: [0, 0.71, 0.2, 1.01],
         }}
-      />
+      /> */}
       <motion.div
         className={styles.transitionPage}
         initial={{ opacity: 1, translateY: 0 }}
