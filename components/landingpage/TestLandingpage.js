@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   CardActionArea,
   CardContent,
@@ -10,12 +11,15 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import * as Scroll from "react-scroll";
+
 import Navbar from "./Navbar";
 import PiriwebSvg from "./landingpage_svg/PiriwebSvg";
 import WebsiteSvg from "./landingpage_svg/WebsiteSvg";
 import MobileSvg from "./landingpage_svg/MobileSvg";
 import OnlineshopSvg from "./landingpage_svg/OnlineshopSvg";
 import ApplicationSvg from "./landingpage_svg/ApplicationSvg";
+import StartSvg from "./landingpage_svg/StartSvg";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
@@ -27,25 +31,50 @@ const StyledHeaderModular = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
   padding: "12px",
   transition: "all 1s ease-in-out",
-  [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xxl")]: {
+    fontSize: "8rem",
+  },
+  [theme.breakpoints.down("xl")]: {
+    fontSize: "7rem",
+  },
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "6rem",
+  },
+  [theme.breakpoints.down("mm")]: {
+    fontSize: "4rem",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "2rem",
+  },
 }));
 
 const StyledSubtitle = styled(Typography)(({ theme }) => ({
+  textAlign: "center",
   fontSize: "1.5rem",
   fontWeight: "200",
   color: "#848484",
+  marginTop: "32px",
   transition: "all 400ms ease-in-out",
-  [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("xl")]: {
+    fontSize: "1.3rem",
+  },
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "1.1rem",
+  },
+  [theme.breakpoints.down("mm")]: {
     fontSize: "1rem",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "0.75rem",
   },
 }));
 
 const TestLandingpage = (props) => {
   const { t } = props;
+  let ScrollLink = Scroll.Link;
   return (
     <StyledContainer
+      disableGutters
       maxWidth='xxl'
       sx={{
         position: "relative",
@@ -53,11 +82,14 @@ const TestLandingpage = (props) => {
         flexDirection: "column",
       }}
     >
-      <Navbar t={t}></Navbar>
+      <Container maxWidth='xxl'>
+        <Navbar t={t}></Navbar>
+      </Container>
       <Box sx={{ flexGrow: 1 }}>
         <Box
           sx={{
-            height: "50vh",
+            // height: { xs: "100vh", sm: "60vh", xl: "45vh" },
+            height: { xs: "650px", md: "600px", mm: "600px", lg: "800px" },
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -65,92 +97,159 @@ const TestLandingpage = (props) => {
           }}
         >
           <Box>
-            <StyledHeaderModular variant='mainHeader' component='div'>
-              Deine Webentwicklung
+            <StyledHeaderModular variant='mainHeader' component='h1'>
+              {t.landingpage.mainHeader1}
             </StyledHeaderModular>
-            <StyledHeaderModular variant='mainHeader' component='div'>
-              für deine Vision
+            <StyledHeaderModular variant='mainHeader' component='h2'>
+              {t.landingpage.mainHeader2}
             </StyledHeaderModular>
           </Box>
-          <Box sx={{ width: "70%" }}>
-            <StyledSubtitle variant='body2' component='div'>
-              Ich entwickle custom code solutions – digitale Lösungen, die
-              begeistern. Meine individuellen Applikationen helfen deinem
-              Unternehmen, eigene Prozesse zu vereinfachen oder deine
-              Internetpräsenz erlebbar zu machen.
+          <Box sx={{ width: { xs: "90%", sm: "80%" } }}>
+            <StyledSubtitle variant='body2' component='h2'>
+              {t.landingpage.secondHeader}
             </StyledSubtitle>
           </Box>
         </Box>
         <Grid container spacing={0}>
-          <Grid item xs={4}>
+          <Grid item xs={12} xl={4}>
             <Grid
               item
               xs={12}
               sx={{
-                height: "706px",
+                height: "756px",
                 margin: "6px",
               }}
             >
-              <Card sx={{ height: "100%" }}>
-                <CardActionArea
+              <ScrollLink
+                to='footer'
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={3000}
+              >
+                <Card
                   sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
                     height: "100%",
+                    border: "1px solid #E9E9E9",
+                    boxShadow: "1px 1px 24px #E9E9E9",
                   }}
                 >
-                  <Box
+                  <CardActionArea
                     sx={{
-                      width: "100%",
-                      height: "200px",
                       display: "flex",
+                      flexDirection: "column",
                       justifyContent: "center",
                       alignItems: "center",
+                      height: "100%",
                     }}
                   >
-                    <PiriwebSvg />
-                  </Box>
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant='h5'
-                      component='div'
+                    <Box
                       sx={{
+                        width: "100%",
+                        height: "200px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <PiriwebSvg />
+                    </Box>
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant='h5'
+                        component='div'
+                        sx={{
+                          textAlign: "center",
+                          fontFamily: "Sora",
+                          fontWeight: 100,
+                          color: "#1E1F26",
+                          fontSize: "3rem",
+                          letterSpacing: "0.3em",
+                        }}
+                      >
+                        PIRI WEB
+                      </Typography>
+                    </CardContent>
+                    <CardContent
+                      sx={{
+                        flexGrow: 0.25,
+                        display: "flex",
+                        alignItems: "center",
                         textAlign: "center",
-                        fontFamily: "Sora",
-                        fontWeight: 100,
-                        color: "#1E1F26",
-                        fontSize: "3rem",
-                        letterSpacing: "0.3em",
+                        width: "80%",
                       }}
                     >
-                      PIRI WEB
-                    </Typography>
-                  </CardContent>
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography
-                      variant='body2'
+                      <Typography
+                        variant='body2'
+                        sx={{
+                          fontSize: "1.2rem",
+                          fontWeight: "200",
+                          color: "#848484",
+                          transition: "all 400ms ease-in-out",
+                        }}
+                      >
+                        {t.landingpage.companyContent}
+                      </Typography>
+                    </CardContent>
+                    <CardContent
                       sx={{
-                        fontSize: "1.2rem",
-                        fontWeight: "200",
-                        color: "#848484",
-                        transition: "all 400ms ease-in-out",
+                        flexGrow: 1,
+                        display: "flex",
+                        alignItems: "center",
+                        textAlign: "center",
                       }}
                     >
-                      Ihr Partner wenn es um Web Entwicklung geht. Full-Stack
-                      Web Lösungen in verschiedensten Bereichen. Du hast eine
-                      Idee? hier hast du eine Lösung.
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+                      <Box
+                        sx={{
+                          backgroundColor: "#0170F3",
+                          padding: " 6px 8px",
+                          borderRadius: "4px",
+                          boxShadow: "1px 1px 12px #77adea",
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                      >
+                        <Typography
+                          variant='body2'
+                          sx={{
+                            color: "white",
+                            fontSize: {
+                              xxl: "1.3rem",
+                              xl: "1rem",
+                              sm: "0.9rem",
+                              xs: "0.9rem",
+                            },
+                            fontWeight: "200",
+                            transition: "all 400ms ease-in-out",
+                            backgroundColor: "1E1F26",
+                            lineHeight: 1.75,
+                            marginRight: "6px",
+                          }}
+                        >
+                          {t.landingpage.companyButton}
+                        </Typography>
+                        <StartSvg />
+                      </Box>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </ScrollLink>
             </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Grid item xs={12} sx={{ height: "375px", margin: "6px" }}>
-              <Card sx={{ height: "100%" }}>
+          <Grid item xs={12} md={6} xl={4}>
+            <Grid
+              item
+              xs={12}
+              sx={{ height: { xs: "600px", lg: "400px" }, margin: "6px" }}
+            >
+              <Card
+                sx={{
+                  height: "100%",
+                  border: "1px solid #E9E9E9",
+                  boxShadow: "1px 1px 24px #E9E9E9",
+                }}
+              >
                 <CardActionArea
                   sx={{
                     display: "flex",
@@ -167,27 +266,29 @@ const TestLandingpage = (props) => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      marginTop: "16px",
                     }}
                   >
                     <WebsiteSvg />
                   </Box>
-                  <CardContent>
+                  <CardContent sx={{ paddingBottom: "0px" }}>
                     <Typography
                       gutterBottom
                       variant='body'
-                      component='div'
+                      component='h3'
                       sx={{
                         textAlign: "center",
                         fontFamily: "Sora",
                         fontWeight: 100,
                         color: "#1E1F26",
                         fontSize: "2rem",
+                        margin: "0px",
                       }}
                     >
-                      YOUR WEBSITE
+                      {t.landingpage.labelWebsite}
                     </Typography>
                   </CardContent>
-                  <CardContent sx={{ flexGrow: 1 }}>
+                  <CardContent sx={{ width: "70%" }}>
                     <Typography
                       variant='body2'
                       sx={{
@@ -210,14 +311,24 @@ const TestLandingpage = (props) => {
                         transition: "all 400ms ease-in-out",
                       }}
                     >
-                      {t.landingpage.descriptionWebsite}
+                      {t.landingpage.description2Website}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
               </Card>
             </Grid>
-            <Grid item xs={12} sx={{ height: "325px", margin: "6px" }}>
-              <Card sx={{ height: "100%" }}>
+            <Grid
+              item
+              xs={12}
+              sx={{ height: { xs: "550px", lg: "350px" }, margin: "6px" }}
+            >
+              <Card
+                sx={{
+                  height: "100%",
+                  border: "1px solid #E9E9E9",
+                  boxShadow: "1px 1px 24px #E9E9E9",
+                }}
+              >
                 <CardActionArea
                   sx={{
                     display: "flex",
@@ -234,48 +345,72 @@ const TestLandingpage = (props) => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      marginTop: "16px",
                     }}
                   >
                     <ApplicationSvg />
                   </Box>
-                  <CardContent>
+                  <CardContent sx={{ paddingBottom: "0px" }}>
                     <Typography
                       gutterBottom
                       variant='body'
-                      component='div'
+                      component='h3'
                       sx={{
                         textAlign: "center",
                         fontFamily: "Sora",
                         fontWeight: 100,
                         color: "#1E1F26",
                         fontSize: "2rem",
+                        margin: "0px",
+                        paddingBottom: "0px",
                       }}
                     >
-                      YOUR APPLICATION
+                      {t.landingpage.labelApplication}
                     </Typography>
                   </CardContent>
-                  <CardContent sx={{ flexGrow: 1 }}>
+                  <CardContent sx={{ width: "70%" }}>
                     <Typography
                       variant='body2'
                       sx={{
+                        textAlign: "center",
                         fontSize: "1.2rem",
                         fontWeight: "200",
                         color: "#848484",
                         transition: "all 400ms ease-in-out",
                       }}
                     >
-                      Ihr Partner wenn es um Web Entwicklung geht. Full-Stack
-                      Web Lösungen in verschiedensten Bereichen. Du hast eine
-                      Idee? hier hast du eine Lösung.
+                      {t.landingpage.description1Application}
+                    </Typography>
+                    <Typography
+                      variant='body2'
+                      sx={{
+                        textAlign: "center",
+                        fontSize: "1.2rem",
+                        fontWeight: "200",
+                        color: "#848484",
+                        transition: "all 400ms ease-in-out",
+                      }}
+                    >
+                      {t.landingpage.description2Application}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
               </Card>
             </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Grid item xs={12} sx={{ height: "325px", margin: "6px" }}>
-              <Card sx={{ height: "100%" }}>
+          <Grid item xs={12} md={6} xl={4}>
+            <Grid
+              item
+              xs={12}
+              sx={{ height: { xs: "550px", lg: "350px" }, margin: "6px" }}
+            >
+              <Card
+                sx={{
+                  height: "100%",
+                  border: "1px solid #E9E9E9",
+                  boxShadow: "1px 1px 24px #E9E9E9",
+                }}
+              >
                 <CardActionArea
                   sx={{
                     display: "flex",
@@ -292,46 +427,69 @@ const TestLandingpage = (props) => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      marginTop: "16px",
                     }}
                   >
                     <MobileSvg />
                   </Box>
-                  <CardContent>
+                  <CardContent sx={{ paddingBottom: "0px" }}>
                     <Typography
                       gutterBottom
                       variant='body'
-                      component='div'
+                      component='h3'
                       sx={{
                         textAlign: "center",
                         fontFamily: "Sora",
                         fontWeight: 100,
                         color: "#1E1F26",
                         fontSize: "2rem",
+                        margin: "0px",
                       }}
                     >
-                      YOUR MOBILEAPP
+                      {t.landingpage.labelMobileapp}
                     </Typography>
                   </CardContent>
-                  <CardContent sx={{ flexGrow: 1 }}>
+                  <CardContent sx={{ width: "70%" }}>
                     <Typography
                       variant='body2'
                       sx={{
+                        textAlign: "center",
                         fontSize: "1.2rem",
                         fontWeight: "200",
                         color: "#848484",
                         transition: "all 400ms ease-in-out",
                       }}
                     >
-                      Ihr Partner wenn es um Web Entwicklung geht. Full-Stack
-                      Web Lösungen in verschiedensten Bereichen. Du hast eine
-                      Idee? hier hast du eine Lösung.
+                      {t.landingpage.description1Mobileapp}
+                    </Typography>
+                    <Typography
+                      variant='body2'
+                      sx={{
+                        textAlign: "center",
+                        fontSize: "1.2rem",
+                        fontWeight: "200",
+                        color: "#848484",
+                        transition: "all 400ms ease-in-out",
+                      }}
+                    >
+                      {t.landingpage.description2Mobileapp}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
               </Card>
             </Grid>
-            <Grid item xs={12} sx={{ height: "375px", margin: "6px" }}>
-              <Card sx={{ height: "100%" }}>
+            <Grid
+              item
+              xs={12}
+              sx={{ height: { xs: "600px", lg: "400px" }, margin: "6px" }}
+            >
+              <Card
+                sx={{
+                  height: "100%",
+                  border: "1px solid #E9E9E9",
+                  boxShadow: "1px 1px 24px #E9E9E9",
+                }}
+              >
                 <CardActionArea
                   sx={{
                     display: "flex",
@@ -348,15 +506,16 @@ const TestLandingpage = (props) => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      marginTop: "16px",
                     }}
                   >
                     <OnlineshopSvg />
                   </Box>
-                  <CardContent>
+                  <CardContent sx={{ paddingBottom: "0px" }}>
                     <Typography
                       gutterBottom
                       variant='body'
-                      component='div'
+                      component='h3'
                       sx={{
                         textAlign: "center",
                         fontFamily: "Sora",
@@ -365,22 +524,33 @@ const TestLandingpage = (props) => {
                         fontSize: "2rem",
                       }}
                     >
-                      YOUR ONLINESHOP
+                      {t.landingpage.labelOnlineshop}
                     </Typography>
                   </CardContent>
-                  <CardContent sx={{ flexGrow: 1 }}>
+                  <CardContent sx={{ width: "70%" }}>
                     <Typography
                       variant='body2'
                       sx={{
+                        textAlign: "center",
                         fontSize: "1.2rem",
                         fontWeight: "200",
                         color: "#848484",
                         transition: "all 400ms ease-in-out",
                       }}
                     >
-                      Ihr Partner wenn es um Web Entwicklung geht. Full-Stack
-                      Web Lösungen in verschiedensten Bereichen. Du hast eine
-                      Idee? hier hast du eine Lösung.
+                      {t.landingpage.description1Onlineshop}
+                    </Typography>
+                    <Typography
+                      variant='body2'
+                      sx={{
+                        textAlign: "center",
+                        fontSize: "1.2rem",
+                        fontWeight: "200",
+                        color: "#848484",
+                        transition: "all 400ms ease-in-out",
+                      }}
+                    >
+                      {t.landingpage.description2Onlineshop}
                     </Typography>
                   </CardContent>
                 </CardActionArea>

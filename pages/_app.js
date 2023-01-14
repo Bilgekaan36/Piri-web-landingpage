@@ -14,7 +14,6 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { Analytics } from "@vercel/analytics/react";
 
 import Layout from "../components/layout/Layout";
-import { useEffect } from "react";
 
 const theme = createTheme({
   palette: {
@@ -35,7 +34,6 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "Sora",
-
     logo: {
       fontFamily: "Sora",
       fontWeight: 100,

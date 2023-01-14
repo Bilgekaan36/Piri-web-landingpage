@@ -31,11 +31,11 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.palette.background.custom,
+  backgroundColor: "#0170F3",
   height: "55px",
   marginLeft: "12px",
   "&:hover": {
-    backgroundColor: "#6691c3",
+    backgroundColor: "#0170F3",
   },
 }));
 
@@ -59,7 +59,7 @@ const Navbar = (props) => {
               <Link href='/'>
                 <Typography
                   variant='logo'
-                  component='div'
+                  component='h2'
                   sx={{
                     letterSpacing: "0.3em",
                     fontSize: { xs: "1rem", sm: "1.5rem" },

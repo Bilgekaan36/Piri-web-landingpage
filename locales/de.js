@@ -3,36 +3,64 @@ const translation = {
     work: "PROJEKTE",
     contact: "KONTAKT",
   },
+  // landingpage: {
+  //   firstLabelWebsite: "DEINE",
+  //   secondLabelWebsite: "WEBSEITE",
+  //   thirdLabelWebsite: `modern & innovativ`,
+  //   description1Website: "Bringe deine Vision ins Web!",
+  //   description2Website: "Ob Frontend- oder Backend du bekommst hier alles",
+  //   description3Website: "aus einer Hand",
+  //   descriptionWebsite:
+  //     "Ob Frontend- oder Backend du bekommst hier alles, aus einer Hand",
+  //   firstLabelApplication: "DEINE",
+  //   secondLabelApplication: "APPLIKATION",
+  //   thirdLabelApplication: `individuell & Hightech`,
+  //   description1Application: "Deine personalisierte Applikation!",
+  //   description2Application:
+  //     "Mit modernsten Technologien für das beste Kundenerlebnis",
+  //   description3Application: "Professionalität zahlt sich aus",
+  //   firstLabelMobileapp: "DEINE",
+  //   secondLabelMobileapp: "MOBILEAPP",
+  //   thirdLabelMobileapp: `einzigartig & attraktiv`,
+  //   description1Mobileapp: "Erlange den entscheidenden Vorteil!",
+  //   description2Mobileapp: "Durch ansprechendes Design, entsteht Emotion",
+  //   description3Mobileapp: "weil Design verbindet",
+
+  //   firstLabelOnlineshop: "DEIN",
+  //   secondLabelOnlineshop: "ONLINESHOP",
+  //   thirdLabelOnlineshop: `effizient & profitabel`,
+  //   description1Onlineshop: "Deine Ware professionell Verkaufen!",
+  //   description2Onlineshop:
+  //     "Die höchste Conversion durch richtige Positionierung!",
+  //   description3Onlineshop: "Mache aus Besuchern echte Kunden",
+  // },
   landingpage: {
-    firstLabelWebsite: "DEINE",
-    secondLabelWebsite: "WEBSEITE",
-    thirdLabelWebsite: `modern & innovativ`,
+    mainHeader1: "Deine Webentwicklung",
+    mainHeader2: "für deine Vision",
+    secondHeader:
+      "Ich entwickle custom code solutions – digitale Lösungen, die begeistern. Meine individuellen Applikationen helfen deinem Unternehmen, eigene Prozesse zu vereinfachen oder deine Internetpräsenz erlebbar zu machen.",
+    companyContent:
+      "Dein Partner, wenn es um Web Entwicklung geht. Full-Stack Web Lösungen in verschiedensten Bereichen. Du hast eine Idee? Hier hast du eine Lösung.",
+    companyButton: "GET STARTED",
+    labelWebsite: "DEINE WEBSEITE",
     description1Website: "Bringe deine Vision ins Web!",
-    description2Website: "Ob Frontend- oder Backend du bekommst hier alles",
-    description3Website: "aus einer Hand",
-    descriptionWebsite:
-      "Ob Frontend- oder Backend du bekommst hier alles, aus einer Hand",
-    firstLabelApplication: "DEINE",
-    secondLabelApplication: "APPLIKATION",
-    thirdLabelApplication: `individuell & Hightech`,
+    description2Website:
+      "Ob Frontend- oder Backend du bekommst hier alles aus einer Hand.",
+
+    labelApplication: "DEINE APPLIKATION",
     description1Application: "Deine personalisierte Applikation!",
     description2Application:
-      "Mit modernsten Technologien für das beste Kundenerlebnis",
-    description3Application: "Professionalität zahlt sich aus",
-    firstLabelMobileapp: "DEINE",
-    secondLabelMobileapp: "MOBILEAPP",
-    thirdLabelMobileapp: `einzigartig & attraktiv`,
-    description1Mobileapp: "Erlange den entscheidenden Vorteil!",
-    description2Mobileapp: "Durch ansprechendes Design, entsteht Emotion",
-    description3Mobileapp: "weil Design verbindet",
+      "Mit den neuesten Technologien für das beste Kundenerlebnis und effizientere Abläufe. Professionalität zahlt sich aus.",
 
-    firstLabelOnlineshop: "DEIN",
-    secondLabelOnlineshop: "ONLINESHOP",
-    thirdLabelOnlineshop: `effizient & profitabel`,
+    labelMobileapp: "DEINE MOBILEAPP",
+    description1Mobileapp: "Erlange den entscheidenden Vorteil!",
+    description2Mobileapp:
+      "Durch ansprechendes Design, entsteht Emotion, weil Design verbindet.",
+
+    labelOnlineshop: "DEIN ONLINESHOP",
     description1Onlineshop: "Deine Ware professionell Verkaufen!",
     description2Onlineshop:
-      "Die höchste Conversion durch richtige Positionierung!",
-    description3Onlineshop: "Mache aus Besuchern echte Kunden",
+      "Die höchste Conversion durch richtige Positionierung! Mache aus Besuchern echte Kunden.",
   },
   benefitspage: {
     title1: "DEINE",

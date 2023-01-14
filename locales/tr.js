@@ -3,36 +3,64 @@ const translation = {
     work: "PROJELER",
     contact: "İLETİŞİM",
   },
+  // landingpage: {
+  //   firstLabelWebsite: "SİZİN",
+  //   secondLabelWebsite: "WEB SİTENİZ",
+  //   thirdLabelWebsite: `modern & inovatif`,
+  //   description1Website: "Vizyonunuzu web'e taşıyın!",
+  //   description2Website:
+  //     "İster ön uç ister arka uç olsun, burada her ikisi geliştirilmekte",
+  //   description3Website: "tek bir kaynaktan",
+
+  //   firstLabelApplication: "SİZİN",
+  //   secondLabelApplication: "UYGULAMANIZ",
+  //   thirdLabelApplication: `bireysel & teknolojik`,
+  //   description1Application: "Kişiselleştirilmiş uygulamanız!",
+  //   description2Application:
+  //     "En iyi müşteri deneyimi için en son teknolojilerle",
+  //   description3Application: "Profesyonellik karşılığını verir",
+
+  //   firstLabelMobileapp: "SİZİN",
+  //   secondLabelMobileapp: "MOBİL UYGULAMANIZ",
+  //   thirdLabelMobileapp: `benzersiz & çekici`,
+  //   description1Mobileapp: "Belirleyici avantajı elde edin!",
+  //   description2Mobileapp: "Çekici tasarım duygusal bağ kurar",
+  //   description3Mobileapp: "çünkü tasarım birleştirir",
+
+  //   firstLabelOnlineshop: "SİZİN",
+  //   secondLabelOnlineshop: "ONLINE MAĞAZANIZ",
+  //   thirdLabelOnlineshop: `verimli & kârlı`,
+  //   description1Onlineshop: "Mallarınızı profesyonelce satın!",
+  //   description2Onlineshop: "Doğru konumlandırma sayesinde en yüksek dönüşüm!",
+  //   description3Onlineshop: "Ziyaretçileri gerçek müşterilere dönüştürün",
+  // },
   landingpage: {
-    firstLabelWebsite: "SİZİN",
-    secondLabelWebsite: "WEB SİTENİZ",
-    thirdLabelWebsite: `modern & inovatif`,
+    mainHeader1: "Sizin Web Gelişiminiz",
+    mainHeader2: "sizin Vizyonunuz için",
+    secondHeader:
+      "Özel kod çözümleri geliştiriyorum – fark oluşturan dijital çözümler. Bireysel uygulamalarım, Şirketinizin kendi süreçlerini basitleştirmesine veya internet varlığını cazip hale getirmesine yardımcı olur.",
+    companyContent:
+      "Web geliştirme söz konusu olduğunda sizin çözüm ortağınız. Çeşitli alanlarda tam yığın web çözümleri. Sizin bir fikriniz mi var? Benimde mutlaka bir çözümüm var.",
+    companyButton: "HADI BAŞLAYALIM",
+    labelWebsite: "SİZİN WEB SİTENİZ",
     description1Website: "Vizyonunuzu web'e taşıyın!",
     description2Website:
-      "İster ön uç ister arka uç olsun, burada her ikisi geliştirilmekte",
-    description3Website: "tek bir kaynaktan",
+      "İster ön uç ister arka uç olsun, burada her ikisi geliştirilmekte, tek bir kaynaktan.",
 
-    firstLabelApplication: "SİZİN",
-    secondLabelApplication: "UYGULAMANIZ",
-    thirdLabelApplication: `bireysel & teknolojik`,
+    labelApplication: "SİZİN UYGULAMANIZ",
     description1Application: "Kişiselleştirilmiş uygulamanız!",
     description2Application:
-      "En iyi müşteri deneyimi için en son teknolojilerle",
-    description3Application: "Profesyonellik karşılığını verir",
+      "En iyi müşteri deneyimi ve daha verimli işlemler için en son teknolojilerle. Profesyonellik karşılığını verir.",
 
-    firstLabelMobileapp: "SİZİN",
-    secondLabelMobileapp: "MOBİL UYGULAMANIZ",
-    thirdLabelMobileapp: `benzersiz & çekici`,
+    labelMobileapp: "SİZİN MOBİL UYGULAMANIZ",
     description1Mobileapp: "Belirleyici avantajı elde edin!",
-    description2Mobileapp: "Çekici tasarım duygusal bağ kurar",
-    description3Mobileapp: "çünkü tasarım birleştirir",
+    description2Mobileapp:
+      "Çekici tasarım duygusal bağ kurar, çünkü tasarım birleştirir.",
 
-    firstLabelOnlineshop: "SİZİN",
-    secondLabelOnlineshop: "ONLINE MAĞAZANIZ",
-    thirdLabelOnlineshop: `verimli & kârlı`,
+    labelOnlineshop: "SİZİN ONLINE MAĞAZANIZ",
     description1Onlineshop: "Mallarınızı profesyonelce satın!",
-    description2Onlineshop: "Doğru konumlandırma sayesinde en yüksek dönüşüm!",
-    description3Onlineshop: "Ziyaretçileri gerçek müşterilere dönüştürün",
+    description2Onlineshop:
+      "Doğru konumlandırma sayesinde en yüksek dönüşüm! Ziyaretçileri gerçek müşterilere dönüştürün",
   },
   benefitspage: {
     title1: "SİZİN",

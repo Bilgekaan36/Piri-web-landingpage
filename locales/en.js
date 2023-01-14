@@ -4,35 +4,32 @@ const translation = {
     contact: "CONTACT",
   },
   landingpage: {
-    firstLabelWebsite: "YOUR",
-    secondLabelWebsite: "WEBSITE",
-    thirdLabelWebsite: `modern & innovative`,
+    mainHeader1: "Your Web Development",
+    mainHeader2: "for your Vision",
+    secondHeader:
+      "I develop custom code solutions – digital solutions that inspire. My individual applications help your Companie to simplify their own processes or to make the internet presence experienceable.",
+    companyContent:
+      "Your partner when it comes to web development. Full-stack web solutions in various areas. you have an idea? Here you have a solution.",
+    companyButton: "GET STARTED",
+    labelWebsite: "YOUR WEBSITE",
     description1Website: "Bring your vision to the web!",
-    description2Website: "Whether frontend or backend you get everything here",
-    description3Website: "from a single source",
+    description2Website:
+      "Whether frontend or backend you get everything here from a single source.",
 
-    firstLabelApplication: "YOUR",
-    secondLabelApplication: "APPLICATION",
-    thirdLabelApplication: `individual & high-tech`,
+    labelApplication: "YOUR APPLICATION",
     description1Application: "Your personalized application!",
     description2Application:
-      "With the latest technologies for the best customer experience",
-    description3Application: "Professionalism pays off",
+      "With the latest technologies for the best customer experiencea and more efficient progress. Professionalism pays off.",
 
-    firstLabelMobileapp: "YOUR",
-    secondLabelMobileapp: "MOBILEAPP",
-    thirdLabelMobileapp: `unique & attractive`,
+    labelMobileapp: "YOUR MOBILEAPP",
     description1Mobileapp: "Get the decisive advantage!",
-    description2Mobileapp: "Appealing design creates emotion",
-    description3Mobileapp: "because design connects",
+    description2Mobileapp:
+      "Appealing design creates emotion because design connects.",
 
-    firstLabelOnlineshop: "YOUR",
-    secondLabelOnlineshop: "ONLINESHOP",
-    thirdLabelOnlineshop: `efficient & profitable`,
+    labelOnlineshop: "YOUR ONLINESHOP",
     description1Onlineshop: "Sell your goods professionally!",
     description2Onlineshop:
-      "The highest conversion through correct positioning!",
-    description3Onlineshop: "Turn visitors into real customers",
+      "The highest conversion through correct positioning! Turn visitors into real customers.",
   },
   benefitspage: {
     title1: "YOUR",
