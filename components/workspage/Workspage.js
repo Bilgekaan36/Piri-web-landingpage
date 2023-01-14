@@ -20,7 +20,7 @@ const StyledHeader = styled(Box)(({ theme }) => ({
 const StyledTitleText = styled(Typography)(({ theme }) => ({
   color: "#1e1f26",
   fontSize: "10vw",
-  fontWeight: "700",
+  fontWeight: "400",
   paddingRight: "12px",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
@@ -33,7 +33,7 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
     fontSize: "17vw",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "20vw",
+    fontSize: "17vw",
   },
   [theme.breakpoints.down("xs")]: {},
 }));
@@ -41,7 +41,7 @@ const StyledTitleText = styled(Typography)(({ theme }) => ({
 const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
   fontSize: "10vw",
   color: "white",
-  fontWeight: "700",
+  fontWeight: "400",
   textShadow: "0px 0px 3px #1e1f26",
   paddingRight: "64px",
   [theme.breakpoints.down("xl")]: {},
@@ -58,7 +58,7 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
     paddingRight: "32px",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "20vw",
+    fontSize: "17vw",
     paddingRight: "24px",
   },
   [theme.breakpoints.down("xs")]: {},
