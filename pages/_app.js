@@ -1,17 +1,15 @@
 import "../styles/globals.css";
 
-import "@fontsource/sora/200.css";
-import "@fontsource/sora/300.css";
-import "@fontsource/sora/400.css";
-import "@fontsource/sora/500.css";
-import "@fontsource/sora/600.css";
-import "@fontsource/sora/700.css";
-import "@fontsource/sora/800.css";
-
 import Head from "next/head";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Analytics } from "@vercel/analytics/react";
+import { Inter } from "@next/font/google";
+
+const inter = Inter({
+  // weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+});
 
 import Layout from "../components/layout/Layout";
 
@@ -33,58 +31,49 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Sora",
     logo: {
-      fontFamily: "Sora",
       fontWeight: 100,
       color: "#1E1F26",
       fontSize: "1.5rem",
       letterSpacing: "-0.1em",
     },
     header: {
-      fontFamily: "Sora",
       fontWeight: 100,
       color: "#1E1F26",
       fontSize: "1.5rem",
       letterSpacing: "-0.1em",
     },
     mainHeader: {
-      fontFamily: "Sora",
-      fontWeight: 900,
+      fontWeight: 800,
       fontSize: "9rem",
       lineHeight: 0.8,
       letterSpacing: "-0.1rem",
     },
     secondHeader: {
-      fontFamily: "Sora",
       fontWeight: 200,
       fontSize: "4vw",
       lineHeight: 0.8,
       letterSpacing: "-0.5rem",
     },
     smallTitle: {
-      fontFamily: "Sora",
       fontWeight: 800,
       fontSize: "1.3rem",
       lineHeight: 0.8,
       letterSpacing: "0em",
     },
     bigTitle: {
-      fontFamily: "Sora",
       fontWeight: 800,
       fontSize: "6vw",
       lineHeight: 0.8,
       letterSpacing: "0em",
     },
     buttonTitle: {
-      fontFamily: "Sora",
       fontWeight: 400,
       fontSize: "2.5rem",
       lineHeight: 1.334,
       letterSpacing: "0em",
     },
     buttonContent: {
-      fontFamily: "Sora",
       fontWeight: 400,
       fontSize: "1.5rem",
       lineHeight: 1.334,
@@ -96,6 +85,11 @@ const theme = createTheme({
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <style jsx global>{`
+        html {
+          font-family: ${inter.style.fontFamily};
+        }
+      `}</style>
       <ParallaxProvider>
         <ThemeProvider theme={theme}>
           <Layout>

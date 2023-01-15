@@ -53,7 +53,6 @@ const StyledHeaderModular = styled(Typography)(({ theme }) => ({
 const StyledSubtitle = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   fontSize: "1.5rem",
-  fontWeight: "200",
   color: "#848484",
   marginTop: "32px",
   transition: "all 400ms ease-in-out",
@@ -197,7 +196,6 @@ const TestLandingpage = (props) => {
                           component='div'
                           sx={{
                             textAlign: "center",
-                            fontFamily: "Sora",
                             fontWeight: 100,
                             color: "#1E1F26",
                             fontSize: "3rem",
@@ -323,7 +321,6 @@ const TestLandingpage = (props) => {
                         component='h3'
                         sx={{
                           textAlign: "center",
-                          fontFamily: "Sora",
                           fontWeight: 400,
                           color: "#6691c3",
                           fontSize: "2rem",
@@ -411,7 +408,6 @@ const TestLandingpage = (props) => {
                         component='h3'
                         sx={{
                           textAlign: "center",
-                          fontFamily: "Sora",
                           fontWeight: 400,
                           color: "#F76B6C",
                           fontSize: "2rem",
@@ -502,7 +498,6 @@ const TestLandingpage = (props) => {
                         component='h3'
                         sx={{
                           textAlign: "center",
-                          fontFamily: "Sora",
                           fontWeight: 400,
                           color: "#79C4C8",
                           fontSize: "2rem",
@@ -590,7 +585,6 @@ const TestLandingpage = (props) => {
                         component='h3'
                         sx={{
                           textAlign: "center",
-                          fontFamily: "Sora",
                           fontWeight: 400,
                           color: "#f7be02",
                           fontSize: "2rem",
