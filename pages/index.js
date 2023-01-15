@@ -2,8 +2,9 @@ import styles from "../components/layout/Layout.module.css";
 
 import { useRouter } from "next/router";
 import { Container, Typography } from "@mui/material";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { animateScroll as scroll } from "react-scroll";
 
 import Benefitspage from "../components/benefitspage/Benefitspage";
 import Personalpage from "../components/personalpage/Personalpage";
@@ -34,6 +35,10 @@ export default function Main() {
       t = tr;
       break;
   }
+
+  useEffect(() => {
+    scroll.scrollToTop();
+  });
 
   return (
     <Container disableGutters maxWidth='false'>
