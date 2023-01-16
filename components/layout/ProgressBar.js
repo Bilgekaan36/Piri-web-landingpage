@@ -2,14 +2,14 @@ import styles from "./Layout.module.css";
 
 import React from "react";
 
-import { motion, useScroll } from "framer-motion";
+import { useScroll, animated } from "@react-spring/web";
 
 const ProgressBar = () => {
   const { scrollYProgress } = useScroll();
 
   return (
     <>
-      <motion.div
+      <animated.div
         className={styles["progress-bar"]}
         style={{
           scaleX: scrollYProgress,

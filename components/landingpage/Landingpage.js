@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import * as Scroll from "react-scroll";
-import { motion } from "framer-motion";
+import { useSpring, animated } from "@react-spring/web";
 
 import Navbar from "./Navbar";
 import PiriwebSvg from "./landingpage_svg/PiriwebSvg";
@@ -53,6 +53,7 @@ const StyledHeaderModular = styled(Typography)(({ theme }) => ({
 const StyledSubtitle = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   fontSize: "1.5rem",
+  fontWeight: "200",
   color: "#848484",
   marginTop: "32px",
   transition: "all 400ms ease-in-out",
@@ -73,6 +74,77 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
 const TestLandingpage = (props) => {
   const { t } = props;
   let ScrollLink = Scroll.Link;
+
+  const [springs, api] = useSpring(
+    () => ({
+      from: { opacity: 0, scale: 0 },
+      to: { opacity: 1, scale: 1 },
+      delay: 1500,
+      config: {
+        duration: 800,
+      },
+    }),
+    []
+  );
+
+  const [card1, api1] = useSpring(
+    () => ({
+      from: { opacity: 0, scale: 0 },
+      to: { opacity: 1, scale: 1 },
+      delay: 1500,
+      config: {
+        duration: 800,
+      },
+    }),
+    []
+  );
+
+  const [card2, api2] = useSpring(
+    () => ({
+      from: { opacity: 0, scale: 0 },
+      to: { opacity: 1, scale: 1 },
+      delay: 1750,
+      config: {
+        duration: 800,
+      },
+    }),
+    []
+  );
+  const [card3, api3] = useSpring(
+    () => ({
+      from: { opacity: 0, scale: 0 },
+      to: { opacity: 1, scale: 1 },
+      delay: 2000,
+      config: {
+        duration: 800,
+      },
+    }),
+    []
+  );
+  const [card4, api4] = useSpring(
+    () => ({
+      from: { opacity: 0, scale: 0 },
+      to: { opacity: 1, scale: 1 },
+      delay: 2250,
+      config: {
+        duration: 800,
+      },
+    }),
+    []
+  );
+
+  const [card5, api5] = useSpring(
+    () => ({
+      from: { opacity: 0, scale: 0 },
+      to: { opacity: 1, scale: 1 },
+      delay: 2500,
+      config: {
+        duration: 800,
+      },
+    }),
+    []
+  );
+
   return (
     <StyledContainer
       disableGutters
@@ -97,56 +169,28 @@ const TestLandingpage = (props) => {
           }}
         >
           <Box>
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-                delay: 1.5,
-              }}
-            >
+            <animated.div style={springs}>
               <StyledHeaderModular variant='mainHeader' component='h1'>
                 {t.landingpage.mainHeader1}
               </StyledHeaderModular>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-                delay: 1.5,
-              }}
-            >
+            </animated.div>
+            <animated.div style={springs}>
               <StyledHeaderModular variant='mainHeader' component='h2'>
                 {t.landingpage.mainHeader2}
               </StyledHeaderModular>
-            </motion.div>
+            </animated.div>
           </Box>
           <Box sx={{ width: { xs: "90%", sm: "80%" } }}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-                delay: 1.5,
-              }}
-            >
+            <animated.div style={springs}>
               <StyledSubtitle variant='body2' component='h2'>
                 {t.landingpage.secondHeader}
               </StyledSubtitle>
-            </motion.div>
+            </animated.div>
           </Box>
         </Box>
         <Grid container spacing={0}>
           <Grid item xs={12} xl={4}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-                delay: 1.5,
-              }}
-            >
+            <animated.div style={card1}>
               <Grid
                 item
                 xs={12}
@@ -270,17 +314,10 @@ const TestLandingpage = (props) => {
                   </Card>
                 </ScrollLink>
               </Grid>
-            </motion.div>
+            </animated.div>
           </Grid>
           <Grid item xs={12} md={6} xl={4}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-                delay: 1.75,
-              }}
-            >
+            <animated.div style={card2}>
               <Grid
                 item
                 xs={12}
@@ -359,15 +396,8 @@ const TestLandingpage = (props) => {
                   </CardActionArea>
                 </Card>
               </Grid>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-                delay: 2,
-              }}
-            >
+            </animated.div>
+            <animated.div style={card3}>
               <Grid
                 item
                 xs={12}
@@ -447,17 +477,10 @@ const TestLandingpage = (props) => {
                   </CardActionArea>
                 </Card>
               </Grid>
-            </motion.div>
+            </animated.div>
           </Grid>
           <Grid item xs={12} md={6} xl={4}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-                delay: 2.25,
-              }}
-            >
+            <animated.div style={card4}>
               <Grid
                 item
                 xs={12}
@@ -536,15 +559,8 @@ const TestLandingpage = (props) => {
                   </CardActionArea>
                 </Card>
               </Grid>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1,
-                delay: 2.55,
-              }}
-            >
+            </animated.div>
+            <animated.div style={card5}>
               <Grid
                 item
                 xs={12}
@@ -622,7 +638,7 @@ const TestLandingpage = (props) => {
                   </CardActionArea>
                 </Card>
               </Grid>
-            </motion.div>
+            </animated.div>
           </Grid>
         </Grid>
       </Box>

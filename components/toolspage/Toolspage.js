@@ -1,63 +1,9 @@
 import React, { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
-import {
-  Box,
-  Container,
-  styled,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Container, styled, useMediaQuery, useTheme } from "@mui/material";
 
 import ToolStepper from "./ToolStepper";
-
-const StyledHeader = styled(Box)(({ theme }) => ({
-  display: "flex",
-  overflow: "hidden",
-}));
-
-const StyledTitleText = styled(Typography)(({ theme }) => ({
-  color: "white",
-  fontSize: "10vw",
-  fontWeight: "400",
-  paddingRight: "12px",
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "15vw",
-  },
-  [theme.breakpoints.down("mm")]: {
-    fontSize: "15vw",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "17vw",
-  },
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "17vw",
-  },
-}));
-
-const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
-  fontSize: "10vw",
-  fontWeight: "400",
-  color: "#1e1f26",
-  textShadow: "0px 0px 3px white",
-  paddingRight: "64px",
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "15vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("mm")]: {
-    fontSize: "15vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "17vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "17vw",
-    paddingRight: "24px",
-  },
-}));
+import ParallaxHeader from "../ParallaxHeader";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "#1E1F26",
@@ -84,18 +30,11 @@ const Toolspage = ({ t }) => {
         backgroundColor: activeBackground,
       }}
     >
-      <StyledHeader>
-        <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-          <StyledTitleText>{t.toolspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.toolspage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.toolspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.toolspage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.toolspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.toolspage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.toolspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.toolspage.title2}</StyledTitleTextSecond>
-        </Parallax>
-      </StyledHeader>
+      <ParallaxHeader
+        firstTitle={t.toolspage.title1}
+        secondTitle={t.toolspage.title2}
+        activeBackground='white'
+      />
       <Parallax
         style={{
           height: "50px",

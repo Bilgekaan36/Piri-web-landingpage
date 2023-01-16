@@ -78,19 +78,6 @@ const Launchpage = ({ t }) => {
         transition: "400ms all ease-in-out",
       }}
     >
-      <Parallax
-        style={{
-          height: "100px",
-          width: "100px",
-          // backgroundColor: "green",
-          position: "absolute",
-          top: "-110px",
-          left: 0,
-        }}
-        onEnter={() => {}}
-        onExit={() => {}}
-      />
-
       <Box
         sx={{
           position: "sticky",

@@ -4,66 +4,13 @@ import Grid from "@mui/material/Grid";
 import { Box, Container, styled, Typography } from "@mui/material";
 
 import BenefitsStepper from "./BenefitsStepper";
-
-const StyledHeader = styled(Box)(({ theme }) => ({
-  display: "flex",
-  overflow: "hidden",
-}));
-
-const StyledTitleText = styled(Typography)(({ theme }) => ({
-  color: "white",
-  fontSize: "10vw",
-  fontWeight: "400",
-  paddingRight: "12px",
-  [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "15vw",
-  },
-  [theme.breakpoints.down("mm")]: {
-    fontSize: "15vw",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "17vw",
-  },
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "17vw",
-  },
-  [theme.breakpoints.down("xs")]: {},
-}));
-
-const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
-  fontSize: "10vw",
-  fontWeight: "400",
-  color: "#1e1f26",
-  textShadow: "0px 0px 3px white",
-  paddingRight: "64px",
-  [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "15vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("mm")]: {
-    fontSize: "15vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "17vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "17vw",
-    paddingRight: "24px",
-  },
-  [theme.breakpoints.down("xs")]: {},
-}));
+import ParallaxHeader from "../ParallaxHeader";
 
 const StyledMainTitle = styled(Typography)(({ theme }) => ({
   color: "white",
   fontSize: "4.5rem",
   fontWeight: "700",
   lineHeight: 1,
-  // textShadow: "0px 0px 3px white",
-
   [theme.breakpoints.down("lg")]: {
     fontSize: "2.5rem",
   },
@@ -122,18 +69,11 @@ const Benefitspage = ({ t }) => {
         backgroundColor: activeBackground,
       }}
     >
-      <StyledHeader>
-        <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-          <StyledTitleText>{t.benefitspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.benefitspage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.benefitspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.benefitspage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.benefitspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.benefitspage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.benefitspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.benefitspage.title2}</StyledTitleTextSecond>
-        </Parallax>
-      </StyledHeader>
+      <ParallaxHeader
+        firstTitle={t.benefitspage.title1}
+        secondTitle={t.benefitspage.title2}
+        activeBackground='white'
+      />
       <StyledContainer
         maxWidth='false'
         sx={{

@@ -11,54 +11,7 @@ import {
 
 import { Parallax } from "react-scroll-parallax";
 import { useState } from "react";
-
-const StyledHeader = styled(Box)(({ theme }) => ({
-  display: "flex",
-  overflow: "hidden",
-}));
-
-const StyledTitleText = styled(Typography)(({ theme }) => ({
-  color: "#1e1f26",
-  fontSize: "10vw",
-  fontWeight: "400",
-  paddingRight: "12px",
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "15vw",
-  },
-  [theme.breakpoints.down("mm")]: {
-    fontSize: "15vw",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "17vw",
-  },
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "17vw",
-  },
-}));
-
-const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
-  fontSize: "10vw",
-  color: "white",
-  fontWeight: "400",
-  textShadow: "0px 0px 3px #1e1f26",
-  paddingRight: "64px",
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "15vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("mm")]: {
-    fontSize: "15vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "17vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "17vw",
-    paddingRight: "24px",
-  },
-}));
+import ParallaxHeader from "../ParallaxHeader";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
@@ -111,18 +64,11 @@ const Workspage = ({ t }) => {
         backgroundColor: activeBackground,
       }}
     >
-      <StyledHeader>
-        <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-          <StyledTitleText>{t.workspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.workspage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.workspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.workspage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.workspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.workspage.title2}</StyledTitleTextSecond>
-          <StyledTitleText>{t.workspage.title1}</StyledTitleText>
-          <StyledTitleTextSecond>{t.workspage.title2}</StyledTitleTextSecond>
-        </Parallax>
-      </StyledHeader>
+      <ParallaxHeader
+        firstTitle={t.workspage.title1}
+        secondTitle={t.workspage.title2}
+        activeBackground='#1e1f26'
+      />
       <Container
         maxWidth='false'
         sx={{ backgroundColor: activeBackground, position: "relative" }}

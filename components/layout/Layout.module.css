@@ -8,15 +8,3 @@
   background: #0170f3;
   transform-origin: 0%;
 }
-
-.transitionPage {
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  background-color: #1e1f26;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}

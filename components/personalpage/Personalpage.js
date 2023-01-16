@@ -5,56 +5,7 @@ import profil from "../../public/profil.png";
 import { Parallax } from "react-scroll-parallax";
 
 import { Container, styled, Grid, Typography, Box } from "@mui/material";
-
-const StyledHeader = styled(Box)(({ theme }) => ({
-  display: "flex",
-  overflow: "hidden",
-}));
-
-const StyledTitleText = styled(Typography)(({ theme }) => ({
-  fontSize: "10vw",
-  fontWeight: "400",
-  paddingRight: "12px",
-  color: "#1e1f26",
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "15vw",
-  },
-  [theme.breakpoints.down("mm")]: {
-    fontSize: "15vw",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "17vw",
-  },
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "17vw",
-  },
-  [theme.breakpoints.down("xs")]: {},
-}));
-
-const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
-  fontSize: "10vw",
-  color: "white",
-  fontWeight: "400",
-  textShadow: "0px 0px 3px #1e1f26",
-  paddingRight: "64px",
-
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "15vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("mm")]: {
-    fontSize: "15vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "17vw",
-    paddingRight: "32px",
-  },
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "17vw",
-    paddingRight: "24px",
-  },
-}));
+import ParallaxHeader from "../ParallaxHeader";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
@@ -104,13 +55,15 @@ const Personalpage = ({ t }) => {
   return (
     <Box
       sx={{
-        backgroundColor: activeBackground,
+        backgroundColor: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
       }}
     >
       <StyledContainer
         disableGutters
         maxWidth='false'
-        sx={{ backgroundColor: activeBackground }}
+        sx={{
+          backgroundColor: activeBackground === "white" ? "white" : "#1e1f26",
+        }}
       >
         <Parallax
           style={{
@@ -133,26 +86,12 @@ const Personalpage = ({ t }) => {
           onEnter={() => {}}
           onExit={() => {}}
         />
-        <StyledHeader sx={{ marginBottom: "60px" }}>
-          <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-            <StyledTitleTextSecond>
-              {t.personalpage.title2}
-            </StyledTitleTextSecond>
-            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-            <StyledTitleTextSecond>
-              {t.personalpage.title2}
-            </StyledTitleTextSecond>
-            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-            <StyledTitleTextSecond>
-              {t.personalpage.title2}
-            </StyledTitleTextSecond>
-            <StyledTitleText>{t.personalpage.title1}</StyledTitleText>
-            <StyledTitleTextSecond>
-              {t.personalpage.title2}
-            </StyledTitleTextSecond>
-          </Parallax>
-        </StyledHeader>
+
+        <ParallaxHeader
+          firstTitle={t.personalpage.title1}
+          secondTitle={t.personalpage.title2}
+          activeBackground='#1e1f26'
+        />
         <Container
           maxWidth='xxl'
           sx={{ display: "flex", paddingBottom: { xs: "0px", mm: "0px" } }}
@@ -227,82 +166,11 @@ const Personalpage = ({ t }) => {
           </Grid>
         </Container>
       </StyledContainer>
-      <StyledHeader
-        sx={{
-          backgroundColor: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-        }}
-      >
-        <Parallax translateX={[-10, -15]} style={{ display: "flex" }}>
-          <StyledTitleText
-            sx={{
-              color: activeBackground === "white" ? "white" : "#1e1f26",
-            }}
-          >
-            {t.footerpage.title1}
-          </StyledTitleText>
-          <StyledTitleTextSecond
-            sx={{
-              textShadow: `0px 0px 3px ${
-                activeBackground === "white" ? "white" : "#1e1f26"
-              }`,
-              color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-            }}
-          >
-            {t.footerpage.title1}
-          </StyledTitleTextSecond>
-          <StyledTitleText
-            sx={{
-              color: activeBackground === "white" ? "white" : "#1e1f26",
-            }}
-          >
-            {t.footerpage.title1}
-          </StyledTitleText>
-          <StyledTitleTextSecond
-            sx={{
-              textShadow: `0px 0px 3px ${
-                activeBackground === "white" ? "white" : "#1e1f26"
-              }`,
-              color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-            }}
-          >
-            {t.footerpage.title1}
-          </StyledTitleTextSecond>
-          <StyledTitleText
-            sx={{
-              color: activeBackground === "white" ? "white" : "#1e1f26",
-            }}
-          >
-            {t.footerpage.title1}
-          </StyledTitleText>
-          <StyledTitleTextSecond
-            sx={{
-              textShadow: `0px 0px 3px ${
-                activeBackground === "white" ? "white" : "#1e1f26"
-              }`,
-              color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-            }}
-          >
-            {t.footerpage.title1}
-          </StyledTitleTextSecond>
-          <StyledTitleText
-            sx={{
-              color: activeBackground === "white" ? "white" : "#1e1f26",
-            }}
-          >
-            {t.footerpage.title1}
-          </StyledTitleText>
-          <StyledTitleTextSecond
-            sx={{
-              textShadow: `0px 0px 3px ${
-                activeBackground === "white" ? "white" : "#1e1f26"
-              }`,
-              color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-            }}
-          >
-            {t.footerpage.title1}
-          </StyledTitleTextSecond>
-        </Parallax>
-      </StyledHeader>
+      <ParallaxHeader
+        firstTitle={t.footerpage.title1}
+        secondTitle={t.footerpage.title1}
+        activeBackground={activeBackground}
+      />
     </Box>
   );
 };
