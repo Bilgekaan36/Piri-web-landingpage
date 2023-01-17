@@ -61,85 +61,73 @@ const Workspage = ({ t }) => {
 
   const [ref1, springs1] = useInView(() => ({
     from: {
-      opacity: 0,
       x: "-100%",
     },
     to: {
-      opacity: 1,
       x: "0",
     },
     config: {
-      duration: 400,
+      duration: 1000,
     },
   }));
 
   const [ref2, springs2] = useInView(() => ({
     from: {
-      opacity: 0,
       x: "100%",
     },
     to: {
-      opacity: 1,
       x: "0",
     },
     config: {
-      duration: 400,
+      duration: 1000,
     },
   }));
 
   const [ref3, springs3] = useInView(() => ({
     from: {
-      opacity: 0,
       x: "-100%",
     },
     to: {
-      opacity: 1,
       x: "0",
     },
     config: {
-      duration: 400,
+      duration: 1000,
     },
   }));
 
   const [ref4, springs4] = useInView(() => ({
     from: {
-      opacity: 0,
       x: "100%",
     },
     to: {
-      opacity: 1,
       x: "0",
     },
     config: {
-      duration: 400,
+      duration: 1000,
     },
   }));
 
   const [ref5, springs5] = useInView(() => ({
     from: {
-      opacity: 0,
       x: "-100%",
     },
     to: {
-      opacity: 1,
       x: "0",
     },
     config: {
-      duration: 400,
+      duration: 1000,
     },
   }));
 
   const [ref6, springs6] = useInView(() => ({
     from: {
-      opacity: 0,
       x: "100%",
     },
     to: {
-      opacity: 1,
       x: "0",
     },
     config: {
-      duration: 400,
+      duration: 1000,
     },
   }));
 
@@ -167,10 +155,7 @@ const Workspage = ({ t }) => {
           maxWidth='xxl'
           sx={{ backgroundColor: activeBackground }}
         >
-          <ImageList
-            cols={matchDownLg ? 1 : 2}
-            rowHeight={matchDownLg ? 160 : 340}
-          >
+          <ImageList cols={1} rowHeight={400} sx={{ overflow: "hidden" }}>
             <animated.div ref={ref1} style={springs1}>
               <ImageListItem
                 rows={4}

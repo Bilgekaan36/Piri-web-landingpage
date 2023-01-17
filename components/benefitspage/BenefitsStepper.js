@@ -88,9 +88,9 @@ const StyledStepperGrid = styled(Grid)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  marginBottom: "100px",
+  marginBottom: "240px",
   [theme.breakpoints.down("md")]: {
-    marginBottom: "80px",
+    marginBottom: "120px",
   },
 }));
 

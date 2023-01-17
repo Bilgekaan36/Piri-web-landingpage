@@ -77,7 +77,7 @@ const theme = createTheme({
     bigTitle: {
       fontWeight: 800,
       fontSize: "6vw",
-      lineHeight: 0.8,
+      lineHeight: 1,
       letterSpacing: "0em",
     },
     buttonTitle: {

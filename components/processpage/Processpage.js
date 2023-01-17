@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, styled, Grid, Typography, Box } from "@mui/material";
 import { Parallax } from "react-scroll-parallax";
-import { useInView, animated } from "@react-spring/web";
 
 import ParallaxHeader from "../ParallaxHeader";
 
@@ -293,76 +292,6 @@ const Process = ({ t }) => {
     },
   ];
 
-  const [ref1, springs1] = useInView(
-    () => ({
-      from: {
-        opacity: 0,
-      },
-      to: {
-        opacity: 1,
-      },
-    }),
-    {
-      rootMargin: "-25% 0%",
-    }
-  );
-
-  const [ref2, springs2] = useInView(
-    () => ({
-      from: {
-        opacity: 0,
-      },
-      to: {
-        opacity: 1,
-      },
-    }),
-    {
-      rootMargin: "-25% 0%",
-    }
-  );
-
-  const [ref3, springs3] = useInView(
-    () => ({
-      from: {
-        opacity: 0,
-      },
-      to: {
-        opacity: 1,
-      },
-    }),
-    {
-      rootMargin: "-25% 0%",
-    }
-  );
-
-  const [ref4, springs4] = useInView(
-    () => ({
-      from: {
-        opacity: 0,
-      },
-      to: {
-        opacity: 1,
-      },
-    }),
-    {
-      rootMargin: "-25% 0%",
-    }
-  );
-
-  const [ref5, springs5] = useInView(
-    () => ({
-      from: {
-        opacity: 0,
-      },
-      to: {
-        opacity: 1,
-      },
-    }),
-    {
-      rootMargin: "-25% 0%",
-    }
-  );
-
   return (
     <Box
       sx={{
@@ -432,8 +361,195 @@ const Process = ({ t }) => {
                   height: `${progress}px`,
                 }}
               />
-              <animated.div ref={ref1} style={springs1}>
-                <StyledStepperGrid container spacing={0}>
+              <StyledStepperGrid container spacing={0}>
+                <StyledStepperNumbers
+                  sx={{
+                    backgroundColor: activeBackground,
+                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                  }}
+                >
+                  01
+                </StyledStepperNumbers>
+                <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
+                  <StyledStepperTitle>
+                    {t.processpage.titleDiscovery}
+                  </StyledStepperTitle>
+                  <StyledStepperSubTitle
+                    sx={{
+                      color:
+                        activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                    }}
+                  >
+                    {t.processpage.titleDiscovery}
+                  </StyledStepperSubTitle>
+                  <StyledStepperContent>
+                    {t.processpage.contentDiscovery}
+                  </StyledStepperContent>
+                  {textData[0].subtitles.map((subtitle) => (
+                    <StyledStepperSubText
+                      key={subtitle.textId}
+                      sx={{
+                        color:
+                          activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                      }}
+                    >
+                      {subtitle.text}
+                    </StyledStepperSubText>
+                  ))}
+                </StyledGrid>
+              </StyledStepperGrid>
+              <StyledStepperGrid container spacing={0}>
+                <StyledStepperNumbers
+                  sx={{
+                    backgroundColor: activeBackground,
+                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                  }}
+                >
+                  02
+                </StyledStepperNumbers>
+                <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
+                  <StyledStepperTitle>
+                    {t.processpage.titleStrategy}
+                  </StyledStepperTitle>
+                  <StyledStepperSubTitle
+                    sx={{
+                      color:
+                        activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                    }}
+                  >
+                    {t.processpage.titleStrategy}
+                  </StyledStepperSubTitle>
+                  <StyledStepperContent>
+                    {t.processpage.contentStrategy}
+                  </StyledStepperContent>
+                  {textData[1].subtitles.map((subtitle) => (
+                    <StyledStepperSubText
+                      key={subtitle.textId}
+                      sx={{
+                        color:
+                          activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                      }}
+                    >
+                      {subtitle.text}
+                    </StyledStepperSubText>
+                  ))}
+                </StyledGrid>
+              </StyledStepperGrid>
+              <StyledStepperGrid container spacing={0}>
+                <StyledStepperNumbers
+                  sx={{
+                    backgroundColor: activeBackground,
+                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                  }}
+                >
+                  03
+                </StyledStepperNumbers>
+                <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
+                  <StyledStepperTitle>
+                    {t.processpage.titleDesign}
+                  </StyledStepperTitle>
+                  <StyledStepperSubTitle
+                    sx={{
+                      color:
+                        activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                    }}
+                  >
+                    {t.processpage.titleDesign}
+                  </StyledStepperSubTitle>
+                  <StyledStepperContent>
+                    {t.processpage.contentDesign}
+                  </StyledStepperContent>
+                  {textData[2].subtitles.map((subtitle) => (
+                    <StyledStepperSubText
+                      key={subtitle.textId}
+                      sx={{
+                        color:
+                          activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                      }}
+                    >
+                      {subtitle.text}
+                    </StyledStepperSubText>
+                  ))}
+                </StyledGrid>
+              </StyledStepperGrid>
+
+              <StyledStepperGrid container spacing={0}>
+                <StyledStepperNumbers
+                  sx={{
+                    backgroundColor: activeBackground,
+                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                  }}
+                >
+                  04
+                </StyledStepperNumbers>
+                <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
+                  <StyledStepperTitle>
+                    {t.processpage.titleDevelopment}
+                  </StyledStepperTitle>
+                  <StyledStepperSubTitle
+                    sx={{
+                      color:
+                        activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                    }}
+                  >
+                    {t.processpage.titleDevelopment}
+                  </StyledStepperSubTitle>
+                  <StyledStepperContent>
+                    {t.processpage.contentDevelopment}
+                  </StyledStepperContent>
+                  {textData[2].subtitles.map((subtitle) => (
+                    <StyledStepperSubText
+                      key={subtitle.textId}
+                      sx={{
+                        color:
+                          activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                      }}
+                    >
+                      {subtitle.text}
+                    </StyledStepperSubText>
+                  ))}
+                </StyledGrid>
+              </StyledStepperGrid>
+
+              <StyledStepperGrid container spacing={0}>
+                <StyledStepperNumbers
+                  sx={{
+                    backgroundColor: activeBackground,
+                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                  }}
+                >
+                  05
+                </StyledStepperNumbers>
+                <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
+                  <StyledStepperTitle>
+                    {t.processpage.titleOnboarding}
+                  </StyledStepperTitle>
+                  <StyledStepperSubTitle
+                    sx={{
+                      color:
+                        activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                    }}
+                  >
+                    {t.processpage.titleOnboarding}
+                  </StyledStepperSubTitle>
+                  <StyledStepperContent>
+                    {t.processpage.contentOnboarding}
+                  </StyledStepperContent>
+                  {textData[2].subtitles.map((subtitle) => (
+                    <StyledStepperSubText
+                      key={subtitle.textId}
+                      sx={{
+                        color:
+                          activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                      }}
+                    >
+                      {subtitle.text}
+                    </StyledStepperSubText>
+                  ))}
+                </StyledGrid>
+              </StyledStepperGrid>
+              {/* {textData.map((text, index) => (
+                <StyledStepperGrid container spacing={0} key={index}>
                   <StyledStepperNumbers
                     sx={{
                       backgroundColor: activeBackground,
@@ -441,24 +557,20 @@ const Process = ({ t }) => {
                         activeBackground === "#1e1f26" ? "white" : "#1e1f26",
                     }}
                   >
-                    01
+                    {text.number}
                   </StyledStepperNumbers>
                   <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
-                    <StyledStepperTitle>
-                      {t.processpage.titleDiscovery}
-                    </StyledStepperTitle>
+                    <StyledStepperTitle> {text.title}</StyledStepperTitle>
                     <StyledStepperSubTitle
                       sx={{
                         color:
                           activeBackground === "#1e1f26" ? "white" : "#1e1f26",
                       }}
                     >
-                      {t.processpage.titleDiscovery}
+                      {text.title}
                     </StyledStepperSubTitle>
-                    <StyledStepperContent>
-                      {t.processpage.contentDiscovery}
-                    </StyledStepperContent>
-                    {textData[0].subtitles.map((subtitle) => (
+                    <StyledStepperContent>{text.content}</StyledStepperContent>
+                    {text.subtitles.map((subtitle) => (
                       <StyledStepperSubText
                         key={subtitle.textId}
                         sx={{
@@ -473,175 +585,7 @@ const Process = ({ t }) => {
                     ))}
                   </StyledGrid>
                 </StyledStepperGrid>
-              </animated.div>
-              <animated.div ref={ref2} style={springs2}>
-                <StyledStepperGrid container spacing={0}>
-                  <StyledStepperNumbers
-                    sx={{
-                      backgroundColor: activeBackground,
-                      color:
-                        activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                    }}
-                  >
-                    02
-                  </StyledStepperNumbers>
-                  <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
-                    <StyledStepperTitle>
-                      {t.processpage.titleStrategy}
-                    </StyledStepperTitle>
-                    <StyledStepperSubTitle
-                      sx={{
-                        color:
-                          activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                      }}
-                    >
-                      {t.processpage.titleStrategy}
-                    </StyledStepperSubTitle>
-                    <StyledStepperContent>
-                      {t.processpage.contentStrategy}
-                    </StyledStepperContent>
-                    {textData[1].subtitles.map((subtitle) => (
-                      <StyledStepperSubText
-                        key={subtitle.textId}
-                        sx={{
-                          color:
-                            activeBackground === "#1e1f26"
-                              ? "white"
-                              : "#1e1f26",
-                        }}
-                      >
-                        {subtitle.text}
-                      </StyledStepperSubText>
-                    ))}
-                  </StyledGrid>
-                </StyledStepperGrid>
-              </animated.div>
-              <animated.div ref={ref3} style={springs3}>
-                <StyledStepperGrid container spacing={0}>
-                  <StyledStepperNumbers
-                    sx={{
-                      backgroundColor: activeBackground,
-                      color:
-                        activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                    }}
-                  >
-                    03
-                  </StyledStepperNumbers>
-                  <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
-                    <StyledStepperTitle>
-                      {t.processpage.titleDesign}
-                    </StyledStepperTitle>
-                    <StyledStepperSubTitle
-                      sx={{
-                        color:
-                          activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                      }}
-                    >
-                      {t.processpage.titleDesign}
-                    </StyledStepperSubTitle>
-                    <StyledStepperContent>
-                      {t.processpage.contentDesign}
-                    </StyledStepperContent>
-                    {textData[2].subtitles.map((subtitle) => (
-                      <StyledStepperSubText
-                        key={subtitle.textId}
-                        sx={{
-                          color:
-                            activeBackground === "#1e1f26"
-                              ? "white"
-                              : "#1e1f26",
-                        }}
-                      >
-                        {subtitle.text}
-                      </StyledStepperSubText>
-                    ))}
-                  </StyledGrid>
-                </StyledStepperGrid>
-              </animated.div>
-              <animated.div ref={ref4} style={springs4}>
-                <StyledStepperGrid container spacing={0}>
-                  <StyledStepperNumbers
-                    sx={{
-                      backgroundColor: activeBackground,
-                      color:
-                        activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                    }}
-                  >
-                    04
-                  </StyledStepperNumbers>
-                  <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
-                    <StyledStepperTitle>
-                      {t.processpage.titleDevelopment}
-                    </StyledStepperTitle>
-                    <StyledStepperSubTitle
-                      sx={{
-                        color:
-                          activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                      }}
-                    >
-                      {t.processpage.titleDevelopment}
-                    </StyledStepperSubTitle>
-                    <StyledStepperContent>
-                      {t.processpage.contentDevelopment}
-                    </StyledStepperContent>
-                    {textData[2].subtitles.map((subtitle) => (
-                      <StyledStepperSubText
-                        key={subtitle.textId}
-                        sx={{
-                          color:
-                            activeBackground === "#1e1f26"
-                              ? "white"
-                              : "#1e1f26",
-                        }}
-                      >
-                        {subtitle.text}
-                      </StyledStepperSubText>
-                    ))}
-                  </StyledGrid>
-                </StyledStepperGrid>
-              </animated.div>
-              <animated.div ref={ref5} style={springs5}>
-                <StyledStepperGrid container spacing={0}>
-                  <StyledStepperNumbers
-                    sx={{
-                      backgroundColor: activeBackground,
-                      color:
-                        activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                    }}
-                  >
-                    05
-                  </StyledStepperNumbers>
-                  <StyledGrid item xs={10} sm={10} mm={10} md={10} lg={10}>
-                    <StyledStepperTitle>
-                      {t.processpage.titleOnboarding}
-                    </StyledStepperTitle>
-                    <StyledStepperSubTitle
-                      sx={{
-                        color:
-                          activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                      }}
-                    >
-                      {t.processpage.titleOnboarding}
-                    </StyledStepperSubTitle>
-                    <StyledStepperContent>
-                      {t.processpage.contentOnboarding}
-                    </StyledStepperContent>
-                    {textData[2].subtitles.map((subtitle) => (
-                      <StyledStepperSubText
-                        key={subtitle.textId}
-                        sx={{
-                          color:
-                            activeBackground === "#1e1f26"
-                              ? "white"
-                              : "#1e1f26",
-                        }}
-                      >
-                        {subtitle.text}
-                      </StyledStepperSubText>
-                    ))}
-                  </StyledGrid>
-                </StyledStepperGrid>
-              </animated.div>
+              ))} */}
             </Grid>
           </Grid>
         </Parallax>
