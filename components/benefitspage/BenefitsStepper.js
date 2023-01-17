@@ -13,71 +13,71 @@ import brandingdesign from "../../public/benefitspage_assets/branding-design.jso
 import mission from "../../public/benefitspage_assets/mission.json";
 
 const StyledStepperTitle = styled(Typography)(({ theme }) => ({
-  fontSize: "1.2rem",
+  fontSize: "1.4rem",
   fontWeight: "400",
   color: "#848484",
   transition: "all 400ms ease-in-out",
   [theme.breakpoints.down("xxl")]: {},
   [theme.breakpoints.down("xl")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
   },
   [theme.breakpoints.down("lg")]: {
-    fontSize: "1.1rem",
+    fontSize: "1.3rem",
   },
   [theme.breakpoints.down("mm")]: {
-    fontSize: "0.85rem",
+    fontSize: "1rem",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "0.85rem",
+    fontSize: "1rem",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "0.8rem",
+    fontSize: "1rem",
   },
 }));
 
 const StyledStepperSubTitle = styled(Typography)(({ theme }) => ({
-  fontSize: "2rem",
+  fontSize: "2.2rem",
   fontWeight: "500",
   color: "white",
   marginBottom: "12px",
   transition: "all 400ms ease-in-out",
 
   [theme.breakpoints.down("xxl")]: {
-    fontSize: "2rem",
+    fontSize: "2.2rem",
   },
   [theme.breakpoints.down("xl")]: {
-    fontSize: "1.5rem",
-  },
-  [theme.breakpoints.down("lg")]: {
     fontSize: "1.7rem",
   },
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "1.9rem",
+  },
   [theme.breakpoints.down("mm")]: {
-    fontSize: "1.3rem",
+    fontSize: "1.5rem",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "1.25rem",
+    fontSize: "1.45rem",
   },
 }));
 
 const StyledStepperContent = styled(Typography)(({ theme }) => ({
-  fontSize: "1.2rem",
+  fontSize: "1.4rem",
   fontWeight: "200",
   color: "#848484",
   transition: "all 400ms ease-in-out",
   [theme.breakpoints.down("xl")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
   },
   [theme.breakpoints.down("lg")]: {
-    fontSize: "1.1rem",
+    fontSize: "1.3rem",
   },
   [theme.breakpoints.down("mm")]: {
-    fontSize: "0.85rem",
+    fontSize: "1.1rem",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "0.85rem",
+    fontSize: "1.1rem",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "0.8rem",
+    fontSize: "1.1rem",
   },
   [theme.breakpoints.down("xs")]: {},
 }));
@@ -88,9 +88,9 @@ const StyledStepperGrid = styled(Grid)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  marginBottom: "240px",
+  marginBottom: "200px",
   [theme.breakpoints.down("md")]: {
-    marginBottom: "120px",
+    marginBottom: "80px",
   },
 }));
 

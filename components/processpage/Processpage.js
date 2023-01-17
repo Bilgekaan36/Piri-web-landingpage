@@ -9,92 +9,93 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 }));
 
 const StyledStepperTitle = styled(Typography)(({ theme }) => ({
-  fontSize: "1.2rem",
+  fontSize: "1.4rem",
   fontWeight: "400",
   color: "#848484",
 
   [theme.breakpoints.down("xl")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
   },
   [theme.breakpoints.down("lg")]: {
-    fontSize: "1.1rem",
+    fontSize: "1.3rem",
   },
   [theme.breakpoints.down("mm")]: {
-    fontSize: "0.85rem",
+    fontSize: "1rem",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "0.85rem",
+    fontSize: "1.1rem",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "0.8rem",
+    fontSize: "1rem",
   },
 }));
 
 const StyledStepperSubTitle = styled(Typography)(({ theme }) => ({
-  fontSize: "2rem",
+  fontSize: "2.2rem",
   fontWeight: "500",
   marginBottom: "12px",
   color: "#1e1f26",
   [theme.breakpoints.down("xxl")]: {
-    fontSize: "2rem",
+    fontSize: "2.2rem",
   },
   [theme.breakpoints.down("xl")]: {
-    fontSize: "1.5rem",
-  },
-  [theme.breakpoints.down("lg")]: {
     fontSize: "1.7rem",
   },
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "1.9rem",
+  },
   [theme.breakpoints.down("mm")]: {
-    fontSize: "1.3rem",
+    fontSize: "1.5rem",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "1.5rem",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "1.25rem",
+    fontSize: "1.45rem",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledStepperSubText = styled(Typography)(({ theme }) => ({
-  fontSize: "1.5rem",
+  fontSize: "1.7rem",
   fontWeight: "500",
   marginBottom: "12px",
   color: "#1e1f26",
   [theme.breakpoints.down("xxl")]: {
-    fontSize: "1.5rem",
+    fontSize: "1.7rem",
   },
   [theme.breakpoints.down("xl")]: {
-    fontSize: "1rem",
-  },
-  [theme.breakpoints.down("lg")]: {
     fontSize: "1.2rem",
   },
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "1.4rem",
+  },
   [theme.breakpoints.down("mm")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "0.9rem",
+    fontSize: "1.1rem",
   },
-  [theme.breakpoints.down("xs")]: {},
 }));
 
 const StyledStepperContent = styled(Typography)(({ theme }) => ({
   fontSize: "1.2rem",
   fontWeight: "200",
   color: "#848484",
-
+  marginBottom: "12px",
   [theme.breakpoints.down("xl")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
   },
   [theme.breakpoints.down("lg")]: {
-    fontSize: "1.1rem",
+    fontSize: "1.3rem",
   },
   [theme.breakpoints.down("mm")]: {
-    fontSize: "0.85rem",
+    fontSize: "1.1rem",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "0.85rem",
+    fontSize: "1.1rem",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "0.8rem",
+    fontSize: "1.1rem",
   },
 }));
 
@@ -117,17 +118,17 @@ const StyledMainTitle = styled(Typography)(({ theme }) => ({
 
 const StyledSubTitle = styled(Typography)(({ theme }) => ({
   color: "#848484",
-  fontSize: "2rem",
+  fontSize: "2.2rem",
   fontWeight: "400",
   lineHeight: 1,
   [theme.breakpoints.down("lg")]: {
-    fontSize: "1.5rem",
+    fontSize: "1.7rem",
   },
   [theme.breakpoints.down("mm")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
   },
 }));
 
@@ -154,7 +155,7 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   justifyContent: "flex-start",
   transition: "all 1s ease-in-out",
   position: "relative",
-  height: "400px",
+  // height: "400px",
 }));
 
 const StyledStepperNumbers = styled(Typography)(({ theme }) => ({
@@ -319,7 +320,7 @@ const Process = ({ t }) => {
             mm={8}
             md={8}
             lg={6}
-            sx={{ height: "30vh" }}
+            sx={{ height: "30vh", marginTop: "100px" }}
           >
             <StyledMainTitle>{t.processpage.mainTitle1}</StyledMainTitle>
             <StyledMainTitle>{t.processpage.mainTitle2}</StyledMainTitle>
@@ -329,7 +330,7 @@ const Process = ({ t }) => {
         </StyledStepperGrid>
         <Parallax
           onProgressChange={(progressData) => {
-            const result = progressData * 2800;
+            const result = progressData;
             handleProgress(result);
           }}
         >
@@ -358,7 +359,11 @@ const Process = ({ t }) => {
                   left: 0,
                   backgroundColor: "#1e1f26",
                   width: { xs: "2px", sm: "5px" },
-                  height: `${progress}px`,
+                  height: {
+                    xs: `${progress * 2400}px`,
+                    sm: `${progress * 2900}px`,
+                    lg: `${progress * 3000}px`,
+                  },
                 }}
               />
               <StyledStepperGrid container spacing={0}>

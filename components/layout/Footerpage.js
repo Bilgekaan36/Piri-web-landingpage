@@ -35,11 +35,11 @@ const StyledLeftTitleGrid = styled(Grid)(({ theme }) => ({
 }));
 
 const StyledLeftTitleText = styled(Typography)(({ theme }) => ({
-  fontSize: "2rem",
+  fontSize: "2.2rem",
   color: "white",
   fontWeight: 600,
   [theme.breakpoints.down("mm")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
   },
 }));
 
@@ -48,29 +48,29 @@ const StyledRightTitleGrid = styled(Grid)(({ theme }) => ({
   color: "white",
 
   [theme.breakpoints.down("md")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
   },
 }));
 
 const StyledHeadContent = styled(Typography)(({ theme }) => ({
-  fontSize: "1.4rem",
+  fontSize: "1.6rem",
   fontWeight: "200",
   color: "white",
   marginBottom: "12px",
   [theme.breakpoints.down("xl")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
   },
   [theme.breakpoints.down("lg")]: {
-    fontSize: "1.1rem",
+    fontSize: "1.3rem",
   },
   [theme.breakpoints.down("mm")]: {
-    fontSize: "0.85rem",
+    fontSize: "1rem",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "0.85rem",
+    fontSize: "1rem",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "0.9rem",
+    fontSize: "1.1rem",
   },
 }));
 
@@ -83,7 +83,7 @@ const StyledFooterTitle = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("lg")]: {
     paddingTop: "4rem",
     paddingBottom: "4rem",
-    fontSize: "1.75rem",
+    fontSize: "1.95rem",
     lineHeight: "1",
   },
 }));

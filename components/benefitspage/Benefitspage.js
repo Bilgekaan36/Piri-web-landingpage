@@ -10,17 +10,17 @@ import { useRef } from "react";
 
 const StyledMainTitle = styled(Typography)(({ theme }) => ({
   color: "white",
-  fontSize: "4.5rem",
+  fontSize: "4.7rem",
   fontWeight: "700",
   lineHeight: 1,
   [theme.breakpoints.down("lg")]: {
-    fontSize: "2.5rem",
+    fontSize: "2.7rem",
   },
   [theme.breakpoints.down("mm")]: {
-    fontSize: "2rem",
+    fontSize: "2.2rem",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "2rem",
+    fontSize: "2.2rem",
   },
 }));
 

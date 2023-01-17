@@ -130,7 +130,7 @@ const ToolsStepper = ({ t }) => {
         <animated.div ref={ref1} style={card1}>
           <Card
             sx={{
-              height: 370,
+              height: 400,
               width: {
                 xs: "100%",
                 sm: "100%",
@@ -188,7 +188,7 @@ const ToolsStepper = ({ t }) => {
         <animated.div ref={ref2} style={card2}>
           <Card
             sx={{
-              height: 370,
+              height: 400,
               width: {
                 xs: "100%",
                 sm: "100%",
@@ -220,7 +220,7 @@ const ToolsStepper = ({ t }) => {
                 Material UI
               </Typography>
               <CardContent>
-                <Typography variant='body2' color='#848484'>
+                <Typography variant='body1' color='#848484'>
                   {t.toolsStepper.contentMaterialUi}
                 </Typography>
               </CardContent>
@@ -246,7 +246,7 @@ const ToolsStepper = ({ t }) => {
         <animated.div ref={ref3} style={card3}>
           <Card
             sx={{
-              height: 370,
+              height: 400,
               width: {
                 xs: "100%",
                 sm: "100%",
@@ -278,7 +278,7 @@ const ToolsStepper = ({ t }) => {
                 NODE.JS
               </Typography>
               <CardContent>
-                <Typography variant='body2' color='#848484'>
+                <Typography variant='body1' color='#848484'>
                   {t.toolsStepper.contentNodejs}
                 </Typography>
               </CardContent>
@@ -304,7 +304,7 @@ const ToolsStepper = ({ t }) => {
         <animated.div ref={ref4} style={card4}>
           <Card
             sx={{
-              height: 370,
+              height: 400,
               width: {
                 xs: "100%",
                 sm: "100%",
@@ -336,7 +336,7 @@ const ToolsStepper = ({ t }) => {
                 VERCEL
               </Typography>
               <CardContent>
-                <Typography variant='body2' color='#848484'>
+                <Typography variant='body1' color='#848484'>
                   {t.toolsStepper.contentVercel}
                 </Typography>
               </CardContent>
@@ -362,7 +362,7 @@ const ToolsStepper = ({ t }) => {
         <animated.div ref={ref5} style={card5}>
           <Card
             sx={{
-              height: 370,
+              height: 400,
               width: {
                 xs: "100%",
                 sm: "100%",
@@ -394,7 +394,7 @@ const ToolsStepper = ({ t }) => {
                 Next.js
               </Typography>
               <CardContent>
-                <Typography variant='body2' color='#848484'>
+                <Typography variant='body1' color='#848484'>
                   {t.toolsStepper.contentNextjs}
                 </Typography>
               </CardContent>
@@ -420,7 +420,7 @@ const ToolsStepper = ({ t }) => {
         <animated.div ref={ref6} style={card6}>
           <Card
             sx={{
-              height: 370,
+              height: 400,
               width: {
                 xs: "100%",
                 sm: "100%",
@@ -452,7 +452,7 @@ const ToolsStepper = ({ t }) => {
                 VUE
               </Typography>
               <CardContent>
-                <Typography variant='body2' color='#848484'>
+                <Typography variant='body1' color='#848484'>
                   {t.toolsStepper.contentVue}
                 </Typography>
               </CardContent>
@@ -478,7 +478,7 @@ const ToolsStepper = ({ t }) => {
         <animated.div ref={ref7} style={card7}>
           <Card
             sx={{
-              height: 370,
+              height: 400,
               width: {
                 xs: "100%",
                 sm: "100%",
@@ -510,7 +510,7 @@ const ToolsStepper = ({ t }) => {
                 FIREBASE
               </Typography>
               <CardContent>
-                <Typography variant='body2' color='#848484'>
+                <Typography variant='body1' color='#848484'>
                   {t.toolsStepper.contentFirebase}
                 </Typography>
               </CardContent>
@@ -536,7 +536,7 @@ const ToolsStepper = ({ t }) => {
         <animated.div ref={ref8} style={card8}>
           <Card
             sx={{
-              height: 370,
+              height: 400,
               width: {
                 xs: "100%",
                 sm: "100%",
@@ -568,7 +568,7 @@ const ToolsStepper = ({ t }) => {
                 JAVASCCRIPT
               </Typography>
               <CardContent>
-                <Typography variant='body2' color='#848484'>
+                <Typography variant='body1' color='#848484'>
                   {t.toolsStepper.contentJavascript}
                 </Typography>
               </CardContent>
@@ -594,7 +594,7 @@ const ToolsStepper = ({ t }) => {
         <animated.div ref={ref9} style={card9}>
           <Card
             sx={{
-              height: 370,
+              height: 400,
               width: {
                 xs: "100%",
                 sm: "100%",
@@ -626,7 +626,7 @@ const ToolsStepper = ({ t }) => {
                 ADOBE
               </Typography>
               <CardContent>
-                <Typography variant='body2' color='#848484'>
+                <Typography variant='body1' color='#848484'>
                   {t.toolsStepper.contentAdobe}
                 </Typography>
               </CardContent>
@@ -652,7 +652,7 @@ const ToolsStepper = ({ t }) => {
         <animated.div ref={ref10} style={card10}>
           <Card
             sx={{
-              height: 370,
+              height: 400,
               width: {
                 xs: "100%",
                 sm: "100%",
@@ -684,7 +684,7 @@ const ToolsStepper = ({ t }) => {
                 VSCODE
               </Typography>
               <CardContent>
-                <Typography variant='body2' color='#848484'>
+                <Typography variant='body1' color='#848484'>
                   {t.toolsStepper.contentVscode}
                 </Typography>
               </CardContent>

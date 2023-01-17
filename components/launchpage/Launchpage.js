@@ -92,7 +92,10 @@ const Launchpage = ({ t }) => {
       >
         <Typography
           variant='bigTitle'
-          sx={{ color: "white", fontSize: { xs: "8vw", sm: "6vw", md: "5vw" } }}
+          sx={{
+            color: "white",
+            fontSize: { xs: "10vw", sm: "8vw", md: "7vw" },
+          }}
         >
           {t.launchpage.launchTitle}
         </Typography>
@@ -100,7 +103,7 @@ const Launchpage = ({ t }) => {
           variant='smallTitle'
           sx={{
             color: "white",
-            fontSize: { xs: "4.5vw", sm: "3vw", md: "2vw", fontWeight: "500" },
+            fontSize: { xs: "6.5vw", sm: "5vw", md: "4vw", fontWeight: "500" },
             paddingTop: { xs: "32px", md: "64px", mm: "100px" },
           }}
         >
@@ -110,7 +113,7 @@ const Launchpage = ({ t }) => {
           variant='smallTitle'
           sx={{
             color: "white",
-            fontSize: { xs: "4.5vw", sm: "3vw", md: "2vw", fontWeight: "500" },
+            fontSize: { xs: "6.5vw", sm: "5vw", md: "4vw", fontWeight: "500" },
           }}
         >
           {t.launchpage.launchsubTitle2}

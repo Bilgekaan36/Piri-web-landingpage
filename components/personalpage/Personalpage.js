@@ -27,21 +27,23 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 }));
 
 const StyledHeadTitle = styled(Typography)(({ theme }) => ({
-  fontSize: "3rem",
+  fontSize: "3.2rem",
   fontWeight: "900",
   lineHeight: 1.2,
   color: "#1e1f26",
+  marginTop: "100px",
   [theme.breakpoints.down("lg")]: {
-    fontSize: "1.5rem",
+    fontSize: "1.9rem",
+    marginTop: "80px",
   },
 }));
 
 const StyledHeadContent = styled(Typography)(({ theme }) => ({
-  fontSize: "1.5rem",
+  fontSize: "1.7rem",
   color: "#1e1f26",
   marginTop: "32px",
   [theme.breakpoints.down("lg")]: {
-    fontSize: "0.75rem",
+    fontSize: "1.1rem",
     marginTop: "24px",
   },
 }));
@@ -125,10 +127,7 @@ const Personalpage = ({ t }) => {
           secondTitle={t.personalpage.title2}
           activeBackground='#1e1f26'
         />
-        <Container
-          maxWidth='xxl'
-          sx={{ display: "flex", paddingBottom: { xs: "0px", mm: "0px" } }}
-        >
+        <Container maxWidth='xxl' sx={{ display: "flex" }}>
           <Grid
             container
             spacing={0}
@@ -140,9 +139,9 @@ const Personalpage = ({ t }) => {
             <Grid
               item
               xs={12}
-              sm={4}
-              md={4}
-              mm={3}
+              sm={5}
+              md={5}
+              mm={5}
               lg={4}
               sx={{
                 display: "flex",

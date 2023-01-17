@@ -1,13 +1,4 @@
-import {
-  Container,
-  styled,
-  ImageList,
-  ImageListItem,
-  Typography,
-  useMediaQuery,
-  useTheme,
-  Box,
-} from "@mui/material";
+import { Container, styled, Typography, Box, Grid } from "@mui/material";
 import { useInView, animated } from "@react-spring/web";
 
 import { Parallax } from "react-scroll-parallax";
@@ -35,12 +26,12 @@ const StyledFooterText = styled(Typography)(({ theme }) => ({
   lineHeight: "1.2",
   fontWeight: "700",
   textAlign: "center",
-  fontSize: "4vw",
+  fontSize: "6.5vw",
   [theme.breakpoints.down("lg")]: {
-    fontSize: "5vw",
+    fontSize: "7.5vw",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "6vw",
+    fontSize: "8.5vw",
   },
 }));
 
@@ -52,84 +43,112 @@ const StyledFooterAuthor = styled(Typography)(({ theme }) => ({
 }));
 
 const Workspage = ({ t }) => {
-  const theme = useTheme();
-  const matchDownLg = useMediaQuery(theme.breakpoints.down("lg"));
   const [activeBackground, setActiveBackground] = useState("white");
   const handleStep = (data) => {
     setActiveBackground(data);
   };
 
-  const [ref1, springs1] = useInView(() => ({
-    from: {
-      x: "-100%",
-    },
-    to: {
-      x: "0",
-    },
-    config: {
-      duration: 1000,
-    },
-  }));
+  const [ref1, springs1] = useInView(
+    () => ({
+      from: {
+        x: "-100%",
+      },
+      to: {
+        x: "0",
+      },
+      config: {
+        duration: 400,
+      },
+    }),
+    {
+      rootMargin: "-40% 0%",
+    }
+  );
 
-  const [ref2, springs2] = useInView(() => ({
-    from: {
-      x: "100%",
-    },
-    to: {
-      x: "0",
-    },
-    config: {
-      duration: 1000,
-    },
-  }));
+  const [ref2, springs2] = useInView(
+    () => ({
+      from: {
+        x: "100%",
+      },
+      to: {
+        x: "0",
+      },
+      config: {
+        duration: 400,
+      },
+    }),
+    {
+      rootMargin: "-40% 0%",
+    }
+  );
 
-  const [ref3, springs3] = useInView(() => ({
-    from: {
-      x: "-100%",
-    },
-    to: {
-      x: "0",
-    },
-    config: {
-      duration: 1000,
-    },
-  }));
+  const [ref3, springs3] = useInView(
+    () => ({
+      from: {
+        x: "-100%",
+      },
+      to: {
+        x: "0",
+      },
+      config: {
+        duration: 400,
+      },
+    }),
+    {
+      rootMargin: "-40% 0%",
+    }
+  );
 
-  const [ref4, springs4] = useInView(() => ({
-    from: {
-      x: "100%",
-    },
-    to: {
-      x: "0",
-    },
-    config: {
-      duration: 1000,
-    },
-  }));
+  const [ref4, springs4] = useInView(
+    () => ({
+      from: {
+        x: "100%",
+      },
+      to: {
+        x: "0",
+      },
+      config: {
+        duration: 400,
+      },
+    }),
+    {
+      rootMargin: "-40% 0%",
+    }
+  );
 
-  const [ref5, springs5] = useInView(() => ({
-    from: {
-      x: "-100%",
-    },
-    to: {
-      x: "0",
-    },
-    config: {
-      duration: 1000,
-    },
-  }));
+  const [ref5, springs5] = useInView(
+    () => ({
+      from: {
+        x: "-100%",
+      },
+      to: {
+        x: "0",
+      },
+      config: {
+        duration: 400,
+      },
+    }),
+    {
+      rootMargin: "-40% 0%",
+    }
+  );
 
-  const [ref6, springs6] = useInView(() => ({
-    from: {
-      x: "100%",
-    },
-    to: {
-      x: "0",
-    },
-    config: {
-      duration: 1000,
-    },
-  }));
+  const [ref6, springs6] = useInView(
+    () => ({
+      from: {
+        x: "100%",
+      },
+      to: {
+        x: "0",
+      },
+      config: {
+        duration: 400,
+      },
+    }),
+    {
+      rootMargin: "-40% 0%",
+    }
+  );
 
   return (
     <Box
@@ -155,158 +174,116 @@ const Workspage = ({ t }) => {
           maxWidth='xxl'
           sx={{ backgroundColor: activeBackground }}
         >
-          <ImageList cols={1} rowHeight={400} sx={{ overflow: "hidden" }}>
+          <Grid container spacing={0} sx={{ overflow: "hidden" }}>
             <animated.div ref={ref1} style={springs1}>
-              <ImageListItem
-                rows={4}
-                sx={{ overflow: "hidden", position: "relative" }}
-              >
+              <Grid item xs={12} sx={{ overflow: "hidden" }}>
                 <video
                   src={require("../../public/videos/example.mp4")}
                   type='video/mp4'
                   muted
                   playsInline
                   height='100%'
-                  width='100%'
                   style={{
                     objectFit: "cover",
                     width: "100%",
                     height: "100%",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
                   }}
                   autoPlay={true}
                   loop
                 />
-              </ImageListItem>
+              </Grid>
             </animated.div>
             <animated.div ref={ref2} style={springs2}>
-              <ImageListItem
-                rows={4}
-                sx={{ overflow: "hidden", position: "relative" }}
-              >
+              <Grid item xs={12} sx={{ overflow: "hidden" }}>
                 <video
                   src={require("../../public/videos/admin.mp4")}
                   type='video/mp4'
                   muted
                   playsInline
                   height='100%'
-                  width='100%'
                   style={{
                     objectFit: "cover",
                     width: "100%",
                     height: "100%",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
                   }}
                   autoPlay={true}
                   loop
                 />
-              </ImageListItem>
+              </Grid>
             </animated.div>
             <animated.div ref={ref3} style={springs3}>
-              <ImageListItem
-                rows={4}
-                sx={{ overflow: "hidden", position: "relative" }}
-              >
+              <Grid item xs={12} sx={{ overflow: "hidden" }}>
                 <video
                   src={require("../../public/videos/bitcoin.mp4")}
                   type='video/mp4'
                   muted
                   playsInline
                   height='100%'
-                  width='100%'
                   style={{
                     objectFit: "cover",
                     width: "100%",
                     height: "100%",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
                   }}
                   autoPlay={true}
                   loop
                 />
-              </ImageListItem>
+              </Grid>
             </animated.div>
             <animated.div ref={ref4} style={springs4}>
-              <ImageListItem
-                rows={4}
-                sx={{ overflow: "hidden", position: "relative" }}
-              >
+              <Grid item xs={12} sx={{ overflow: "hidden" }}>
                 <video
                   src={require("../../public/videos/todo.mp4")}
                   type='video/mp4'
                   muted
                   playsInline
                   height='100%'
-                  width='100%'
                   style={{
                     objectFit: "cover",
                     width: "100%",
                     height: "100%",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
                   }}
                   autoPlay={true}
                   loop
                 />
-              </ImageListItem>
+              </Grid>
             </animated.div>
             <animated.div ref={ref5} style={springs5}>
-              <ImageListItem
-                rows={4}
-                sx={{ overflow: "hidden", position: "relative" }}
-              >
+              <Grid item xs={12} sx={{ overflow: "hidden" }}>
                 <video
                   src={require("../../public/videos/example.mp4")}
                   type='video/mp4'
                   muted
                   playsInline
                   height='100%'
-                  width='100%'
                   style={{
                     objectFit: "cover",
                     width: "100%",
                     height: "100%",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
                   }}
                   autoPlay={true}
                   loop
                 />
-              </ImageListItem>
+              </Grid>
             </animated.div>
             <animated.div ref={ref6} style={springs6}>
-              <ImageListItem
-                rows={4}
-                sx={{ overflow: "hidden", position: "relative" }}
-              >
+              <Grid item xs={12} sx={{ overflow: "hidden" }}>
                 <video
                   src={require("../../public/videos/admin.mp4")}
                   type='video/mp4'
                   muted
                   playsInline
                   height='100%'
-                  width='100%'
                   style={{
                     objectFit: "cover",
                     width: "100%",
                     height: "100%",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
                   }}
                   autoPlay={true}
                   loop
                 />
-              </ImageListItem>
+              </Grid>
             </animated.div>
-          </ImageList>
+          </Grid>
           <StyledFooterBox sx={{ backgroundColor: activeBackground }}>
             <StyledFooterText
               variant='bigTitle'
@@ -340,7 +317,7 @@ const Workspage = ({ t }) => {
             width: "100px",
             backgroundColor: "transparent",
             position: "absolute",
-            bottom: "20%",
+            bottom: "12%",
             left: 0,
             zIndex: 10,
           }}
@@ -359,42 +336,3 @@ const Workspage = ({ t }) => {
 };
 
 export default Workspage;
-
-const itemData = [
-  {
-    id: 0,
-    title: "Next.js",
-    author: "bilgekaan",
-    video: require("../../public/videos/example.mp4"),
-  },
-  {
-    id: 1,
-    title: "bilgekaanyilmaz.com",
-    author: "bilgekaan",
-    video: require("../../public/videos/admin.mp4"),
-  },
-  {
-    id: 2,
-    title: "Next.js",
-    author: "bilgekaan",
-    video: require("../../public/videos/bitcoin.mp4"),
-  },
-  {
-    id: 3,
-    title: "bilgekaanyilmaz.com",
-    author: "bilgekaan",
-    video: require("../../public/videos/todo.mp4"),
-  },
-  // {
-  //   id: 4,
-  //   title: "Next.js",
-  //   author: "bilgekaan",
-  //   video: require("../../public/videos/admin.mp4"),
-  // },
-  // {
-  //   id: 5,
-  //   title: "bilgekaanyilmaz.com",
-  //   author: "bilgekaan",
-  //   video: require("../../public/videos/example.mp4"),
-  // },
-];
