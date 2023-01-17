@@ -3,6 +3,7 @@ import styles from "./Personalpage.module.css";
 import Image from "next/image";
 import profil from "../../public/profil.png";
 import { Parallax } from "react-scroll-parallax";
+import { useInView, animated } from "@react-spring/web";
 
 import { Container, styled, Grid, Typography, Box } from "@mui/material";
 import ParallaxHeader from "../ParallaxHeader";
@@ -51,6 +52,38 @@ const Personalpage = ({ t }) => {
   const handleBackground = (data) => {
     setActiveBackground(data);
   };
+
+  const [ref1, springs1] = useInView(() => ({
+    from: { opacity: 0, scale: 0 },
+    to: { opacity: 1, scale: 1 },
+    config: {
+      duration: 400,
+    },
+  }));
+
+  const [ref2, springs2] = useInView(() => ({
+    from: { opacity: 0, scale: 0 },
+    to: { opacity: 1, scale: 1 },
+    config: {
+      duration: 400,
+    },
+  }));
+
+  const [ref3, springs3] = useInView(() => ({
+    from: { opacity: 0, scale: 0 },
+    to: { opacity: 1, scale: 1 },
+    config: {
+      duration: 400,
+    },
+  }));
+
+  const [ref4, springs4] = useInView(() => ({
+    from: { opacity: 0, scale: 0 },
+    to: { opacity: 1, scale: 1 },
+    config: {
+      duration: 400,
+    },
+  }));
 
   return (
     <Box
@@ -107,7 +140,7 @@ const Personalpage = ({ t }) => {
             <Grid
               item
               xs={12}
-              sm={5}
+              sm={4}
               md={4}
               mm={3}
               lg={4}
@@ -117,39 +150,47 @@ const Personalpage = ({ t }) => {
                 justifyContent: "center",
               }}
             >
-              <StyledHeadTitle
-                sx={{
-                  color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                }}
-              >
-                {t.personalpage.personalTitle1}
-              </StyledHeadTitle>
-              <StyledHeadContent
-                sx={{
-                  color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                }}
-              >
-                {t.personalpage.personalContent1}
-              </StyledHeadContent>
-              <StyledHeadContent
-                sx={{
-                  color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                }}
-              >
-                {t.personalpage.personalContent2}
-              </StyledHeadContent>
-              <StyledHeadContent
-                sx={{
-                  color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                }}
-              >
-                {t.personalpage.personalContent3}
-              </StyledHeadContent>
+              <animated.div ref={ref1} style={springs1}>
+                <StyledHeadTitle
+                  sx={{
+                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                  }}
+                >
+                  {t.personalpage.personalTitle1}
+                </StyledHeadTitle>
+              </animated.div>
+              <animated.div ref={ref2} style={springs2}>
+                <StyledHeadContent
+                  sx={{
+                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                  }}
+                >
+                  {t.personalpage.personalContent1}
+                </StyledHeadContent>
+              </animated.div>
+              <animated.div ref={ref3} style={springs3}>
+                <StyledHeadContent
+                  sx={{
+                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                  }}
+                >
+                  {t.personalpage.personalContent2}
+                </StyledHeadContent>
+              </animated.div>
+              <animated.div ref={ref4} style={springs4}>
+                <StyledHeadContent
+                  sx={{
+                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                  }}
+                >
+                  {t.personalpage.personalContent3}
+                </StyledHeadContent>
+              </animated.div>
             </Grid>
             <Grid
               item
-              xs={11}
-              sm={4.5}
+              xs={11.5}
+              sm={4.75}
               md={4}
               mm={3}
               lg={4.5}

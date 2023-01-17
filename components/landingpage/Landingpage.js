@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import * as Scroll from "react-scroll";
-import { useSpring, animated } from "@react-spring/web";
+import { useTrail, useSpring, animated } from "@react-spring/web";
 
 import Navbar from "./Navbar";
 import PiriwebSvg from "./landingpage_svg/PiriwebSvg";
@@ -71,17 +71,17 @@ const StyledSubtitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const TestLandingpage = (props) => {
+const Landingpage = (props) => {
   const { t } = props;
   let ScrollLink = Scroll.Link;
 
   const [springs, api] = useSpring(
     () => ({
-      from: { opacity: 0, scale: 0 },
-      to: { opacity: 1, scale: 1 },
-      delay: 1500,
+      from: { opacity: 0, translateY: 50 },
+      to: { opacity: 1, translateY: 0 },
+      delay: 1700,
       config: {
-        duration: 800,
+        duration: 400,
       },
     }),
     []
@@ -93,7 +93,7 @@ const TestLandingpage = (props) => {
       to: { opacity: 1, scale: 1 },
       delay: 1500,
       config: {
-        duration: 800,
+        duration: 400,
       },
     }),
     []
@@ -105,7 +105,7 @@ const TestLandingpage = (props) => {
       to: { opacity: 1, scale: 1 },
       delay: 1750,
       config: {
-        duration: 800,
+        duration: 400,
       },
     }),
     []
@@ -116,7 +116,7 @@ const TestLandingpage = (props) => {
       to: { opacity: 1, scale: 1 },
       delay: 2000,
       config: {
-        duration: 800,
+        duration: 400,
       },
     }),
     []
@@ -127,7 +127,7 @@ const TestLandingpage = (props) => {
       to: { opacity: 1, scale: 1 },
       delay: 2250,
       config: {
-        duration: 800,
+        duration: 400,
       },
     }),
     []
@@ -139,11 +139,22 @@ const TestLandingpage = (props) => {
       to: { opacity: 1, scale: 1 },
       delay: 2500,
       config: {
-        duration: 800,
+        duration: 400,
       },
     }),
     []
   );
+
+  const headers = [t.landingpage.mainHeader1, t.landingpage.mainHeader2];
+
+  const trails = useTrail(2, {
+    from: { opacity: 0, translateY: 50 },
+    to: { opacity: 1, translateY: 0 },
+    delay: 1700,
+    config: {
+      duration: 600,
+    },
+  });
 
   return (
     <StyledContainer
@@ -155,7 +166,7 @@ const TestLandingpage = (props) => {
         flexDirection: "column",
       }}
     >
-      <Container maxWidth='xxl'>
+      <Container disableGutters maxWidth='xxl'>
         <Navbar t={t}></Navbar>
       </Container>
       <Box sx={{ flexGrow: 1 }}>
@@ -169,16 +180,13 @@ const TestLandingpage = (props) => {
           }}
         >
           <Box>
-            <animated.div style={springs}>
-              <StyledHeaderModular variant='mainHeader' component='h1'>
-                {t.landingpage.mainHeader1}
-              </StyledHeaderModular>
-            </animated.div>
-            <animated.div style={springs}>
-              <StyledHeaderModular variant='mainHeader' component='h2'>
-                {t.landingpage.mainHeader2}
-              </StyledHeaderModular>
-            </animated.div>
+            {trails.map((props, index) => (
+              <animated.div style={props} key={index}>
+                <StyledHeaderModular variant='mainHeader' component='h1'>
+                  {headers[index]}
+                </StyledHeaderModular>
+              </animated.div>
+            ))}
           </Box>
           <Box sx={{ width: { xs: "90%", sm: "80%" } }}>
             <animated.div style={springs}>
@@ -646,4 +654,4 @@ const TestLandingpage = (props) => {
   );
 };
 
-export default TestLandingpage;
+export default Landingpage;

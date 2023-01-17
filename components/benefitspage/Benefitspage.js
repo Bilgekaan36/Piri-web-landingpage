@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import Grid from "@mui/material/Grid";
 import { Box, Container, styled, Typography } from "@mui/material";
+import { useInView, animated } from "@react-spring/web";
 
 import BenefitsStepper from "./BenefitsStepper";
 import ParallaxHeader from "../ParallaxHeader";
+import { useRef } from "react";
 
 const StyledMainTitle = styled(Typography)(({ theme }) => ({
   color: "white",
@@ -28,7 +30,6 @@ const StyledStepperGrid = styled(Grid)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  transition: "all 1s ease-in-out",
   marginBottom: "200px",
   marginTop: "120px",
 
@@ -58,13 +59,32 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 }));
 
 const Benefitspage = ({ t }) => {
+  const target = useRef(null);
+
   const [activeBackground, setActiveBackground] = useState("#1e1f26");
   const handleBackground = (data) => {
     setActiveBackground(data);
   };
 
+  const [ref, springs] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
+    {
+      rootMargin: "-40% 0%",
+    }
+  );
+
   return (
     <Box
+      ref={target}
       sx={{
         backgroundColor: activeBackground,
       }}
@@ -112,18 +132,24 @@ const Benefitspage = ({ t }) => {
             alignItems: "center",
           }}
         >
-          <StyledStepperGrid container spacing={0}>
-            <StyledGrid item xs={12} sm={8} mm={8} md={8} lg={6}>
-              <StyledMainTitle
-                sx={{
-                  color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
-                }}
-              >
-                {t.benefitspage.headTitle}
-              </StyledMainTitle>
-            </StyledGrid>
-          </StyledStepperGrid>
-          <BenefitsStepper t={t} activeBackground={activeBackground} />
+          <animated.div ref={ref} style={springs}>
+            <StyledStepperGrid container spacing={0}>
+              <StyledGrid item xs={12} sm={8} mm={8} md={8} lg={6}>
+                <StyledMainTitle
+                  sx={{
+                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                  }}
+                >
+                  {t.benefitspage.headTitle}
+                </StyledMainTitle>
+              </StyledGrid>
+            </StyledStepperGrid>
+          </animated.div>
+          <BenefitsStepper
+            target={target}
+            t={t}
+            activeBackground={activeBackground}
+          />
         </Container>
       </StyledContainer>
     </Box>

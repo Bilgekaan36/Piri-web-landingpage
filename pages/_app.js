@@ -31,6 +31,19 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: [
+      inter.style.fontFamily,
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
     logo: {
       fontWeight: 100,
       color: "#1E1F26",

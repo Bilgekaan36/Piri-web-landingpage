@@ -8,6 +8,7 @@ import {
   useTheme,
   Box,
 } from "@mui/material";
+import { useInView, animated } from "@react-spring/web";
 
 import { Parallax } from "react-scroll-parallax";
 import { useState } from "react";
@@ -58,6 +59,90 @@ const Workspage = ({ t }) => {
     setActiveBackground(data);
   };
 
+  const [ref1, springs1] = useInView(() => ({
+    from: {
+      opacity: 0,
+      x: "-100%",
+    },
+    to: {
+      opacity: 1,
+      x: "0",
+    },
+    config: {
+      duration: 400,
+    },
+  }));
+
+  const [ref2, springs2] = useInView(() => ({
+    from: {
+      opacity: 0,
+      x: "100%",
+    },
+    to: {
+      opacity: 1,
+      x: "0",
+    },
+    config: {
+      duration: 400,
+    },
+  }));
+
+  const [ref3, springs3] = useInView(() => ({
+    from: {
+      opacity: 0,
+      x: "-100%",
+    },
+    to: {
+      opacity: 1,
+      x: "0",
+    },
+    config: {
+      duration: 400,
+    },
+  }));
+
+  const [ref4, springs4] = useInView(() => ({
+    from: {
+      opacity: 0,
+      x: "100%",
+    },
+    to: {
+      opacity: 1,
+      x: "0",
+    },
+    config: {
+      duration: 400,
+    },
+  }));
+
+  const [ref5, springs5] = useInView(() => ({
+    from: {
+      opacity: 0,
+      x: "-100%",
+    },
+    to: {
+      opacity: 1,
+      x: "0",
+    },
+    config: {
+      duration: 400,
+    },
+  }));
+
+  const [ref6, springs6] = useInView(() => ({
+    from: {
+      opacity: 0,
+      x: "100%",
+    },
+    to: {
+      opacity: 1,
+      x: "0",
+    },
+    config: {
+      duration: 400,
+    },
+  }));
+
   return (
     <Box
       sx={{
@@ -71,7 +156,11 @@ const Workspage = ({ t }) => {
       />
       <Container
         maxWidth='false'
-        sx={{ backgroundColor: activeBackground, position: "relative" }}
+        sx={{
+          backgroundColor: activeBackground,
+          position: "relative",
+          padding: { xs: "0px", sm: "0px 16px" },
+        }}
       >
         <StyledContainer
           disableGutters
@@ -82,14 +171,13 @@ const Workspage = ({ t }) => {
             cols={matchDownLg ? 1 : 2}
             rowHeight={matchDownLg ? 160 : 340}
           >
-            {itemData.map((item) => (
+            <animated.div ref={ref1} style={springs1}>
               <ImageListItem
                 rows={4}
-                key={item.id}
                 sx={{ overflow: "hidden", position: "relative" }}
               >
                 <video
-                  src={item.video}
+                  src={require("../../public/videos/example.mp4")}
                   type='video/mp4'
                   muted
                   playsInline
@@ -107,7 +195,132 @@ const Workspage = ({ t }) => {
                   loop
                 />
               </ImageListItem>
-            ))}
+            </animated.div>
+            <animated.div ref={ref2} style={springs2}>
+              <ImageListItem
+                rows={4}
+                sx={{ overflow: "hidden", position: "relative" }}
+              >
+                <video
+                  src={require("../../public/videos/admin.mp4")}
+                  type='video/mp4'
+                  muted
+                  playsInline
+                  height='100%'
+                  width='100%'
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                  }}
+                  autoPlay={true}
+                  loop
+                />
+              </ImageListItem>
+            </animated.div>
+            <animated.div ref={ref3} style={springs3}>
+              <ImageListItem
+                rows={4}
+                sx={{ overflow: "hidden", position: "relative" }}
+              >
+                <video
+                  src={require("../../public/videos/bitcoin.mp4")}
+                  type='video/mp4'
+                  muted
+                  playsInline
+                  height='100%'
+                  width='100%'
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                  }}
+                  autoPlay={true}
+                  loop
+                />
+              </ImageListItem>
+            </animated.div>
+            <animated.div ref={ref4} style={springs4}>
+              <ImageListItem
+                rows={4}
+                sx={{ overflow: "hidden", position: "relative" }}
+              >
+                <video
+                  src={require("../../public/videos/todo.mp4")}
+                  type='video/mp4'
+                  muted
+                  playsInline
+                  height='100%'
+                  width='100%'
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                  }}
+                  autoPlay={true}
+                  loop
+                />
+              </ImageListItem>
+            </animated.div>
+            <animated.div ref={ref5} style={springs5}>
+              <ImageListItem
+                rows={4}
+                sx={{ overflow: "hidden", position: "relative" }}
+              >
+                <video
+                  src={require("../../public/videos/example.mp4")}
+                  type='video/mp4'
+                  muted
+                  playsInline
+                  height='100%'
+                  width='100%'
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                  }}
+                  autoPlay={true}
+                  loop
+                />
+              </ImageListItem>
+            </animated.div>
+            <animated.div ref={ref6} style={springs6}>
+              <ImageListItem
+                rows={4}
+                sx={{ overflow: "hidden", position: "relative" }}
+              >
+                <video
+                  src={require("../../public/videos/admin.mp4")}
+                  type='video/mp4'
+                  muted
+                  playsInline
+                  height='100%'
+                  width='100%'
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                  }}
+                  autoPlay={true}
+                  loop
+                />
+              </ImageListItem>
+            </animated.div>
           </ImageList>
           <StyledFooterBox sx={{ backgroundColor: activeBackground }}>
             <StyledFooterText
@@ -187,16 +400,16 @@ const itemData = [
     author: "bilgekaan",
     video: require("../../public/videos/todo.mp4"),
   },
-  {
-    id: 4,
-    title: "Next.js",
-    author: "bilgekaan",
-    video: require("../../public/videos/admin.mp4"),
-  },
-  {
-    id: 5,
-    title: "bilgekaanyilmaz.com",
-    author: "bilgekaan",
-    video: require("../../public/videos/example.mp4"),
-  },
+  // {
+  //   id: 4,
+  //   title: "Next.js",
+  //   author: "bilgekaan",
+  //   video: require("../../public/videos/admin.mp4"),
+  // },
+  // {
+  //   id: 5,
+  //   title: "bilgekaanyilmaz.com",
+  //   author: "bilgekaan",
+  //   video: require("../../public/videos/example.mp4"),
+  // },
 ];

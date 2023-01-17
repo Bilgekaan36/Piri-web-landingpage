@@ -1,8 +1,9 @@
 import styles from "./BenefitsStepper.module.css";
 
-import * as React from "react";
+import React from "react";
 import { Typography, styled, Grid } from "@mui/material";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import { useInView, animated } from "@react-spring/web";
 
 import conversion from "../../public/benefitspage_assets/conversion.json";
 import webdesign from "../../public/benefitspage_assets/web-design.json";
@@ -87,7 +88,6 @@ const StyledStepperGrid = styled(Grid)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  transition: "all 400ms ease-in-out",
   marginBottom: "100px",
   [theme.breakpoints.down("md")]: {
     marginBottom: "80px",
@@ -116,65 +116,111 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
 }));
 
 const BenefitsStepper = ({ activeBackground, t }) => {
-  const steps = [
+  const [ref1, springs1] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
     {
-      flexDirection: "row",
-      label: t.benefitsStepper.label1,
-      sublabel: t.benefitsStepper.sublabel1,
-      description: t.benefitsStepper.description1,
-      lottieFile: conversion,
-    },
+      rootMargin: "-25% 0%",
+    }
+  );
+
+  const [ref2, springs2] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
     {
-      flexDirection: "row-reverse",
-      label: t.benefitsStepper.label2,
-      sublabel: t.benefitsStepper.sublabel2,
-      description: t.benefitsStepper.description2,
-      lottieFile: webdesign,
-    },
+      rootMargin: "-25% 0%",
+    }
+  );
+
+  const [ref3, springs3] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
     {
-      flexDirection: "row",
-      label: t.benefitsStepper.label3,
-      sublabel: t.benefitsStepper.sublabel3,
-      description: t.benefitsStepper.description3,
-      lottieFile: webdevelopment,
-    },
+      rootMargin: "-25% 0%",
+    }
+  );
+
+  const [ref4, springs4] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
     {
-      flexDirection: "row-reverse",
-      label: t.benefitsStepper.label4,
-      sublabel: t.benefitsStepper.sublabel4,
-      description: t.benefitsStepper.description4,
-      lottieFile: responsivedesign,
-    },
+      rootMargin: "-25% 0%",
+    }
+  );
+
+  const [ref5, springs5] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
     {
-      flexDirection: "row",
-      label: t.benefitsStepper.label5,
-      sublabel: t.benefitsStepper.sublabel5,
-      description: t.benefitsStepper.description5,
-      lottieFile: brandingdesign,
-    },
+      rootMargin: "-25% 0%",
+    }
+  );
+
+  const [ref6, springs6] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
     {
-      flexDirection: "row-reverse",
-      label: t.benefitsStepper.label6,
-      sublabel: t.benefitsStepper.sublabel6,
-      description: t.benefitsStepper.description6,
-      lottieFile: mission,
-    },
-  ];
+      rootMargin: "-25% 0%",
+    }
+  );
 
   return (
     <>
-      {steps.map((step, index) => (
-        <StyledStepperGrid
-          container
-          spacing={0}
-          sx={{ flexDirection: step.flexDirection }}
-          key={index}
-        >
+      <animated.div ref={ref1} style={springs1}>
+        <StyledStepperGrid container spacing={0} sx={{ flexDirection: "row" }}>
           <StyledGrid item xs={12} sm={4} mm={4} md={4} lg={3}>
             <Player
               autoplay
               loop={true}
-              src={step.lottieFile}
+              src={conversion}
               className={styles.lottiePlayer}
             >
               <Controls
@@ -184,18 +230,182 @@ const BenefitsStepper = ({ activeBackground, t }) => {
             </Player>
           </StyledGrid>
           <StyledGrid item xs={12} sm={6} mm={6} md={6} lg={5}>
-            <StyledStepperTitle>{step.label}</StyledStepperTitle>
+            <StyledStepperTitle>{t.benefitsStepper.label1}</StyledStepperTitle>
             <StyledStepperSubTitle
               sx={{
                 color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
               }}
             >
-              {step.sublabel}
+              {t.benefitsStepper.sublabel1}
             </StyledStepperSubTitle>
-            <StyledStepperContent>{step.description}</StyledStepperContent>
+            <StyledStepperContent>
+              {t.benefitsStepper.description1}
+            </StyledStepperContent>
           </StyledGrid>
         </StyledStepperGrid>
-      ))}
+      </animated.div>
+      <animated.div ref={ref2} style={springs2}>
+        <StyledStepperGrid
+          container
+          spacing={0}
+          sx={{ flexDirection: "row-reverse" }}
+        >
+          <StyledGrid item xs={12} sm={4} mm={4} md={4} lg={3}>
+            <Player
+              autoplay
+              loop={true}
+              src={webdesign}
+              className={styles.lottiePlayer}
+            >
+              <Controls
+                visible={false}
+                buttons={["play", "repeat", "frame", "debug"]}
+              />
+            </Player>
+          </StyledGrid>
+          <StyledGrid item xs={12} sm={6} mm={6} md={6} lg={5}>
+            <StyledStepperTitle>{t.benefitsStepper.label2}</StyledStepperTitle>
+            <StyledStepperSubTitle
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {t.benefitsStepper.sublabel2}
+            </StyledStepperSubTitle>
+            <StyledStepperContent>
+              {t.benefitsStepper.description2}
+            </StyledStepperContent>
+          </StyledGrid>
+        </StyledStepperGrid>
+      </animated.div>
+      <animated.div ref={ref3} style={springs3}>
+        <StyledStepperGrid container spacing={0} sx={{ flexDirection: "row" }}>
+          <StyledGrid item xs={12} sm={4} mm={4} md={4} lg={3}>
+            <Player
+              autoplay
+              loop={true}
+              src={webdevelopment}
+              className={styles.lottiePlayer}
+            >
+              <Controls
+                visible={false}
+                buttons={["play", "repeat", "frame", "debug"]}
+              />
+            </Player>
+          </StyledGrid>
+          <StyledGrid item xs={12} sm={6} mm={6} md={6} lg={5}>
+            <StyledStepperTitle>{t.benefitsStepper.label3}</StyledStepperTitle>
+            <StyledStepperSubTitle
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {t.benefitsStepper.sublabel3}
+            </StyledStepperSubTitle>
+            <StyledStepperContent>
+              {t.benefitsStepper.description3}
+            </StyledStepperContent>
+          </StyledGrid>
+        </StyledStepperGrid>
+      </animated.div>
+      <animated.div ref={ref4} style={springs4}>
+        <StyledStepperGrid
+          container
+          spacing={0}
+          sx={{ flexDirection: "row-reverse" }}
+        >
+          <StyledGrid item xs={12} sm={4} mm={4} md={4} lg={3}>
+            <Player
+              autoplay
+              loop={true}
+              src={responsivedesign}
+              className={styles.lottiePlayer}
+            >
+              <Controls
+                visible={false}
+                buttons={["play", "repeat", "frame", "debug"]}
+              />
+            </Player>
+          </StyledGrid>
+          <StyledGrid item xs={12} sm={6} mm={6} md={6} lg={5}>
+            <StyledStepperTitle>{t.benefitsStepper.label4}</StyledStepperTitle>
+            <StyledStepperSubTitle
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {t.benefitsStepper.sublabel4}
+            </StyledStepperSubTitle>
+            <StyledStepperContent>
+              {t.benefitsStepper.description4}
+            </StyledStepperContent>
+          </StyledGrid>
+        </StyledStepperGrid>
+      </animated.div>
+      <animated.div ref={ref5} style={springs5}>
+        <StyledStepperGrid container spacing={0} sx={{ flexDirection: "row" }}>
+          <StyledGrid item xs={12} sm={4} mm={4} md={4} lg={3}>
+            <Player
+              autoplay
+              loop={true}
+              src={brandingdesign}
+              className={styles.lottiePlayer}
+            >
+              <Controls
+                visible={false}
+                buttons={["play", "repeat", "frame", "debug"]}
+              />
+            </Player>
+          </StyledGrid>
+          <StyledGrid item xs={12} sm={6} mm={6} md={6} lg={5}>
+            <StyledStepperTitle>{t.benefitsStepper.label5}</StyledStepperTitle>
+            <StyledStepperSubTitle
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {t.benefitsStepper.sublabel5}
+            </StyledStepperSubTitle>
+            <StyledStepperContent>
+              {t.benefitsStepper.description5}
+            </StyledStepperContent>
+          </StyledGrid>
+        </StyledStepperGrid>
+      </animated.div>
+      <animated.div ref={ref6} style={springs6}>
+        <StyledStepperGrid
+          container
+          spacing={0}
+          sx={{ flexDirection: "row-reverse" }}
+        >
+          <StyledGrid item xs={12} sm={4} mm={4} md={4} lg={3}>
+            <Player
+              autoplay
+              loop={true}
+              src={mission}
+              className={styles.lottiePlayer}
+            >
+              <Controls
+                visible={false}
+                buttons={["play", "repeat", "frame", "debug"]}
+              />
+            </Player>
+          </StyledGrid>
+          <StyledGrid item xs={12} sm={6} mm={6} md={6} lg={5}>
+            <StyledStepperTitle>{t.benefitsStepper.label6}</StyledStepperTitle>
+            <StyledStepperSubTitle
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {t.benefitsStepper.sublabel6}
+            </StyledStepperSubTitle>
+            <StyledStepperContent>
+              {t.benefitsStepper.description6}
+            </StyledStepperContent>
+          </StyledGrid>
+        </StyledStepperGrid>
+      </animated.div>
     </>
   );
 };

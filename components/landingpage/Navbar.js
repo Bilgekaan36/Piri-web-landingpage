@@ -50,7 +50,7 @@ const Navbar = (props) => {
   let ScrollLink = Scroll.Link;
 
   return (
-    <Container disableGutters sx={{ width: { xxl: 1536, xl: 900, md: 700 } }}>
+    <Container sx={{ width: { xxl: 1536, xl: 900, md: 700 } }}>
       <Box>
         <StyledAppBar>
           <Toolbar sx={{ padding: "0px" }}>
