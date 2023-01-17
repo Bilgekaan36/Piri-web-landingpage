@@ -1,3 +1,5 @@
+import styles from "./Landingpage.module.css";
+
 import {
   Box,
   Card,
@@ -10,7 +12,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import * as Scroll from "react-scroll";
-import { useTrail, useSpring, animated } from "@react-spring/web";
+import { useTrail, useSpring, useInView, animated } from "@react-spring/web";
 
 import Navbar from "./Navbar";
 import PiriwebSvg from "./landingpage_svg/PiriwebSvg";
@@ -145,6 +147,22 @@ const Landingpage = (props) => {
     []
   );
 
+  const [ref1, springs1] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
+    {
+      rootMargin: "-40% 0%",
+    }
+  );
+
   const headers = [t.landingpage.mainHeader1, t.landingpage.mainHeader2];
 
   const trails = useTrail(2, {
@@ -199,129 +217,143 @@ const Landingpage = (props) => {
         <Grid container spacing={0}>
           <Grid item xs={12} xl={4}>
             <animated.div style={card1}>
-              <Grid
-                item
-                xs={12}
-                sx={{
-                  height: "756px",
-                  margin: "6px",
-                }}
-              >
-                <ScrollLink
-                  to='footer'
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={3000}
+              <animated.div ref={ref1} style={springs1}>
+                <Grid
+                  item
+                  xs={12}
+                  sx={{
+                    height: "756px",
+                    margin: "6px",
+                  }}
                 >
-                  <Card
-                    sx={{
-                      height: "100%",
-                      border: "1px solid #E9E9E9",
-                      boxShadow: "1px 1px 24px #E9E9E9",
-                    }}
+                  <ScrollLink
+                    to='footer'
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={3000}
                   >
-                    <CardActionArea
+                    <Card
                       sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
                         height: "100%",
+                        border: "1px solid #E9E9E9",
+                        boxShadow: "1px 1px 24px #E9E9E9",
+                        overflow: "hidden",
+                        position: "relative",
+                        "&:before": {
+                          content: '""',
+                          position: "absolute",
+                          left: "-80%",
+                          backgroundColor: " rgba(142, 142, 142, 0.3)",
+                          height: "100%",
+                          width: "100px",
+                          transform: "skewX(-30deg)",
+                        },
                       }}
+                      className={styles.shine}
                     >
-                      <Box
+                      <CardActionArea
                         sx={{
-                          width: "100%",
-                          height: "200px",
                           display: "flex",
+                          flexDirection: "column",
                           justifyContent: "center",
                           alignItems: "center",
-                        }}
-                      >
-                        <PiriwebSvg />
-                      </Box>
-                      <CardContent>
-                        <Typography
-                          gutterBottom
-                          variant='h5'
-                          component='div'
-                          sx={{
-                            textAlign: "center",
-                            fontWeight: 100,
-                            color: "#1E1F26",
-                            fontSize: "3rem",
-                            letterSpacing: "0.3em",
-                          }}
-                        >
-                          PIRI WEB
-                        </Typography>
-                      </CardContent>
-                      <CardContent
-                        sx={{
-                          flexGrow: 0.25,
-                          display: "flex",
-                          alignItems: "center",
-                          textAlign: "center",
-                          width: { xs: "100%", sm: "80%" },
-                        }}
-                      >
-                        <Typography
-                          variant='body2'
-                          sx={{
-                            fontSize: "1.2rem",
-                            fontWeight: "200",
-                            color: "#848484",
-                            transition: "all 400ms ease-in-out",
-                          }}
-                        >
-                          {t.landingpage.companyContent}
-                        </Typography>
-                      </CardContent>
-                      <CardContent
-                        sx={{
-                          flexGrow: 1,
-                          display: "flex",
-                          alignItems: "center",
-                          textAlign: "center",
+                          height: "100%",
                         }}
                       >
                         <Box
                           sx={{
-                            backgroundColor: "#0170F3",
-                            padding: " 6px 8px",
-                            borderRadius: "4px",
-                            boxShadow: "1px 1px 12px #77adea",
+                            width: "100%",
+                            height: "200px",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                        >
+                          <PiriwebSvg />
+                        </Box>
+                        <CardContent>
+                          <Typography
+                            gutterBottom
+                            variant='h5'
+                            component='div'
+                            sx={{
+                              textAlign: "center",
+                              fontWeight: 100,
+                              color: "#1E1F26",
+                              fontSize: "3rem",
+                              letterSpacing: "0.3em",
+                            }}
+                          >
+                            PIRI WEB
+                          </Typography>
+                        </CardContent>
+                        <CardContent
+                          sx={{
+                            flexGrow: 0.25,
                             display: "flex",
                             alignItems: "center",
+                            textAlign: "center",
+                            width: { xs: "100%", sm: "80%" },
                           }}
                         >
                           <Typography
                             variant='body2'
                             sx={{
-                              color: "white",
-                              fontSize: {
-                                xxl: "1.3rem",
-                                xl: "1rem",
-                                sm: "0.9rem",
-                                xs: "0.9rem",
-                              },
+                              fontSize: "1.2rem",
                               fontWeight: "200",
+                              color: "#848484",
                               transition: "all 400ms ease-in-out",
-                              backgroundColor: "1E1F26",
-                              lineHeight: 1.75,
-                              marginRight: "6px",
                             }}
                           >
-                            {t.landingpage.companyButton}
+                            {t.landingpage.companyContent}
                           </Typography>
-                          <StartSvg />
-                        </Box>
-                      </CardContent>
-                    </CardActionArea>
-                  </Card>
-                </ScrollLink>
-              </Grid>
+                        </CardContent>
+                        <CardContent
+                          sx={{
+                            flexGrow: 1,
+                            display: "flex",
+                            alignItems: "center",
+                            textAlign: "center",
+                          }}
+                        >
+                          <Box
+                            sx={{
+                              backgroundColor: "#0170F3",
+                              padding: " 6px 8px",
+                              borderRadius: "4px",
+                              boxShadow: "1px 1px 12px #77adea",
+                              display: "flex",
+                              alignItems: "center",
+                            }}
+                          >
+                            <Typography
+                              variant='body2'
+                              sx={{
+                                color: "white",
+                                fontSize: {
+                                  xxl: "1.3rem",
+                                  xl: "1rem",
+                                  sm: "0.9rem",
+                                  xs: "0.9rem",
+                                },
+                                fontWeight: "200",
+                                transition: "all 400ms ease-in-out",
+                                backgroundColor: "1E1F26",
+                                lineHeight: 1.75,
+                                marginRight: "6px",
+                              }}
+                            >
+                              {t.landingpage.companyButton}
+                            </Typography>
+                            <StartSvg />
+                          </Box>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </ScrollLink>
+                </Grid>
+              </animated.div>
             </animated.div>
           </Grid>
           <Grid item xs={12} md={6} xl={4}>

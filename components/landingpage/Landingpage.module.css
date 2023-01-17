@@ -25,3 +25,34 @@
     scale: 160%;
   }
 }
+
+.shine {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+  /* background-size: 200px; */
+  overflow: hidden;
+}
+
+.shine::before {
+  content: "";
+  position: absolute;
+  left: -80%;
+  background-color: rgba(142, 142, 142, 0.3);
+  height: 100%;
+  width: 100px;
+  transform: skewX(-30deg);
+}
+
+.shine:hover::before {
+  animation: slide 1s;
+}
+
+@keyframes slide {
+  0%,
+  100% {
+    left: -80%;
+  }
+  50% {
+    left: 140%;
+  }
+}

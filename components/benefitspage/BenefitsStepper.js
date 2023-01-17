@@ -11,6 +11,8 @@ import webdevelopment from "../../public/benefitspage_assets/web-development.jso
 import responsivedesign from "../../public/benefitspage_assets/responsive-design.json";
 import brandingdesign from "../../public/benefitspage_assets/branding-design.json";
 import mission from "../../public/benefitspage_assets/mission.json";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const StyledStepperTitle = styled(Typography)(({ theme }) => ({
   fontSize: "1.4rem",
@@ -116,6 +118,12 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
 }));
 
 const BenefitsStepper = ({ activeBackground, t }) => {
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    setInit(true);
+  }, []);
+
   const [ref1, springs1] = useInView(
     () => ({
       from: {
@@ -214,6 +222,36 @@ const BenefitsStepper = ({ activeBackground, t }) => {
 
   return (
     <>
+      {!init && (
+        <StyledStepperGrid container spacing={0} sx={{ flexDirection: "row" }}>
+          <StyledGrid item xs={12} sm={4} mm={4} md={4} lg={3}>
+            <Player
+              autoplay
+              loop={true}
+              src={conversion}
+              className={styles.lottiePlayer}
+            >
+              <Controls
+                visible={false}
+                buttons={["play", "repeat", "frame", "debug"]}
+              />
+            </Player>
+          </StyledGrid>
+          <StyledGrid item xs={12} sm={6} mm={6} md={6} lg={5}>
+            <StyledStepperTitle>{t.benefitsStepper.label1}</StyledStepperTitle>
+            <StyledStepperSubTitle
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {t.benefitsStepper.sublabel1}
+            </StyledStepperSubTitle>
+            <StyledStepperContent>
+              {t.benefitsStepper.description1}
+            </StyledStepperContent>
+          </StyledGrid>
+        </StyledStepperGrid>
+      )}
       <animated.div ref={ref1} style={springs1}>
         <StyledStepperGrid container spacing={0} sx={{ flexDirection: "row" }}>
           <StyledGrid item xs={12} sm={4} mm={4} md={4} lg={3}>
