@@ -63,7 +63,7 @@ const translation = {
       "Die höchste Conversion durch richtige Positionierung! Mache aus Besuchern echte Kunden.",
   },
   benefitspage: {
-    title1: "DEINE",
+    title1: "VORTEILE",
     title2: "VORTEILE",
     headTitle:
       "Alles, was du brauchst, um Sichtbarkeit, Traffic und Umsatz zu steigern.",
@@ -102,14 +102,14 @@ const translation = {
                    Drei Sekunden gelten in der Regel als Maximalwert für die Ladedauer, wobei 200ms als optimaler Wert gilt.`,
   },
   workspage: {
-    title1: "MEINE",
+    title1: "PROJEKTE",
     title2: "PROJEKTE",
     quote1: "Machen Sie es einfach,",
     quote2: "aber bedeutsam.",
   },
   toolspage: {
-    title1: "TECH",
-    title2: "STACK",
+    title1: "TECHNOLOGIEN",
+    title2: "TECHNOLOGIEN",
   },
   toolsStepper: {
     contentReact:
@@ -138,7 +138,7 @@ const translation = {
       "Visual Studio Code, allgemein auch als VS Code bezeichnet, ist ein Quellcode-Editor von Microsoft.",
   },
   processpage: {
-    title1: "DER",
+    title1: "PROZESS",
     title2: "PROZESS",
     mainTitle1: "DEINE",
     mainTitle2: "APPLIKATION",
@@ -183,8 +183,8 @@ const translation = {
     launchsubTitle2: "abzuheben!",
   },
   personalpage: {
-    title1: "ÜBER",
-    title2: "MICH",
+    title1: "PERSÖNLICH",
+    title2: "PERSÖNLICH",
     personalTitle1: "Deine Web-Applikation, deine Signifikanz!",
     personalContent1:
       "Ich bin als Fullstack Webentwickler tätig. Ich liebe es, Ideen und Projekte mit großer Begeisterung zu erstellen.",

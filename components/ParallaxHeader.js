@@ -6,7 +6,7 @@ import { styled, Typography, Box } from "@mui/material";
 const StyledTitleText = styled(Typography)(({ theme }) => ({
   fontSize: "10vw",
   fontWeight: "400",
-  paddingRight: "12px",
+  padding: "0px 32px",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
@@ -27,7 +27,6 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
   fontSize: "10vw",
   fontWeight: "400",
   color: "#1e1f26",
-  paddingRight: "64px",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",

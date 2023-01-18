@@ -47,11 +47,13 @@ const StyledHeadContent = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const Personalpage = ({ t }) => {
+const Personalpage = (props) => {
+  const t = props.t;
   const [activeBackground, setActiveBackground] = useState("white");
 
   const handleBackground = (data) => {
     setActiveBackground(data);
+    props.exportActiveBackground(data);
   };
 
   const [ref1, springs1] = useInView(() => ({
@@ -105,7 +107,7 @@ const Personalpage = ({ t }) => {
             width: "100px",
             backgroundColor: "transparent",
             position: "absolute",
-            bottom: "65%",
+            bottom: "40%",
             left: 0,
             zIndex: 10,
           }}

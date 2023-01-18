@@ -32,7 +32,7 @@ const translation = {
       "The highest conversion through correct positioning! Turn visitors into real customers.",
   },
   benefitspage: {
-    title1: "YOUR",
+    title1: "BENEFITS",
     title2: "BENEFITS",
     headTitle: "Everything you need to increase visibility, traffic and sales.",
   },
@@ -65,14 +65,14 @@ const translation = {
     description6: `Three seconds is usually the maximum value for the charging time, with 200ms being the optimal value.`,
   },
   workspage: {
-    title1: "MY",
+    title1: "PROJECTS",
     title2: "PROJECTS",
     quote1: "Make it easy,",
     quote2: "but significant.",
   },
   toolspage: {
-    title1: "TECH",
-    title2: "STACK",
+    title1: "TECHNOLOGYS",
+    title2: "TECHNOLOGYS",
   },
   toolsStepper: {
     contentReact:
@@ -101,7 +101,7 @@ const translation = {
       "Visual Studio Code, also commonly referred to as VS Code, is a source-code editor made by Microsoft.",
   },
   processpage: {
-    title1: "THE",
+    title1: "PROCESS",
     title2: "PROCESS",
     mainTitle1: "YOUR",
     mainTitle2: "APPLICATION",
@@ -146,8 +146,8 @@ const translation = {
     launchsubTitle2: "digitally!",
   },
   personalpage: {
-    title1: "ABOUT",
-    title2: "ME",
+    title1: "PERSONALITY",
+    title2: "PERSONALITY",
     personalTitle1: "Your web application, your significance!",
     personalContent1:
       "I've been a full stack web developer. I love creating ideas and projects with great enthusiasm.",

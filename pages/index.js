@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { Container } from "@mui/material";
 import { useEffect, useRef } from "react";
 import { animateScroll as scroll } from "react-scroll";
+import { useState } from "react";
 
 import PageTransition from "../components/PageTransition";
 import Landingpage from "../components/landingpage/Landingpage";
@@ -18,6 +19,7 @@ import de from "../locales/de";
 import tr from "../locales/tr";
 
 export default function Main() {
+  const [activeBackground, setActiveBackground] = useState("white");
   const ref = useRef();
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
@@ -38,6 +40,10 @@ export default function Main() {
     scroll.scrollToTop();
   });
 
+  const exportActiveBackground = (data) => {
+    setActiveBackground(data);
+  };
+
   return (
     <Container disableGutters maxWidth='false'>
       <PageTransition />
@@ -47,8 +53,8 @@ export default function Main() {
       <Toolspage t={t} />
       <Processpage t={t} />
       <Launchpage t={t} />
-      <Personalpage t={t} />
-      <Footerpage ref={ref} />
+      <Personalpage exportActiveBackground={exportActiveBackground} t={t} />
+      <Footerpage activeBackground={activeBackground} ref={ref} />
     </Container>
   );
 }

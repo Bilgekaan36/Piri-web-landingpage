@@ -56,22 +56,22 @@ const StyledHeaderModular = styled(Typography)(({ theme }) => ({
 
 const StyledSubtitle = styled(Typography)(({ theme }) => ({
   textAlign: "center",
-  fontSize: "1.5rem",
+  fontSize: "1.7rem",
   fontWeight: "200",
   color: "#848484",
   marginTop: "32px",
   transition: "all 400ms ease-in-out",
   [theme.breakpoints.down("xl")]: {
-    fontSize: "1.3rem",
+    fontSize: "1.5rem",
   },
   [theme.breakpoints.down("lg")]: {
-    fontSize: "1.1rem",
+    fontSize: "1.3rem",
   },
   [theme.breakpoints.down("mm")]: {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "0.9rem",
+    fontSize: "1.1rem",
   },
 }));
 

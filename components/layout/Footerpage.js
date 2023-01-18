@@ -120,7 +120,10 @@ const Footerpage = (props, ref) => {
       break;
   }
   return (
-    <StyledContainer maxWidth='false'>
+    <StyledContainer
+      maxWidth='false'
+      sx={{ backgroundColor: props.activeBackground }}
+    >
       <Container
         disableGutters
         maxWidth='xxl'
@@ -129,7 +132,13 @@ const Footerpage = (props, ref) => {
       >
         <StyledHeaderGrid container spacing={0}>
           <StyledLeftTitleGrid item xs={10} sm={5} lg={4}>
-            <StyledLeftTitleText variant='bigTitle' sx={{ color: "white" }}>
+            <StyledLeftTitleText
+              variant='bigTitle'
+              sx={{
+                color:
+                  props.activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
               {t.footerpage.leftTitle1}
             </StyledLeftTitleText>
             <StyledLeftTitleText
@@ -140,19 +149,40 @@ const Footerpage = (props, ref) => {
             >
               {t.footerpage.leftTitle2}
             </StyledLeftTitleText>
-            <StyledLeftTitleText variant='bigTitle' sx={{ color: "white" }}>
+            <StyledLeftTitleText
+              variant='bigTitle'
+              sx={{
+                color:
+                  props.activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
               {t.footerpage.leftTitle3}
             </StyledLeftTitleText>
           </StyledLeftTitleGrid>
           <StyledRightTitleGrid item xs={10} sm={5} lg={4}>
             <Box>
-              <StyledHeadContent>
+              <StyledHeadContent
+                sx={{
+                  color:
+                    props.activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                }}
+              >
                 {t.footerpage.footerContent1}
               </StyledHeadContent>
-              <StyledHeadContent>
+              <StyledHeadContent
+                sx={{
+                  color:
+                    props.activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                }}
+              >
                 {t.footerpage.footerContent2}
               </StyledHeadContent>
-              <StyledHeadContent>
+              <StyledHeadContent
+                sx={{
+                  color:
+                    props.activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                }}
+              >
                 {t.footerpage.footerContent3}
               </StyledHeadContent>
             </Box>
@@ -180,7 +210,14 @@ const Footerpage = (props, ref) => {
           >
             <Link href='https://calendly.com/piri-web/30min' legacyBehavior>
               <a target='_blank' rel='noopener noreferrer'>
-                <StyledFooterTitle>
+                <StyledFooterTitle
+                  sx={{
+                    color:
+                      props.activeBackground === "#1e1f26"
+                        ? "white"
+                        : "#1e1f26",
+                  }}
+                >
                   {t.footerpage.meetingTitle}
                 </StyledFooterTitle>
               </a>
@@ -202,7 +239,14 @@ const Footerpage = (props, ref) => {
             <a
               href={`mailto:bilgekaan.yilmaz36@gmail.com?subject=${""}&body=${""}`}
             >
-              <StyledFooterTitle> {t.footerpage.emailTitle}</StyledFooterTitle>
+              <StyledFooterTitle
+                sx={{
+                  color:
+                    props.activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                }}
+              >
+                {t.footerpage.emailTitle}
+              </StyledFooterTitle>
             </a>
             <Box className={styles.iconArrow} />
           </StyledGrid>

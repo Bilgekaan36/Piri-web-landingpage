@@ -63,8 +63,8 @@ const translation = {
       "Doğru konumlandırma sayesinde en yüksek dönüşüm! Ziyaretçileri gerçek müşterilere dönüştürün",
   },
   benefitspage: {
-    title1: "SİZİN",
-    title2: "FAYDALARINIZ",
+    title1: "AVANTAJINIZ",
+    title2: "AVANTAJINIZ",
     headTitle:
       "Görünürlüğü, trafiği ve satışları artırmak için ihtiyacınız olan her şey.",
   },
@@ -96,14 +96,14 @@ const translation = {
     description6: `Üç saniye genellikle yüklenme süresi için maksimum değerdir ve 200ms en uygun değerdir.`,
   },
   workspage: {
-    title1: "KENDİ",
+    title1: "PROJELERİM",
     title2: "PROJELERİM",
     quote1: "Kolay ama,",
     quote2: "anlamlı yap.",
   },
   toolspage: {
-    title1: "TEK",
-    title2: "YIĞINI",
+    title1: "TEKNOLOJİ",
+    title2: "TEKNOLOJİ",
   },
   toolsStepper: {
     contentReact:
@@ -133,7 +133,7 @@ const translation = {
   },
   processpage: {
     title1: "İŞLEM",
-    title2: "SÜRECİ",
+    title2: "İŞLEM",
     mainTitle1: "SIZIN",
     mainTitle2: "UYGULAMANIZ",
     mainTitle3: "Her şey tek parça gibi tek kaynaktan.",
@@ -177,8 +177,8 @@ const translation = {
     launchsubTitle2: "havalanma zamanı!",
   },
   personalpage: {
-    title1: "KENDİM",
-    title2: "HAKKINDA",
+    title1: "HAKKIMDA",
+    title2: "HAKKIMDA",
     personalTitle1: "Sizin web uygulamanız, sizin prestijiniz!",
     personalContent1:
       "Full stack web geliştiricisiyim. Büyük bir heyecanla fikir ve proje üretmeyi seviyorum.",
