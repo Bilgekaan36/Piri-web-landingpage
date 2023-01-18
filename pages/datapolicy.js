@@ -133,7 +133,7 @@ const Imprint = () => {
             width: "100px",
             backgroundColor: "transparent",
             position: "absolute",
-            bottom: "17%",
+            bottom: "10%",
             left: 0,
             zIndex: 10,
           }}
@@ -861,7 +861,7 @@ const Imprint = () => {
           </StyledTitleTextSecond>
         </Parallax>
       </StyledHeader>
-      <Footerpage />
+      <Footerpage activeBackground={activeBackground} />
     </>
   );
 };

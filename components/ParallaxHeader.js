@@ -30,19 +30,15 @@ const StyledTitleTextSecond = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {
     fontSize: "15vw",
-    paddingRight: "32px",
   },
   [theme.breakpoints.down("mm")]: {
     fontSize: "15vw",
-    paddingRight: "32px",
   },
   [theme.breakpoints.down("md")]: {
     fontSize: "17vw",
-    paddingRight: "32px",
   },
   [theme.breakpoints.down("sm")]: {
     fontSize: "17vw",
-    paddingRight: "24px",
   },
   [theme.breakpoints.down("xs")]: {},
 }));

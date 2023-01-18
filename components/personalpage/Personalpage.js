@@ -92,12 +92,14 @@ const Personalpage = (props) => {
     <Box
       sx={{
         backgroundColor: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+        position: "relative",
       }}
     >
       <StyledContainer
         disableGutters
         maxWidth='false'
         sx={{
+          position: "relative",
           backgroundColor: activeBackground === "white" ? "white" : "#1e1f26",
         }}
       >
@@ -130,6 +132,7 @@ const Personalpage = (props) => {
         />
         <Container maxWidth='xxl' sx={{ display: "flex" }}>
           <Grid
+            className='footer'
             container
             spacing={0}
             sx={{
@@ -163,7 +166,7 @@ const Personalpage = (props) => {
               <animated.div ref={ref2} style={springs2}>
                 <StyledHeadContent
                   sx={{
-                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                    color: activeBackground === "#1e1f26" ? "white" : "#848484",
                   }}
                 >
                   {t.personalpage.personalContent1}
@@ -172,7 +175,7 @@ const Personalpage = (props) => {
               <animated.div ref={ref3} style={springs3}>
                 <StyledHeadContent
                   sx={{
-                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                    color: activeBackground === "#1e1f26" ? "white" : "#848484",
                   }}
                 >
                   {t.personalpage.personalContent2}
@@ -181,7 +184,7 @@ const Personalpage = (props) => {
               <animated.div ref={ref4} style={springs4}>
                 <StyledHeadContent
                   sx={{
-                    color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                    color: activeBackground === "#1e1f26" ? "white" : "#848484",
                   }}
                 >
                   {t.personalpage.personalContent3}

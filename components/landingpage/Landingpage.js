@@ -221,19 +221,6 @@ const Landingpage = (props) => {
     },
   });
 
-  // const { ref: sixtCard } = useParallax({
-  //   onEnter: () => setSixtAnimation(true),
-  //   onExit: () => setSixtAnimation(false),
-  // });
-
-  // const startView = () => {
-  //   setAnimation(true);
-  // };
-
-  // const closeView = () => {
-  //   setAnimation(false);
-  // };
-
   const headers = [t.landingpage.mainHeader1, t.landingpage.mainHeader2];
 
   const trails = useTrail(2, {

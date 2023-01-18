@@ -271,7 +271,7 @@ const Footerpage = (props, ref) => {
               }}
             >
               <Typography variant='h7' sx={{ fontSize: { xs: "0.75rem" } }}>
-                © 2022 by bilgekaan yilmaz
+                © 2023 by bilgekaan yilmaz
               </Typography>
               <Box
                 flexGrow={1}
@@ -307,7 +307,6 @@ const Footerpage = (props, ref) => {
                 </Link>
               </Box>
               <Box
-                className='footer'
                 sx={{
                   display: "flex",
                   justifyContent: "center",

@@ -87,7 +87,7 @@ const Navbar = (props) => {
             <StyledButton>
               <ScrollLink
                 to='footer'
-                spy={true}
+                spy={false}
                 smooth={true}
                 offset={0}
                 duration={3000}
