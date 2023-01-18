@@ -12,7 +12,8 @@ import {
 } from "@mui/material";
 import React from "react";
 import * as Scroll from "react-scroll";
-import { useTrail, useSpring, useInView, animated } from "@react-spring/web";
+import { useTrail, useSpring, animated } from "@react-spring/web";
+import { useParallax } from "react-scroll-parallax";
 
 import Navbar from "./Navbar";
 import PiriwebSvg from "./landingpage_svg/PiriwebSvg";
@@ -21,6 +22,7 @@ import MobileSvg from "./landingpage_svg/MobileSvg";
 import OnlineshopSvg from "./landingpage_svg/OnlineshopSvg";
 import ApplicationSvg from "./landingpage_svg/ApplicationSvg";
 import StartSvg from "./landingpage_svg/StartSvg";
+import { useState } from "react";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
@@ -147,21 +149,90 @@ const Landingpage = (props) => {
     []
   );
 
-  const [ref1, springs1] = useInView(
-    () => ({
-      from: {
-        opacity: 0,
-        y: 100,
-      },
-      to: {
-        opacity: 1,
-        y: 0,
-      },
-    }),
-    {
-      rootMargin: "-40% 0%",
-    }
-  );
+  const [firstAnimation, setFirstAnimation] = useState(false);
+  const [secondAnimation, setSecondAnimation] = useState(false);
+  const [thirdAnimation, setThirdAnimation] = useState(false);
+  const [fourthAnimation, setFourthAnimation] = useState(false);
+  const [fifthAnimation, setFifthAnimation] = useState(false);
+  // const [sixtAnimation, setSixtAnimation] = useState(false);
+
+  const { ref: firstCard } = useParallax({
+    // onEnter: () => setFirstAnimation(true),
+    // onExit: () => setFirstAnimation(false),
+    onProgressChange: (progress) => {
+      const prog = progress * 2.5;
+      if (prog >= 1) {
+        setFirstAnimation(true);
+      } else {
+        setFirstAnimation(false);
+      }
+    },
+  });
+
+  const { ref: secondCard } = useParallax({
+    // onEnter: () => setSecondAnimation(true),
+    // onExit: () => setSecondAnimation(false),
+    onProgressChange: (progress) => {
+      const prog = progress * 2.5;
+      if (prog >= 1) {
+        setSecondAnimation(true);
+      } else {
+        setSecondAnimation(false);
+      }
+    },
+  });
+
+  const { ref: thirdCard } = useParallax({
+    // onEnter: () => setThirdAnimation(true),
+    // onExit: () => setThirdAnimation(false),
+    onProgressChange: (progress) => {
+      const prog = progress * 2.5;
+      if (prog >= 1) {
+        setThirdAnimation(true);
+      } else {
+        setThirdAnimation(false);
+      }
+    },
+  });
+
+  const { ref: fourthCard } = useParallax({
+    // onEnter: () => setFourthAnimation(true),
+    // onExit: () => setFourthAnimation(false),
+    onProgressChange: (progress) => {
+      const prog = progress * 2.5;
+      if (prog >= 1) {
+        setFourthAnimation(true);
+      } else {
+        setFourthAnimation(false);
+      }
+    },
+  });
+
+  const { ref: fifthCard } = useParallax({
+    // onEnter: () => setFifthAnimation(true),
+    // onExit: () => setFifthAnimation(false),
+    onProgressChange: (progress) => {
+      const prog = progress * 2.5;
+      if (prog >= 1) {
+        setFifthAnimation(true);
+      } else {
+        setFifthAnimation(false);
+      }
+    },
+  });
+
+  // const { ref: sixtCard } = useParallax({
+  //   onEnter: () => setSixtAnimation(true),
+  //   onExit: () => setSixtAnimation(false),
+  // });
+
+  // const startView = () => {
+  //   setAnimation(true);
+  // };
+
+  // const closeView = () => {
+  //   setAnimation(false);
+  // };
 
   const headers = [t.landingpage.mainHeader1, t.landingpage.mainHeader2];
 
@@ -217,143 +288,133 @@ const Landingpage = (props) => {
         <Grid container spacing={0}>
           <Grid item xs={12} xl={4}>
             <animated.div style={card1}>
-              <animated.div ref={ref1} style={springs1}>
-                <Grid
-                  item
-                  xs={12}
-                  sx={{
-                    height: "756px",
-                    margin: "6px",
-                  }}
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  height: "756px",
+                  margin: "6px",
+                }}
+              >
+                <ScrollLink
+                  to='footer'
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={3000}
                 >
-                  <ScrollLink
-                    to='footer'
-                    spy={true}
-                    smooth={true}
-                    offset={0}
-                    duration={3000}
+                  <Card
+                    ref={firstCard}
+                    sx={{
+                      height: "100%",
+                      border: "1px solid #E9E9E9",
+                      boxShadow: "1px 1px 24px #E9E9E9",
+                    }}
+                    className={`${styles.shine} ${
+                      firstAnimation ? styles.slide : ""
+                    }`}
                   >
-                    <Card
+                    <CardActionArea
                       sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
                         height: "100%",
-                        border: "1px solid #E9E9E9",
-                        boxShadow: "1px 1px 24px #E9E9E9",
-                        overflow: "hidden",
-                        position: "relative",
-                        "&:before": {
-                          content: '""',
-                          position: "absolute",
-                          left: "-80%",
-                          backgroundColor: " rgba(142, 142, 142, 0.3)",
-                          height: "100%",
-                          width: "100px",
-                          transform: "skewX(-30deg)",
-                        },
                       }}
-                      className={styles.shine}
                     >
-                      <CardActionArea
+                      <Box
                         sx={{
+                          width: "100%",
+                          height: "200px",
                           display: "flex",
-                          flexDirection: "column",
                           justifyContent: "center",
                           alignItems: "center",
-                          height: "100%",
+                        }}
+                      >
+                        <PiriwebSvg />
+                      </Box>
+                      <CardContent>
+                        <Typography
+                          gutterBottom
+                          variant='h5'
+                          component='div'
+                          sx={{
+                            textAlign: "center",
+                            fontWeight: 100,
+                            color: "#1E1F26",
+                            fontSize: "3rem",
+                            letterSpacing: "0.3em",
+                          }}
+                        >
+                          PIRI WEB
+                        </Typography>
+                      </CardContent>
+                      <CardContent
+                        sx={{
+                          flexGrow: 0.25,
+                          display: "flex",
+                          alignItems: "center",
+                          textAlign: "center",
+                          width: { xs: "100%", sm: "80%" },
+                        }}
+                      >
+                        <Typography
+                          variant='body2'
+                          sx={{
+                            fontSize: "1.2rem",
+                            fontWeight: "200",
+                            color: "#848484",
+                            transition: "all 400ms ease-in-out",
+                          }}
+                        >
+                          {t.landingpage.companyContent}
+                        </Typography>
+                      </CardContent>
+                      <CardContent
+                        sx={{
+                          flexGrow: 1,
+                          display: "flex",
+                          alignItems: "center",
+                          textAlign: "center",
                         }}
                       >
                         <Box
                           sx={{
-                            width: "100%",
-                            height: "200px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                          }}
-                        >
-                          <PiriwebSvg />
-                        </Box>
-                        <CardContent>
-                          <Typography
-                            gutterBottom
-                            variant='h5'
-                            component='div'
-                            sx={{
-                              textAlign: "center",
-                              fontWeight: 100,
-                              color: "#1E1F26",
-                              fontSize: "3rem",
-                              letterSpacing: "0.3em",
-                            }}
-                          >
-                            PIRI WEB
-                          </Typography>
-                        </CardContent>
-                        <CardContent
-                          sx={{
-                            flexGrow: 0.25,
+                            backgroundColor: "#0170F3",
+                            padding: " 6px 8px",
+                            borderRadius: "4px",
+                            boxShadow: "1px 1px 12px #77adea",
                             display: "flex",
                             alignItems: "center",
-                            textAlign: "center",
-                            width: { xs: "100%", sm: "80%" },
                           }}
                         >
                           <Typography
                             variant='body2'
                             sx={{
-                              fontSize: "1.2rem",
+                              color: "white",
+                              fontSize: {
+                                xxl: "1.3rem",
+                                xl: "1rem",
+                                sm: "0.9rem",
+                                xs: "0.9rem",
+                              },
                               fontWeight: "200",
-                              color: "#848484",
                               transition: "all 400ms ease-in-out",
+                              backgroundColor: "1E1F26",
+                              lineHeight: 1.75,
+                              marginRight: "6px",
                             }}
                           >
-                            {t.landingpage.companyContent}
+                            {t.landingpage.companyButton}
                           </Typography>
-                        </CardContent>
-                        <CardContent
-                          sx={{
-                            flexGrow: 1,
-                            display: "flex",
-                            alignItems: "center",
-                            textAlign: "center",
-                          }}
-                        >
-                          <Box
-                            sx={{
-                              backgroundColor: "#0170F3",
-                              padding: " 6px 8px",
-                              borderRadius: "4px",
-                              boxShadow: "1px 1px 12px #77adea",
-                              display: "flex",
-                              alignItems: "center",
-                            }}
-                          >
-                            <Typography
-                              variant='body2'
-                              sx={{
-                                color: "white",
-                                fontSize: {
-                                  xxl: "1.3rem",
-                                  xl: "1rem",
-                                  sm: "0.9rem",
-                                  xs: "0.9rem",
-                                },
-                                fontWeight: "200",
-                                transition: "all 400ms ease-in-out",
-                                backgroundColor: "1E1F26",
-                                lineHeight: 1.75,
-                                marginRight: "6px",
-                              }}
-                            >
-                              {t.landingpage.companyButton}
-                            </Typography>
-                            <StartSvg />
-                          </Box>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  </ScrollLink>
-                </Grid>
-              </animated.div>
+                          <StartSvg />
+                        </Box>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </ScrollLink>
+              </Grid>
             </animated.div>
           </Grid>
           <Grid item xs={12} md={6} xl={4}>
@@ -364,11 +425,15 @@ const Landingpage = (props) => {
                 sx={{ height: { xs: "600px", lg: "400px" }, margin: "6px" }}
               >
                 <Card
+                  ref={secondCard}
                   sx={{
                     height: "100%",
                     border: "1px solid #E9E9E9",
                     boxShadow: "1px 1px 24px #E9E9E9",
                   }}
+                  className={`${styles.shine} ${
+                    secondAnimation ? styles.slide : ""
+                  }`}
                 >
                   <CardActionArea
                     sx={{
@@ -444,11 +509,15 @@ const Landingpage = (props) => {
                 sx={{ height: { xs: "550px", lg: "350px" }, margin: "6px" }}
               >
                 <Card
+                  ref={thirdCard}
                   sx={{
                     height: "100%",
                     border: "1px solid #E9E9E9",
                     boxShadow: "1px 1px 24px #E9E9E9",
                   }}
+                  className={`${styles.shine} ${
+                    thirdAnimation ? styles.slide : ""
+                  }`}
                 >
                   <CardActionArea
                     sx={{
@@ -527,11 +596,15 @@ const Landingpage = (props) => {
                 sx={{ height: { xs: "550px", lg: "350px" }, margin: "6px" }}
               >
                 <Card
+                  ref={fourthCard}
                   sx={{
                     height: "100%",
                     border: "1px solid #E9E9E9",
                     boxShadow: "1px 1px 24px #E9E9E9",
                   }}
+                  className={`${styles.shine} ${
+                    fourthAnimation ? styles.slide : ""
+                  }`}
                 >
                   <CardActionArea
                     sx={{
@@ -607,11 +680,15 @@ const Landingpage = (props) => {
                 sx={{ height: { xs: "600px", lg: "400px" }, margin: "6px" }}
               >
                 <Card
+                  ref={fifthCard}
                   sx={{
                     height: "100%",
                     border: "1px solid #E9E9E9",
                     boxShadow: "1px 1px 24px #E9E9E9",
                   }}
+                  className={`${styles.shine} ${
+                    fifthAnimation ? styles.slide : ""
+                  }`}
                 >
                   <CardActionArea
                     sx={{

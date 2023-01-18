@@ -145,7 +145,7 @@ const StyledStepperGrid = styled(Grid)(({ theme }) => ({
     marginBottom: "80px",
   },
   [theme.breakpoints.down("sm")]: {
-    marginBottom: "40px",
+    marginBottom: "80px",
   },
 }));
 
@@ -320,7 +320,7 @@ const Process = ({ t }) => {
             mm={8}
             md={8}
             lg={6}
-            sx={{ height: "30vh", marginTop: "100px" }}
+            sx={{ margin: "160px 0px" }}
           >
             <StyledMainTitle>{t.processpage.mainTitle1}</StyledMainTitle>
             <StyledMainTitle>{t.processpage.mainTitle2}</StyledMainTitle>
@@ -358,9 +358,9 @@ const Process = ({ t }) => {
                   top: 0,
                   left: 0,
                   backgroundColor: "#1e1f26",
-                  width: { xs: "2px", sm: "5px" },
+                  width: { xs: "2px", sm: "3px" },
                   height: {
-                    xs: `${progress * 2400}px`,
+                    xs: `${progress * 3700}px`,
                     sm: `${progress * 2900}px`,
                     lg: `${progress * 3000}px`,
                   },

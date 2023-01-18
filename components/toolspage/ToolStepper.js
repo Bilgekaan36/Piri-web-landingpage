@@ -565,7 +565,7 @@ const ToolsStepper = ({ t }) => {
                 <JavascriptSvg />
               </Box>
               <Typography gutterBottom variant='h5' component='div'>
-                JAVASCCRIPT
+                JAVASCRIPT
               </Typography>
               <CardContent>
                 <Typography variant='body1' color='#848484'>

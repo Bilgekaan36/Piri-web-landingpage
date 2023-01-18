@@ -31,7 +31,6 @@ const StyledHeadTitle = styled(Typography)(({ theme }) => ({
   fontWeight: "900",
   lineHeight: 1.2,
   color: "#1e1f26",
-  marginTop: "100px",
   [theme.breakpoints.down("lg")]: {
     fontSize: "1.9rem",
     marginTop: "80px",
@@ -139,14 +138,15 @@ const Personalpage = ({ t }) => {
             <Grid
               item
               xs={12}
-              sm={5}
-              md={5}
-              mm={5}
-              lg={4}
+              sm={6}
+              md={6}
+              mm={6}
+              lg={6}
               sx={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
+                paddingBottom: "32px",
               }}
             >
               <animated.div ref={ref1} style={springs1}>
@@ -188,14 +188,18 @@ const Personalpage = ({ t }) => {
             </Grid>
             <Grid
               item
-              xs={11.5}
-              sm={4.75}
-              md={4}
-              mm={3}
-              lg={4.5}
-              xl={4}
-              xxl={3.5}
-              sx={{ display: "flex", alignItems: "flex-end" }}
+              xs={12}
+              sm={6}
+              md={6}
+              mm={6}
+              lg={6}
+              xl={6}
+              xxl={6}
+              sx={{
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: "center",
+              }}
             >
               <Image
                 src={profil}
