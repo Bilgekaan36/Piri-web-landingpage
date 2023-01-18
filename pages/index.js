@@ -38,7 +38,7 @@ export default function Main() {
 
   useEffect(() => {
     scroll.scrollToTop();
-  });
+  }, []);
 
   const exportActiveBackground = (data) => {
     setActiveBackground(data);
