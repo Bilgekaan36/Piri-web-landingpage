@@ -103,7 +103,7 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   },
 }));
 
-const Footerpage = (props, ref) => {
+const Footerpage = (props) => {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   // const t = locale === "en" ? en : de;
@@ -252,7 +252,6 @@ const Footerpage = (props, ref) => {
           </StyledGrid>
         </Grid>
         <Grid
-          ref={ref}
           container
           spacing={0}
           sx={{

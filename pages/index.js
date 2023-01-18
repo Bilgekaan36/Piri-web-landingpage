@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { Container } from "@mui/material";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { animateScroll as scroll } from "react-scroll";
 import { useState } from "react";
 
@@ -20,7 +20,6 @@ import tr from "../locales/tr";
 
 export default function Main() {
   const [activeBackground, setActiveBackground] = useState("white");
-  const ref = useRef();
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   let t;
@@ -54,7 +53,7 @@ export default function Main() {
       <Processpage t={t} />
       <Launchpage t={t} />
       <Personalpage exportActiveBackground={exportActiveBackground} t={t} />
-      <Footerpage activeBackground={activeBackground} ref={ref} />
+      <Footerpage activeBackground={activeBackground} />
     </Container>
   );
 }
