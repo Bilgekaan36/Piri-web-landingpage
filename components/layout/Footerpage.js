@@ -86,6 +86,9 @@ const StyledFooterTitle = styled(Typography)(({ theme }) => ({
     fontSize: "1.95rem",
     lineHeight: "1",
   },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "1.75rem",
+  },
 }));
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
