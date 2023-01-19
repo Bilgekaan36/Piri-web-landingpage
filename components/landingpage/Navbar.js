@@ -98,9 +98,9 @@ const Navbar = (props) => {
                     color: "white",
                     fontSize: {
                       xxl: "1.3rem",
-                      xl: "1rem",
-                      sm: "0.9rem",
-                      xs: "0.9rem",
+                      xl: "1.1rem",
+                      sm: "1.1rem",
+                      xs: "1.1rem",
                     },
                   }}
                 >

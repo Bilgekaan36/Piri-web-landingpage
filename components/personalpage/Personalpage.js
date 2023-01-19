@@ -41,7 +41,7 @@ const StyledHeadContent = styled(Typography)(({ theme }) => ({
   fontSize: "1.7rem",
   color: "#1e1f26",
   marginTop: "32px",
-  [theme.breakpoints.down("lg")]: {
+  [theme.breakpoints.down("xl")]: {
     fontSize: "1.1rem",
     marginTop: "24px",
   },
