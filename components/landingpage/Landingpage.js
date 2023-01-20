@@ -381,12 +381,12 @@ const Landingpage = (props) => {
                             sx={{
                               color: "white",
                               fontSize: {
-                                xxl: "1.3rem",
-                                xl: "1rem",
-                                sm: "0.9rem",
-                                xs: "0.9rem",
+                                xxl: "1.5rem",
+                                xl: "1.1rem",
+                                sm: "1.1rem",
+                                xs: "1.1rem",
                               },
-                              fontWeight: "200",
+                              fontWeight: 300,
                               transition: "all 400ms ease-in-out",
                               backgroundColor: "1E1F26",
                               lineHeight: 1.75,

@@ -264,6 +264,7 @@ const Footerpage = (props) => {
         >
           <Grid item xs={10} lg={8}>
             <Box
+              className='footer'
               sx={{
                 padding: "32px 0",
                 display: "flex",

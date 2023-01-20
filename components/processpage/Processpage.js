@@ -195,6 +195,9 @@ const Process = ({ t }) => {
   };
 
   const handleProgress = (data) => {
+    if (data >= 0.9) {
+      return;
+    }
     setProgress(data);
   };
 
@@ -330,8 +333,7 @@ const Process = ({ t }) => {
         </StyledStepperGrid>
         <Parallax
           onProgressChange={(progressData) => {
-            const result = progressData;
-            handleProgress(result);
+            handleProgress(progressData);
           }}
         >
           <Grid
@@ -361,7 +363,7 @@ const Process = ({ t }) => {
                   width: { xs: "2px", sm: "3px" },
                   height: {
                     xs: `${progress * 3700}px`,
-                    sm: `${progress * 2900}px`,
+                    sm: `${progress * 3700}px`,
                     lg: `${progress * 3000}px`,
                   },
                 }}

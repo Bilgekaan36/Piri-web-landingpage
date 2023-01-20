@@ -132,7 +132,6 @@ const Personalpage = (props) => {
         />
         <Container maxWidth='xxl' sx={{ display: "flex" }}>
           <Grid
-            className='footer'
             container
             spacing={0}
             sx={{
