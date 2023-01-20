@@ -51,10 +51,10 @@ const theme = createTheme({
       letterSpacing: "-0.1em",
     },
     header: {
-      fontWeight: 100,
+      fontWeight: 300,
       color: "#1E1F26",
       fontSize: "1.5rem",
-      letterSpacing: "-0.1em",
+      letterSpacing: "0em",
     },
     mainHeader: {
       fontWeight: 800,
