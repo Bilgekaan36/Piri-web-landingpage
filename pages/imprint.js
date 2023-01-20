@@ -175,21 +175,43 @@ const Imprint = () => {
                 color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
               }}
             >
-              {t.imprint.contentStreet}
+              {t.imprint.contentStreetTr}
             </StyledHeadContent>
             <StyledHeadContent
               sx={{
                 color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
               }}
             >
-              {t.imprint.contentCity}
+              {t.imprint.contentCityTr}
             </StyledHeadContent>
             <StyledHeadContent
               sx={{
                 color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
               }}
             >
-              {t.imprint.contentCode}
+              {t.imprint.contentCodeTr}
+            </StyledHeadContent>
+            <StyledHeadContent
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+                marginTop: "32px",
+              }}
+            >
+              {t.imprint.contentName}
+            </StyledHeadContent>
+            <StyledHeadContent
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {t.imprint.contentStreetDe}
+            </StyledHeadContent>
+            <StyledHeadContent
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {t.imprint.contentCityDe}
             </StyledHeadContent>
             <StyledHeadTitle
               sx={{
@@ -203,7 +225,14 @@ const Imprint = () => {
                 color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
               }}
             >
-              {t.imprint.subContentPhone}
+              {t.imprint.subContentPhoneDe}
+            </StyledHeadContent>
+            <StyledHeadContent
+              sx={{
+                color: activeBackground === "#1e1f26" ? "white" : "#1e1f26",
+              }}
+            >
+              {t.imprint.subContentPhoneTr}
             </StyledHeadContent>
             <StyledHeadContent
               sx={{
