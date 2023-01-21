@@ -35,7 +35,7 @@ const translation = {
   //   description3Onlineshop: "Ziyaretçileri gerçek müşterilere dönüştürün",
   // },
   landingpage: {
-    mainHeader1: "Sizin Web Gelişiminiz",
+    mainHeader1: "Sizin Web YAZILIMINIZ",
     mainHeader2: "sizin Vizyonunuz",
     secondHeader:
       "Özel kod çözümleri geliştiriyorum – fark oluşturan dijital çözümler. Bireysel uygulamalarım, Şirketinizin kendi süreçlerini basitleştirmesine veya internet varlığını cazip hale getirmesine yardımcı olur.",
