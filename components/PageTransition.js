@@ -14,7 +14,7 @@ const PageTransition = () => {
     () => ({
       from: { y: "0" },
       to: { y: "-100%" },
-      delay: 1200,
+      delay: 2000,
       config: {
         duration: 400,
       },
@@ -22,11 +22,11 @@ const PageTransition = () => {
     []
   );
 
-  const logo = useSpring({
+  const [logo, apiLogo] = useSpring(() => ({
     from: { opacity: 0, x: "-100%" },
     to: { opacity: 1, x: "0" },
-    delay: 0,
-  });
+    delay: 400,
+  }));
 
   return (
     <animated.div
